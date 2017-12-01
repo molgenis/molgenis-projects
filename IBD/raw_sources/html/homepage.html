@@ -105,11 +105,6 @@
 	</div>
 </div>
 <style>
-	/* 
-#ibd-canvas{
-		width:100%;
-	}
- */
 	.badge-primary{ 
 		background-color: #337ab7;
 	}
@@ -137,6 +132,12 @@
 	function createImageString(numberOfPatients, numberOfPatientsWithLocation, percentage){
 		return '('+numberOfPatientsWithLocation+' of '+numberOfPatients+' patients ('+percentage+'%))'
 	}
+	
+	function addTextToImage(context, title, content, xPos, yPos, align) {
+		context.textAlign=align
+        context.fillText(title, xPos, yPos);
+        context.fillText(content, xPos, yPos+20);
+	}
 	function drawImage(data){
 		var canvas = document.getElementById("ibd-canvas");
      	var context = canvas.getContext("2d");
@@ -159,32 +160,20 @@
     	imageObj.onload = function(){
          	context.drawImage(imageObj, 10, 10);
          	context.font = "12pt Calibri";
-         	L1Text = createImageString(total, L1Number, L1Percentage)
-         	L2Text = createImageString(total, L2Number, L2Percentage)
-         	L3Text = createImageString(total, L3Number, L3Percentage)
-         	L4Text = createImageString(total, L4Number, L4Percentage)
-         	E1Text = createImageString(total, E1Number, E1Percentage)
-         	E2Text = createImageString(total, E2Number, E2Percentage)
-         	E3Text = createImageString(total, E3Number, E3Percentage)
-         	context.textAlign="end"
-         	context.fillText("Colonic disease (L2)", 240, 290);
-         	context.fillText(L2Text, 240, 310);
-         	context.fillText("Iliocolonic (L3)", 240, 350);
-         	context.fillText(L3Text, 240, 370);
-         	context.textAlign="start"
-         	context.fillText("UpperGI disease (L4)", 410, 180);
-         	context.fillText(L4Text, 410, 200);
-         	context.fillText("Ileal disease (L1)", 410, 320);
-         	context.fillText(L1Text, 410, 340);
-         	context.textAlign="end"
-         	context.fillText("Extensive colitis (E3)", 780, 340);
-         	context.fillText(E3Text, 780, 360);
-         	context.textAlign="start"
-         	context.fillText("Left sided colitis (E2)", 955, 320);
-         	context.fillText(E2Text, 955, 340);
-         	context.fillText("Proctitis (E1)", 955, 390);
-         	context.fillText(E1Text, 955, 410);
-         	
+         	L1Text = createImageString(total, L1Number, L1Percentage);
+         	L2Text = createImageString(total, L2Number, L2Percentage);
+         	L3Text = createImageString(total, L3Number, L3Percentage);
+         	L4Text = createImageString(total, L4Number, L4Percentage);
+         	E1Text = createImageString(total, E1Number, E1Percentage);
+         	E2Text = createImageString(total, E2Number, E2Percentage);
+         	E3Text = createImageString(total, E3Number, E3Percentage);
+         	addTextToImage(context, "Colonic disease (L2)", L2Text, 240, 290, "end");
+         	addTextToImage(context, "Iliocolonic (L3)", L3Text, 240, 350, "end");
+			addTextToImage(context, "UpperGI disease (L4)", L4Text, 410, 180, "start");
+			addTextToImage(context, "Ileal disease (L1)", L1Text, 410, 320, "start");
+			addTextToImage(context, "Extensive colitis (E3)", E3Text, 780, 340, "end");
+			addTextToImage(context, "Left sided colitis (E2)", E2Text, 955, 320, "start");
+			addTextToImage(context, "Proctitis (E1)", E1Text, 955, 390, "start");
      	};
      	imageObj.src = "/img/blankImg.png"; 
 	}
