@@ -2,9 +2,9 @@
 1. [1000IBD](#1000ibd)  
   a. [Websites](#websites)  
   b. [Publications](#publications)
-2. [BBRMI-ERIC](#bbrmi-eric)
+2. [BBRMI-ERIC](#bbrmi-eric)  
   a. [Websites](#websites-1)  
-  b. [Publications](#publications-1)
+  b. [Publications](#publications-1)  
 
 ## 1000IBD
 > The 1000IDB project describes patients and samples with inflammatory bowel disease. 
