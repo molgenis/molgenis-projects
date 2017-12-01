@@ -1,5 +1,8 @@
-# MOLGENIS Projects overview
-
+# MOLGENIS Projects table of contents
+1. [1000IBD](#1000ibd)  
+  a. [Websites](#websites)  
+  b. [Publications](#publications)
+2. [BBRMI-ERIC](#bbrmi-eric)
 
 ## 1000IBD
 > The 1000IDB project describes patients and samples with inflammatory bowel disease. 
