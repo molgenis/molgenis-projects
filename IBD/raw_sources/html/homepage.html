@@ -38,12 +38,12 @@
 					   <li class="list-group-item count-info">
 						<span class="badge" id="percentage-of-males"></span>
 						<span class="badge badge-primary" id="number-of-males"></span>
-						&nbsp;&nbsp;- Male
+						Male
 					  </li>
 					   <li class="list-group-item count-info">
 						<span class="badge" id="percentage-of-females"></span>
 						<span class="badge badge-primary" id="number-of-females"></span>
-						&nbsp;&nbsp;- Female
+						Female
 					  </li>
 					  <li class="list-group-item count-info">
 					  	<span class="badge" id="percentage-of-samples"></span>
@@ -98,8 +98,18 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<canvas id="ibd-canvas" width="1140" height="500"></canvas>
+		</div>
+	</div>
 </div>
 <style>
+	/* 
+#ibd-canvas{
+		width:100%;
+	}
+ */
 	.badge-primary{ 
 		background-color: #337ab7;
 	}
@@ -122,6 +132,61 @@
 <script>
 	function setTitle(data){
 		$('#title').text(data.text);
+	}
+	
+	function createImageString(numberOfPatients, numberOfPatientsWithLocation, percentage){
+		return '('+numberOfPatientsWithLocation+' of '+numberOfPatients+' patients ('+percentage+'%))'
+	}
+	function drawImage(data){
+		var canvas = document.getElementById("ibd-canvas");
+     	var context = canvas.getContext("2d");
+     	var imageObj = new Image();
+     	var L1Number = data.L1Number;
+     	var L1Percentage = data.L1Number;
+     	var L2Number = data.L2Number;
+     	var L2Percentage = data.L2Number;
+     	var L3Number = data.L3Number;
+     	var L3Percentage = data.L3Number;
+     	var L4Number = data.L4Number;
+     	var L4Percentage = data.L4Number;
+     	var E1Number = data.E1Number;
+     	var E1Percentage = data.E1Number;
+     	var E2Number = data.E2Number;
+     	var E2Percentage = data.E2Number;
+     	var E3Number = data.E3Number;
+     	var E3Percentage = data.E3Number;
+     	var total = data.numberPatients;
+    	imageObj.onload = function(){
+         	context.drawImage(imageObj, 10, 10);
+         	context.font = "12pt Calibri";
+         	L1Text = createImageString(total, L1Number, L1Percentage)
+         	L2Text = createImageString(total, L2Number, L2Percentage)
+         	L3Text = createImageString(total, L3Number, L3Percentage)
+         	L4Text = createImageString(total, L4Number, L4Percentage)
+         	E1Text = createImageString(total, E1Number, E1Percentage)
+         	E2Text = createImageString(total, E2Number, E2Percentage)
+         	E3Text = createImageString(total, E3Number, E3Percentage)
+         	context.textAlign="end"
+         	context.fillText("Colonic disease (L2)", 240, 290);
+         	context.fillText(L2Text, 240, 310);
+         	context.fillText("Iliocolonic (L3)", 240, 350);
+         	context.fillText(L3Text, 240, 370);
+         	context.textAlign="start"
+         	context.fillText("UpperGI disease (L4)", 410, 180);
+         	context.fillText(L4Text, 410, 200);
+         	context.fillText("Ileal disease (L1)", 410, 320);
+         	context.fillText(L1Text, 410, 340);
+         	context.textAlign="end"
+         	context.fillText("Extensive colitis (E3)", 780, 340);
+         	context.fillText(E3Text, 780, 360);
+         	context.textAlign="start"
+         	context.fillText("Left sided colitis (E2)", 955, 320);
+         	context.fillText(E2Text, 955, 340);
+         	context.fillText("Proctitis (E1)", 955, 390);
+         	context.fillText(E1Text, 955, 410);
+         	
+     	};
+     	imageObj.src = "/img/blankImg.png"; 
 	}
 	
 	$(function () {
@@ -154,6 +219,8 @@
 			
 			$('#age-mean').text(counts.meanAge);
 			$('#age-sd').text(counts.sdAge);
+			drawImage(counts);
 		})
+		
 	});
 </script>
