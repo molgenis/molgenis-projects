@@ -1,17 +1,34 @@
 # MOLGENIS Projects table of contents
-1. [1000IBD](#1000ibd)  
+1. [Molgenis default](#default) 
   a. [Websites](#websites)  
   b. [Publications](#publications)
-2. [BBRMI-ERIC](#bbrmi-eric)  
+2. [1000IBD](#1000ibd)  
   a. [Websites](#websites-1)  
-  b. [Publications](#publications-1)  
+  b. [Publications](#publications-1)
+3. [BBRMI-ERIC](#bbrmi-eric)  
+  a. [Websites](#websites-2)  
+  b. [Publications](#publications-2)  
+
+## Molgenis default
+> MOLGENIS: Flexible software for scientific data
+
+### How to
+Css minified in molgenis repository using: https://cssminifier.com/
+
+### Online resources
+#### Websites
+http://molgenis.github.io/
+
+#### Publications
+The MOLGENIS toolkit: rapid prototyping of biosoftware at the push of a button. - Swertz et al. https://www.ncbi.nlm.nih.gov/pubmed/21210979
+Beyond standardization: dynamic software infrastructures for systems biology. - Swertz & Jansen https://www.ncbi.nlm.nih.gov/pubmed/17297480
 
 ## 1000IBD
 > The 1000IDB project describes patients and samples with inflammatory bowel disease. 
 
 ### Online resources
 #### Websites
-A public MOLGENIS data server can be found [here](https://molgenis40.gcc.rug.nl/).  
+A public MOLGENIS data server can be found [here](https://1000ibd.com).  
 It contains an overview of data and research results.
 
 #### Publications 
@@ -22,10 +39,10 @@ TODO: add papers + url's
 
 ### Online resources
 #### Websites
-A public MOLGENIS data server can be found [here](https://molgenis21.gcc.rug.nl/).  
+A public MOLGENIS data server can be found [here](https://directory.bbmri-eric.eu).  
 It contains the BBMRI-ERIC Directory containing biobanks and sample collection metadata form organizations all over Europe.
 
 You can read more about the BBMRI-ERIC groups and projects at http://www.bbmri-eric.eu/
 
 #### Publications
-TODO: add papters + url's
+Biopreservation and Biobanking - Holub Petr, Swertz Morris, Reihs Robert, van Enckevort David, Müller Heimo, and Litton Jan-Eric http://online.liebertpub.com/doi/10.1089/bio.2016.0088
