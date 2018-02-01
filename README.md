@@ -50,3 +50,21 @@ You can read more about the BBMRI-ERIC groups and projects at http://www.bbmri-e
 #### Publications
 *Biopreservation and Biobanking* - Holub Petr, Swertz Morris, Reihs Robert, van Enckevort David, Müller Heimo, and Litton Jan-Eric  
 http://online.liebertpub.com/doi/10.1089/bio.2016.0088
+
+## VKGL
+> Association of Clinical Lab Diagnostics (Vereniging Klinische Lab Diagnostiek)
+
+### How to
+#### Consensus
+This script generates the consensus table for the VKGL project  
+To run: incude a config.txt in the directory of this project. The file should look like: config_example.txt.  
+Make sure you have loaded tables with the metadata of the VKGL project on your molgenis server.  
+Now run VKGL_consensus_table_generator.py
+
+#### Clinvar export
+Work in progress
+
+### Online resources
+#### Websites
+http://www.vkgl.nl/nl/  
+http://molgenis.org/vkgl
