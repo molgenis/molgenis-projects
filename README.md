@@ -8,7 +8,10 @@
   b. [Publications](#publications-1)
 3. [BBRMI-ERIC](#bbrmi-eric)  
   a. [Websites](#websites-2)  
-  b. [Publications](#publications-2)  
+  b. [Publications](#publications-2)
+4. [VKGL](#vkgl) 
+  [How to](#how-to) 
+  a. [Websites](#websites-2)   
 
 ## Molgenis default
 > MOLGENIS: Flexible software for scientific data
