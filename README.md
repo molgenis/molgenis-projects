@@ -1,5 +1,6 @@
 # MOLGENIS Projects table of contents
-1. [Molgenis default](#default) 
+1. [Molgenis default](#molgenis-default)  
+  [How to](#how-to)  
   a. [Websites](#websites)  
   b. [Publications](#publications)
 2. [1000IBD](#1000ibd)  
@@ -20,8 +21,10 @@ Css minified in molgenis repository using: https://cssminifier.com/
 http://molgenis.github.io/
 
 #### Publications
-The MOLGENIS toolkit: rapid prototyping of biosoftware at the push of a button. - Swertz et al. https://www.ncbi.nlm.nih.gov/pubmed/21210979
-Beyond standardization: dynamic software infrastructures for systems biology. - Swertz & Jansen https://www.ncbi.nlm.nih.gov/pubmed/17297480
+*The MOLGENIS toolkit: rapid prototyping of biosoftware at the push of a button.* - Swertz et al.  
+https://www.ncbi.nlm.nih.gov/pubmed/21210979  
+*Beyond standardization: dynamic software infrastructures for systems biology.* - Swertz & Jansen  
+https://www.ncbi.nlm.nih.gov/pubmed/17297480
 
 ## 1000IBD
 > The 1000IDB project describes patients and samples with inflammatory bowel disease. 
@@ -45,4 +48,5 @@ It contains the BBMRI-ERIC Directory containing biobanks and sample collection m
 You can read more about the BBMRI-ERIC groups and projects at http://www.bbmri-eric.eu/
 
 #### Publications
-Biopreservation and Biobanking - Holub Petr, Swertz Morris, Reihs Robert, van Enckevort David, Müller Heimo, and Litton Jan-Eric http://online.liebertpub.com/doi/10.1089/bio.2016.0088
+*Biopreservation and Biobanking* - Holub Petr, Swertz Morris, Reihs Robert, van Enckevort David, Müller Heimo, and Litton Jan-Eric  
+http://online.liebertpub.com/doi/10.1089/bio.2016.0088
