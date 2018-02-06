@@ -1,7 +1,6 @@
 __author__ = 'mslofstra'
 from openpyxl import load_workbook
 from excelSheet import ExcelSheet
-from pathlib import Path
 
 class ExcelFile:
     """Class EmxFile

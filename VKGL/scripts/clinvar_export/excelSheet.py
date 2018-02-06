@@ -1,4 +1,7 @@
 __author__ = 'mslofstra'
+import string
+import sys
+import openpyxl.styles
 
 class ExcelSheet:
     def __init__(self, sheet):
@@ -29,8 +32,8 @@ class ExcelSheet:
                 col_values.append(value)
         return col_values
 
-    def get_header(self):
-        first_row = list(self.sheet.rows)[0]
+    def get_header(self, header_row=0):
+        first_row = list(self.sheet.rows)[header_row]
         return [cell.value for cell in first_row if cell.value]
 
     def find_first_empty_column(self):
@@ -55,15 +58,25 @@ class ExcelSheet:
             self.alter(colmax, r,'')
         return self.get_header()
 
-    def find_first_empty_cell(self):
+    def find_first_empty_row(self, header_row=0):
+        headers = self.get_header(header_row)
+        header_letters = [letter for header, letter in zip(headers, list(string.ascii_uppercase))]
+        first_empty_row = 0
+        for letter in header_letters:
+            first_empty_cell = self.find_first_empty_cell(letter)
+            if first_empty_cell > first_empty_row:
+                first_empty_row = first_empty_cell
+        return first_empty_row
+
+    def find_first_empty_cell(self, column="A"):
         """function find_first_empty_cell
         This function finds the first empty cell in the given sheet (checks if the first column is empty)
         Returns the row number of the cell."""
-        column = "A"
         iteration = 1
         empty_cell_not_found = True
         while empty_cell_not_found:
-            if self.sheet[column+str(iteration)].value== None:
+            #check if the cell is empty and contains no background color
+            if self.sheet[column+str(iteration)].value== None and type(self.sheet[column+str(iteration)].fill.bgColor.indexed) != int:
                 empty_cell_not_found= False
             else:
                 iteration += 1

@@ -16,8 +16,8 @@ class ClinvarExportGenerator:
             self.process_variant(variant, self.expEvidenceInfo)
 
     def process_variant(self, variant, info):
+        row = info['sheet'].find_first_empty_row(2)
         for column in info['columns']:
-            row = info['sheet'].find_first_empty_cell()
             columnId = info['columns'][column]
             sheet = info['sheet']
             if column in info['defaults']:

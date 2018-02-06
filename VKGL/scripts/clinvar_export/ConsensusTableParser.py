@@ -46,7 +46,7 @@ class ConsensusTableParser:
             print("Working on {}-{} of {}".format(start, start+num, total))
             consensusItems = self.session.get('VKGL_consensus', num=num, start=start)
             self.parse_table_content_page(consensusItems)
-        print(time.time() - startTime)
+        print('Done in: ', time.time() - startTime, 'seconds')
 
 def main():
     ConsensusTableParser()
