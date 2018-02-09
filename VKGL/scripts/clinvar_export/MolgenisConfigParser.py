@@ -4,7 +4,7 @@ class MolgenisConfigParser():
 
     def parse(self, file):
         config = {}
-        for line in open(file):
+        for line in file.readlines():
             values = line.split('=')
             config[values[0]] = values[1].replace('\n', '')
         return config
