@@ -1,6 +1,6 @@
 class MolgenisConfigParser():
     def __init__(self, file):
-        self.config = self.parse(file)
+        self.config = self.parse(open(file))
 
     def parse(self, file):
         config = {}

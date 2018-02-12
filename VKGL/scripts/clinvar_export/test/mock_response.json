@@ -1,0 +1,291 @@
+[{
+    "_href": "/api/v2/mocked_variant1",
+    "id": "consensus_mocked_variant1",
+    "chromosome": "1",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "C",
+    "ALT": "T",
+    "gene": "GENE1",
+    "cDNA": "c.123C>T",
+    "protein": "p.T123I",
+    "lab1_classification": {
+      "_href": "/api/v2/package_lab1/lab1_mocked_variant1",
+      "id": "lab1_mocked_variant1",
+      "classification": "Likely pathogenic"
+    },
+    "lab1": "Likely pathogenic",
+    "consensus_classification": "Classified by one lab",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/123456",
+        "mim_number": "123456"
+      },
+      {
+        "_href": "/api/v2/OMIM_diseases/456789",
+        "mim_number": "456789"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant1",
+      "id": "consensus_mocked_variant1",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant2",
+    "id": "consensus_mocked_variant2",
+    "chromosome": "2",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "G",
+    "ALT": "C",
+    "gene": "GENE2",
+    "cDNA": "c.123G>C",
+    "protein": "p.T123I",
+    "lab1_classification": {
+      "_href": "/api/v2/package_lab1/lab1_mocked_variant2",
+      "id": "lab1_mocked_variant2",
+      "classification": "Likely benign"
+    },
+    "lab2_classification": {
+      "_href": "/api/v2/package_lab2/lab2_mocked_variant2",
+      "id": "lab2_mocked_variant2",
+      "classification": "Benign"
+    },
+    "lab1": "Likely pathogenic",
+    "lab2": "Benign",
+    "consensus_classification": "(Likely) benign",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/123456",
+        "mim_number": "123456"
+      },
+      {
+        "_href": "/api/v2/OMIM_diseases/456789",
+        "mim_number": "456789"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant2",
+      "id": "consensus_mocked_variant2",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant3",
+    "id": "consensus_mocked_variant3",
+    "chromosome": "3",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "G",
+    "ALT": "A",
+    "gene": "GENE3",
+    "cDNA": "c.123G>A",
+    "protein": "p.T123I",
+    "lab1_classification": {
+      "_href": "/api/v2/package_lab1/lab1_mocked_variant3",
+      "id": "lab1_mocked_variant3",
+      "classification": "Likely pathogenic"
+    },
+    "lab2_classification": {
+      "_href": "/api/v2/package_lab2/lab2_mocked_variant3",
+      "id": "lab2_mocked_variant3",
+      "classification": "Benign"
+    },
+    "lab1": "Likely pathogenic",
+    "lab2": "Benign",
+    "consensus_classification": "Opposite classification",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/123456",
+        "mim_number": "123456"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant3",
+      "id": "consensus_mocked_variant3",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant4",
+    "id": "consensus_mocked_variant4",
+    "chromosome": "4",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "T",
+    "ALT": "C",
+    "gene": "GENE4",
+    "cDNA": "c.123T>C",
+    "protein": "p.T123I",
+    "lab2_classification": {
+      "_href": "/api/v2/package_lab2/lab2_mocked_variant4",
+      "id": "lab2_mocked_variant4",
+      "classification": "Benign"
+    },
+    "lab2": "Benign",
+    "consensus_classification": "Classified by one lab",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/123456",
+        "mim_number": "123456"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant4",
+      "id": "consensus_mocked_variant4",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant5",
+    "id": "consensus_mocked_variant5",
+    "chromosome": "5",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "A",
+    "ALT": "C",
+    "gene": "GENE5",
+    "cDNA": "c.123A>C",
+    "protein": "p.T123I",
+    "lab1_classification": {
+      "_href": "/api/v2/package_lab1/lab1_mocked_variant5",
+      "id": "lab1_mocked_variant5",
+      "classification": "Pathogenic"
+    },
+    "lab2_classification": {
+      "_href": "/api/v2/package_lab2/lab2_mocked_variant5",
+      "id": "lab2_mocked_variant5",
+      "classification": "Likely pathogenic"
+    },
+    "lab3_classification": {
+      "_href": "/api/v2/package_lab3/lab3_mocked_variant5",
+      "id": "lab3_mocked_variant5",
+      "classification": "Likely pathogenic"
+    },
+    "lab1": "Pathogenic",
+    "lab2": "Likely pathogenic",
+    "lab3": "Likely pathogenic",
+    "consensus_classification": "(Likely) pathogenic",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/123456",
+        "mim_number": "123456"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant5",
+      "id": "consensus_mocked_variant5",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant6",
+    "id": "consensus_mocked_variant6",
+    "chromosome": "6",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "A",
+    "ALT": "T",
+    "gene": "GENE6",
+    "cDNA": "c.123A>T",
+    "protein": "p.T123I",
+    "lab1_classification": {
+      "_href": "/api/v2/package_lab1/lab1_mocked_variant6",
+      "id": "lab1_mocked_variant6",
+      "classification": "Benign"
+    },
+    "lab3_classification": {
+      "_href": "/api/v2/package_lab3/lab3_mocked_variant6",
+      "id": "lab3_mocked_variant6",
+      "classification": "Benign"
+    },
+    "lab1": "Benign",
+    "lab3": "Benign",
+    "consensus_classification": "(Likely) benign",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/456789",
+        "mim_number": "456789"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant6",
+      "id": "consensus_mocked_variant6",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant7",
+    "id": "consensus_mocked_variant7",
+    "chromosome": "7",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "T",
+    "ALT": "G",
+    "gene": "GENE7",
+    "cDNA": "c.123T>G",
+    "protein": "p.T123I",
+    "lab2_classification": {
+      "_href": "/api/v2/package_lab2/lab2_mocked_variant7",
+      "id": "lab2_mocked_variant7",
+      "classification": "Likely benign"
+    },
+    "lab3_classification": {
+      "_href": "/api/v2/package_lab3/lab3_mocked_variant7",
+      "id": "lab3_mocked_variant7",
+      "classification": "Benign"
+    },
+    "lab2": "Likely benign",
+    "lab3": "Benign",
+    "consensus_classification": "(Likely) benign",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/345678",
+        "mim_number": "345678"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant7",
+      "id": "consensus_mocked_variant7",
+      "comments": "-"
+    }
+  },
+  {
+    "_href": "/api/v2/mocked_variant8",
+    "id": "consensus_mocked_variant8",
+    "chromosome": "8",
+    "POS": 123456,
+    "stop": 123456,
+    "REF": "G",
+    "ALT": "A",
+    "gene": "GENE8",
+    "cDNA": "c.123G>A",
+    "protein": "p.T123I",
+    "lab2_classification": {
+      "_href": "/api/v2/package_lab2/lab2_mocked_variant8",
+      "id": "lab2_mocked_variant8",
+      "classification": "Likely benign"
+    },
+    "lab3_classification": {
+      "_href": "/api/v2/package_lab3/lab3_mocked_variant8",
+      "id": "lab3_mocked_variant8",
+      "classification": "VUS"
+    },
+    "lab2": "(Likely) pathogenic",
+    "lab3": "VUS",
+    "consensus_classification": "No consensus",
+    "disease": [
+      {
+        "_href": "/api/v2/OMIM_diseases/145678",
+        "mim_number": "145678"
+      }
+    ],
+    "comments": {
+      "_href": "/api/v2/VKGL_comments/consensus_mocked_variant8",
+      "id": "consensus_mocked_variant8",
+      "comments": "-"
+    }
+  }
+]

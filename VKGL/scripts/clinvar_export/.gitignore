@@ -6,3 +6,4 @@ __pycache__/
 clinvar_template_original.xlsx
 raw.json
 submissionInfo.json
+test.json
