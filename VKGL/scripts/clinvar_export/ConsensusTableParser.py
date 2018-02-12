@@ -10,15 +10,16 @@ class ConsensusTableParser:
     """ConsensusTableParser gets the variants from the consensus table,
     retrieves the lab information of the variants with consensus and only one omim disease code,
     output is written for each lab """
-    def __init__(self, config, raw_file, use_raw=False, export=True):
-        self.config = MolgenisConfigParser(config).config
+    def __init__(self, raw_file, use_raw=False, export=True):
+        self.config = MolgenisConfigParser("config.txt").config
         labs = self.config['labs'].split(',')
-        self.raw_file = raw_file
         self.labClassifications = dict((lab, []) for lab in labs)
         if use_raw:
+            self.raw_file = open(raw_file)
             print("Reading from server skipped, reading from previously generated {}".format(raw_file))
             self.parse_raw()
         else:
+            self.raw_file = open(raw_file, "w")
             self.session = molgenis.Session(self.config['url'])
             self.session.login(self.config['account'], self.config['password'])
             self.get_paginated_table_content()
@@ -86,7 +87,9 @@ class ConsensusTableParser:
     def parse_raw(self):
         """NAME: parse_raw
         PURPOSE: Parses the raw file generated during a previous round."""
-        input = json.load(self.raw_file)
+        print(self.raw_file.read())
+        file_content = self.raw_file.read()
+        input = json.loads(file_content)
         self.labClassifications = input
 
     def write_output(self):
@@ -102,7 +105,7 @@ def main():
     # Export from raw
     # ConsensusTableParser(True, True)
     # Produce a raw without export
-    ConsensusTableParser(use_raw=False, export=False, config=open("config.txt"), raw_file=open("raw.json", "w"))
+    ConsensusTableParser(use_raw=True, export=False, raw_file="raw.json")
     # Run defaults
     # ConsensusTableParser()
 

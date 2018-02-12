@@ -4,7 +4,7 @@ from ProgressBar import ProgressBar
 
 class ClinvarExportGenerator:
     def __init__(self, lab_variants, lab_name):
-        clinvar_sheets = ['READ_ME', 'Variant', 'ExpEvidence', 'Deletes']
+        clinvar_sheets = ['READ_ME', 'SubmissionInfo', 'Variant', 'ExpEvidence', 'Deletes']
         print("Writing output for {}...".format(lab_name))
         self.clinvarExport = ExcelFile('clinvar_template.xlsx', clinvar_sheets)
         self.variantInfo = self.configure_variant_sheet()
@@ -107,7 +107,7 @@ def main():
         {"id":"test","chromosome":"7","POS":26093141,"stop":26093141,"REF":"C","ALT":"A","gene":"HFE","cDNA":"c.845C>A","transcript":"y","protein":"x","type":"snp","location":"exonic","exon":"4","effect":"nonsynonymous","classification":"Pathogenic","comments":{"comments":"-"},"lab_upload_date":"2017-10-05 09:35:11","timestamp":"2017-06-15T10:37:55Z", 'omim':'123456'},
         {"id": "test2", "chromosome": "7", "POS": 26093141, "stop": 26093141, "REF": "C", "ALT": "A", "gene": "HFE",
          "cDNA": "c.845C>A", "transcript": "y", "protein": "x", "type": "snp", "location": "exonic", "exon": "4",
-         "effect": "nonsynonymous", "classification": "Pathogenic", "comments": {"comments": "-"}}
+         "effect": "nonsynonymous", "classification": "Pathogenic", "omim": '123456'}
     ]
     ClinvarExportGenerator(testVariant, 'test')
 

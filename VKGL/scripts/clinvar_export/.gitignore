@@ -5,3 +5,4 @@ __pycache__/
 ~$*.xlsx
 clinvar_template_original.xlsx
 raw.json
+submissionInfo.json
