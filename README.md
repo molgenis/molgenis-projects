@@ -103,12 +103,27 @@ Logs will be created in /Bbrmi_eric_quality_checker. Two logs will be written:
 ### How to
 #### Consensus
 This script generates the consensus table for the VKGL project  
-To run: incude a config.txt in the directory of this project. The file should look like: config_example.txt.  
-Make sure you have loaded tables with the metadata of the VKGL project on your molgenis server.  
-Now run VKGL_consensus_table_generator.py
+Requirements before running:  
+- Incude a config.txt in the directory of this project. The file should look like: config_example.txt.  
+- Include omim.txt, which is a biomart export with unique rows containing the columns: Gene_stable_ID, MIM_disease_accession, HGNC_symbol  
+- Make sure you have loaded tables with the metadata of the VKGL project on your molgenis server.  
+  
+Run: 
+```
+python3 VKGL_consensus_table_generator.py
+```
 
 #### Clinvar export
-Work in progress
+This script generates the ClinVar export per lab. Variants exported to ClinVar meet the following rules:
+- Variant has consensus classification  
+- Only one OMIM code is selected for the variant in the consensus table  
+
+Requirements before running:  
+- Incude a config.txt in the directory of this project. The file should look like: config_example.txt.  
+
+```
+python3 ConsensusTableParser.py
+```
 
 ### Online resources
 #### Websites
