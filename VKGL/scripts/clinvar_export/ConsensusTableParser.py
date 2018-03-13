@@ -10,7 +10,7 @@ class ConsensusTableParser:
     """ConsensusTableParser gets the variants from the consensus table,
     retrieves the lab information of the variants with consensus and only one omim disease code,
     output is written for each lab """
-    def __init__(self, raw_file, use_raw=False, export=True):
+    def __init__(self, raw_file="raw.json", use_raw=False, export=True):
         self.config = MolgenisConfigParser("config.txt").config
         labs = self.config['labs'].split(',')
         self.labClassifications = dict((lab, []) for lab in labs)
@@ -87,10 +87,10 @@ class ConsensusTableParser:
     def parse_raw(self):
         """NAME: parse_raw
         PURPOSE: Parses the raw file generated during a previous round."""
-        print(self.raw_file.read())
-        file_content = self.raw_file.read()
-        input = json.loads(file_content)
-        self.labClassifications = input
+        with self.raw_file as file:
+            file_content = file.read()
+            input = json.loads(file_content)
+            self.labClassifications = input
 
     def write_output(self):
         """NAME: write_output
@@ -105,9 +105,9 @@ def main():
     # Export from raw
     # ConsensusTableParser(True, True)
     # Produce a raw without export
-    ConsensusTableParser(use_raw=True, export=False, raw_file="raw.json")
+    # ConsensusTableParser(use_raw=False, export=True, raw_file="raw.json")
     # Run defaults
-    # ConsensusTableParser()
+    ConsensusTableParser()
 
 
 if __name__ == '__main__':

@@ -11,7 +11,10 @@ class ProgressBar:
         self.start_time = time.time()
         self.time_running = 0
         self.bar = '[]'.format(' '* 100)
-        self.percentage = self.get_percentage()
+        if total != 0:
+            self.percentage = self.get_percentage()
+        else:
+            self.percentage = 0
         self.number_of_stripes = 0
         self.number_of_spaces = 100
 

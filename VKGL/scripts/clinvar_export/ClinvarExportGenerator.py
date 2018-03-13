@@ -1,5 +1,6 @@
 from excelFile import ExcelFile
 from ProgressBar import ProgressBar
+import json
 
 
 class ClinvarExportGenerator:
@@ -10,7 +11,7 @@ class ClinvarExportGenerator:
         self.variantInfo = self.configure_variant_sheet()
         self.expEvidenceInfo = self.configure_ExpEvidence_sheet()
         self.process_variants(lab_variants)
-        self.clinvarExport.save_to_new_file( 'export/{}_clinvar_export.xlsx'.format(lab_name))
+        self.clinvarExport.save_to_new_file('export/{}_clinvar_export.xlsx'.format(lab_name))
         print('{}_clinvar_export.xlsx created'.format(lab_name))
 
     def process_variants(self, variants):
@@ -22,7 +23,7 @@ class ClinvarExportGenerator:
         for i, variant in enumerate(variants):
             self.process_variant(variant, self.variantInfo)
             self.process_variant(variant, self.expEvidenceInfo)
-            progress.get_next(i+1)
+            progress.get_next(i + 1)
         progress.get_next(len(variants))
         print(progress.get_done_message('min'))
 
@@ -39,7 +40,6 @@ class ClinvarExportGenerator:
                 values = [variant[attr] for attr in info['mapping'][column]]
                 value = str(':'.join(values))
                 sheet.alter(columnId, row, value)
-
 
     def configure_variant_sheet(self):
         """NAME: configure_variant_sheet
@@ -74,7 +74,7 @@ class ClinvarExportGenerator:
         """NAME: configure_ExpEvidence_sheet
         PURPOSE: set up the mapping between variant and the ExpEvidence sheet of clinvar and set up the ExpEvidence sheet
         OUTPUT: expEvidence (a dictionary with a mapping from the VKGL variant to the Clinvar ExpEvidence sheet, for some
-        clinvar columns default values, the clinvar column names and the sheet in which the information is stored)"""
+                clinvar columns default values, the clinvar column names and the sheet in which the information is stored)"""
         sheet = self.clinvarExport.sheets['ExpEvidence']
 
         expEvidence = {
@@ -101,10 +101,55 @@ class ClinvarExportGenerator:
 
         return expEvidence
 
+    def configure_SubmissionInfo_sheet(self):
+        """NAME: configure_SubmissionInfo_sheet
+        PURPOSE: set up the mapping between variant and the SubmissionInfo sheet of clinvar and set up the SubmissionInfo sheet
+        OUTPUT: submissionInfo (a dictionary with a mapping from the VKGL variant to the Clinvar SubmissionInfo sheet, for some
+                clinvar columns default values, the clinvar column names and the sheet in which the information is stored)"""
+        sheet = self.clinvarExport.sheets['SubmissionInfo']
+        providedInfo = json.parse(open('submissionInfo.json').read())
+        submissionInfo = {
+            'mapping': {
+                ''
+            },
+            'defaults': {
+                'submitter_id_type': 'personID',
+                'submitter_type': 'private',
+                'organization_type': 'lab',
+                'country': 'The Netherlands',
+                'submission_description': 'VKGL Data-share Consensus',
+                'assembly_name': 'GRCh37'
+            },
+            'columns': {
+                'submitter_id_col': 'A',
+                'submitter_id_type':'B',
+                'submitter_type': 'C',
+                'submitter_first_name': 'D',
+                'submitter_last_name': 'E',
+                'submitter_phone': 'F',
+                'submitter_email': 'G',
+                'organization_type': 'I',
+                'organization': 'J',
+                'organization_id': 'K',
+                'organization_abbr': 'L',
+                'institution': 'N',
+                'city': 'P',
+                'province': 'Q',
+                'country': 'R',
+                'submission_description': 'V',
+                'assembly_name':'AB'
+
+            },
+            'sheet': sheet
+        }
+
 
 def main():
     testVariant = [
-        {"id":"test","chromosome":"7","POS":26093141,"stop":26093141,"REF":"C","ALT":"A","gene":"HFE","cDNA":"c.845C>A","transcript":"y","protein":"x","type":"snp","location":"exonic","exon":"4","effect":"nonsynonymous","classification":"Pathogenic","comments":{"comments":"-"},"lab_upload_date":"2017-10-05 09:35:11","timestamp":"2017-06-15T10:37:55Z", 'omim':'123456'},
+        {"id": "test", "chromosome": "7", "POS": 26093141, "stop": 26093141, "REF": "C", "ALT": "A", "gene": "HFE",
+         "cDNA": "c.845C>A", "transcript": "y", "protein": "x", "type": "snp", "location": "exonic", "exon": "4",
+         "effect": "nonsynonymous", "classification": "Pathogenic", "comments": {"comments": "-"},
+         "lab_upload_date": "2017-10-05 09:35:11", "timestamp": "2017-06-15T10:37:55Z", 'omim': '123456'},
         {"id": "test2", "chromosome": "7", "POS": 26093141, "stop": 26093141, "REF": "C", "ALT": "A", "gene": "HFE",
          "cDNA": "c.845C>A", "transcript": "y", "protein": "x", "type": "snp", "location": "exonic", "exon": "4",
          "effect": "nonsynonymous", "classification": "Pathogenic", "omim": '123456'}
