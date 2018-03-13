@@ -1,0 +1,8 @@
+*.txt
+!config_example.txt
+__pycache__
+.idea
+data_model/countries/*
+!data_model/countries/.gitkeep 
+data_model/meta_data.zip
+
