@@ -54,6 +54,49 @@ You can read more about the BBMRI-ERIC groups and projects at http://www.bbmri-e
 *Biopreservation and Biobanking* - Holub Petr, Swertz Morris, Reihs Robert, van Enckevort David, Müller Heimo, and Litton Jan-Eric  
 http://online.liebertpub.com/doi/10.1089/bio.2016.0088
 
+### How to
+
+#### Data mover
+This script downloads data from one server of BBMRI eric and uploads it to a specified target server. The datamodel is altered.
+This new model is specified in the data_model folder. This new model will be uploaded.
+The old data retrieved from the specified server will be converted to the new model.
+Invalid rows will be filtered out and written to logfiles. The valid data will be uploaded in the models  
+
+##### Run  
+Add a config.txt file in the format of config_example.txt, in the same directory.   
+Config.txt:
+
+```
+url=http(s)://source-server/api/
+account=username
+password=password
+countries=AT,BE,CZ,DE,EE,FI,FR,GR,IT,MT,NL,NO,PL,SE,UK,LV
+target_server=http(s)://target-server/api/
+target_account=username
+target_password=password
+```
+To upload without countries, set the "countries" parameter to "FALSE" in the config file.
+
+Run the script:  
+```
+python3 Bbmri_data_mover.py
+```
+
+##### Model  
+Model for countries will be created in /datamodel/countries.
+Model for general directory is already in /datamodel and will be zipped as: meta_data.zip
+
+##### Data  
+Data will be retrieved from one server, converted to new model and put in the new server. Invalid rows are filtered out.
+
+##### Logs of invalid data  
+Logs will be created in /Bbrmi_eric_quality_checker. Two logs will be written:
+
+| Logfile           | Description                                                                                 |
+|-------------------|---------------------------------------------------------------------------------------------|
+| logs.txt          | Contains all rows with invalid data                                                         |
+| breaking_rows.txt | Contains data invalid rows that are not uploaded in the new model on the target server      |
+
 ## VKGL
 > Association of Clinical Lab Diagnostics (Vereniging Klinische Lab Diagnostiek)
 
