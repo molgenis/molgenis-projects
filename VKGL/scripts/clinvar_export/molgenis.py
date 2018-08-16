@@ -73,7 +73,9 @@ class Session():
                                     headers=self._get_token_header(),
                                     params={"attributes": attributes, "expand": expand})
         if response.status_code == 200:
-            return response.json()
+            result = response.json()
+            response.close()
+            return result
         response.raise_for_status();
         return response;
 
@@ -116,7 +118,9 @@ class Session():
                                                 "sortColumn": sortColumn, "sortOrder":
                                                     sortOrder})
         if response.status_code == 200:
-            return response.json()["items"]
+            result = response.json()["items"]
+            response.close()
+            return result
         response.raise_for_status();
         return response;
 
