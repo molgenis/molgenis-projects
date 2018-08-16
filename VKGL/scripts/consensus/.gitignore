@@ -4,3 +4,4 @@ __pycache__
 config_test.txt
 OMIM_to_HGNC.txt
 *.csv
+omim.txt

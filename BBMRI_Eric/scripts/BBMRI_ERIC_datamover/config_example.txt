@@ -1,0 +1,7 @@
+url=http(s)://source-server/api/
+account=username
+password=password
+countries=AT,BE,CZ,DE,EE,FI,FR,GR,IT,MT,NL,NO,PL,SE,UK,LV
+target_server=http(s)://target-server/api/
+target_account=username
+target_password=password

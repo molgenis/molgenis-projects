@@ -1,0 +1,12 @@
+id,label,ontology,uri,description
+biomaterial-storage,Biological material storage,,,
+cell-culture,Cell culture,,,
+data-analytics,Data analytics,,,
+data-storage,Data Storage,,,
+digital-imaging,Digital imaging,,,
+immunohistochemistry-scoring,Immunohistochemistry scoring,,,
+immunohistochemistry-staining,Immunohistochemistry staining,,,
+nucleic-acid-extraction,Nucleic acid extraction,,,
+pathology-archive-access,Access to the full pathology archive,,,
+recontact,Ability to recontact,,,
+tma-creation,Tissue micro array creation,,,
