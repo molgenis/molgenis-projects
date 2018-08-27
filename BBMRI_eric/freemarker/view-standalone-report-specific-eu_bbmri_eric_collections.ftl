@@ -32,7 +32,7 @@
     	</#if>
     	<#if contact.get('phone')??>
     		<tr>
-      			<th scope="row">Phone</t>
+      			<th scope="row">Phone</th>
       			<td>${contact.get('phone')}<br></td>
     		</tr>
     	</#if>
@@ -192,7 +192,7 @@
     </div>
     <div class="col-md-4">
       	<h4>Main contact</h4>
-      	<table class="table table-striped"">
+      	<table class="table table-striped">
       	<tbody>
       		${biobankcontact()}
       	</tbody>
