@@ -99,7 +99,7 @@
   	<#return result[key]>
 </#function>
 
-<button onClick="back()" class="btn btn-primary">< Back to biobanks</button> <br/><br/>
+<button onClick="back()" class="btn btn-primary">< Back to search results</button> <br/><br/>
 <script>
 	function back() {
     	window.history.back()
@@ -123,7 +123,7 @@
           	</#if>
         </div>
       	</div>
-      	<hr></hr>
+      	<hr/>
     	</div>
   	</div>
   	<div class="row">
@@ -222,32 +222,40 @@
         <!-- Collection details -->
         <div class="row">
             <div class="col-md-12">
-                <hr></hr>
+                <hr/>
                 <h3>${entity.get('name')}</h3>
-                <!--<small><strong>ID</strong>: ${entity.get('id')}</small>-->
                 	<#if entity.get('description')??>
                     	${entity.get('description')}
                 	</#if>
                 	               
-                <br/><br/>                           
-                
-                <#if entity.get('sub_collections')?? && entity.get('sub_collections')?has_content>
-					- ${entity.get('id')}
-                	<br/>
-                	<#list entity.get('sub_collections') as subs>
-                    	<span style="margin-left:2em"><small>+ ${subs.get('id')}</small></span>
-                		<#if subs_has_next><br/></#if>
-                    </#list>
-                <#elseif entity.get('parent_collection')?? && entity.get('parent_collection')?has_content>
-                	+ ${entity.get('parent_collection').get('id')}
-                	<br/>
-                	<span style="margin-left:2em"><small>- ${entity.get('id')}</small></span>
-                <#else>
-                	${entity.get('id')}             
-                </#if> 
+                <br/><br/>
+
+				<#if entity.get('sub_collections')?? && entity.get('sub_collections')?has_content>
+					<a href="/menu/main/dataexplorer/details/eu_bbmri_eric_collections/${entity.get('id')}">${entity.get('id')}</a>
+					<ul>
+						<#list entity.get('sub_collections') as subs>
+							<li>
+								<small>
+									<a href="/menu/main/dataexplorer/details/eu_bbmri_eric_collections/${subs.get('id')}">${subs.get('id')}</a>
+								</small>
+							</li>
+						</#list>
+					</ul>
+				<#elseif entity.get('parent_collection')?? && entity.get('parent_collection')?has_content>
+					<a href="/menu/main/dataexplorer/details/eu_bbmri_eric_collections/${entity.get('parent_collection').get('id')}">${entity.get('parent_collection').get('id')}</a>
+					<ul>
+						<li>
+							<small>
+								<a href="/menu/main/dataexplorer/details/eu_bbmri_eric_collections/${entity.get('id')}">${entity.get('id')}</a>
+							</small>
+						</li>
+					</ul>
+				<#else>
+					<a href="/menu/main/dataexplorer/details/eu_bbmri_eric_collections/${entity.get('id')}">${entity.get('id')}</a>
+				</#if>
             </div>
         </div>
-        <hr></hr>
+        <hr/>
 
   <div class="row">
     <div class="col-md-4">
@@ -363,7 +371,7 @@
     </div>
   </div>
 
-  <hr></hr>
+  <hr/>
 
   <div class="row">
     <!-- Sample Access conditions -->
