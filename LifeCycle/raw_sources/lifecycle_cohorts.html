@@ -1,0 +1,140 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Varela+Round" />
+<div class="container-fluid">
+    <article>
+        <div class="entry-content">
+            <header>
+                <h2><span id="life">Life</span>Cycle cohorts</h2>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" id="cohorts">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script>
+      function createCodebookLinkList(codebooks) {
+        var result = $('<ul>')
+        for (i = 0; i < codebooks.length; i++) {
+          var codebook = codebooks[i]
+          result.append($('<li>').append(
+            $('<a target="_blank">').attr('href', codebook.URL)
+              .text(codebook.label)
+            )
+          )
+        }
+        return result
+      }
+
+      function createCodebooks(codebooks) {
+        var result = $('<div class="col col-md-4">')
+          .append($('<h4>').text('Codebooks'))
+        if (codebooks.length) {
+          result.append(createCodebookLinkList(codebooks))
+        } else {
+          result.append($('<p>').text('N/A'))
+        }
+        return result
+      }
+
+      function createWebsite(website) {
+        return website
+          ? $('<dd>').append($('<a target="_blank">').text(website))
+          : $('<dd>').text('N/A')
+      }
+
+      function createProfile(cohort) {
+        return $('<div class="col col-md-4">')
+          .append($('<h4>').text('Cohort profile'))
+          .append($('<dl>')
+            .append($('<dt>').text('Website')).append(createWebsite(cohort.website))
+            .append($('<dt>').text('Info')).append($('<dd>').text(cohort.profile_info || 'N/A'))
+          )
+      }
+
+      function createContactDl(cohort) {
+        var result = $('<dl>').append($('<dt>').text('Project Coordinator'))
+        if (!cohort.coordinator_name && !cohort.coordinator_email) {
+          result.append($('<dd>').text('N/A'))
+        } else {
+          if (cohort.coordinator_name) {
+            result.append($('<dd>').text(cohort.coordinator_name))
+          }
+          if (cohort.coordinator_email) {
+            result.append(
+              $('<dd>').append(
+                $('<a>').attr('href', 'mailto:' + cohort.coordinator_email)
+                  .text(cohort.coordinator_email)
+              )
+            )
+          }
+        }
+        result.append($('<dt>').text('Access'))
+        if (!cohort.access_url) {
+          result.append($('<dd>').text('N/A'))
+        } else {
+          result.append(
+            $('<dd>').append(
+              $('<a target="_blank">')
+                .attr('href', cohort.access_url)
+                .text(cohort.access_label || cohort.access_url)
+            )
+          )
+        }
+        return result
+      }
+
+      function createContact(cohort) {
+        return $('<div class="col col-md-4">')
+          .append($('<h4>').text('Contact'))
+          .append(createContactDl(cohort))
+      }
+
+      function createPanel(cohort) {
+        var heading = cohort.name ? `${cohort.name} (${cohort.label})` : cohort.label
+        return $('<div class="panel panel-info">')
+          .append($('<div class="panel-heading">').text(heading))
+          .append($('<div class="panel-body">')
+            .append($('<div>').html(cohort.description))
+            .append($('<div class="row">')
+              .append(createProfile(cohort))
+              .append(createCodebooks(cohort.codebooks))
+              .append(createContact(cohort))
+            )
+          )
+      }
+
+      var url = '/api/v2/LifeCycle_Cohorts?attrs=*,codebooks(*)'
+      $.ajax({
+        url: url,
+        success: function (response) {
+          for (var i = 0; i < response.items.length; i++) {
+            $('#cohorts').append(createPanel(response.items[i]))
+          }
+        },
+        datatype: 'json'
+      })
+    </script></div>
+<style>
+    h2 {
+        font-family: 'Varela Round', sans-serif;
+        color: #225a94;
+        font-weight: bold;
+        border-bottom: 2px solid #e8eff5;
+        margin-bottom: 1em;
+    }
+
+    h2 span#life {
+        color: #d1121c;
+    }
+    .entry-content {
+        box-shadow: 0 0 46px -10px rgba(59, 59, 59, 1);
+        width: 90%;
+        z-index: 1000;
+        background-color: white;
+        border-radius: 5px;
+        padding: 2em;
+    }
+</style>
