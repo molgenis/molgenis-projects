@@ -4,7 +4,10 @@ import pprint
 from omim_parser import OmimParser
 
 class ConsensusTableGenerator():
-    def __init__(self, labs, session, omim_file):
+    def __init__(self, labs, session, omim_file, consensus_table, comments_table, postfix):
+        self.postfix = postfix
+        self.comments_table = comments_table
+        self.consensus_table = consensus_table
         print('Started')
         self.omim_codes = OmimParser(omim_file).codes
         print('Omim codes parsed')
@@ -15,11 +18,27 @@ class ConsensusTableGenerator():
         self.clear_tables()
         self.lab_data = self.process_data()
         table = self.calculate_consensus()
+        # self.export_csv(table)
         self.upload_consensus(table)
+
+    def export_csv(self, table):
+        csv = open('export.csv', 'w')
+        header = dict.keys(table[0])
+        csv.write('"')
+        csv.write('","'.join(header))
+        csv.write('"\n')
+        for variant in table:
+            for i, col in enumerate(variant):
+                if i == 0:
+                    csv.write('"{}"'.format(variant[col]))
+                else:
+                    csv.write(',"{}"'.format(variant[col]))
+            csv.write('\n')
+        csv.close()
 
     def process_lab(self, lab, num, start, consensus):
         print('Processing data of', lab)
-        lab_data = self.session.get('VKGL_' + lab, num=num, start=start)
+        lab_data = self.session.get(lab + self.postfix, num=num, start=start)
         for variant in lab_data:
             variantId = variant['id'].replace(lab + '_', '')
             if variantId not in consensus:
@@ -47,7 +66,7 @@ class ConsensusTableGenerator():
     def process_data(self):
         consensus = {}
         for lab in self.labs:
-            total = self.session.get_total("VKGL_" + lab)
+            total = self.session.get_total(lab + self.postfix)
             times = math.ceil(total/10000)
             for time in range(times):
                 start = ((time+1)*10000) - 10000
@@ -56,7 +75,7 @@ class ConsensusTableGenerator():
         return consensus
 
     def process_consensus_chunk(self, num, start, ids):
-        consensus = self.session.get('VKGL_consensus', num=num, start=start)
+        consensus = self.session.get(self.consensus_table, num=num, start=start)
         for row in consensus:
             ids.append(row['id'])
             self.old_diseases[row['id']] = ['' if 'disease' not in row else row['disease']['mim_number']][0]
@@ -66,10 +85,10 @@ class ConsensusTableGenerator():
         if len(ids) > 0:
             print('Deleting consensus...')
             for chunk in self.chunks(ids, 1000):
-                self.session.delete_list('VKGL_consensus', chunk)
+                self.session.delete_list(self.consensus_table, chunk)
 
     def process_comments_chunk(self, num, start, ids):
-        comments = self.session.get('VKGL_comments', num=num, start= start)
+        comments = self.session.get(self.comments_table, num=num, start= start)
         for row in comments:
             id = row['id']
             if id.startswith('consensus_'):
@@ -82,10 +101,10 @@ class ConsensusTableGenerator():
             print('Deleting comments...')
             for i, chunk in enumerate(self.chunks(ids, 1000)):
                 print('Deleting chunk {} of {}'.format(i+1, len(self.chunks(ids, 1000))))
-                self.session.delete_list('VKGL_comments', chunk)
+                self.session.delete_list(self.comments_table, chunk)
 
     def clear_tables(self):
-        consensus_total = self.session.get_total('VKGL_consensus')
+        consensus_total = self.session.get_total(self.consensus_table)
         if consensus_total > 0:
             times = math.ceil(consensus_total/10000)
             print('Clearing consensus')
@@ -94,9 +113,9 @@ class ConsensusTableGenerator():
                 start = ((time+1)*10000) - 10000
                 num = 10000
                 ids = self.process_consensus_chunk(num, start, ids)
-            self.delete_consensus(ids)
-            print('Deleted consensus variants')
-        comments_total = self.session.get_total('VKGL_comments')
+                # self.delete_consensus(ids)
+                # print('Deleted consensus variants')
+        comments_total = self.session.get_total(self.comments_table)
         ids  = []
         if comments_total > 0:
             times = math.ceil(comments_total/10000)
@@ -120,16 +139,24 @@ class ConsensusTableGenerator():
             v = variant['counter']['v']
             if b > 1 and p == 0 and v == 0:
                 variant['consensus_classification'] = '(Likely) benign (' + str(b) + ')'
+                variant['classification'] = 'p'
             elif b == 0 and p > 1 and v == 0:
                 variant['consensus_classification'] = '(Likely) pathogenic (' + str(p) + ')'
+                variant['classification'] = 'b'
             elif b == 0 and p == 0 and v > 1:
-                variant['consensus_classification'] = 'VUS(' + str(v) + ')'
+                variant['consensus_classification'] = 'VUS (' + str(v) + ')'
+                variant['classification'] = 'v'
             elif b > 0 and p > 0:
                 variant['consensus_classification'] = 'Opposite classification'
+                variant['classification'] = 'op'
             elif (b > 0 and v > 0) or (p > 0 and v > 0):
                 variant['consensus_classification'] = 'No consensus'
+                variant['classification'] = 'no'
             elif b == 1 or v == 1 or p == 1:
                 variant['consensus_classification'] = 'Classified by one lab'
+                variant['classification'] = 'one'
+            else:
+                print('Something went wrong: ', b, v, p)
             self.lab_data[id] = variant
             del variant['counter']
             molgenis_table.append(variant)
@@ -144,14 +171,14 @@ class ConsensusTableGenerator():
                 comments.append({'id': 'consensus_' + id, 'comments': '-'})
         comment_chunks = self.chunks(comments, 1000)
         for chunk in comment_chunks:
-            self.session.add_all('VKGL_comments', chunk)
+            self.session.add_all(self.comments_table, chunk)
 
     def upload_consensus(self, entities):
         self.upload_comments()
         print('Comments uploaded')
         entity_chunks = self.chunks(entities, 1000)
         for chunk in entity_chunks:
-            self.session.add_all('VKGL_consensus', chunk)
+            self.session.add_all(self.consensus_table, chunk)
         print('Consensus uploaded\nDone!')
 
     def chunks(self,l, n=1000):
@@ -168,10 +195,13 @@ def main():
     labs = config['labs'].split(',')
     url = config['url']
     account = config['account']
+    consensus_table = config['consensus_table']
+    comments_table = config['comments_table']
+    postfix = config['postfix']
     pwd = config['password']
     session = molgenis.Session(url)
     session.login(account, pwd)
-    consensus = ConsensusTableGenerator(labs, session, 'omim.txt')
+    consensus = ConsensusTableGenerator(labs, session, 'omim.txt', consensus_table, comments_table, postfix)
 
 
 if __name__ == '__main__':
