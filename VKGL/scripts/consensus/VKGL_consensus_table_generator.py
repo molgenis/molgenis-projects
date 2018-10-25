@@ -5,6 +5,7 @@ from omim_parser import OmimParser
 
 
 class ConsensusTableGenerator():
+
   def __init__(self, labs, session, omim_file, consensus_table, comments_table,
       postfix):
     self.postfix = postfix
@@ -216,7 +217,6 @@ def main():
   session.login(account, pwd)
   consensus = ConsensusTableGenerator(labs, session, 'omim.txt',
                                       consensus_table, comments_table, postfix)
-
 
 if __name__ == '__main__':
   main()
