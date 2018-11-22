@@ -1,3 +1,4 @@
+
 <!--
 create a freemarker template with name: 
 view-model-documentation-entitiesreport.ftl
@@ -29,9 +30,9 @@ sys_md_Attribute:model-documentation
 </#if>
 </#list></@compress>"/>
 <!--docs of each table-->
-<#list datasetRepository?sort_by("entity") as e>
+<#list datasetRepository as e>
 <#if e.entity.package.id == p.entity.package.id && !entity?seq_contains(e.entity.id)>
-<h2>Entity: ${e.entity.label}</h2>
+<h2>${e.entity.label}</h2>
 <p><i>description:</i> <#if e.entity.description??>${e.entity.description}<#else>NA</#if></p>
 <#if e.entity.extends??><p><i>extends: ${e.entity.extends.label}</i></p></#if>
 <#assign entity = entity + [e.entity.id]/>
@@ -39,7 +40,7 @@ Attributes:
 <ul>
 <#list datasetRepository?sort_by("entity") as a>
 <#if e.entity.id == a.entity.id>
-<li><b>${a.label}</b>: ${a.type}<#if a.description??><br/><i>${a.description}</#if></i></li>
+<li><b>${a.label}</b><#if a.nillable = false>*</#if>: ${a.type}<#if a.refEntityType??>(${a.refEntityType.label})</#if><#if a.description??> - <i>${a.description}</#if></i></li>
 </#if>
 </#list>
 </ul>
