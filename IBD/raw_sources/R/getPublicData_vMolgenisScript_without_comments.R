@@ -8,6 +8,7 @@ phenotypes <- "${phenotypes}"
 ichip <- "${ichip}"
 otu <- "${otu}"
 biopsies <- "${biopsies}"
+metagenomics <- "${metagenomics}"
 
 eval(expr = parse(text = getURL(paste0(url, "/molgenis.R?molgenis-token=", token))))
 
@@ -110,19 +111,25 @@ getPatientDataPerSampleType <- function(sampleType, patient_data) {
 
 patient_data <- molgenis.get(phenotypes, num = 10000)
 stool_patient_data <- patient_data[patient_data$feces_16S_ID != "",]
-ichip_patient_data <- patient_data[patient_data$Ichip_ID != "",]
+ichip_table <- molgenis.get(ichip, num = 10000)
+ichip_patient_data <- patient_data[patient_data$ID_1000IBD %in% ichip_table$ID_1000IBD,]
 biopsies_table <- molgenis.get(biopsies, num = 10000)
 biopsies_patient_data <- patient_data[patient_data$ID_1000IBD %in% biopsies_table$ID_1000IBD,]
+metagenomics_table <- molgenis.get(metagenomics, num=10000)
+metagenomics_patient_data <- patient_data[patient_data$ID_1000IBD %in% metagenomics_table$ID_1000IBD,]
 
-iChipSamples <- getTotalRows(ichip)
+
+iChipSamples <- nrow(ichip_table)
 stoolSamples <- getTotalRows(otu)
 totalSamples <- iChipSamples + stoolSamples
 biopsiesSamples <- nrow(biopsies_table)
+metagenomicsSamples <- nrow(metagenomics_table)
 
 allPatientSamples <- getPatientDataPerSampleType("all_patients", patient_data)
 stoolPatientSamples <- getPatientDataPerSampleType("stool_patients", stool_patient_data)
 ichipPatientSamples <- getPatientDataPerSampleType("ichip_patients", ichip_patient_data)
 biopsiesPatientSamples <- getPatientDataPerSampleType("biopsies_patients", biopsies_patient_data)
+metagenomicsPatientSamples <- getPatientDataPerSampleType("metagenomics_patients", metagenomics_patient_data)
 
 numberSamples <- c(totalSamples)
 allPatientSamples <- cbind(allPatientSamples, numberSamples)
@@ -136,9 +143,13 @@ ichipPatientSamples <- cbind(ichipPatientSamples, numberSamples)
 numberSamples <- c(biopsiesSamples)
 biopsiesPatientSamples <- cbind(biopsiesPatientSamples, numberSamples)
 
-molgenis.deleteList("IBD_counts", c("all_patients", "stool_patients", "ichip_patients", "biopsies_patients"))
+numberSamples <- c(metagenomicsSamples)
+metagenomicsPatientSamples <- cbind(metagenomicsPatientSamples, numberSamples)
+
+molgenis.deleteList("IBD_counts", c("all_patients", "stool_patients", "ichip_patients", "biopsies_patients", "metagenomics_patients"))
 
 molgenis.addAll('IBD_counts', allPatientSamples)
 molgenis.addAll('IBD_counts', stoolPatientSamples)
 molgenis.addAll('IBD_counts', ichipPatientSamples)
 molgenis.addAll('IBD_counts', biopsiesPatientSamples)
+molgenis.addAll('IBD_counts', metagenomicsPatientSamples)
