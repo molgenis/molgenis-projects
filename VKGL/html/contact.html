@@ -1,0 +1,37 @@
+<h1>Contact</h1>
+<div class="list-group" id="contacts">
+
+</div>
+<script>
+  var contactTemplate = function (contact) {
+    var template = '<div class="list-group-item">' +
+      '<h4 class="list-group-item-heading">' + contact.lab + '</h4>' +
+      '<p class="list-group-item-text">'
+
+    if (contact.department) {
+      template += '<i>' + contact.department + '</i>'
+    }
+
+    template += '<br/><br/>'
+    if (contact.name) {
+      template += '<span class="glyphicon glyphicon-user" aria-hidden="true"></span> ' + contact.name + '<br/>'
+    }
+    if (contact.address) {
+      template += '<span class="glyphicon glyphicon-home" aria-hidden="true"></span> ' + contact.address + ' ' + contact.city + '<br/>'
+    } else if (contact.city) {
+      template += '<span class="glyphicon glyphicon-home" aria-hidden="true"></span> ' + contact.city + '<br/>'
+    }
+    if (contact.email) {
+      template += '<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> ' + contact.email
+    }
+
+    template += '</p></div>'
+    return template
+  }
+  $.get('/api/v2/VKGL_contacts').done(function (contacts) {
+    $.map(contacts.items, function (contact) {
+      $('#contacts').append(contactTemplate(contact))
+    })
+  })
+
+</script>
