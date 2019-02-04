@@ -12,6 +12,9 @@
 4. [VKGL](#vkgl)  
   [How to](#how-to)  
   a. [Websites](#websites-2)   
+5. [Chromosome6 project](#chromosome6-project)
+  a. [Websites](#websites)
+  b. [Publications](#publications)
 
 ## Molgenis default
 > MOLGENIS: Flexible software for scientific data
@@ -114,3 +117,14 @@ Work in progress
 #### Websites
 http://www.vkgl.nl/nl/  
 http://molgenis.org/vkgl
+
+## Chromosome6 project
+> The chromosome 6 project aims to compare alterations in chromosome 6 (the genotype) with the effect they have on the appearance features and other clinical features of individuals with chromosome 6 abberations.
+
+### Online resources
+#### Websites
+https://chromosome6.org
+
+#### Publications
+*The phenotypic spectrum of proximal 6q deletions based on a large cohort derived from social media and literature reports* - Engwerda et al. 
+https://www.nature.com/articles/s41431-018-0172-9
