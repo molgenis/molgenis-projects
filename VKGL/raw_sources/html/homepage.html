@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center" id="vkgl-image">
+      <img alt="VKGL" src="/logo/logo2.jpg"/>
+    </div>
+  </div>
+  <div class="row" id="vkgl-title">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>Data Sharing of Variant Classifications</h2>
+      <br/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" id="vkgl-position-search">
+      <label for="position-query">Search for positions in the format: &quot;chromosome:position&quot;(example&quot;8:100844758&quot;)</label>
+      <div class="input-group">
+        <input class="form-control" id="position-query" placeholder="Enter a chr:pos combination"
+               type="text"/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" id="position-query-button" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+          <a class="btn btn-default"
+             href="/menu/main/dataexplorer?entity=VKGL_public_consensus&amp;hideselect=true&amp;mod=data">Browse all positions</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" id="vkgl-search">
+      <br/>
+      <label for="classification-query">Search for a variant, gene, classification, etc.</label>
+      <div class="input-group">
+        <input class="form-control" id="classification-query"
+               placeholder="Enter a variant, gene, lab, classification, etc" type="text"/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" id="classification-query-button" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+          <a class="btn btn-default"
+             href="/menu/main/dataexplorer?entity=VKGL_public_consensus&amp;hideselect=true&amp;mod=data">Browse all classifications</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" id="vkgl-text">
+      <br/>
+      To efficiently offer genetical patient care in &quot;the Next Generation
+      Sequencing Era&quot;, is sharing genetic data essential. The datashare workgroup of VKGL has
+      set up a central database to enable mutual sharing of variant classifications through a partly
+      automatic process. An additional goal is the public sharing of these data. The currently
+      publicly available part of the database consists of DNA variant classifications established
+      based on (former) diagnostic questions. The database is not a patient database and therefore
+      does not contain any data regarding patients themselves, neither information about in how many
+      patients a DNA variant was seen, nor which clinical features were reported during
+      application.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" id="vkgl-disclaimer">
+      <hr/>
+      <i>This work has been supported by a voucher from BBMRI.NL. The consensus data is also
+        publicly accessible in
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=VKGL+Data-share+Consensus"
+           target="_blank">ClinVar</a>
+        and
+        <a href="https://databases.lovd.nl/shared/variants#order=VariantOnGenome%2FDNA%2CASC&amp;search_owned_by_=vkgl"
+           target="_blank">LOVD</a>
+      </i>
+      <br/>
+      <br/>
+      <i>Disclaimer: We have used all reasonable efforts to ensure that the information displayed on
+        these pages and contained in the databases is of high quality. We make no warranty, express
+        or implied, as to its accuracy or that the information is fit for a particular purpose, and
+        will not be held responsible for any consequences arising out of any inaccuracies or
+        omissions. Individuals, organisations and companies which use this database do so on the
+        understanding that no liability whatsoever either direct or indirect shall rest upon the
+        curator(s) or any of their employees or agents for the effects of any product, process or
+        method that may be produced or adopted by any part, notwithstanding that the formulation of
+        such product, process or method may be based upon information here provided.</i>
+    </div>
+  </div>
+</div>
+<script language="javascript">
+  (function ($, molgenis) {
+    'use strict'
+    $(function () {
+      $('#position-query-button').on('click', function () {
+        var queryValue = $('#position-query').val()
+        var splitted = queryValue.split(/:|-/)
+        if (splitted.length === 3) {
+          var chr = splitted[0]
+          var start = splitted[1]
+          var stop = splitted[2]
+          window.location.replace(
+            '/menu/main/dataexplorer?entity=VKGL_public_consensus&mod=data&filter=(start=ge='
+            + start
+            + ';start=le=' + stop + ');chromosome=q=' + chr + ';(stop=ge=' + start + ';stop=le='
+            + stop + ')')
+        } else if (splitted.length === 2) {
+          var chr = splitted[0]
+          var start = splitted[1]
+          window.location.replace(
+            '/menu/main/dataexplorer?entity=VKGL_public_consensus&mod=data&filter=(start=ge='
+            + start
+            + ';start=le=' + start + ');chromosome=q=' + chr)
+        }
+
+      })
+    })
+    $(function () {
+      $('#classification-query-button').on('click', function () {
+        var queryValue = $('#classification-query').val()
+        window.location = '/menu/main/dataexplorer?entity=VKGL_public_consensus&hideselect=true&mod=data&query%5Bq%5D%5B0%5D%5Boperator%5D=SEARCH&query%5Bq%5D%5B0%5D%5Bvalue%5D='
+          + queryValue
+      })
+    })
+  }($, window.top.molgenis = window.top.molgenis || {}))
+</script>
