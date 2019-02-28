@@ -1,0 +1,35 @@
+add group dnbc
+add group alspac
+add group bib
+add group chop
+add group elfe
+add group eden
+add group gecko
+add group genr
+add group moba
+add group hbcs
+add group inma
+add group nfbc66
+add group nfbc86
+add group ninfea
+add group raine
+add group rhea
+add group sws
+import LifeCycle_ALSPAC_Harmonizations
+import LifeCycle_CHOP_Harmonizations
+import LifeCycle_DNBC_Harmonizations
+import LifeCycle_EDEN_Harmonizations
+import LifeCycle_GenR_Harmonizations
+import LifeCycle_HBCS_Harmonizations
+import LifeCycle_INMA_Harmonizations
+import LifeCycle_MoBa_Harmonizations
+import LifeCycle_NFBC66_Harmonizations
+import LifeCycle_NFBC86_Harmonizations
+import LifeCycle_RHEA_Harmonizations
+import LifeCycle_SWS_Harmonizations
+import LifeCycle_NINFEA_Harmonizations
+import sys_sec_User
+import sys_job_ScheduledJob
+import sys_StaticContent
+import sys_set_app
+import UI_Menu
