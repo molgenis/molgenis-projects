@@ -1,0 +1,3 @@
+give PCMM_EDITOR view app
+give PCMM_EDITOR view app-molgenis-app-biobank-explorer
+give PCMM_EDITOR view sys_App

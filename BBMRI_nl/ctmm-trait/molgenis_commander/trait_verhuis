@@ -1,0 +1,25 @@
+add group decode
+add group pcmm
+import sys_sec_User
+make cbangma PCMM_EDITOR
+make eschenk PCMM_EDITOR
+make gjenster PCMM_EDITOR
+make hvanderpoel PCMM_EDITOR
+make ijdejong PCMM_EDITOR
+make jschalken PCMM_EDITOR
+make rhoffmann PCMM_EDITOR
+make t.hulsen PCMM_EDITOR
+make czhang DECODE_EDITOR
+make ga.meijer DECODE_EDITOR
+make ivterve DECODE_EDITOR
+make jbijlard DECODE_EDITOR
+make mbolijn DECODE_EDITOR
+make mdevries DECODE_EDITOR
+make razevedo DECODE_EDITOR
+make rglas DECODE_EDITOR
+make sderidder DECODE_EDITOR
+make wpipping DECODE_EDITOR
+import decode
+import pcmm
+import pcmm_dataset
+import sys_set_app
