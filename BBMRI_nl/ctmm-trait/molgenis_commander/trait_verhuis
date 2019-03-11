@@ -19,6 +19,9 @@ make razevedo DECODE_EDITOR
 make rglas DECODE_EDITOR
 make sderidder DECODE_EDITOR
 make wpipping DECODE_EDITOR
+make r.fijneman DECODE_EDITOR
+make bhijmans DECODE_EDITOR
+make m.bierkens DECODE_EDITOR
 import decode
 import pcmm
 import pcmm_dataset
