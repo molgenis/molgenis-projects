@@ -1,0 +1,9 @@
+delete --data eu_bbmri_eric_col_qual_info
+delete --data eu_bbmri_eric_collections
+delete --data eu_bbmri_eric_bio_qual_info
+delete --data eu_bbmri_eric_biobanks
+delete --data eu_bbmri_eric_networks
+delete --data eu_bbmri_eric_persons
+$wait please map persons, networks, biobanks, collections
+import BBMRIQUA_COL_v2
+import BBMRIQUA_BIO_v2.xlsx
