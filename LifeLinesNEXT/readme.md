@@ -17,3 +17,5 @@ Sample registration on googledrive [EMX](https://drive.google.com/open?id=11G2R1
 
 ## Participation registration
 In NEXT study the are different people how are registering the participants and registering the follow-up for the participation.
+
+* [Short manual](/LifeLinesNEXT/Korte handleiding_zonderww.pdf) how to use Participant Registration. 
