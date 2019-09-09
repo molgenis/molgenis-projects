@@ -18,5 +18,6 @@ Sample registration on googledrive [EMX](https://drive.google.com/open?id=11G2R1
 ## Participation registration
 In NEXT study the are different people how are registering the participants and registering the follow-up for the participation.
 
-*  Changes in Participation registration, [Punten van Test bijeenkomst](//LifeLinesNEXT/Changes_participation.md) 
+*  Changes in Participation registration, [Punten van Test bijeenkomst](/LifeLinesNEXT/Changes_participation.md) 
 * [Short manual](https://github.com/molgenis/molgenis-projects/blob/master/LifeLinesNEXT/Korte%20handleiding_zonderww.pdf) how to use Participant Registration. 
+* Latest [EMX](/LifeLinesNEXT/EMX_LL_deelnemer_aangepast.xlsx) Participation Registration. 
