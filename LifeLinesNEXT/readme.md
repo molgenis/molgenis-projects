@@ -13,7 +13,7 @@ These sample can be registered per persontype, materialtype and timepoint. In mo
 
 Samples are temporally stored at the genetics department, and after a while the materials will be transported to the general storage facility of the UMCG. All materials are stored per type, in a box with 9 x 9 spots. 
 
-Sample registration [EMX](https://drive.google.com/open?id=11G2R1WIQAKcHkJEmqPWYN0XtGbPjAOYJ).
+Sample registration on googledrive [EMX](https://drive.google.com/open?id=11G2R1WIQAKcHkJEmqPWYN0XtGbPjAOYJ) or in github [EMX](/LifeLinesNEXT/sample_storage.xlsx).
 
 ## Participation registration
 In NEXT study the are different people how are registering the participants and registering the follow-up for the participation.
