@@ -23,11 +23,24 @@ All points in DUTCH, since this part is only availble in dutch.
 | Deelname registratie (Onderdeel Melding) | Optie IBD poli moet MDL poli worden. | Done |
 | Deelname registratie (Onderdeel Melding) | Optie POEM toevoegen; Zouden we onder MDL ook ‘POEM’ toe kunnen voegen? En zouden we dan ook op die patiëntengroep kunnen filteren? Dat we een lijst krijgen met POEM-deelnemers? | Done |
 | Deelname registratie (Onderdeel Terugtrekking) | Extra veld stopzetting formulier ja/nee. | Done |
-| Deelname registratie (Onderdeel Vragenlijsten) | Dit gaat nog uitgezocht worden of dit nodig is het deelname registratie. Misschien is huidig systeem voldoende. | |
+| Deelname registratie (Onderdeel Vragenlijsten) | Dit gaat nog uitgezocht worden of dit nodig is het deelname registratie. Misschien is huidig systeem voldoende. | Remove, Done|
 | LL Data | Al aanwezige data importeren in "nieuwe" systeem | uitzoeken wat er geleverd gaat worden door LL |
 | Firewall | Voor accept en productie staat die nu uit, moet aan (?) | aanvragen |
 | Productie server | Nog in zijn geheel inrichten | |
 
+
+# Feedback TEST supplement 09-09-2019
+
+| Onderdelen | Afspraken | TO DO |
+| --------- | ----- | -----|
+| Deelname registratie | inconsistant NL / EN, in field everything in EN, rest in NL | EN standard langue, all other fieldnames NL |
+| werking | Everything goes slow, opening new item or searching | best to use chrome/firefox browser |
+| remove NAW | script has to be made, monthly removing NAW values, when "terugtrekken" is status | script, need to be planned |
+| Deelname registratie (Onderdeel Moeder) | date of birth was datetime, please change to date | Done |
+| Deelname registratie (Onderdeel Moeder) | phone/mail not mandatory, should be. Change name to Telefoon nr.1 and Telefoon nr.2 | Done |
+| Deelname registratie (Onderdeel Moeder) | CTC type still unknown what it means, waiting for Bert (?) | |
+| Deelname registratie (Onderdeel Vragenlijsten) | Unipark system import NAW molgenis, how? | need appointment Annet, unipark access |
+| Proces deelname registratie | Need flow for deelname registratie, not availble, still unclear if fields are missing maybe make two item for deelname registratie (proces servicedesk / NAW ) | meeting with servicedesk |
 
 
 
