@@ -4,7 +4,7 @@ All points in DUTCH, since this part is only availble in dutch.
 
 | Onderdelen | Afspraken | TO DO |
 | --------- | ----- | -----|
-| Login | Users aanmaken, nu alleen annette een account | Lijst met users toevoegen |
+| Login | Users aanmaken, nu alleen annette een account | Lijst met users toevoegen (received list without email) |
 | Rechten | Alle users die betrokken zijn bij deelnemersregistratie, hebben editor recht | Rechten toevoegen |
 | Deelname registratie | Andere volgorde elementen om deelname registratie logischer in te vullen. | Done |
 | Deelname registratie | Moeder, naam; samengestelde naam zichtbaar | Done |
@@ -40,7 +40,7 @@ All points in DUTCH, since this part is only availble in dutch.
 | Deelname registratie (Onderdeel Moeder) | phone/mail not mandatory, should be. Change name to Telefoon nr.1 and Telefoon nr.2 | Done |
 | Deelname registratie (Onderdeel Moeder) | CTC type still unknown what it means, waiting for Bert (?) | |
 | Deelname registratie (Onderdeel Vragenlijsten) | Unipark system import NAW molgenis, how? | need appointment Annet, unipark access |
-| Proces deelname registratie | Need flow for deelname registratie, not availble, still unclear if fields are missing maybe make two item for deelname registratie (proces servicedesk / NAW ) | meeting with servicedesk |
+| Proces deelname registratie | Need flow for deelname registratie, not available, still unclear if fields are missing maybe make two items for deelname registratie (proces servicedesk / NAW ) | meeting with servicedesk |
 
 
 
