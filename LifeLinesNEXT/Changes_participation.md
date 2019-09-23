@@ -1,3 +1,21 @@
+# Feedback 19-09-2019 (Supplement Servicedesk Taken)
+All tasks and flow elements are NOT included in current model, therefore new update needed for participation registration.
+
+| Onderdelen | Afspraken | TO DO |
+| --------- | ----- | -----|
+| Deelname registratie | Toevoegen taken voor servicebureau en doktersassistent | Done |
+|  Deelname registratie (Huisbezoeken) | change names to; huisbezoek 12wk, huisbezoek 28wk, kraambezoe 2wk, huisbezoek 3mnd, huisbezoek 12 mnd | Done |
+|  Deelname registratie (Onderdeel Moeder) | CTCTYPE, kan weg | Done |
+| Deelname registratie | 	Toevoegen aan bronnenlijst: advertentie Facebook | Done |
+| Deelname registratie |  Opmerkingenveld toevoegen bij bellen VLK>>>??VLK | Done |
+|  Deelname registratie | automatisch uitrekenen; duur zwangerschap, weeknummer, actuele leeftijd kind | link toegevoegd naar sites die dit voor je berekenen |
+| Deelname registratie (Onderdeel Melding) | Optie Newborn toevoegen; zelfde als poem | Done|
+| Deelname registratie (Onderdeel Melding) | Deelnemers van POEM verander naar deelnemer van POEM | Done |
+| Deelname registratie (Onderdeel Terugtrekking) | Het stuk over ‘terugtrekking’ verplaatsen naar ‘status’, want dat gaat over hetzelfde (waarom trekt iemand zich terug?) | niet handig voor werklijstje als je dat gaat verplaatsen naar NAW gegevens, wacht andere oplossing |
+| Systeem | Bij ‘behandelend praktijk’ geeft ‘ie de zoekfunctie pas weer als je het hele woord het ingevuld. Kan dit ook al bij de eerste letters? Bijv. bij ‘Assen’, die vindt ‘ie pas als je ‘Assen’ helemaal hebt ingetypt en het zo mooi zijn als ‘ie die optie al geeft bij ‘A’ of ‘As’ | Zoekfunctie (nieuwe versie) |
+| Systeem | Het lijkt erop alsof gegevens niet gewijzigd kunnen worden nadat ze zijn ingevuld. We krijgen het niet voor elkaar om bijv. het scherm met de NAW gegevens van de moeder weer voor ons te krijgen om wijzigingen aan te brengen. Dit is wel van belang, bijv. bij een verhuizing en zeker ook als iemand zich terugtrekt. Of zien we dat verkeerd? | Uitleg nodig |
+
+--------
 # Feedback TEST 29-08-2019
 
 All points in DUTCH, since this part is only availble in dutch.
@@ -41,6 +59,8 @@ All points in DUTCH, since this part is only availble in dutch.
 | Deelname registratie (Onderdeel Moeder) | CTC type still unknown what it means, waiting for Bert (?) | |
 | Deelname registratie (Onderdeel Vragenlijsten) | Unipark system import NAW molgenis, how? | need appointment Annet, unipark access |
 | Proces deelname registratie | Need flow for deelname registratie, not available, still unclear if fields are missing maybe make two items for deelname registratie (proces servicedesk / NAW ) | meeting with servicedesk |
+
+
 
 
 
