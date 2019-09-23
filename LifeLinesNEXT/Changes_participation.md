@@ -3,7 +3,7 @@ All tasks and flow elements are NOT included in current model, therefore new upd
 
 | Onderdelen | Afspraken | TO DO |
 | --------- | ----- | -----|
-| Deelname registratie | Toevoegen taken voor servicebureau en doktersassistent | Done |
+| Deelname registratie | Toevoegen [taken](/LifeLinesNEXT/Service_tasks.md) voor servicebureau en doktersassistent | Done |
 |  Deelname registratie (Huisbezoeken) | change names to; huisbezoek 12wk, huisbezoek 28wk, kraambezoe 2wk, huisbezoek 3mnd, huisbezoek 12 mnd | Done |
 |  Deelname registratie (Onderdeel Moeder) | CTCTYPE, kan weg | Done |
 | Deelname registratie | 	Toevoegen aan bronnenlijst: advertentie Facebook | Done |
