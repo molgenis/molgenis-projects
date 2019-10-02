@@ -10,6 +10,6 @@ expression NEXT_baby() {
 $('next_nr_baby').matches(/^[0-9]{6}$/i).value()
 }
 ```
-Check if ID has ONLY has digits and 6 digits are used.
+Check if ID has ONLY digits and only variety of 6 digits can be used.
 
 ![NEXT_ID_model](/LifeLinesNEXT/ID/nummers.png)
