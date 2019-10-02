@@ -1,6 +1,8 @@
 # LifeLines NEXT
 
-[NEXT](https://www.lifelines.nl/deelnemers/onderzoek/next) is a dutch birth cohort, started in 2016. In 2019 LifeLines hads to move to another loaction and the NEXT project stayed at in Groningen, therefore a new registration system had to be designed.
+[NEXT](https://www.lifelines.nl/deelnemers/onderzoek/next) is a dutch birth cohort, started in 2016. In 2019 LifeLines hads to move to another loaction and the NEXT project stayed at in Groningen, therefore a new registration system had to be designed. 
+
+[Logos](/LifeLinesNEXT/logo/) used on production site.
 
 ## Sample registration
 
