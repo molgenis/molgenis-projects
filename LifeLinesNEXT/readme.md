@@ -20,5 +20,6 @@ In NEXT study the are different people how are registering the participants and 
 
 *  Changes in Participation registration, [Punten van Test bijeenkomst](/LifeLinesNEXT/Changes_participation.md) 
 * [Short manual](https://github.com/molgenis/molgenis-projects/blob/master/LifeLinesNEXT/Korte%20handleiding_zonderww.pdf) how to use Participant Registration. 
-* Latest [EMX](/LifeLinesNEXT/EMX_LLNEXT_latest.xlsx) Participation Registration. 
+* Latest [EMX](/LifeLinesNEXT/EMX_latest_LLNEXT.xlsx) Participation Registration. 
 * See [issues](https://github.com/molgenis/molgenis-projects/issues) with label: LLNEXT, for ongonig issues 
+* Model for [ID's](/LifeLinesNEXT/ID)
