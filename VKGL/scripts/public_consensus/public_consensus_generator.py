@@ -1,7 +1,7 @@
 import requests
 import json
 import math
-import re
+import sys
 
 
 class MyEncoder(json.JSONEncoder):
@@ -172,6 +172,7 @@ class Molgenis():
 def prepare_target(target, table_name):
     target.wipe_table(table_name)
 
+
 def generate_public_table(molgenis, consensus_table, public_table):
     molgenis.token = '${molgenisToken}'
     prepare_target(molgenis, public_table)
@@ -195,7 +196,7 @@ def populate_public_table(consensus, target, table_name):
 def is_public_variant(variant):
     classification_type = variant['consensus_classification']
     no_consensus = 'No consensus'
-    opposite = 'Opposite classification'
+    opposite = 'Opposite classifications'
     return classification_type != no_consensus and classification_type != opposite
 
 
@@ -209,8 +210,8 @@ def process_consensus(consensus):
 
 
 def create_label(variant):
-    return '{}:{}-{} {} {}>{}'.format(variant['chromosome'], variant['POS'], variant['stop'], variant['gene'],
-                                      variant['REF'], variant['ALT'])
+    return '{}:{} {} {}>{}'.format(variant['chromosome'], variant['start'], variant['gene'],
+                                   variant['ref'], variant['alt'])
 
 
 def get_classification(variant):
@@ -247,19 +248,16 @@ def get_support(variant):
     if variant['consensus_classification'] == 'Classified by one lab':
         return '1 lab'
     else:
-        return '{} labs'.format(re.findall(r'\d', variant['consensus_classification'])[0])
-
-
+        return '{} labs'.format(variant['matches'])
 
 def prepare_to_publish(variant):
     output = {
         'ID': variant['id'],
         'label': create_label(variant),
         'chromosome': variant['chromosome'],
-        'start': variant['POS'],
-        'stop': variant['stop'],
-        'ref': variant['REF'],
-        'alt': variant['ALT'],
+        'start': variant['start'],
+        'ref': variant['ref'],
+        'alt': variant['alt'],
         'gene': variant['gene'],
         'classification': get_classification(variant),
         'support': get_support(variant)
@@ -268,9 +266,11 @@ def prepare_to_publish(variant):
     if 'protein' in variant:
         output['p_notation'] = variant['protein']
 
-    if 'cDNA' in variant:
-        output['c_notation'] = variant['cDNA']
+    if 'stop' in variant:
+        output['stop'] = variant['stop']
 
+    if 'c_dna' in variant:
+        output['c_notation'] = variant['c_dna']
     return output
 
 
