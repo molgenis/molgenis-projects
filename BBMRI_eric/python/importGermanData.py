@@ -152,23 +152,25 @@ def replace_chars(id):
         print("Invalid characters in: ", id)
     return ''.join(charList)
 
-def syncEricWithTMF(tables, sourceUrl, targetUrl, token):
+def syncEricWithTMF(de_tables, eu_tables, sourceUrl, targetUrl, token):
     germanMolgenis = Molgenis(sourceUrl)
     ericMolgenis = Molgenis(targetUrl)
     ericMolgenis.token=token
     #wipe everything before upload because this works the other way around as updating
-    for table in reversed(tables):
+    for table in reversed(eu_tables):
         ericMolgenis.wipe_table(table)
-    for table in tables:
-        german = germanMolgenis.get_molgenis_upload_format(table)
+    for de_table, eu_table in zip(de_tables, eu_tables):
+        german = germanMolgenis.get_molgenis_upload_format(de_table)
         if len(german) > 0:
-            ericMolgenis.add_all(table, german)
+            ericMolgenis.add_all(eu_table, german)
 
 
 def importGermanData():
-    source = "https://molgenis93.gcc.rug.nl/api/"
+    source = "https://molgenis21.gcc.rug.nl/api/"
     target = "https://molgenis129.gcc.rug.nl/api/"
     token = '${molgenisToken}'
-    syncEricWithTMF(["eu_bbmri_eric_DE_persons", "eu_bbmri_eric_DE_networks", "eu_bbmri_eric_DE_biobanks", "eu_bbmri_eric_DE_collections"], source, target, token)
+    syncEricWithTMF(["eu_bbmri_eric_persons", "eu_bbmri_eric_networks", "eu_bbmri_eric_biobanks", "eu_bbmri_eric_collections"],
+                    ["eu_bbmri_eric_DE_persons", "eu_bbmri_eric_DE_networks", "eu_bbmri_eric_DE_biobanks", "eu_bbmri_eric_DE_collections"],
+                    source, target, token)
 
 importGermanData()
