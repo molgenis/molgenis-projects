@@ -824,6 +824,14 @@ pre {
   .offset-md-11 {
     margin-left: 91.66667%; } }
 
+/* Additional media query */
+@media (min-width: 769px) and (max-width: 991px) {
+  .container {
+    max-width: 96%;
+  }
+}
+/* End additional media query */
+
 @media (min-width: 992px) {
   .col-lg {
     flex-basis: 0;
