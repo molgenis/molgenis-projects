@@ -1,0 +1,127 @@
+// NOTE: Try to keep this file as empty as possible. Use the elemenmts
+// directory to target specific pages and elements.
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+legend,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: $mg-header-color;
+    font-family: $mg-header-font;
+}
+
+.navbar-brand {
+    align-items: center;
+    background: $mg-color-white;
+    line-height: $mg-navbar-height;
+    padding: 0 $mg-spacer;
+    vertical-align: middle;
+
+    img.molgenis-navbar-logo {
+        display: inline-block;
+        height: 32px;
+        padding: 0;
+    }
+}
+
+
+html body table.table {
+    // TODO: Remove once old CSS files are removed from freemarker.
+    background: none !important;
+
+    thead {
+        th {
+            background: $mg-color-white;
+            border-top: 0;
+            color: $mg-color-grey-700;
+            font-family: $mg-font-mono;
+        }
+    }
+
+    tbody {
+        tr {
+            &:first-child {
+                td {
+                    border-top: 0;
+                }
+            }
+
+            &:nth-child(even) {
+                background: $mg-color-grey-200;
+            }
+
+            &:nth-child(odd) {
+                background: $mg-color-grey-100;
+            }
+
+            &:hover {
+                background: $mg-color-white;
+            }
+        }
+    }
+}
+
+// Themed scrollbars for webkit browsers
+::-webkit-scrollbar {
+    height: $mg-spacer / 1.5;
+    width: $mg-spacer / 1.5;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: 1px solid $mg-color-grey-300;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $mg-color-primary;
+}
+
+::selection {
+    background: $mg-color-primary;
+    color: $mg-color-white;
+}
+
+// Small helper classes to apply proper capitalizing without polluting translations.
+.lc {text-transform: lowercase;}
+.uc {text-transform: uppercase;}
+.ca {text-transform: capitalize;}
+
+.cf {
+    display: inline-block;
+    &::first-letter {text-transform: uppercase;}
+}
+
+.breadcrumb {
+    padding: 0;
+}
+
+.select2-container {
+    min-width: 250px !important;
+}
+
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+button {
+    .glyphicon {
+        top: 2px !important;
+    }
+}
+
+

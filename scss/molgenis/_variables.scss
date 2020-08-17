@@ -1,0 +1,64 @@
+// Colors:
+$mg-color-primary: #017ffd !default;
+$mg-color-primary-light: lighten($mg-color-primary, 43%) !default;
+$mg-color-secondary: #adb5bd !default;
+$mg-color-warning: #ff9800 !default;
+$mg-color-error: #e40017 !default;
+$mg-color-success: #009333 !default;
+$mg-color-info: #adb5bd !default;
+
+$mg-color-white: #fff !default;
+$mg-color-grey-100: #f8f9fa !default;
+$mg-color-grey-200: #e9ecef !default;
+$mg-color-grey-300: #dee2e6 !default;
+$mg-color-grey-400: #ced4da !default;
+$mg-color-grey-500: #adb5bd !default;
+$mg-color-grey-600: #6c757d !default;
+$mg-color-grey-700: #495057 !default;
+$mg-color-grey-800: #343a40 !default;
+$mg-color-grey-900: #212529 !default;
+$mg-color-black: #000 !default;
+
+$mg-color-text-light: rgba(0, 0, 0, 0.5) !default;
+$mg-color-text-dark: #212529 !default;
+
+$mg-body-bg: #fafafa !default;
+$mg-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175) !default;
+
+$mg-header-bg: $mg-color-primary;
+$mg-header-color: $mg-color-white;
+$mg-border-color: $mg-color-grey-300 !default;
+$mg-border-radius: 0;
+
+// Font config:
+// Rem units are assumed but not applied here. This makes it easier to
+// calculate between px (Bootstrap 3) and rem (Bootstrap 4).
+$mg-font-size-base: 0.8 !default;
+$mg-font-base: 'IBM_Plex_sans' !default;
+$mg-font-sans-serif: 'IBM_Plex_sans' !default;
+$mg-font-mono: 'IBM_Plex_mono' !default;
+$mg-header-font: 'bebas_neueregular' !default;
+
+// Dimensions:
+$mg-spacer: 16px !default;
+$mg-header-height: 40px !default;
+$mg-navbar-height: 50px !default;
+$mg-navbar-font-weight: 300 !default;
+$mg-input-height: 35px !default;
+
+
+// Common Bootstrap 3/4 instructions:
+$body-bg: $mg-body-bg;
+$table-cell-padding: $mg-spacer / 2;
+$table-condensed-cell-padding: 10px;
+
+$font-family-base: $mg-font-sans-serif;
+$font-family-sans-serif: $mg-font-sans-serif;
+$font-family-serif: $mg-font-sans-serif;
+$font-family-monospace: $mg-font-mono;
+
+$dropdown-link-color: $mg-color-grey-700 !default;
+$dropdown-link-hover-bg: $mg-color-primary-light !default;
+$dropdown-link-hover-color: $mg-color-primary !default;
+$dropdown-link-active-bg: $mg-color-primary-light !default;
+$dropdown-link-active-color: $mg-color-white !default;

@@ -1,0 +1,23 @@
+// Font-size is in rems
+$font-size-base: $mg-font-size-base * 1rem;
+
+$primary: $mg-color-primary;
+$secondary: $mg-color-secondary;
+
+$input-height-base: $mg-input-height;
+
+$navbar-light-active-color: $mg-color-primary-light;
+$navbar-light-color: $mg-color-primary;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-padding-x: 0;
+$navbar-padding-y: 0;
+
+$dropdown-spacer: 0;
+$dropdown-item-padding-x: 0;
+$dropdown-item-padding-y: 0;
+$dropdown-border-radius: 0;
+$dropdown-padding-y: 0;
+
+$border-radius: $mg-border-radius !default;
+$border-radius-lg: $mg-border-radius * 2 !default;
+$border-radius-sm: $mg-border-radius / 2 !default;

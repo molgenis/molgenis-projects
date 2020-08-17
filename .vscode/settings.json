@@ -1,0 +1,7 @@
+{
+    "stylelint.autoFixOnSave": true,
+    "files.associations": {
+        "*.tpl": "nginx"
+     }
+
+}

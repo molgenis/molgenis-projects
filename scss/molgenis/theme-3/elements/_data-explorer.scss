@@ -1,0 +1,47 @@
+
+// Data Explorer top well
+#entity-class {
+    // padding: 0 $mg-spacer / 2;
+    #entity-package-path,
+    #delete-dropdown-container,
+    #dataset-select-container,
+    #entity-class-description,
+    #entity-class-name {
+        display: inline-block;
+        float: left;
+        height: $mg-header-height;
+        line-height: $mg-header-height;
+        margin: 0;
+        padding: 0;
+    }
+
+    .col-md-7 {
+        #entity-class-description {
+            margin-left: $mg-spacer;
+        }
+    }
+
+    #delete-dropdown-container,
+    #dataset-select-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.plugin-settings-btn {
+    font-size: 2rem;
+    padding: $mg-spacer / 2;
+    padding-top: 0;
+
+    &:hover {
+        color: $mg-color-primary;
+    }
+}
+
+
+#feature-select {
+    .control-label {
+        line-height: $mg-input-height;
+    }
+}
