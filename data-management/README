@@ -1,0 +1,12 @@
+
+# Install instructions
+
+* Please notice that some pages only load bootstrap 3; .e.g. apply custom to both stylesheets
+
+```bash
+cat molgenis-new3.css custom3.css > ~/molgenis-new3-1.css
+cat molgenis-new4.css > ~/molgenis-new4-1.css
+```
+
+* Upload the adjusted stylesheets using the [Theme Manager](https://molgenis23.gcc.rug.nl/menu/admin/thememanager)
+* Select the new updated theme
