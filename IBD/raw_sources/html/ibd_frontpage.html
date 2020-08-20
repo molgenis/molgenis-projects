@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.css" integrity="sha512-iVAPZRCMdOOiZWYKdeY78tlHFUKf/PqAJEf/0bfnkxJ8MHQHqNXB/wK2y6RH/LmoQ0avRlGphSn06IMMxSW+xw==" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.js" integrity="sha512-jfp1Gv+A3dHho9qOUUWOrZA6NWR08j7GYVn8VXcRI0FsDb3xe0hQHVwasi2UarjZzPYOxT5uvmlHrWLXQ+M4AQ==" crossorigin="anonymous"></script>
 <div class="container">
+
 	<div class="row">
 		<div class="col-md-12">
 			<h1>
@@ -139,6 +140,92 @@
 </div>
 <style>
 	.badge-primary{
+=======
+<div class="row">
+<div class="col-md-12">
+<h1>1000IBD</h1>
+
+<p id="description">The 1000IBD data is available at the European Genome-phenome Archive (EGA): <a href="https://www.ebi.ac.uk/ega/studies/EGAS00001002702">https://www.ebi.ac.uk/ega/studies/EGAS00001002702</a><br />
+<br />
+Please find below the patient characteristics of the available datasets:</p>
+
+<hr /></div>
+</div>
+
+<div class="row">
+<div class="col-md-6"><select id="dataset-select" style="width:100%"><option selected="selected" value="all_patients">Dataset 1: All participants (select all 1215 from the phenotype table)</option><option value="ichip_patients">Dataset 2: iChip (selection of 1215 participants)</option><option value="stool_patients">Dataset 3: 16S microbiome from stool (selection of 1215 participants)</option><option value="biopsies_patients">Dataset 4: 16S microbiome from biopsies (selection of 1215 participants)</option><option value="metagenomics_patients">Dataset 5: metagenomics (selection of 1215 participants)</option><option value="scrna_patients">Dataset 6: Single-Cell RNA-seq (selection of 1215 participants)</option> </select></div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<h2 id="title">&nbsp;</h2>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12" id="overview">
+<div class="row" id="counts">
+<div class="col-md-3">
+<ul class="list-group">
+	<li class="list-group-item count-info"><span class="badge" id="percentage-of-patients"></span> <span class="badge badge-primary" id="number-of-patients"></span> <b>Patients</b></li>
+	<li class="list-group-item count-info"><span class="badge" id="percentage-of-males"></span> <span class="badge badge-primary" id="number-of-males"></span> Male</li>
+	<li class="list-group-item count-info"><span class="badge" id="percentage-of-females"></span> <span class="badge badge-primary" id="number-of-females"></span> Female</li>
+	<li class="list-group-item count-info"><span class="badge badge-primary" id="number-of-samples"></span> <b>Samples</b></li>
+	<li class="list-group-item count-info"><b>Age</b> <small>average (SD)</small></li>
+	<li class="list-group-item count-info">Onset <span class="pull-right"><span id="age-onset-mean"></span> (<span id="age-onset-sd"></span>)</span></li>
+	<li class="list-group-item count-info">Last recorded diagnosis <span class="pull-right"><span id="age-final-mean"></span> (<span id="age-final-sd"></span>)</span></li>
+</ul>
+</div>
+
+<div class="col-md-9">
+<div class="panel panel-primary">
+<div class="panel-heading">Diagnosis</div>
+
+<div class="panel-body diagnosis-panel">
+<table class="table table-striped" id="diagnosis-table">
+	<thead>
+		<tr>
+			<th>Count</th>
+			<th>Percentage</th>
+			<th>Diagnosis</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="count-cd">&nbsp;</td>
+			<td id="percentage-cd">&nbsp;</td>
+			<td>CD</td>
+		</tr>
+		<tr>
+			<td id="count-uc">&nbsp;</td>
+			<td id="percentage-uc">&nbsp;</td>
+			<td>UC</td>
+		</tr>
+		<tr>
+			<td id="count-ibdu">&nbsp;</td>
+			<td id="percentage-ibdu">&nbsp;</td>
+			<td>IBDU</td>
+		</tr>
+		<tr>
+			<td id="count-ibdi">&nbsp;</td>
+			<td id="percentage-ibdi">&nbsp;</td>
+			<td>IBDI</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12"><canvas height="500" id="ibd-canvas" width="1140"></canvas></div>
+</div>
+</div>
+<style type="text/css">.badge-primary{ 
+
 		background-color: #337ab7;
 	}
 	.count-info{
