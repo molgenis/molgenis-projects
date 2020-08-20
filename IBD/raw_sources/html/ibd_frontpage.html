@@ -1,11 +1,9 @@
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2-bootstrap.min.css" integrity="sha512-eNfdYTp1nlHTSXvQD4vfpGnJdEibiBbCmaXHQyizI93wUnbCZTlrs1bUhD7pVnFtKRChncH5lpodpXrLpEdPfQ==" rel="stylesheet" />
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.css" integrity="sha512-iVAPZRCMdOOiZWYKdeY78tlHFUKf/PqAJEf/0bfnkxJ8MHQHqNXB/wK2y6RH/LmoQ0avRlGphSn06IMMxSW+xw==" rel="stylesheet" /><script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.js" integrity="sha512-jfp1Gv+A3dHho9qOUUWOrZA6NWR08j7GYVn8VXcRI0FsDb3xe0hQHVwasi2UarjZzPYOxT5uvmlHrWLXQ+M4AQ==" crossorigin="anonymous"></script>
 <div class="container">
 <div class="row">
 <div class="col-md-12">
 <h1>1000IBD</h1>
 
-<p id="description">The 1000IBD data is available at the European Genome-phenome Archive (EGA): <a href="#">Here will be the link to the paper</a><br />
+<p id="description">The 1000IBD data is available at the European Genome-phenome Archive (EGA): <a href="https://www.ebi.ac.uk/ega/studies/EGAS00001002702">https://www.ebi.ac.uk/ega/studies/EGAS00001002702</a><br />
 <br />
 Please find below the patient characteristics of the available datasets:</p>
 
@@ -27,31 +25,21 @@ Please find below the patient characteristics of the available datasets:</p>
 <div class="row" id="counts">
 <div class="col-md-3">
 <ul class="list-group">
-	<li class="list-group-item count-info">
-	<h5>Patients <span class="float-right"> <span class="badge badge-pill badge-secondary" id="percentage-of-patients"></span> <span class="badge badge-pill badge-primary" id="number-of-patients"></span> </span></h5>
-	</li>
-	<li class="list-group-item count-info">
-	<h6>Male <span class="float-right"> <span class="badge badge-pill badge-secondary" id="percentage-of-males"></span> <span class="badge badge-pill badge-primary" id="number-of-males"></span> </span></h6>
-	</li>
-	<li class="list-group-item count-info">
-	<h6>Female <span class="float-right"> <span class="badge badge-pill badge-secondary" id="percentage-of-females"></span> <span class="badge badge-pill badge-primary" id="number-of-females"></span> </span></h6>
-	</li>
-	<li class="list-group-item count-info">
-	<h5>Samples <span class="float-right"> <span class="badge badge-pill badge-primary" id="number-of-samples"></span> </span></h5>
-	</li>
-	<li class="list-group-item count-info">
-	<h5>Age <small>average (SD)</small></h5>
-	</li>
-	<li class="list-group-item count-info">Onset <span class="float-right"><span id="age-onset-mean"></span> (<span id="age-onset-sd"></span>)</span></li>
-	<li class="list-group-item count-info">Last recorded diagnosis <span class="float-right"><span id="age-final-mean"></span> (<span id="age-final-sd"></span>)</span></li>
+	<li class="list-group-item count-info"><span class="badge" id="percentage-of-patients"></span> <span class="badge badge-primary" id="number-of-patients"></span> <b>Patients</b></li>
+	<li class="list-group-item count-info"><span class="badge" id="percentage-of-males"></span> <span class="badge badge-primary" id="number-of-males"></span> Male</li>
+	<li class="list-group-item count-info"><span class="badge" id="percentage-of-females"></span> <span class="badge badge-primary" id="number-of-females"></span> Female</li>
+	<li class="list-group-item count-info"><span class="badge badge-primary" id="number-of-samples"></span> <b>Samples</b></li>
+	<li class="list-group-item count-info"><b>Age</b> <small>average (SD)</small></li>
+	<li class="list-group-item count-info">Onset <span class="pull-right"><span id="age-onset-mean"></span> (<span id="age-onset-sd"></span>)</span></li>
+	<li class="list-group-item count-info">Last recorded diagnosis <span class="pull-right"><span id="age-final-mean"></span> (<span id="age-final-sd"></span>)</span></li>
 </ul>
 </div>
 
 <div class="col-md-9">
-<div class="card card-primary border-primary">
-<div class="card-header bg-primary text-white"><b>Diagnosis</b></div>
+<div class="panel panel-primary">
+<div class="panel-heading">Diagnosis</div>
 
-<div class="card-body diagnosis-panel">
+<div class="panel-body diagnosis-panel">
 <table class="table table-striped" id="diagnosis-table">
 	<thead>
 		<tr>
@@ -94,7 +82,7 @@ Please find below the patient characteristics of the available datasets:</p>
 <div class="col-md-12"><canvas height="500" id="ibd-canvas" width="1140"></canvas></div>
 </div>
 </div>
-<style type="text/css">.badge-primary{
+<style type="text/css">.badge-primary{ 
 		background-color: #337ab7;
 	}
 	.count-info{
@@ -106,25 +94,13 @@ Please find below the patient characteristics of the available datasets:</p>
 	#title {
 		margin-bottom: 1em;
 	}
-	.select2-container .select2-choice {
-		height: 34px;
-		line-height: 1.42857;
-		background-image: none;
-		margin-bottom: 1rem;
-	}
-	.select2-choice>span:first-child, .select2-chosen, .select2-container .select2-choices .select2-search-field input {
-		padding: 6px 12px;
-	}
-	.select2-container .select2-choice .select2-arrow {
-		background-image: none;
-		background-color: #fff;
-	}
 </style>
 <script>
 	function setTitle(data){
+		console.log(data.text);
 		$('#title').text(data.text.split(" (")[0]);
 	}
-
+	
 	function createImageString(numberOfPatients, numberOfPatientsWithLocation, percentage){
 		return '('+numberOfPatientsWithLocation+' of '+numberOfPatients+' patients ('+percentage+'%))'
 	}
@@ -175,52 +151,52 @@ Please find below the patient characteristics of the available datasets:</p>
          	context.fillText(E2Text, 950, 340);
          	context.fillText("Proctitis (E1)", 950, 390);
          	context.fillText(E1Text, 950, 410);
-
+         	
      	};
      	imageObj.src = "/logo/blankImg.png";
 	}
 	function fillInPage(selected_option) {
-		$.get('/api/v2/IBD_counts/' + selected_option).done( function(counts) {
+		molgenis.RestClient.prototype.getAsync('/api/v2/IBD_counts/'+selected_option, {}, function(counts){
 				$('#number-of-patients').text(counts.numberPatients);
 				$('#number-of-males').text(counts.countMale);
 				$('#number-of-females').text(counts.countFemale);
-
+			
 				$('#percentage-of-patients').text('100%');
 				$('#percentage-of-males').text(counts.percentageMale+'%');
 				$('#percentage-of-females').text(counts.percentageFemale+'%');
-
+			
 				$('#percentage-cd').text(counts.percentageCD+'%');
 				$('#percentage-uc').text(counts.percentageUC+'%');
 				$('#percentage-ibdu').text(counts.percentageIBDU+'%');
 				$('#percentage-ibdi').text(counts.percentageIBDI+'%');
-
+			
 				$('#count-cd').text(counts.totalCD);
 				$('#count-uc').text(counts.totalUC);
 				$('#count-ibdu').text(counts.totalIBDU);
 				$('#count-ibdi').text(counts.totalIBDI);
-
+			
 				$('#age-onset-mean').text(counts.meanOnsetAge);
-				$('#age-onset-sd').text(counts.sdOnsetAge);
+				$('#age-onset-sd').text(counts.sdOnsetAge);	
 				$('#age-final-mean').text(counts.meanFinalAge);
 				$('#age-final-sd').text(counts.sdFinalAge);
-
+				
 				$('#number-of-samples').text(counts.numberSamples);
-
+			
 				drawImage(counts);
 			})
 		}
-
+	
 	$(function () {
 		$('#dataset-select').select2();
 		var selected_option = $('#dataset-select').select2('data').id;
 		setTitle($('#dataset-select').select2('data'));
-
+		
 		$('#dataset-select').on('change', function(e) {
 			selected_option = $('#dataset-select').select2('data').id;
 			setTitle($('#dataset-select').select2('data'));
 			fillInPage(selected_option);
 		})
 		fillInPage(selected_option);
-
+		
 	});
 </script>
