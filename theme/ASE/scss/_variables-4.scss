@@ -1,18 +1,14 @@
-@import './variables-common';
+@import './variables';
 
-$font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 0.8125rem !default;
 
-$navbar-dark-color: #0f0;
-
 $blue: $color-primary;
 $primary: $color-primary;
 $seconday: $color-secondary;
-
 
 $navbar-padding-x: 0;
 $navbar-padding-y: 0;

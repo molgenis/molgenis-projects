@@ -75,9 +75,9 @@ tasks.scss = new Task('scss', async function() {
     // No entrypoint; build default theme.
     if (this.ep) {
         scssDir = path.dirname(this.ep.raw)
-        themeName = path.join(scssDir, '..').replace(settings.dir.base, '').replace(path.sep, '')
+        themeName = path.join(scssDir, '..').replace(settings.dir.theme, '').replace(path.sep, '')
     } else {
-        scssDir = path.join(settings.dir.base, settings.theme, 'scss')
+        scssDir = path.join(settings.dir.theme, settings.theme, 'scss')
         themeName = settings.theme
     }
 
@@ -92,17 +92,18 @@ tasks.watch = new Task('watch', async function() {
     return new Promise((resolve) => {
         var app = connect()
         app.use(tinylr.middleware({app}))
-        app.listen({host: settings.dev.host, port: settings.dev.port}, () => {
+        app.listen(settings.dev, () => {
             this.log(`development server listening: ${chalk.grey(`${settings.dev.host}:${settings.dev.port}`)}`)
             resolve()
         })
 
-        chokidar.watch(path.join(settings.dir.base, '**', 'scss', '*.scss')).on('change', async(file) => {
+        chokidar.watch(path.join(settings.dir.theme, '**', 'scss', '*.scss')).on('change', async(file) => {
             await tasks.scss.start(file)
             tinylr.changed(settings.livereload)
         })
     })
 })
+
 
 ;(async() => {
     settings = await loadSettings()

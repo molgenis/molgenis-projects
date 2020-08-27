@@ -48,24 +48,21 @@ server {
       error_page 301 302 307 = @handle_redirect;
   }
 
-  location /css/bootstrap-3/paper_bootstrap3-3.css {
+  location /css/bootstrap-3/lifecycle_bootstrap3-11.css {
       root /usr/share/nginx/html/;
-      rewrite ^ /ASE_bootstrap3.css break;
+      rewrite ^ /LifeCycle/css/LifeCycle_bootstrap3.css break;
   }
 
-  location /css/bootstrap-4/paper_bootstrap3-3.css {
+  location /css/bootstrap-4/lifecycle_bootstrap3-11.css {
       root /usr/share/nginx/html/;
-      rewrite ^ /ASE_bootstrap4.css break;
+      rewrite ^ /LifeCycle/css/LifeCycle_bootstrap4.css break;
   }
 
   location / {
       proxy_set_header Host $http_host;
       proxy_buffers 16 4k;
       proxy_buffer_size 2k;
-      proxy_pass https://molgenis70.gcc.rug.nl;
+      proxy_pass https://molgenis88.gcc.rug.nl;
       proxy_ssl_server_name on;
   }
-
-
-
 }
