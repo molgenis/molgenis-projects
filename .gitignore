@@ -2,4 +2,3 @@ molgenis-projects.iml
 node_modules
 .idea
 docker/nginx/ssl/
-ASE/css/

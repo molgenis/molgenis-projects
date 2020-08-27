@@ -36,15 +36,14 @@ function sassRender(themeFile, cssEntry) {
                 'node_modules/bootstrap-sass/assets/stylesheets',
             ],
             outFile: target.css,
-            sourceMap: !settings.optimized,
+            sourceMap: !settings.optimize,
             sourceMapContents: true,
             sourceMapEmbed: false,
         }, async function(err, sassObj) {
             if (err) reject(err.formatted)
             let cssRules
             const promises = []
-
-            if (settings.optimized) {
+            if (settings.optimize) {
                 cssRules = (await cleanCSS.minify(sassObj.css)).styles
             } else {
                 cssRules = sassObj.css
@@ -61,7 +60,7 @@ function sassRender(themeFile, cssEntry) {
 
 tasks.build = new Task('build', async function() {
     await Promise.all([
-        tasks.scss.start(entrypoint.scss),
+        tasks.scss.start(),
     ])
 })
 
@@ -72,8 +71,16 @@ tasks.build = new Task('build', async function() {
  * customization.
  */
 tasks.scss = new Task('scss', async function() {
-    const scssDir = path.dirname(this.ep.raw)
-    const themeName = path.join(scssDir, '..').replace(settings.dir.base, '').replace(path.sep, '')
+    let scssDir, themeName
+    // No entrypoint; build default theme.
+    if (this.ep) {
+        scssDir = path.dirname(this.ep.raw)
+        themeName = path.join(scssDir, '..').replace(settings.dir.base, '').replace(path.sep, '')
+    } else {
+        scssDir = path.join(settings.dir.base, settings.theme, 'scss')
+        themeName = settings.theme
+    }
+
     await Promise.all([
         sassRender(path.join(scssDir, 'theme-3.scss'), `${themeName}_bootstrap3.css`),
         sassRender(path.join(scssDir, 'theme-4.scss'), `${themeName}_bootstrap4.css`)
@@ -111,14 +118,17 @@ tasks.watch = new Task('watch', async function() {
         .detectLocale(false)
         .option('theme', {alias: 't', description: `Selected theme [${settings.theme}]`, type: 'string'})
         .option('livereload', {alias: 'l', default: 'app.css', description: 'CSS theme file to reload', type: 'string'})
-        .option('optimize', {alias: 'o', default: false, description: 'Optimized production mode', type: 'boolean'})
+        .option('optimize', {alias: 'o', default: false, description: 'Optimize for production', type: 'boolean'})
         .middleware(async(argv) => {
             if (!settings.version) {
                 settings.version = JSON.parse((await fs.readFile(path.join(settings.dir.base, 'package.json')))).version
             }
 
-            tasks.watch.log(`selected theme: ${chalk.cyan(settings.theme)}`)
-            tasks.watch.log(`proxy css to reload: ${chalk.cyan(argv.livereload)}`)
+            tasks.watch.log(`theme: ${chalk.cyan(settings.theme)}`)
+            if (argv._.includes('watch')) {
+                tasks.watch.log(`proxy css to reload: ${chalk.cyan(argv.livereload)}`)
+            }
+
             settings.optimize = argv.optimize
             // Could be a mapping later.
             settings.livereload = argv.livereload
@@ -131,7 +141,7 @@ tasks.watch = new Task('watch', async function() {
 
         .command('build', `build package`, () => {}, () => {tasks.build.start()})
         .command('config', 'list build config', () => {}, () => buildInfo(cli))
-        .command('scss', 'compile stylesheets (SCSS)', () => {}, () => {tasks.scss.start(entrypoint.scss)})
+        .command('scss', 'compile stylesheets (SCSS)', () => {}, () => {tasks.scss.start()})
         .command('watch', `development modus`, () => {}, () => {tasks.watch.start()})
         .demandCommand()
         .help('help')
