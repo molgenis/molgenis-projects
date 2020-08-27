@@ -1,0 +1,21 @@
+@import url('//fonts.googleapis.com/css?family=Roboto');
+
+.navbar.navbar-light {
+    height: 65px;
+
+    .navbar-brand {
+        align-items: center;
+        background: $color-white;
+
+        display: flex;
+        height: 65px;
+        justify-content: center;
+        // margin-right: 7px;
+        width: 65px;
+
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+}

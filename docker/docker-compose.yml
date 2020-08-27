@@ -1,0 +1,13 @@
+services:
+  nginx:
+    container_name: mg_projects_nginx
+    network_mode: host
+    image: nginx
+    volumes:
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/sites-enabled:/etc/nginx/sites-enabled
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ../${THEME_DIR:-ASE}/css:/usr/share/nginx/html
+
+version: "3.8"
+
