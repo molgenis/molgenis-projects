@@ -34,6 +34,7 @@ function sassRender(themeFile, cssEntry) {
             includePaths: [
                 'node_modules',
                 'node_modules/bootstrap-sass/assets/stylesheets',
+                'scss',
             ],
             outFile: target.css,
             sourceMap: !settings.optimize,
@@ -71,35 +72,26 @@ tasks.build = new Task('build', async function() {
  * customization.
  */
 tasks.scss = new Task('scss', async function() {
-    let scssDir, themeName
-    // No entrypoint; build default theme.
-    if (this.ep) {
-        scssDir = path.dirname(this.ep.raw)
-        themeName = path.join(scssDir, '..').replace(settings.dir.theme, '').replace(path.sep, '')
-    } else {
-        scssDir = path.join(settings.dir.theme, settings.theme, 'scss')
-        themeName = settings.theme
-    }
-
+    const themeDir = path.join(settings.dir.theme, settings.MG_THEME, 'scss')
     await Promise.all([
-        sassRender(path.join(scssDir, 'theme-3.scss'), `${themeName}_bootstrap3.css`),
-        sassRender(path.join(scssDir, 'theme-4.scss'), `${themeName}_bootstrap4.css`)
+        sassRender(path.join(themeDir, 'theme-3.scss'), `mg-${settings.MG_THEME}-3.css`),
+        sassRender(path.join(themeDir, 'theme-4.scss'), `mg-${settings.MG_THEME}-4.css`)
     ])
 })
 
 
-tasks.watch = new Task('watch', async function() {
+tasks.dev = new Task('dev', async function() {
     return new Promise((resolve) => {
         var app = connect()
         app.use(tinylr.middleware({app}))
-        app.listen(settings.dev, () => {
-            this.log(`development server listening: ${chalk.grey(`${settings.dev.host}:${settings.dev.port}`)}`)
-            resolve()
-        })
+        app.listen({host: '127.0.0.1', port: 35729}, () => resolve)
 
-        chokidar.watch(path.join(settings.dir.theme, '**', 'scss', '*.scss')).on('change', async(file) => {
+        chokidar.watch([
+            path.join(settings.dir.theme, settings.MG_THEME, '**', 'scss', '*.scss'),
+            path.join(settings.dir.base, 'scss', '**', '*.scss')
+        ]).on('change', async(file) => {
             await tasks.scss.start(file)
-            tinylr.changed(settings.livereload)
+            tinylr.changed(settings.MG_WATCHFILE)
         })
     })
 })
@@ -117,33 +109,26 @@ tasks.watch = new Task('watch', async function() {
     yargs
         .usage('Usage: $0 [task]')
         .detectLocale(false)
-        .option('theme', {alias: 't', description: `Selected theme [${settings.theme}]`, type: 'string'})
-        .option('livereload', {alias: 'l', default: 'app.css', description: 'CSS theme file to reload', type: 'string'})
         .option('optimize', {alias: 'o', default: false, description: 'Optimize for production', type: 'boolean'})
         .middleware(async(argv) => {
             if (!settings.version) {
                 settings.version = JSON.parse((await fs.readFile(path.join(settings.dir.base, 'package.json')))).version
             }
 
-            tasks.watch.log(`theme: ${chalk.cyan(settings.theme)}`)
-            if (argv._.includes('watch')) {
-                tasks.watch.log(`proxy css to reload: ${chalk.cyan(argv.livereload)}`)
+            tasks.dev.log(`\r\n${chalk.bold('THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
+            if (argv._.includes('dev')) {
+                tasks.dev.log(`${chalk.bold('WATCH FILE:')} ${chalk.cyan(settings.MG_WATCHFILE)}`)
             }
 
             settings.optimize = argv.optimize
             // Could be a mapping later.
-            settings.livereload = argv.livereload
-            if (settings.optimize) {
-                tasks.watch.log(`build optimization: ${chalk.green('enabled')}`)
-            } else {
-                tasks.watch.log(`build optimization: ${chalk.red('disabled')}`)
-            }
+            tasks.dev.log(`${chalk.bold('MINIFY:')} ${chalk.grey(settings.optimize)}\r\n`)
         })
 
-        .command('build', `build package`, () => {}, () => {tasks.build.start()})
+        .command('build', `build project files`, () => {}, () => {tasks.build.start()})
         .command('config', 'list build config', () => {}, () => buildInfo(cli))
-        .command('scss', 'compile stylesheets (SCSS)', () => {}, () => {tasks.scss.start()})
-        .command('watch', `development modus`, () => {}, () => {tasks.watch.start()})
+        .command('scss', 'build stylesheets', () => {}, () => {tasks.scss.start()})
+        .command('dev', `development mode`, () => {}, () => {tasks.dev.start()})
         .demandCommand()
         .help('help')
         .showHelpOnFail(true)

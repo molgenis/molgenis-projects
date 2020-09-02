@@ -1,0 +1,13 @@
+@import './variables';
+@import './variables-4';
+@import 'bootstrap-scss/bootstrap';
+@import './custom-4';
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $mg-font-family-headings;
+}
+

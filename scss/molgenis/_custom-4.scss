@@ -1,0 +1,36 @@
+.navbar-brand {
+    align-items: center;
+    background: $mg-color-white;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding: 15px;
+
+    img {
+        display: block;
+        max-width: auto;
+    }
+}
+
+.nav-item {
+    font-weight: 600;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .nav-link {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.navbar {
+    border-bottom: 1px solid $mg-color-grey-300 !important;
+}
+
+.list-group-item,
+.table {
+    font-family: IBM_Plex_mono,monospace;
+}

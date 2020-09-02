@@ -1,0 +1,18 @@
+@import './variables';
+@import 'molgenis/theme-3';
+
+.navbar-brand {
+    align-items: center;
+    background: $mg-color-white;
+
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding: 15px;
+
+    img {
+        display: block;
+        height: auto !important;
+        width: 130px;
+    }
+}

@@ -1,0 +1,40 @@
+// Color config:
+$mg-color-primary: #017ffd !default;
+$mg-color-primary-light: lighten($mg-color-primary, 43%);
+$mg-color-secondary: #adb5bd !default;
+$mg-color-warning: #ff9800 !default;
+$mg-color-error: #e40017 !default;
+$mg-color-success: #009333 !default;
+$mg-color-info: #adb5bd !default;
+
+$mg-color-white: #fff !default;
+$mg-color-grey-100: #f8f9fa !default;
+$mg-color-grey-200: #e9ecef !default;
+$mg-color-grey-300: #dee2e6 !default;
+$mg-color-grey-400: #ced4da !default;
+$mg-color-grey-500: #adb5bd !default;
+$mg-color-grey-600: #6c757d !default;
+$mg-color-grey-700: #495057 !default;
+$mg-color-grey-800: #343a40 !default;
+$mg-color-grey-900: #212529 !default;
+$mg-color-black: #000 !default;
+
+$mg-color-text-light: rgba(0, 0, 0, 0.5) !default;
+$mg-color-text-dark: #212529 !default;
+
+// Font config:
+$mg-font-family-base: 'IBM_Plex_sans' !default;
+$mg-font-family-sans-serif: 'IBM_Plex_sans' !default;
+$mg-font-family-mono: 'IBM_Plex_mono' !default;
+$mg-font-family-headings: 'bebas_neueregular' !default;
+
+// Dimensions:
+$mg-spacer: 1rem !default;
+
+
+// Common Bootstrap 3 & 4 variables:
+$body-bg: #fafafa;
+
+$font-family-serif: $mg-font-family-sans-serif !default;
+$font-family-monospace: $mg-font-family-mono !default;
+$font-family-base: $mg-font-family-sans-serif !default;

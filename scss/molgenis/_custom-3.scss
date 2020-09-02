@@ -1,0 +1,193 @@
+.navbar-brand {
+    align-items: center;
+    background: $mg-color-white;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding: 15px;
+
+    img {
+        display: block;
+        max-width: auto;
+    }
+}
+
+
+.navbar-default {
+    background: $mg-color-white;
+
+    .navbar-nav {
+        .dropdown.open > a {
+            background: $mg-color-primary-light;
+            color: $mg-color-white;
+        }
+
+
+        .dropdown-toggle .caret {
+            margin-left: $mg-spacer;
+        }
+
+        .dropdown-menu li {
+            a:active {
+                background: $mg-color-primary-light;
+                color: $mg-color-white;
+            }
+        }
+    }
+}
+
+
+.dropdown {
+    // Keep dropdown background in sync with bootstrap 4's
+    // See $dropdown-link-hover-bg
+    &.open > a {
+        background: $mg-color-primary !important;
+    }
+
+    .dropdown-menu {
+        > li > a {
+            // Keep dropdown padding in sync with bootstrap 4.
+            padding: 5px 20px;
+        }
+    }
+}
+
+#aggregate-table-container th {
+    background: $mg-color-primary !important;
+}
+
+
+.select2-results .select2-highlighted {
+    background: $mg-color-primary !important;
+}
+
+#menu-editor-tree ol li {
+    color: $mg-color-primary !important;
+}
+
+
+body {
+    .ui-fancytree {
+        .fancytree-node {
+            background: $mg-color-primary-light !important;
+            padding: $mg-spacer / 2 0;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+
+            .fancytree-title {
+                color: $mg-color-primary !important;
+            }
+
+            &:hover {
+                background: $mg-color-primary-light !important;
+            }
+        }
+    }
+
+}
+
+// Navbar customization
+.navbar-nav {
+    font-weight: 600;
+}
+
+body {
+    .bwizard-steps .active {
+        background: $mg-color-primary;
+        color: $mg-color-white;
+
+        &::after {
+            border-left-color: $mg-color-primary;
+        }
+    }
+
+}
+
+.panel {
+    border: 0;
+    box-shadow: 0 0 6px $mg-color-grey-300;
+
+    &.panel-primary {
+        .panel-heading {
+            height: $mg-spacer * 5;
+            line-height: $mg-spacer * 5;
+            padding: 0;
+            position: relative;
+
+            .panel-title {
+                display: inline-block;
+                font-family: $mg-font-family-headings;
+                font-weight: 600;
+                margin-top: 3px;
+                padding: 0 $mg-spacer;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+body {
+    .well {
+        background: none;
+        border: 0;
+    }
+}
+
+table {
+    thead {
+        th {
+            background: $mg-color-primary-light;
+            border-bottom: 0;
+            border-bottom-width: 0 !important;
+            font-family: $mg-font-family-mono !important;
+            padding: $mg-spacer * 1.5 $mg-spacer / 2 !important;
+        }
+    }
+
+    tbody {
+        tr:first-child {
+            td {
+                border-top: 0;
+            }
+        }
+    }
+
+
+    tr {
+        background: $mg-color-white;
+    }
+
+    td {
+        padding: $mg-spacer * 1.5 $mg-spacer / 2 !important;
+    }
+}
+
+
+// Bootstrap 3 corrections for Bootstrap 4 dropdown customizations:
+// => $dropdown-spacer
+.dropdown {
+    .dropdown-menu {
+        li a {
+            padding: 0.75rem !important;
+        }
+    }
+}
+
+#login-modal {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.glyphicon {
+    top: 3px;
+}
+
+.data-table-container {
+    margin-top: $mg-spacer !important;
+}

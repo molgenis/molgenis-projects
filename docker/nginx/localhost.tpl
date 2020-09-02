@@ -1,17 +1,12 @@
 server {
   listen 443 ssl http2 default_server;
   server_name localhost;
-  access_log /var/log/nginx/localhost.access.log;
-  error_log /var/log/nginx/localhost.error.log;
+  access_log /dev/stdout;
+  error_log /dev/stdout info;
 
   ssl_certificate /etc/nginx/ssl/localhost.crt;
   ssl_certificate_key /etc/nginx/ssl/localhost.key;
 
-  #
-  # We use this configuration in all configuration that is using unpkg.com
-  # All the redirects done by unpkg.com are handled here.
-  # unpkg.com redirects 2 or 3 times depending on the url you initially post
-  #
   location @handle_redirect {
       # drop routing information from urls that do not start with `/dist/`
       rewrite ^/([^/]*)/([^/]*)/(?!dist/).*$ /$1/$2 last;
@@ -25,7 +20,6 @@ server {
       expires 10m;
   }
 
-
   location /@molgenis-experimental/molgenis-app-lifelines-webshop/ {
       proxy_pass https://unpkg.com/@molgenis-experimental/molgenis-app-lifelines-webshop@2.5.2/;
       proxy_intercept_errors on;
@@ -33,12 +27,23 @@ server {
       error_page 301 302 307 = @handle_redirect;
   }
 
-
   location /@molgenis-experimental/ {
       proxy_pass https://unpkg.com/@molgenis-experimental/;
       proxy_intercept_errors on;
       recursive_error_pages on;
       error_page 301 302 307 = @handle_redirect;
+  }
+
+  # Override a hardcoded theme from de2
+  location /@molgenis-ui/data-explorer/dist/bootstrap-molgenis-blue.min.css {
+      root /usr/share/nginx/html/;
+      rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css break;
+  }
+
+   # Override a legacy hardcoded Bootstrap 3 theme with our own (login)
+  location /css/bootstrap.min.css {
+      root /usr/share/nginx/html/;
+      rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-3.css break;
   }
 
   location /@molgenis-ui/ {
@@ -48,21 +53,19 @@ server {
       error_page 301 302 307 = @handle_redirect;
   }
 
-  location /css/bootstrap-3/lifecycle_bootstrap3-11.css {
+  location /css/bootstrap-3/${MG_WATCHFILE} {
       root /usr/share/nginx/html/;
-      rewrite ^ /LifeCycle/css/LifeCycle_bootstrap3.css break;
+      rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-3.css break;
   }
 
-  location /css/bootstrap-4/lifecycle_bootstrap3-11.css {
+  location /css/bootstrap-4/${MG_WATCHFILE} {
       root /usr/share/nginx/html/;
-      rewrite ^ /LifeCycle/css/LifeCycle_bootstrap4.css break;
+      rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css break;
   }
 
   location / {
-      proxy_set_header Host $http_host;
-      proxy_buffers 16 4k;
-      proxy_buffer_size 2k;
-      proxy_pass https://molgenis88.gcc.rug.nl;
-      proxy_ssl_server_name on;
+      proxy_buffers 4 32k;
+      proxy_pass ${MG_HOST};
+      proxy_ssl_session_reuse on;
   }
 }
