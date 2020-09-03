@@ -8,7 +8,9 @@
     "yarn": ">= 1.19.0"
   },
   "scripts": {
-    "build": "./cli.js build"
+    "build": "./cli.js build",
+    "build-all": "./cli.js build --all",
+    "dev": "./cli.js dev"
   },
   "devDependencies": {
     "archy": "^1.0.0",

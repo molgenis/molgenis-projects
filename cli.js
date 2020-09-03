@@ -130,7 +130,7 @@ tasks.dev = new Task('dev', async function() {
                 settings.version = JSON.parse((await fs.readFile(path.join(settings.dir.base, 'package.json')))).version
             }
 
-            tasks.dev.log(`\r\n${chalk.bold('SELECTED THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
+            tasks.dev.log(`\r\n${chalk.bold('THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
             if (argv._.includes('dev')) {
                 tasks.dev.log(`${chalk.bold('WATCH FILE:')} ${chalk.cyan(settings.MG_WATCHFILE)}`)
             }
