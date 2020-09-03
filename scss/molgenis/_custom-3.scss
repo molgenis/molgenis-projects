@@ -82,25 +82,36 @@
 
 body {
     .ui-fancytree {
-        .fancytree-node {
-            background: $mg-color-primary-light !important;
-            padding: $mg-spacer / 2 0;
-
-            &:hover {
-                cursor: pointer;
+        li {
+            &:nth-child(even) {
+                background: $mg-color-white;
             }
 
 
-            .fancytree-title {
-                color: $mg-color-primary !important;
+            &:nth-child(odd) {
+                background: $mg-color-grey-100;
             }
 
-            &:hover {
-                background: $mg-color-primary-light !important;
+            .fancytree-node {
+                background: none !important;
+                font-weight: 600;
+                padding: $mg-spacer / 2 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+
+                .fancytree-title {
+                    color: $mg-color-primary !important;
+                }
+
+                &:hover {
+                    background: $mg-color-primary-light !important;
+                }
             }
         }
     }
-
 }
 
 
@@ -123,7 +134,7 @@ body {
 
 .panel {
     border: 0;
-    box-shadow: 0 0 6px $mg-color-grey-300;
+    box-shadow: 0 0 6px $mg-color-grey-400;
 
     &.panel-primary {
         .panel-heading {
@@ -150,36 +161,6 @@ body {
     // Data Explorer 1 table container
     .molgenis-table-container {
         box-shadow: 0 0 6px $mg-color-grey-300 !important;
-
-        table {
-            thead {
-                th {
-                    background: $mg-color-primary-light;
-                    border-bottom: 0;
-                    border-bottom-width: 0 !important;
-                    font-family: $mg-font-family-mono !important;
-                    height: $navbar-height;
-                    line-height: $navbar-height;
-                    padding: 0 $mg-spacer / 2;
-                }
-            }
-
-            tbody {
-                tr:first-child {
-                    td {
-                        border-top: 0;
-                    }
-                }
-            }
-
-            tr {
-                background: $mg-color-white;
-            }
-
-            td {
-                padding: $mg-spacer $mg-spacer / 2 !important;
-            }
-        }
     }
 }
 

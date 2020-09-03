@@ -7,3 +7,8 @@ $mg-font-family-base: 'Roboto';
 $mg-font-family-sans-serif: 'Roboto';
 $mg-font-family-mono: 'Roboto';
 $mg-font-family-headings: 'Roboto';
+
+.navbar-brand img {
+    height: 100%;
+    padding: 4px;
+}

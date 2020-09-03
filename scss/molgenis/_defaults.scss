@@ -11,6 +11,12 @@ h5 {
     font-family: $mg-font-family-headings;
 }
 
+.navbar-brand img {
+    height: 100%;
+    padding: 4px;
+}
+
+
 .navbar-brand {
     align-items: center;
     background: $mg-color-white;
@@ -19,6 +25,93 @@ h5 {
 
     img {
         display: block;
+        height: 100%;
         max-width: auto;
+        padding: 4px;
     }
+}
+
+
+html body table {
+    thead {
+        th {
+            background: $mg-color-grey-200;
+            border-bottom: 0;
+            border-bottom-width: 0 !important;
+            font-family: $mg-font-family-mono;
+            height: $mg-navbar-height;
+            padding: 0;
+            vertical-align: middle;
+        }
+    }
+
+    tbody {
+        tr:first-child {
+            td {
+                border-top: 0;
+            }
+        }
+    }
+
+    tr {
+        &:nth-child(even) {
+            background: $mg-color-grey-100;
+        }
+
+        &:nth-child(odd) {
+            background: $mg-color-white;
+        }
+
+        &:hover {
+            background: $mg-color-primary-light;
+        }
+
+    }
+
+    &.molgenis-table th {
+        line-height: $mg-navbar-height;
+        padding: 0 $mg-spacer / 2;
+    }
+
+    // Force Data Explorer 1 table
+    &.molgenis-table td {
+        padding: $mg-spacer $mg-spacer / 2 !important;
+    }
+
+    td {
+        padding: $mg-spacer $mg-spacer / 2;
+    }
+}
+
+// Themed scrollbars for webkit browsers
+::-webkit-scrollbar {
+    height: $mg-spacer / 1.5;
+    width: $mg-spacer / 1.5;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $mg-color-primary;
+}
+
+::selection {
+    background: $mg-color-primary;
+    color: $mg-color-white;
+}
+
+// Small helper classes to apply proper capitalizing without polluting translations.
+.lc {text-transform: lowercase;}
+.uc {text-transform: uppercase;}
+.ca {text-transform: capitalize;}
+
+.cf {
+    display: inline-block;
+    &::first-letter {text-transform: uppercase;}
+}
+
+.breadcrumb {
+    padding: 0;
 }

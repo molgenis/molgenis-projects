@@ -3,6 +3,11 @@
     background: $mg-color-white !important;
     height: $mg-navbar-height;
 
+    .form-inline {
+        height: 100%;
+    }
+
+
     .navbar-collapse {
         height: 50px;
     }
@@ -89,3 +94,11 @@
 #language-form {
     display: none;
 }
+
+// Navigator table.
+.container {
+    .table-container {
+        height: auto;
+    }
+}
+

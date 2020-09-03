@@ -8,6 +8,7 @@ import connect from 'connect'
 import fs from 'fs-extra'
 import globImporter from 'node-sass-glob-importer'
 import loadSettings from './lib/settings.js'
+import notifier from 'node-notifier'
 import path from 'path'
 import sass from 'node-sass'
 import Task from './lib/task.js'
@@ -41,7 +42,14 @@ function sassRender(themeFile, cssEntry) {
             sourceMapContents: true,
             sourceMapEmbed: false,
         }, async function(err, sassObj) {
-            if (err) reject(err.formatted)
+            if (err) {
+                notifier.notify({
+                    title: 'SCSS Error',
+                    message: err.formatted
+                })
+                reject(err.formatted)
+
+            }
             let cssRules
             const promises = []
             if (settings.optimize) {
@@ -134,8 +142,6 @@ tasks.dev = new Task('dev', async function() {
         .help('help')
         .showHelpOnFail(true)
         .argv
-
-
 })()
 
 
