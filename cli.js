@@ -81,6 +81,7 @@ tasks.scss = new Task('scss', async function() {
 
 
 tasks.dev = new Task('dev', async function() {
+    await tasks.build.start()
     return new Promise((resolve) => {
         var app = connect()
         app.use(tinylr.middleware({app}))

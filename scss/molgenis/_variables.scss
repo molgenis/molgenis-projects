@@ -1,6 +1,6 @@
 // Color config:
 $mg-color-primary: #017ffd !default;
-$mg-color-primary-light: lighten($mg-color-primary, 43%);
+$mg-color-primary-light: lighten($mg-color-primary, 43%) !default;
 $mg-color-secondary: #adb5bd !default;
 $mg-color-warning: #ff9800 !default;
 $mg-color-error: #e40017 !default;
@@ -29,8 +29,7 @@ $mg-font-family-mono: 'IBM_Plex_mono' !default;
 $mg-font-family-headings: 'bebas_neueregular' !default;
 
 // Dimensions:
-$mg-spacer: 1rem !default;
-
+$mg-spacer: 16px !default;
 
 // Common Bootstrap 3 & 4 variables:
 $body-bg: #fafafa;
@@ -38,3 +37,5 @@ $body-bg: #fafafa;
 $font-family-serif: $mg-font-family-sans-serif !default;
 $font-family-monospace: $mg-font-family-mono !default;
 $font-family-base: $mg-font-family-sans-serif !default;
+
+$mg-navbar-height: 50px;

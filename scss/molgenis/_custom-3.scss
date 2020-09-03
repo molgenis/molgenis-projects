@@ -1,53 +1,65 @@
-.navbar-brand {
-    align-items: center;
-    background: $mg-color-white;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    padding: 15px;
-
-    img {
-        display: block;
-        max-width: auto;
-    }
-}
-
-
 .navbar-default {
     background: $mg-color-white;
 
+    #language-select-box {
+        display: none !important;
+    }
+
     .navbar-nav {
+        font-weight: 600;
+
+        > li > a {
+            // padding: 15px 0 !important;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .open {
+            .dropdown-menu {
+                li a {
+                    padding: 0.75rem 1rem;
+                }
+            }
+        }
+
+
         .dropdown.open > a {
             background: $mg-color-primary-light;
             color: $mg-color-white;
         }
 
 
-        .dropdown-toggle .caret {
-            margin-left: $mg-spacer;
-        }
+        .dropdown-toggle {
+            // position: relative;
 
-        .dropdown-menu li {
-            a:active {
-                background: $mg-color-primary-light;
-                color: $mg-color-white;
+            .caret {
+                display: none;
+            }
+
+            &::after {
+                border-bottom: 0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid;
+                content: '';
+                display: inline-block;
+                margin-left: 4px;
+                margin-top: 22px;
+                position: absolute;
+                top: 0;
+
             }
         }
-    }
-}
 
+        .dropdown-menu {
+            padding: 0;
 
-.dropdown {
-    // Keep dropdown background in sync with bootstrap 4's
-    // See $dropdown-link-hover-bg
-    &.open > a {
-        background: $mg-color-primary !important;
-    }
-
-    .dropdown-menu {
-        > li > a {
-            // Keep dropdown padding in sync with bootstrap 4.
-            padding: 5px 20px;
+            li {
+                a:active {
+                    background: $mg-color-primary;
+                    color: $mg-color-white;
+                }
+            }
         }
     }
 }
@@ -62,6 +74,8 @@
 }
 
 #menu-editor-tree ol li {
+    // background: $mg-color-grey-200;
+    border: 0;
     color: $mg-color-primary !important;
 }
 
@@ -89,10 +103,6 @@ body {
 
 }
 
-// Navbar customization
-.navbar-nav {
-    font-weight: 600;
-}
 
 body {
     .bwizard-steps .active {
@@ -104,6 +114,11 @@ body {
         }
     }
 
+    .well {
+        background: none;
+        border: 0;
+    }
+
 }
 
 .panel {
@@ -112,17 +127,15 @@ body {
 
     &.panel-primary {
         .panel-heading {
-            height: $mg-spacer * 5;
-            line-height: $mg-spacer * 5;
-            padding: 0;
-            position: relative;
+            height: $navbar-height;
+            line-height: $navbar-height;
 
             .panel-title {
                 display: inline-block;
                 font-family: $mg-font-family-headings;
                 font-weight: 600;
-                margin-top: 3px;
-                padding: 0 $mg-spacer;
+                margin-top: 2px;
+                padding-left: $mg-spacer;
                 text-align: center;
                 vertical-align: middle;
             }
@@ -130,49 +143,42 @@ body {
     }
 }
 
-body {
-    .well {
-        background: none;
-        border: 0;
-    }
-}
 
-table {
-    thead {
-        th {
-            background: $mg-color-primary-light;
-            border-bottom: 0;
-            border-bottom-width: 0 !important;
-            font-family: $mg-font-family-mono !important;
-            padding: $mg-spacer * 1.5 $mg-spacer / 2 !important;
-        }
-    }
+.data-table-container {
+    margin-top: $mg-spacer / 2 + 7 !important;
 
-    tbody {
-        tr:first-child {
-            td {
-                border-top: 0;
+    // Data Explorer 1 table container
+    .molgenis-table-container {
+        box-shadow: 0 0 6px $mg-color-grey-300 !important;
+
+        table {
+            thead {
+                th {
+                    background: $mg-color-primary-light;
+                    border-bottom: 0;
+                    border-bottom-width: 0 !important;
+                    font-family: $mg-font-family-mono !important;
+                    height: $navbar-height;
+                    line-height: $navbar-height;
+                    padding: 0 $mg-spacer / 2;
+                }
             }
-        }
-    }
 
+            tbody {
+                tr:first-child {
+                    td {
+                        border-top: 0;
+                    }
+                }
+            }
 
-    tr {
-        background: $mg-color-white;
-    }
+            tr {
+                background: $mg-color-white;
+            }
 
-    td {
-        padding: $mg-spacer * 1.5 $mg-spacer / 2 !important;
-    }
-}
-
-
-// Bootstrap 3 corrections for Bootstrap 4 dropdown customizations:
-// => $dropdown-spacer
-.dropdown {
-    .dropdown-menu {
-        li a {
-            padding: 0.75rem !important;
+            td {
+                padding: $mg-spacer $mg-spacer / 2 !important;
+            }
         }
     }
 }
@@ -188,6 +194,13 @@ table {
     top: 3px;
 }
 
-.data-table-container {
-    margin-top: $mg-spacer !important;
+
+.nav-tabs {
+    li {
+        font-weight: bold;
+
+        img {
+            display: none;
+        }
+    }
 }

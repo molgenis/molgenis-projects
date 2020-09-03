@@ -8,6 +8,8 @@ $navbar-default-link-hover-color: $mg-color-white !default;
 $dropdown-link-color: $mg-color-primary !default;
 $dropdown-link-hover-bg: $mg-color-primary !default;
 $dropdown-link-hover-color: $mg-color-white !default;
+$dropdown-link-active-color: #f00;
+$dropdown-link-active-bg: #0f0;
 
 $brand-success: $mg-color-primary !default;
 $navbar-default-link-active-bg: $mg-color-secondary !default;
@@ -39,3 +41,22 @@ $panel-primary-text: $mg-color-primary;
 $nav-tabs-border-color: $mg-color-grey-300;
 $nav-tabs-active-link-hover-bg: $mg-color-primary-light;
 $nav-tabs-active-link-hover-color: $mg-color-primary;
+
+$input-border-radius: 0;
+$input-border-radius-large: 0;
+$input-border-radius-small: 0;
+$input-border-focus: $mg-color-primary;
+
+$grid-float-breakpoint: 1000px;
+$grid-float-breakpoint-max: 1300px;
+
+$grid-gutter-width: 16px;
+
+$panel-body-padding: $mg-spacer;
+$panel-heading-padding: 0;
+
+$btn-border-radius-base: 0;
+$btn-border-radius-large: 0;
+$btn-border-radius-small: 0;
+
+$navbar-height: $mg-navbar-height;

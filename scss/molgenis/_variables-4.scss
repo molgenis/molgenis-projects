@@ -4,7 +4,7 @@ $blue: $mg-color-primary;
 $primary: $mg-color-primary;
 $secondary: $mg-color-secondary;
 
-
+$navbar-light-active-color: $mg-color-primary-light;
 $navbar-light-color: $mg-color-primary;
 $navbar-nav-link-padding-x: 1rem;
 $navbar-padding-x: 0;
@@ -16,7 +16,8 @@ $dropdown-link-hover-bg: $mg-color-primary;
 $dropdown-link-hover-color: $mg-color-white;
 
 $dropdown-spacer: 0;
-$dropdown-item-padding-y: 0.75rem;
+$dropdown-item-padding-x: 0;
+$dropdown-item-padding-y: 0;
 $dropdown-border-radius: 0;
 $dropdown-padding-y: 0;
 

@@ -36,12 +36,16 @@ server {
 
   # Override a hardcoded theme from de2
   location /@molgenis-ui/data-explorer/dist/bootstrap-molgenis-blue.min.css {
+      add_header Last-Modified $date_gmt;
+      add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
       root /usr/share/nginx/html/;
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css break;
   }
 
    # Override a legacy hardcoded Bootstrap 3 theme with our own (login)
   location /css/bootstrap.min.css {
+      add_header Last-Modified $date_gmt;
+      add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
       root /usr/share/nginx/html/;
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-3.css break;
   }
@@ -54,11 +58,15 @@ server {
   }
 
   location /css/bootstrap-3/${MG_WATCHFILE} {
+      add_header Last-Modified $date_gmt;
+      add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
       root /usr/share/nginx/html/;
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-3.css break;
   }
 
   location /css/bootstrap-4/${MG_WATCHFILE} {
+      add_header Last-Modified $date_gmt;
+      add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
       root /usr/share/nginx/html/;
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css break;
   }

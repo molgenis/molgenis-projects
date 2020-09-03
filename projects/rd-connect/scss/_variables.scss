@@ -1,3 +1,9 @@
-@import url('//fonts.googleapis.com/css?family=Roboto');
+@import 'molgenis/variables';
 
-$font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$mg-color-primary: #5c9966;
+$mg-color-primary-light: $mg-color-grey-200;
+
+$mg-font-family-base: 'Roboto';
+$mg-font-family-sans-serif: 'Roboto';
+$mg-font-family-mono: 'Roboto';
+$mg-font-family-headings: 'Roboto';
