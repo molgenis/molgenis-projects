@@ -68,9 +68,14 @@ function sassRender(themeFile, cssEntry) {
 
 
 tasks.build = new Task('build', async function() {
-    await Promise.all([
-        tasks.scss.start(),
-    ])
+    if (settings.all) {
+        const themes = await fs.readdir(settings.dir.theme)
+        await Promise.all(themes.map((theme) => {
+            tasks.scss.start(theme)
+        }))
+    } else {
+        await tasks.scss.start(settings.MG_THEME)
+    }
 })
 
 
@@ -80,10 +85,12 @@ tasks.build = new Task('build', async function() {
  * customization.
  */
 tasks.scss = new Task('scss', async function() {
-    const themeDir = path.join(settings.dir.theme, settings.MG_THEME, 'scss')
+    let theme
+    this.ep.raw ? theme = this.ep.raw : settings.dir.theme
+    const themeDir = path.join(settings.dir.theme, theme, 'scss')
     await Promise.all([
-        sassRender(path.join(themeDir, 'theme-3.scss'), `mg-${settings.MG_THEME}-3.css`),
-        sassRender(path.join(themeDir, 'theme-4.scss'), `mg-${settings.MG_THEME}-4.css`)
+        sassRender(path.join(themeDir, 'theme-3.scss'), `mg-${theme}-3.css`),
+        sassRender(path.join(themeDir, 'theme-4.scss'), `mg-${theme}-4.css`)
     ])
 })
 
@@ -118,6 +125,7 @@ tasks.dev = new Task('dev', async function() {
     yargs
         .usage('Usage: $0 [task]')
         .detectLocale(false)
+        .option('all', {default: false, description: 'Apply to all themes', type: 'boolean'})
         .option('optimize', {alias: 'o', default: false, description: 'Optimize for production', type: 'boolean'})
         .middleware(async(argv) => {
             if (!settings.version) {
@@ -129,6 +137,7 @@ tasks.dev = new Task('dev', async function() {
                 tasks.dev.log(`${chalk.bold('WATCH FILE:')} ${chalk.cyan(settings.MG_WATCHFILE)}`)
             }
 
+            settings.all = argv.all
             settings.optimize = argv.optimize
             // Could be a mapping later.
             tasks.dev.log(`${chalk.bold('MINIFY:')} ${chalk.grey(settings.optimize)}\r\n`)
@@ -136,7 +145,7 @@ tasks.dev = new Task('dev', async function() {
 
         .command('build', `build project files`, () => {}, () => {tasks.build.start()})
         .command('config', 'list build config', () => {}, () => buildInfo(cli))
-        .command('scss', 'build stylesheets', () => {}, () => {tasks.scss.start()})
+        .command('scss', `build stylesheets for ${settings.MG_THEME}`, () => {}, () => {tasks.scss.start()})
         .command('dev', `development mode`, () => {}, () => {tasks.dev.start()})
         .demandCommand()
         .help('help')
