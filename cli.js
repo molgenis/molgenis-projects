@@ -48,7 +48,6 @@ function sassRender(themeFile, cssEntry) {
                     message: err.formatted
                 })
                 reject(err.formatted)
-
             }
             let cssRules
             const promises = []
@@ -70,9 +69,7 @@ function sassRender(themeFile, cssEntry) {
 tasks.build = new Task('build', async function() {
     if (settings.all) {
         const themes = await fs.readdir(settings.dir.theme)
-        await Promise.all(themes.map((theme) => {
-            tasks.scss.start(theme)
-        }))
+        await Promise.all(themes.map((theme) => tasks.scss.start(theme)))
     } else {
         await tasks.scss.start(settings.MG_THEME)
     }
@@ -84,9 +81,10 @@ tasks.build = new Task('build', async function() {
  * The result should look the same with the least amount of
  * customization.
  */
-tasks.scss = new Task('scss', async function() {
+tasks.scss = new Task('scss', async function(ep) {
     let theme
-    this.ep.raw ? theme = this.ep.raw : settings.dir.theme
+    ep.raw ? theme = ep.raw : settings.dir.theme
+
     const themeDir = path.join(settings.dir.theme, theme, 'scss')
     await Promise.all([
         sassRender(path.join(themeDir, 'theme-3.scss'), `mg-${theme}-3.css`),
@@ -106,7 +104,7 @@ tasks.dev = new Task('dev', async function() {
             path.join(settings.dir.theme, settings.MG_THEME, '**', 'scss', '*.scss'),
             path.join(settings.dir.base, 'scss', '**', '*.scss')
         ]).on('change', async(file) => {
-            await tasks.scss.start(file)
+            await tasks.scss.start(settings.MG_THEME)
             tinylr.changed(settings.MG_WATCHFILE)
         })
     })
@@ -132,7 +130,7 @@ tasks.dev = new Task('dev', async function() {
                 settings.version = JSON.parse((await fs.readFile(path.join(settings.dir.base, 'package.json')))).version
             }
 
-            tasks.dev.log(`\r\n${chalk.bold('THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
+            tasks.dev.log(`\r\n${chalk.bold('SELECTED THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
             if (argv._.includes('dev')) {
                 tasks.dev.log(`${chalk.bold('WATCH FILE:')} ${chalk.cyan(settings.MG_WATCHFILE)}`)
             }

@@ -8,11 +8,9 @@ $navbar-default-link-hover-color: $mg-color-white !default;
 $dropdown-link-color: $mg-color-primary !default;
 $dropdown-link-hover-bg: $mg-color-primary !default;
 $dropdown-link-hover-color: $mg-color-white !default;
-$dropdown-link-active-color: #f00;
-$dropdown-link-active-bg: #0f0;
 
 $brand-success: $mg-color-primary !default;
-$navbar-default-link-active-bg: $mg-color-secondary !default;
+$navbar-default-link-active-bg: darken($mg-color-primary, 6.5%) !important;
 $navbar-default-link-active-color: $mg-color-white !default;
 
 $gray-base: $mg-color-black;
@@ -36,7 +34,7 @@ $table-condensed-cell-padding: 0;
 $panel-primary-border: 0;
 $panel-border-radius: 0;
 $panel-primary-heading-bg: $mg-color-grey-200;
-$panel-primary-text: $mg-color-grey-600;
+$panel-primary-text: $mg-color-grey-500;
 
 $nav-tabs-border-color: $mg-color-grey-300;
 $nav-tabs-active-link-hover-bg: $mg-color-primary-light;
