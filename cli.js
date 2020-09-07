@@ -14,6 +14,7 @@ import sass from 'node-sass'
 import Task from './lib/task.js'
 import tinylr from 'tiny-lr'
 import yargs from 'yargs'
+import * as NodeSSH from 'node-ssh'
 
 
 const cleanCSS = new CleanCSS({level: 2, returnPromise: true, sourceMap: true})
@@ -73,6 +74,28 @@ tasks.build = new Task('build', async function() {
     } else {
         await tasks.scss.start(settings.MG_THEME)
     }
+})
+
+
+tasks.publish = new Task('publish', async function() {
+    const ssh = new NodeSSH.NodeSSH()
+    await ssh.connect({
+        host: settings.MG_PUBLISH_HOST,
+        port: Number(settings.MG_PUBLISH_PORT),
+        username: settings.MG_PUBLISH_USER,
+        privateKey: settings.MG_PUBLISH_KEY
+    })
+
+    if (settings.all) {
+        const themes = await fs.readdir(settings.dir.theme)
+        await Promise.all(themes.map((theme) => {
+            return ssh.putDirectory(path.join(settings.dir.theme, theme, 'css'), path.join(settings.MG_PUBLISH_ROOT, theme))
+        }))
+    } else {
+        await ssh.putDirectory(path.join(settings.dir.theme, settings.MG_THEME, 'css'), path.join(settings.MG_PUBLISH_ROOT, settings.MG_THEME))
+    }
+
+    ssh.dispose()
 })
 
 
@@ -143,8 +166,9 @@ tasks.dev = new Task('dev', async function() {
 
         .command('build', `build project files`, () => {}, () => {tasks.build.start()})
         .command('config', 'list build config', () => {}, () => buildInfo(cli))
-        .command('scss', `build stylesheets for ${settings.MG_THEME}`, () => {}, () => {tasks.scss.start()})
         .command('dev', `development mode`, () => {}, () => {tasks.dev.start()})
+        .command('publish', `publish theme files`, () => {}, () => {tasks.publish.start()})
+        .command('scss', `build stylesheets for ${settings.MG_THEME}`, () => {}, () => {tasks.scss.start()})
         .demandCommand()
         .help('help')
         .showHelpOnFail(true)

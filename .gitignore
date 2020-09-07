@@ -3,3 +3,4 @@ node_modules
 .idea
 docker/nginx/ssl/
 docker/.env
+yarn-error.log

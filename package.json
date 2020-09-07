@@ -8,7 +8,7 @@
     "yarn": ">= 1.19.0"
   },
   "scripts": {
-    "build": "./cli.js build",
+    "build": "./cli.js build --optimize",
     "build-all": "./cli.js build --all",
     "dev": "./cli.js dev"
   },
@@ -34,6 +34,7 @@
     "bootstrap-sass": "^3.4.1",
     "bootstrap-scss": "4.5.2",
     "ini": "^1.3.5",
-    "node-notifier": "^8.0.0"
+    "node-notifier": "^8.0.0",
+    "node-ssh": "^11.0.0"
   }
 }
