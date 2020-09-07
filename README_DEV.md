@@ -20,17 +20,16 @@ websites.
 git clone git@github.com:molgenis/molgenis-projects.git
 cd molgenis-projects
 yarn
-# Build the default Molgenis
+# Set the config file
 cp docker/.env.default docker/.env
+# Build the selected theme (MG_THEME in .env)
 yarn build
-# Build the lifecycle theme
-cp docker/.env.lifecycle .env
-yarn build
-# Build all project css at once
+# Build all themes in /projects
 yarn build-all
-# Build optimized/minified css
-yarn build-all --optimize
-yarn build --optimize
+# Publish the selected theme
+yarn publish
+# Publish all themes
+yarn publish-all
 ```
 
 ## Development
@@ -38,15 +37,7 @@ yarn build --optimize
 * Start the Nginx proxy; we use the default theme in this example
 
 ```bash
-# One-time action: generate a SSL certificate
-cd docker/nginx/ssl
-./ca_cert.sh localhost
-# Sorry, this only works on Archlinux at the moment
-# Find out how to apply custom certificates systemwide...
-sudo ./ca_system.sh
-cd ../../
-cp .env.default .env
-docker-compose up
+docker-compose up nginx
 ```
 
 * In another shell, start the dev tool
@@ -59,7 +50,7 @@ yarn dev
 
 ## Adding a new theme
 
-Just copy **theme-3.scss**, **theme-4.scss** and **_variables.scss** from
+Copy **theme-3.scss**, **theme-4.scss** and **_variables.scss** from
 another theme. Customizable variables are the ones that start with the
 **mg-** prefix. Please don't customize Bootstrap variables. Molgenis
 transitions from Bootstrap 3 to Bootstrap 4, and still depends on

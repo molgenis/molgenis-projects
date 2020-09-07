@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "./cli.js build --optimize",
-    "build-all": "./cli.js build --all",
+    "build-all": "./cli.js build --all --optimize",
     "dev": "./cli.js dev"
   },
   "devDependencies": {

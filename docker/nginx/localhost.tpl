@@ -1,11 +1,9 @@
 server {
-  listen 443 ssl http2 default_server;
+  listen 80 default_server;
   server_name localhost;
+
   access_log /dev/stdout;
   error_log /dev/stdout info;
-
-  ssl_certificate /etc/nginx/ssl/localhost.crt;
-  ssl_certificate_key /etc/nginx/ssl/localhost.key;
 
   location @handle_redirect {
       # drop routing information from urls that do not start with `/dist/`
@@ -34,7 +32,7 @@ server {
       error_page 301 302 307 = @handle_redirect;
   }
 
-  # Override a hardcoded theme from de2
+  # HACK: Override a hardcoded theme from de2
   location /@molgenis-ui/data-explorer/dist/bootstrap-molgenis-blue.min.css {
       add_header Last-Modified $date_gmt;
       add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
@@ -42,7 +40,7 @@ server {
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css break;
   }
 
-   # Override a legacy hardcoded Bootstrap 3 theme with our own (login)
+   # HACK: Override a legacy hardcoded Bootstrap 3 theme with our own (login)
   location /css/bootstrap.min.css {
       add_header Last-Modified $date_gmt;
       add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
