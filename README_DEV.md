@@ -6,6 +6,14 @@ and easier to maintain. During development, one can use the
 Nginx proxy (docker) to apply themes on remote Molgenis
 websites.
 
+## Prerequisites
+
+* [Visual Studio Code](https://code.visualstudio.com/docs/setup/mac)
+* [Node.js](https://nodejs.org/dist/v14.9.0/node-v14.9.0.pkg)
+* [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+* [Docker](https://docs.docker.com/docker-for-mac/install/)
+* [Docker-compose](https://docs.docker.com/compose/install/)
+
 ## Usage
 
 ```bash
