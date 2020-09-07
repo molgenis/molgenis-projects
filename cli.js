@@ -78,6 +78,7 @@ tasks.build = new Task('build', async function() {
 
 
 tasks.publish = new Task('publish', async function() {
+    const publishRoot = path.join(settings.MG_PUBLISH_ROOT, settings.MG_PUBLISH_VERSION)
     const ssh = new NodeSSH.NodeSSH()
     await ssh.connect({
         host: settings.MG_PUBLISH_HOST,
@@ -89,10 +90,12 @@ tasks.publish = new Task('publish', async function() {
     if (settings.all) {
         const themes = await fs.readdir(settings.dir.theme)
         await Promise.all(themes.map((theme) => {
-            return ssh.putDirectory(path.join(settings.dir.theme, theme, 'css'), path.join(settings.MG_PUBLISH_ROOT, theme))
+            tasks.dev.log(`${chalk.bold('publishing')} ${chalk.cyan(theme)}`)
+            return ssh.putDirectory(path.join(settings.dir.theme, theme, 'css'), path.join(publishRoot, theme))
         }))
     } else {
-        await ssh.putDirectory(path.join(settings.dir.theme, settings.MG_THEME, 'css'), path.join(settings.MG_PUBLISH_ROOT, settings.MG_THEME))
+        tasks.dev.log(`${chalk.bold('publishing')} ${chalk.cyan(settings.MG_THEME)}`)
+        await ssh.putDirectory(path.join(settings.dir.theme, settings.MG_THEME, 'css'), path.join(publishRoot, settings.MG_THEME))
     }
 
     ssh.dispose()
@@ -153,15 +156,16 @@ tasks.dev = new Task('dev', async function() {
                 settings.version = JSON.parse((await fs.readFile(path.join(settings.dir.base, 'package.json')))).version
             }
 
-            tasks.dev.log(`\r\n${chalk.bold('THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
+            if (['dev', 'scss'].includes(argv._)) {
+                tasks.dev.log(`\r\n${chalk.bold('THEME:')} ${chalk.cyan(settings.MG_THEME)}`)
+                tasks.dev.log(`${chalk.bold('MINIFY:')} ${chalk.grey(settings.optimize)}\r\n`)
+            }
             if (argv._.includes('dev')) {
                 tasks.dev.log(`${chalk.bold('WATCH FILE:')} ${chalk.cyan(settings.MG_WATCHFILE)}`)
             }
 
             settings.all = argv.all
             settings.optimize = argv.optimize
-            // Could be a mapping later.
-            tasks.dev.log(`${chalk.bold('MINIFY:')} ${chalk.grey(settings.optimize)}\r\n`)
         })
 
         .command('build', `build project files`, () => {}, () => {tasks.build.start()})
