@@ -32,6 +32,55 @@ yarn publish
 yarn publish-all
 ```
 
+## Configuration
+
+The configuration for molgenis-projects is located in **docker/.env**. It
+has the following options:
+
+```bash
+# No need to change this; used to make docker containers unique per project
+COMPOSE_PROJECT_NAME=mg_projects
+```
+
+```bash
+# Determines which services are started; e.g. only the Nginx proxy
+COMPOSE_FILE=dc-proxy.yml
+# Nginxm proxy + molgenis services; use when you need to test changes
+# in Molgenis itself from IntelliJ.
+COMPOSE_FILE=dc-proxy.yml:dc-mg-services.yml
+# The whole Molgenis stack; useful to test a deployment
+COMPOSE_FILE=dc-proxy.yml:dc-mg-services.yml:dc-mg.yml
+```
+
+```bash
+# Use external Molgenis instance when only using the Nginx proxy
+MG_HOST=https://master.dev.molgenis.org
+# Use docker name in combination with running the whole Molgenis stack.
+MG_HOST=http://molgenis:8080
+```
+
+```bash
+# Static fileserver root directory
+MG_PUBLISH_ROOT=/home/molgenis/molgenis/css
+# Remote SSH host
+MG_PUBLISH_HOST=static.molgenis.org
+# Path to your private SSH key
+MG_PUBLISH_KEY=/home/user/.ssh/id_rsa
+# SSH Daemon port
+MG_PUBLISH_PORT=50666
+# SSH user to login with
+MG_PUBLISH_USER=molgenis
+# CSS Versioning directory; use minor semver releases only?
+MG_PUBLISH_VERSION=4.5
+```
+
+```bash
+# Which theme to watch and/or build from the /projects dir
+MG_THEME=default
+# The proxied Molgenis CSS file to watch for changes
+MG_WATCHFILE=bootstrap-molgenis-blue.min.css
+```
+
 ## Development
 
 * Start the Nginx proxy; we use the default theme in this example
@@ -48,7 +97,7 @@ yarn dev
 
 > Use the browser [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) to autoreload on file-change.
 
-## Adding a new theme
+## Create A New Theme
 
 Copy **theme-3.scss**, **theme-4.scss** and **_variables.scss** from
 another theme. Customizable variables are the ones that start with the
