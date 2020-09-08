@@ -1,13 +1,9 @@
-networks:
-  mg_projects:
-    driver: bridge
 services:
   molgenis:
     container_name: mg_projects_molgenis
     depends_on:
       - elasticsearch
       - minio
-      - nginx
       - opencpu
       - postgresql
     environment:
@@ -28,9 +24,7 @@ services:
       - mg_projects
     ports:
       - 8080:8080
-
+  nginx:
+    depends_on:
+      - molgenis
 version: "3.8"
-volumes:
-  elasticsearch:
-  minio:
-  postgresql:

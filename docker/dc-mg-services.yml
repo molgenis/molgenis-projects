@@ -1,6 +1,3 @@
-networks:
-  mg_projects:
-    driver: bridge
 services:
   postgresql:
     container_name: mg_projects_postgresql
