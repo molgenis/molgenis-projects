@@ -4,58 +4,69 @@ Projects in the **projects** directory use a common theming
 format and SCSS build tool. This makes themes more consistent
 and easier to maintain. During development, one can use the
 Nginx proxy (docker) to apply themes on remote Molgenis
-websites.
+websites or on a locally running Molgenis stack.
 
 ## Prerequisites
 
-* [Visual Studio Code](https://code.visualstudio.com/docs/setup/mac)
-* [Node.js](https://nodejs.org/dist/v14.9.0/node-v14.9.0.pkg)
-* [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 * [Docker](https://docs.docker.com/docker-for-mac/install/)
 * [Docker-compose](https://docs.docker.com/compose/install/)
+* [Node.js](https://nodejs.org/dist/v14.9.0/node-v14.9.0.pkg)
+* [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+* [Visual Studio Code](https://code.visualstudio.com/docs/setup/mac)
 
-## Usage
+## Basic Usage
 
 ```bash
 git clone git@github.com:molgenis/molgenis-projects.git
 cd molgenis-projects
+git checkout chore/molgenis-7-8
 yarn
-# Set the config file
+# Set the default config file
 cp docker/.env.default docker/.env
 # Build the selected theme (MG_THEME in .env)
 yarn build
-# Build all themes in /projects
-yarn build-all
-# Publish the selected theme
-yarn publish
-# Publish all themes
-yarn publish-all
 ```
+
+Congratulations! You just generated the default Molgenis theme.
+
+> The CSS files were written to **/projects/defaults/css**
+
+Now lets build all themes at once:
+
+```bash
+yarn build-all
+```
+
+> All project directories now have their CSS files generated in
+their accompanying **projects/myproject/css** directory
 
 ## Configuration
 
-The configuration for molgenis-projects is located in **docker/.env**. It
-has the following options:
+The configuration for Docker and the SCSS tool are read from **docker/.env**.
+It recognizes the following options:
 
 ```bash
-# No need to change this; used to make docker containers unique per project
+# No need to change; used to make docker containers unique per project
 COMPOSE_PROJECT_NAME=mg_projects
 ```
 
 ```bash
-# Determines which services are started; e.g. only the Nginx proxy
+# Determines which services to start; e.g. only the Nginx proxy
 COMPOSE_FILE=dc-proxy.yml
-# Nginxm proxy + molgenis services; use when you need to test changes
-# in Molgenis itself from IntelliJ.
+# Nginx proxy + molgenis services; use this you need to test changes
+# in Molgenis itself from IntelliJ
 COMPOSE_FILE=dc-proxy.yml:dc-mg-services.yml
-# The whole Molgenis stack; useful to test a deployment
+# The whole Molgenis stack; useful to test a deployment locally
 COMPOSE_FILE=dc-proxy.yml:dc-mg-services.yml:dc-mg.yml
 ```
 
 ```bash
-# Use external Molgenis instance when only using the Nginx proxy
+# URL of running Molgenis instance; use an external Molgenis
+# URL when only using the Nginx proxy.
 MG_HOST=https://master.dev.molgenis.org
-# Use docker name in combination with running the whole Molgenis stack.
+# Using the whole Molgenis stack, you need to use the
+# Docker service name here if you want to proxy the
+# local instance.
 MG_HOST=http://molgenis:8080
 ```
 
@@ -81,27 +92,140 @@ MG_THEME=default
 MG_WATCHFILE=bootstrap-molgenis-blue.min.css
 ```
 
+## SCSS Theming
+
+Both Bootstrap 3 & 4 CSS is being used in Molgenis, while it transitions to Bootstrap 4.
+Make sure you check the current Molgenis page source to verify that the asserted theme
+is being used.
+
+* **theme-3.scss** is the root source-file for the generated Molgenis Bootstrap 3 theme
+* **theme-4.scss** is the root source-file for the generated Molgenis Bootstrap 4 theme
+* Theme variables go in **./theme/myproject/_variables.scss**
+* Theme-agnostic fixes should be made in the main theme at **./scss/molgenis**
+* Molgenis theme variables start with the **mg--** prefix
+* Molgenis theme variables are in **./scss/molgenis/_variables.scss**
+* Do not use Bootstrap variables in themes directly if you don't need to;
+  use the **mg-** prefixed Molgenis theme variables instead
+* Bootstrap-3 variables are in **./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss**
+* Bootstrap-4 variables are in **./node_modules/bootstrap-scss/_variables.scss**
+* Bootstrap-3 variables are customized in **./scss/molgenis/_variables_3.scss**
+* Bootstrap-4 variables are customized in **./scss/molgenis/_variables-4.scss**
+* Theme-agnostic Bootstrap-agnostic selectors are in **scss/molgenis/_custom.scss**
+* Theme-agnostic Bootstrap-3 specific selectors are in **scss/molgenis/_custom-3.scss**
+* Theme-agnostic Bootstrap-4 specific selectors are in **scss/molgenis/_custom-4.scss**
+
+The setup of the themes is such, that the theme in **scss/molgenis** provides
+sane defaults for all themes, and that all themes inherit their main settings
+from this base set of SCSS files. To keep everything maintainable,
+it is essential that each theme has a minimal amount of custom styling.
+
+So, when trying to fit in a new theme, please try to maintain the following order:
+
+* Change Molgenis variables in the myproject theme
+* Update Bootstrap variables in scss/molgenis
+* Refactor Molgenis variables in scss/molgenis if necessary
+* Add selectors in scss/molgenis (_custom) using Molgenis variables
+* Add Bootstrap variables to custom theme (theme-3.scss/theme-4.scss)
+* Add selectors to custom theme (theme-3.scss/theme-4.scss)
+
 ## Development
 
-* Start the Nginx proxy; we use the default theme in this example
+### Start A New Theme
+
+* Just copy an existing theme to a new directory:
+
+  ```bash
+  cp -R projects/ase projects/myproject
+  ```
+
+* Update the config to use the new theme
+
+  ```bash
+  # vim docker/.env
+  MG_THEME=myproject
+  ```
+
+* Build the theme
+
+  ```bash
+  yarn build
+  ```
+
+### Working with the livereload proxy
+
+In this example we use a remote Molgenis host, instead of the local Molgenis setup.
+
+* Setup the proxy config in **docker/.env**
+
+  ```bash
+  # The proxied host
+  MG_HOST=https://master.dev.molgenis.org
+  # The theme that is being applied on the proxied host.
+  MG_THEME=myproject
+  # The theme that is being used on - in this example - master.dev.molgenis.org
+  # Check view-source:https://master.dev.molgenis.org/ for the current theme in the <head> section
+  MG_WATCHFILE=bootstrap-molgenis-blue.min.css
+  ```
+
+* Start the Nginx proxy and the dev tool
 
 ```bash
-docker-compose up nginx
-```
-
-* In another shell, start the dev tool
-
-```bash
+docker-compose up
+# From another terminal tab
 yarn dev
 ```
 
-> Use the browser [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) to autoreload on file-change.
+* Visit http://localhost; you should see the proxied version of https://master.molgenis.org
+  using the *myproject* theme
 
-## Create A New Theme
+* Install the Chrome [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+  to autoreload on file-change
 
-Copy **theme-3.scss**, **theme-4.scss** and **_variables.scss** from
-another theme. Customizable variables are the ones that start with the
-**mg-** prefix. Please don't customize Bootstrap variables. Molgenis
-transitions from Bootstrap 3 to Bootstrap 4, and still depends on
-both. The Molgenis base theme in **scss/molgenis** takes care of
-ironing out the differences between both versions.
+* Switch livereload on; try changing **$mg-color-primary** in **myproject/_variables.scss**
+
+  > The theme on the webpage should automatically update on save.
+
+## Publishing
+
+This is a Proof-of-Concept workflow for theme updates, in which changes to
+themes are automatically pushed to a remote static fileserver(e.g. https://static.molgenis.org),
+which would act as a CDN to Molgenis. Hosting our own static fileserver has
+several advantages, compared to a service like Unpkg.
+
+* Lower latency
+* Flexibility; just host a directory; no API to deal with
+* Easier to provide fallback methods, compared to dealing with service-outage of npm/unpkg
+* Less pricacy issues
+
+Our CDN requires SSH access in this example:
+
+> ssh2 has a bug in Node 14; use Node < 14 for now
+
+The workflow for publishing changes to themes is:
+
+```bash
+# Publish the selected theme
+yarn publish
+# Publish all themes
+yarn publish-all
+```
+
+Files are served at *https://static.molgenis.org/<molgenis_version>*, so
+the default Bootstrap-4 stylesheet would be served from *https://static.molgenis.org/4.5/default/mg-default-4.css*
+
+Some changes to Molgenis are required:
+
+* Use theme names instead of theme locations -
+  Instead of Molgenis serving its own outdated stylesheets, we should only use
+  the theme name in the freemarker templates:
+
+  ```html
+  <link rel="stylesheet" href="https://static.molgenis.org/${app_settings.molgenisVersionMinor}/mg-${app_settings.bootstrapTheme?html}-4.css" type="text/css">
+  ```
+
+* Remove any other CSS reference from Freemarker templates - the theme file
+  should handle all styling for consistency's sake
+
+  > There are places where the theme file is not included(login), where apps
+  include their own stylesheets and where vanilla Bootstrap is loaded along
+  with the themed version
