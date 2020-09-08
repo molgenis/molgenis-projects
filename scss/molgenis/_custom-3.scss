@@ -66,6 +66,7 @@
     }
 }
 
+// See for example the rd-connect aggregate table
 #aggregate-table-container th {
     background: $mg-color-primary !important;
 }
@@ -75,14 +76,43 @@
     background: $mg-color-primary !important;
 }
 
-#menu-editor-tree ol li {
-    // background: $mg-color-grey-200;
-    border: 0;
-    color: $mg-color-primary !important;
+#plugin-container {
+    #menu-editor-tree {
+        max-height: unset !important;
+
+        ol.vertical li {
+            background: $mg-color-grey-200;
+        }
+
+        ol li {
+            border: 0;
+            color: $mg-color-primary !important;
+            padding: $mg-spacer / 4;
+
+            &.highlight {
+                background: $mg-color-grey-100;
+            }
+        }
+    }
 }
 
 
 body {
+    .bwizard-steps .active {
+        background: $mg-color-primary;
+        color: $mg-color-white;
+
+        &::after {
+            border-left-color: $mg-color-primary;
+        }
+    }
+
+    .well {
+        background: none;
+        border: 0;
+        padding: 0;
+    }
+
     .ui-fancytree {
         li {
             &:nth-child(even) {
@@ -117,23 +147,6 @@ body {
 }
 
 
-body {
-    .bwizard-steps .active {
-        background: $mg-color-primary;
-        color: $mg-color-white;
-
-        &::after {
-            border-left-color: $mg-color-primary;
-        }
-    }
-
-    .well {
-        background: none;
-        border: 0;
-    }
-
-}
-
 .panel {
     border: 0;
     box-shadow: 0 0 6px $mg-color-grey-400;
@@ -158,7 +171,7 @@ body {
 
 
 .data-table-container {
-    margin-top: $mg-spacer / 2 + 7 !important;
+    margin-top: 6px !important;
 
     // Data Explorer 1 table container
     .molgenis-table-container {
@@ -166,13 +179,41 @@ body {
     }
 }
 
-#login-modal {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
+// Give tables more space by default.
+table.table {
+    thead {
+        th {
+            padding: $mg-spacer / 2;
+            vertical-align: middle;
+        }
+    }
+
+    tbody {
+        td {
+            padding: $mg-spacer / 2;
+        }
+    }
 }
 
+// Center visible modals vertically.
+.modal-open {
+    .modal.in {
+        align-items: center;
+        display: flex !important;
+        height: 100%;
+        justify-content: center;
+
+
+        .modal-body {
+            max-height: 90vh;
+            overflow-y: auto;
+
+
+        }
+    }
+}
+
+// Adjust vertical icon offset.
 .glyphicon {
     top: 3px;
 }

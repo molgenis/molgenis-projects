@@ -78,6 +78,8 @@ tasks.build = new Task('build', async function() {
 
 
 tasks.publish = new Task('publish', async function() {
+    await tasks.build.start()
+
     const publishRoot = path.join(settings.MG_PUBLISH_ROOT, settings.MG_PUBLISH_VERSION)
     const ssh = new NodeSSH.NodeSSH()
     await ssh.connect({
