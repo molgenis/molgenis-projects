@@ -1,5 +1,7 @@
 $brand-primary: $mg-color-primary !default;
-$font-size-base: 14px !default;
+
+// Font-size is in pixels
+$font-size-base: $mg-font-size-base * 16px !default;
 
 $navbar-default-link-hover-bg: $mg-color-primary !default;
 $navbar-default-link-color: $mg-color-primary !default;
@@ -29,16 +31,17 @@ $icon-font-path: '/fonts/';
 $table-bg: none;
 $table-bg-accent: none;
 
-$table-condensed-cell-padding: 0;
-
-$panel-primary-border: 0;
+$panel-body-padding: $mg-spacer;
 $panel-border-radius: 0;
-$panel-primary-heading-bg: $mg-color-grey-200;
-$panel-primary-text: $mg-color-grey-700;
+$panel-heading-padding: 0;
+$panel-primary-border: 0;
+$panel-primary-heading-bg: $mg-header-bg;
+$panel-primary-text: $mg-header-color;
 
-$nav-tabs-border-color: $mg-color-grey-300;
-$nav-tabs-active-link-hover-bg: $mg-color-primary-light;
+$nav-tabs-border-color: $mg-color-grey-200;
+$nav-tabs-active-link-hover-bg: $mg-color-white;
 $nav-tabs-active-link-hover-color: $mg-color-primary;
+$nav-tabs-active-link-hover-border-color: $mg-color-grey-200;
 
 $input-border-radius: 0;
 $input-border-radius-large: 0;
@@ -50,11 +53,13 @@ $grid-float-breakpoint-max: 1300px;
 
 $grid-gutter-width: 16px;
 
-$panel-body-padding: $mg-spacer;
-$panel-heading-padding: 0;
-
 $btn-border-radius-base: 0;
 $btn-border-radius-large: 0;
 $btn-border-radius-small: 0;
 
 $navbar-height: $mg-navbar-height;
+// $well-bg: transparent;
+$well-border: $mg-color-grey-200;
+$border-radius-base: 0;
+$border-radius-small: 0;
+$border-radius-large: 0;

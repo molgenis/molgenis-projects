@@ -1,8 +1,11 @@
-$font-size-base: 0.875rem;
+// Font-size is in rems
+$font-size-base: $mg-font-size-base * 1rem;
 
 $blue: $mg-color-primary;
 $primary: $mg-color-primary;
 $secondary: $mg-color-secondary;
+
+$input-height-base: $mg-input-height;
 
 $navbar-light-active-color: $mg-color-primary-light;
 $navbar-light-color: $mg-color-primary;

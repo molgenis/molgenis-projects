@@ -3,12 +3,10 @@
 $mg-color-primary: #5c9966;
 $mg-color-primary-light: $mg-color-grey-200;
 
-$mg-font-family-base: 'Roboto';
-$mg-font-family-sans-serif: 'Roboto';
-$mg-font-family-mono: 'Roboto';
-$mg-font-family-headings: 'Roboto';
+$mg-font-base: sans-serif;
+$mg-font-sans-serif: sans-serif;
+$mg-font-mono: sans-serif,monospace;
+$mg-header-font: sans-serif;
 
-.navbar-brand img {
-    height: 100%;
-    padding: 4px;
-}
+$mg-font-size-base: 0.8;
+$mg-body-bg: $mg-color-white;

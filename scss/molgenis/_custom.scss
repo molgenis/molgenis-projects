@@ -1,5 +1,10 @@
 body {
+    overflow-x: hidden;
     overflow-y: scroll;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 legend,
@@ -8,14 +13,9 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: $mg-font-family-headings;
+    color: $mg-color-grey-600;
+    font-family: $mg-header-font;
 }
-
-.navbar-brand img {
-    height: 100%;
-    padding: 4px;
-}
-
 
 .navbar-brand {
     align-items: center;
@@ -27,59 +27,44 @@ h5 {
         display: block;
         height: 100%;
         max-width: auto;
-        padding: 4px;
+        padding: 8px;
     }
 }
 
 
-html body table {
+html body table.table {
+    // TODO: Remove once old CSS files are removed from freemarker.
+    background: none !important;
+
     thead {
         th {
-            background: $mg-color-grey-200;
-            border-bottom: 0;
-            border-bottom-width: 0 !important;
-            font-family: $mg-font-family-mono;
-            height: $mg-navbar-height;
-            padding: 0;
-            vertical-align: middle;
+            background: $mg-color-white;
+            border-top: 0;
+            color: $mg-color-grey-700;
+            font-family: $mg-font-mono;
         }
     }
 
     tbody {
-        tr:first-child {
-            td {
-                border-top: 0;
+        tr {
+            &:first-child {
+                td {
+                    border-top: 0;
+                }
+            }
+
+            &:nth-child(even) {
+                background: $mg-color-grey-200;
+            }
+
+            &:nth-child(odd) {
+                background: $mg-color-grey-100;
+            }
+
+            &:hover {
+                background: $mg-color-white;
             }
         }
-    }
-
-    tr {
-        &:nth-child(even) {
-            background: $mg-color-grey-100;
-        }
-
-        &:nth-child(odd) {
-            background: $mg-color-white;
-        }
-
-        &:hover {
-            background: $mg-color-primary-light;
-        }
-
-    }
-
-    &.molgenis-table th {
-        line-height: $mg-navbar-height;
-        padding: 0 $mg-spacer / 2;
-    }
-
-    // Force Data Explorer 1 table
-    &.molgenis-table td {
-        padding: $mg-spacer $mg-spacer / 2 !important;
-    }
-
-    td {
-        padding: $mg-spacer $mg-spacer / 2;
     }
 }
 
@@ -91,6 +76,7 @@ html body table {
 
 ::-webkit-scrollbar-track {
     background: transparent;
+    border-left: 1px solid $mg-color-grey-300;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -114,5 +100,25 @@ html body table {
 
 .breadcrumb {
     padding: 0;
+}
+
+.select2-container {
+    min-width: 250px !important;
+}
+
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+button {
+    .glyphicon {
+        top: 2px !important;
+    }
 }
 

@@ -22,21 +22,45 @@ $mg-color-black: #000 !default;
 $mg-color-text-light: rgba(0, 0, 0, 0.5) !default;
 $mg-color-text-dark: #212529 !default;
 
+$mg-border-color: $mg-color-grey-300;
+
 // Font config:
-$mg-font-family-base: 'IBM_Plex_sans' !default;
-$mg-font-family-sans-serif: 'IBM_Plex_sans' !default;
-$mg-font-family-mono: 'IBM_Plex_mono' !default;
-$mg-font-family-headings: 'bebas_neueregular' !default;
+$mg-font-base: 'IBM_Plex_sans' !default;
+$mg-font-sans-serif: 'IBM_Plex_sans' !default;
+$mg-font-mono: 'IBM_Plex_mono' !default;
+
+// Rem units are assumed but not applied here, so we can
+// calculate it later on to px for Bootstrap 3, e.g. 1 unit
+// is 1 rem.
+$mg-font-size-base: 1 !default;
 
 // Dimensions:
 $mg-spacer: 16px !default;
-$mg-border-color: $mg-color-grey-300;
+
+// Header config
+$mg-header-height: 40px;
+$mg-header-bg: $mg-color-primary;
+$mg-header-color: $mg-color-white;
+$mg-header-font: 'bebas_neueregular' !default;
+
+// Navbar
+$mg-navbar-height: 50px;
+$mg-navbar-font-weight: 300;
+
+$mg-input-height: 35px;
+
+
+$mg-body-bg: #fafafa !default;
+$mg-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 
 // Common Bootstrap 3 & 4 variables:
-$body-bg: #fafafa;
+$body-bg: $mg-body-bg;
+$table-cell-padding: $mg-spacer / 2;
 
-$font-family-serif: $mg-font-family-sans-serif !default;
-$font-family-monospace: $mg-font-family-mono !default;
-$font-family-base: $mg-font-family-sans-serif !default;
+$table-condensed-cell-padding: 10px;
+$font-family-base: $mg-font-sans-serif;
+$font-family-sans-serif: $mg-font-sans-serif;
+$font-family-serif: $mg-font-sans-serif;
+$font-family-monospace: $mg-font-mono;
 
-$mg-navbar-height: 50px;
+

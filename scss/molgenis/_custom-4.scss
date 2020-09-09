@@ -16,7 +16,7 @@
         height: 50px;
 
         .nav-item {
-            font-weight: 600;
+            // font-weight: 600;
             height: 50px;
 
             &.dropdown.show {
@@ -37,6 +37,7 @@
             }
 
             .nav-link {
+                font-weight: $mg-navbar-font-weight;
                 height: 50px;
                 line-height: 50px;
                 overflow: hidden;
@@ -60,7 +61,7 @@
 
 .list-group-item,
 .table {
-    font-family: IBM_Plex_mono,monospace;
+    font-family: $font-family-monospace;
 }
 
 .dropdown-toggle {
@@ -98,7 +99,14 @@
 // Navigator table.
 .container {
     .table-container {
+        background: $mg-color-white;
+        box-shadow: $mg-box-shadow;
         height: auto;
+        padding: $mg-spacer / 4;
+
+        table {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -127,6 +135,18 @@
         border: 1px solid $mg-border-color;
         padding: $mg-spacer;
     }
+
+    h1 {
+        color: $mg-color-grey-700;
+    }
+
+    .hide-option-fields-btn-container {
+        padding: $mg-spacer 0;
+        // float: left;
+        text-align: left !important;
+        width: 100%;
+    }
+
 }
 
 .form-group {

@@ -62,11 +62,26 @@ server {
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-3.css break;
   }
 
+
+  location /css/bootstrap-4/mg-${MG_THEME}-3.css.map {
+    add_header Last-Modified $date_gmt;
+    add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+    root /usr/share/nginx/html/;
+    rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-3.css.map break;
+  }
+
   location /css/bootstrap-4/${MG_WATCHFILE} {
       add_header Last-Modified $date_gmt;
       add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
       root /usr/share/nginx/html/;
       rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css break;
+  }
+
+  location /css/bootstrap-4/mg-${MG_THEME}-4.css.map {
+    add_header Last-Modified $date_gmt;
+    add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+    root /usr/share/nginx/html/;
+    rewrite ^ /${MG_THEME}/css/mg-${MG_THEME}-4.css.map break;
   }
 
   location / {
