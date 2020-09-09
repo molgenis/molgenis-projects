@@ -133,6 +133,7 @@
     > .container {
         background: $mg-color-white;
         border: 1px solid $mg-border-color;
+        box-shadow: $mg-box-shadow;
         padding: $mg-spacer;
     }
 
@@ -147,10 +148,13 @@
         width: 100%;
     }
 
+    .form-group {
+        label {
+            color: $mg-color-grey-700;
+            font-weight: bold;
+        }
+    }
+
 }
 
-.form-group {
-    label {
-        font-weight: bold;
-    }
-}
+
