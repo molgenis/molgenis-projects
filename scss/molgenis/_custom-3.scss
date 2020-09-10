@@ -1,5 +1,7 @@
 .navbar-default {
     background: $mg-color-white;
+    border: 0;
+    box-shadow: $mg-box-shadow;
 
     #language-select-box {
         display: none !important;

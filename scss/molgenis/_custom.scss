@@ -20,14 +20,14 @@ h5 {
 .navbar-brand {
     align-items: center;
     background: $mg-color-white;
-    display: block;
-    padding: 0 15px;
+    line-height: $mg-navbar-height;
+    padding: 0 $mg-spacer;
+    vertical-align: middle;
 
-    img {
-        display: block;
-        height: 100%;
-        max-width: auto;
-        padding: 8px;
+    img.molgenis-navbar-logo {
+        display: inline-block;
+        height: 32px;
+        padding: 0;
     }
 }
 
