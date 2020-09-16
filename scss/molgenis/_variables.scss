@@ -38,7 +38,7 @@ $mg-font-size-base: 1 !default;
 $mg-spacer: 16px !default;
 
 // Header config
-$mg-header-height: 40px;
+$mg-header-height: 40px !default;
 $mg-header-bg: $mg-color-primary;
 $mg-header-color: $mg-color-white;
 $mg-header-font: 'bebas_neueregular' !default;
@@ -53,7 +53,7 @@ $mg-body-bg: #fafafa !default;
 $mg-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175);
 
 // Common Bootstrap 3 & 4 variables:
-$body-bg: $mg-body-bg;
+$body-bg: $mg-body-bg !default;
 $table-cell-padding: $mg-spacer / 2;
 
 $table-condensed-cell-padding: 10px;
@@ -61,5 +61,3 @@ $font-family-base: $mg-font-sans-serif;
 $font-family-sans-serif: $mg-font-sans-serif;
 $font-family-serif: $mg-font-sans-serif;
 $font-family-monospace: $mg-font-mono;
-
-
