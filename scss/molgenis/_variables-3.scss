@@ -58,6 +58,7 @@ $btn-border-radius-small: 0;
 $navbar-height: $mg-navbar-height;
 // $well-bg: transparent;
 $well-border: $mg-color-grey-200;
-$border-radius-base: 0;
-$border-radius-small: 0;
-$border-radius-large: 0;
+
+$border-radius-base: $mg-border-radius !default;
+$border-radius-small: $mg-border-radius / 2 !default;
+$border-radius-large: $mg-border-radius * 2 !default;

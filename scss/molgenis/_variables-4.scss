@@ -18,7 +18,6 @@ $dropdown-item-padding-y: 0;
 $dropdown-border-radius: 0;
 $dropdown-padding-y: 0;
 
-// Buttons
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+$border-radius: $mg-border-radius !default;
+$border-radius-lg: $mg-border-radius * 2 !default;
+$border-radius-sm: $mg-border-radius / 2 !default;

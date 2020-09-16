@@ -28,29 +28,26 @@ $mg-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175) !default;
 $mg-header-bg: $mg-color-primary;
 $mg-header-color: $mg-color-white;
 $mg-border-color: $mg-color-grey-300 !default;
+$mg-border-radius: 0;
 
 // Font config:
+// Rem units are assumed but not applied here. This makes it easier to
+// calculate between px (Bootstrap 3) and rem (Bootstrap 4).
+$mg-font-size-base: 0.9 !default;
 $mg-font-base: 'IBM_Plex_sans' !default;
 $mg-font-sans-serif: 'IBM_Plex_sans' !default;
 $mg-font-mono: 'IBM_Plex_mono' !default;
 $mg-header-font: 'bebas_neueregular' !default;
 
-// Rem units are assumed but not applied here, so we can
-// calculate it later on to px for Bootstrap 3, e.g. 1 unit
-// is 1 rem.
-$mg-font-size-base: 1 !default;
-
 // Dimensions:
 $mg-spacer: 16px !default;
 $mg-header-height: 40px !default;
-
 $mg-navbar-height: 50px !default;
 $mg-navbar-font-weight: 300 !default;
 $mg-input-height: 35px !default;
 
 
-
-// Bootstrap (common between Bootstrap 3 & 4):
+// Common Bootstrap 3/4 instructions:
 $body-bg: $mg-body-bg;
 $table-cell-padding: $mg-spacer / 2;
 $table-condensed-cell-padding: 10px;
