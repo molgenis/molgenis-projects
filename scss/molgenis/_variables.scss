@@ -39,23 +39,23 @@ $mg-spacer: 16px !default;
 
 // Header config
 $mg-header-height: 40px !default;
-$mg-header-bg: $mg-color-primary;
-$mg-header-color: $mg-color-white;
 $mg-header-font: 'bebas_neueregular' !default;
 
 // Navbar
-$mg-navbar-height: 50px;
-$mg-navbar-font-weight: 300;
+$mg-navbar-height: 50px !default;
+$mg-navbar-font-weight: 300 !default;
 
-$mg-input-height: 35px;
+$mg-input-height: 35px !default;
 
 $mg-body-bg: #fafafa !default;
-$mg-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175);
+$mg-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175) !default;
 
-// Common Bootstrap 3 & 4 variables:
-$body-bg: $mg-body-bg !default;
+$mg-header-bg: $mg-color-primary;
+$mg-header-color: $mg-color-white;
+
+// Shared Bootstrap 3 & 4 variables:
+$body-bg: $mg-body-bg;
 $table-cell-padding: $mg-spacer / 2;
-
 $table-condensed-cell-padding: 10px;
 $font-family-base: $mg-font-sans-serif;
 $font-family-sans-serif: $mg-font-sans-serif;

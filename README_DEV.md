@@ -10,7 +10,7 @@ websites or on a locally running Molgenis stack.
 
 * [Docker](https://docs.docker.com/docker-for-mac/install/)
 * [Docker-compose](https://docs.docker.com/compose/install/)
-* [Node.js](https://nodejs.org/dist/v14.9.0/node-v14.9.0.pkg)
+* [Node.js](https://nodejs.org/dist/v14.9.0/node-v14.9.0.pkg) 13 or higher
 * [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 * [Visual Studio Code](https://code.visualstudio.com/docs/setup/mac)
 
