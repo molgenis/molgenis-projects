@@ -1,0 +1,110 @@
+// See for example the rd-connect aggregate table
+#aggregate-table-container th {
+    background: $mg-color-primary !important;
+}
+
+
+.select2-results .select2-highlighted {
+    background: $mg-color-primary !important;
+}
+
+
+
+.panel {
+    border: 0;
+    box-shadow: 0 0 6px $mg-color-grey-400;
+
+    &.panel-primary {
+        .panel-heading {
+            height: $mg-header-height;
+            line-height: $mg-header-height;
+
+            .panel-title {
+                display: inline-block;
+                font-family: $mg-header-font;
+                font-weight: 500;
+                // margin-top: 2px;
+                padding-left: $mg-spacer;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+.data-table-container {
+    // Data Explorer 1 table container
+    > div {
+        background: $mg-color-white;
+        box-shadow: $mg-box-shadow;
+        padding: $mg-spacer / 4;
+    }
+
+    table {
+        margin-bottom: 0;
+        margin-top: 0 !important;
+    }
+}
+
+.data-table-pager-container {
+    margin-top: $mg-spacer;
+
+    .pull-right {
+        float: left !important;
+    }
+}
+
+// Give tables more space by default.
+table.table {
+    thead {
+        th {
+            padding: $mg-spacer / 2;
+            vertical-align: middle;
+        }
+    }
+
+    tbody {
+        td {
+            padding: $mg-spacer / 2;
+        }
+    }
+}
+
+// Center visible modals vertically.
+.modal-open {
+    .modal.in {
+        align-items: center;
+        display: flex !important;
+        height: 100%;
+        justify-content: center;
+
+
+        .modal-body {
+            max-height: 90vh;
+            overflow-y: auto;
+
+
+        }
+    }
+}
+
+// Adjust vertical icon offset.
+.glyphicon {
+    top: 3px;
+}
+
+
+.nav-tabs {
+    li {
+        font-weight: bold;
+    }
+
+    img {
+        display: none;
+    }
+}
+
+.well {
+    box-shadow: none;
+}

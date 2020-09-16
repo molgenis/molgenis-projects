@@ -1,0 +1,61 @@
+$brand-primary: $mg-color-primary !default;
+
+// Font-size must be in pixels
+$font-size-base: $mg-font-size-base * 16px !default;
+
+$navbar-default-link-hover-bg: $mg-color-primary !default;
+$navbar-default-link-color: $mg-color-primary !default;
+$navbar-default-link-hover-color: $mg-color-white !default;
+
+$brand-success: $mg-color-primary !default;
+// TODO: Remove important, once theme-loading is cleaned up.
+// See https://wiki.gcc.rug.nl/ticket/7600
+$navbar-default-link-active-bg: $mg-color-primary !important !default;
+$navbar-default-link-active-color: $mg-color-white !default;
+
+$gray-base: $mg-color-black;
+$gray-darker: $mg-color-grey-900;
+$gray-dark: $mg-color-grey-700;
+$gray: $mg-color-grey-700;
+$gray-light: $mg-color-grey-400;
+$gray-lighter: $mg-color-grey-100;
+
+$brand-info: $mg-color-primary;
+$btn-primary-bg: $mg-color-primary;
+$btn-danger-bg: $mg-color-primary;
+
+$icon-font-path: '/fonts/';
+// Disable striped tables.
+$table-bg: none;
+$table-bg-accent: none;
+
+$panel-body-padding: $mg-spacer;
+$panel-border-radius: 0;
+$panel-heading-padding: 0;
+$panel-primary-border: 0;
+$panel-primary-heading-bg: $mg-header-bg;
+$panel-primary-text: $mg-header-color;
+
+$nav-tabs-border-color: $mg-color-grey-200;
+$nav-tabs-active-link-hover-bg: $mg-color-white;
+$nav-tabs-active-link-hover-color: $mg-color-primary;
+$nav-tabs-active-link-hover-border-color: $mg-color-grey-200;
+
+$input-border-radius: 0;
+$input-border-radius-large: 0;
+$input-border-radius-small: 0;
+$input-border-focus: $mg-color-primary;
+
+$grid-float-breakpoint: 1000px;
+$grid-float-breakpoint-max: 1300px;
+
+$grid-gutter-width: 16px;
+
+$navbar-height: $mg-navbar-height;
+
+$well-border: $mg-color-grey-200;
+
+$border-radius-base: $mg-border-radius !default;
+$border-radius-small: $mg-border-radius / 2 !default;
+$border-radius-large: $mg-border-radius * 2 !default;
+

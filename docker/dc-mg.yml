@@ -1,0 +1,30 @@
+services:
+  molgenis:
+    container_name: mg_projects_molgenis
+    depends_on:
+      - elasticsearch
+      - minio
+      - opencpu
+      - postgresql
+    environment:
+      - molgenis.home=/home/molgenis
+      - opencpu.uri.host=opencpu
+      - elasticsearch.transport.addresses=elasticsearch:9300
+      - db_uri=jdbc:postgresql://postgresql/molgenis
+      - db_user=molgenis
+      - db_password=molgenis
+      - admin.password=admin
+      - MINIO_BUCKET_NAME=molgenis
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=molgenis
+      - MINIO_SECRET_KEY=molgenis
+      - "CATALINA_OPTS=-Xmx2g -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+    image: registry.molgenis.org/molgenis/molgenis-app:dev
+    networks:
+      - mg_projects
+    ports:
+      - 8080:8080
+  nginx:
+    depends_on:
+      - molgenis
+version: "3.8"
