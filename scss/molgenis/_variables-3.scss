@@ -1,18 +1,16 @@
 $brand-primary: $mg-color-primary !default;
 
-// Font-size is in pixels
+// Font-size must be in pixels
 $font-size-base: $mg-font-size-base * 16px !default;
 
 $navbar-default-link-hover-bg: $mg-color-primary !default;
 $navbar-default-link-color: $mg-color-primary !default;
 $navbar-default-link-hover-color: $mg-color-white !default;
 
-$dropdown-link-color: $mg-color-primary !default;
-$dropdown-link-hover-bg: $mg-color-primary !default;
-$dropdown-link-hover-color: $mg-color-white !default;
-
 $brand-success: $mg-color-primary !default;
-$navbar-default-link-active-bg: darken($mg-color-primary, 6.5%) !important;
+// TODO: Remove important, once theme-loading is cleaned up.
+// See https://wiki.gcc.rug.nl/ticket/7600
+$navbar-default-link-active-bg: $mg-color-primary !important !default;
 $navbar-default-link-active-color: $mg-color-white !default;
 
 $gray-base: $mg-color-black;

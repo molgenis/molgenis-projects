@@ -1,7 +1,6 @@
-@import 'molgenis/variables';
 
 $mg-color-primary: #5c9966;
-$mg-color-primary-light: $mg-color-grey-200;
+$mg-color-primary-light: #e9ecef;
 
 $mg-font-base: sans-serif;
 $mg-font-sans-serif: sans-serif;
@@ -9,4 +8,6 @@ $mg-font-mono: sans-serif,monospace;
 $mg-header-font: sans-serif;
 
 $mg-font-size-base: 0.8;
-$mg-body-bg: $mg-color-white;
+$mg-body-bg: #fff;
+
+@import 'molgenis/variables';
