@@ -8,6 +8,7 @@ import connect from 'connect'
 import fs from 'fs-extra'
 import globImporter from 'node-sass-glob-importer'
 import loadSettings from './lib/settings.js'
+import mkdirp from 'mkdirp'
 import notifier from 'node-notifier'
 import path from 'path'
 import sass from 'node-sass'
@@ -24,6 +25,7 @@ const tasks = {}
 
 function sassRender(themeFile, cssEntry) {
     const cssDir = path.join(path.dirname(themeFile), '..', 'css')
+
     let target = {
         css: path.join(cssDir, cssEntry),
         map: path.join(cssDir, `${cssEntry}.map`),
@@ -113,6 +115,7 @@ tasks.scss = new Task('scss', async function(ep) {
     let theme
     ep.raw ? theme = ep.raw : settings.dir.theme
 
+    await mkdirp(path.join(settings.dir.theme, theme, 'css'))
     const themeDir = path.join(settings.dir.theme, theme, 'scss')
     await Promise.all([
         sassRender(path.join(themeDir, 'theme-3.scss'), `mg-${theme}-3.css`),
