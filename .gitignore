@@ -1,5 +1,5 @@
 molgenis-projects.iml
 node_modules
 .idea
-docker/.env
+.env
 yarn-error.log
