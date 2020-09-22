@@ -1,4 +1,5 @@
 # MOLGENIS Projects table of contents
+
 1. [Molgenis default](#molgenis-default)
   [How to](#how-to)
   a. [Websites](#websites)
@@ -15,8 +16,10 @@
 5. [Chromosome6 project](#chromosome6-project)
   a. [Websites](#websites)
   b. [Publications](#publications)
+6. [Theming workflow](#theming-workflow)
 
 ## Molgenis default
+
 > MOLGENIS: Flexible software for scientific data
 
 ### Online resources
@@ -125,3 +128,13 @@ https://chromosome6.org
 #### Publications
 *The phenotypic spectrum of proximal 6q deletions based on a large cohort derived from social media and literature reports* - Engwerda et al.
 https://www.nature.com/articles/s41431-018-0172-9
+
+## Theming workflow
+
+Molgenis themes are managed from [Molgenis-theme](https://github.com/molgenis/molgenis-theme).
+Checkout its docs or ask one of the frontend devs, on how to create a new project theme.
+Fixes to the base theme are propagated to all [checked-in](https://github.com/molgenis/molgenis-theme/tree/master/theme) themes. New versions are automatically published to [npm](http://npmjs.com/@molgenis/molgenis-theme) and served from [unpkg](https://unpkg.com/browse/@molgenis/molgenis-theme@latest/css/).
+
+> Some projects may still have their Bootstrap CSS checked in to this repository.
+In such case; please create a new theme in the molgenis-theme project, based on
+the old theme variables and remove the old CSS from this project.
