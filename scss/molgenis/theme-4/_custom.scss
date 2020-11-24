@@ -1,0 +1,99 @@
+.list-group-item,
+.table {
+    font-family: $font-family-monospace;
+}
+
+.dropdown-toggle {
+    &::after {
+        border-bottom: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid;
+        content: '';
+        display: inline-block;
+        margin-left: 4px;
+        margin-top: 22px;
+        position: absolute;
+    }
+}
+
+
+
+.dropdown-menu {
+    // Bootstrap 4 doesn't add a shadow.
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+
+    a {
+        height: 35px;
+        line-height: 35px;
+        padding: 0 $mg-spacer / 2;
+        vertical-align: middle;
+    }
+}
+
+#language-form {
+    display: none;
+}
+
+// Navigator table.
+.container {
+    .table-container {
+        background: $mg-color-white;
+        box-shadow: $mg-box-shadow;
+        height: auto;
+        padding: $mg-spacer / 4;
+
+        table {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+// cke editor (frontpage)
+.cke.cke_chrome {
+    border: 1px solid $mg-border-color;
+    box-shadow: none;
+
+    .cke_top {
+        background: $mg-color-grey-100;
+        background-image: none;
+        border-bottom: 1px solid $mg-border-color;
+    }
+
+    .cke_bottom {
+        background: $mg-color-grey-100;
+        background-image: none;
+    }
+}
+
+#data-row-edit-plugin {
+    > .container {
+        background: $mg-color-white;
+        border: 1px solid $mg-border-color;
+        box-shadow: $mg-box-shadow;
+        padding: $mg-spacer;
+    }
+
+    h1 {
+        color: $mg-color-grey-700;
+    }
+
+    .hide-option-fields-btn-container {
+        padding: $mg-spacer 0;
+        // float: left;
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .form-group {
+        label {
+            color: $mg-color-grey-700;
+            font-weight: bold;
+        }
+    }
+
+}
+
+

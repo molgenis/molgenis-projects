@@ -1,0 +1,83 @@
+<div class="row">
+	<div class="col-md-4">
+		<label class="control-label">Chromosome</label>
+		<select class="form-control" id="chromosome">
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		  <option>6</option>
+		  <option>7</option>
+		  <option>8</option>
+		  <option>9</option>
+		  <option>10</option>
+		  <option>11</option>
+		  <option>12</option>
+		  <option>13</option>
+		  <option>14</option>
+		  <option>15</option>
+		  <option>16</option>
+		  <option>17</option>
+		  <option>18</option>
+		  <option>19</option>
+		  <option>20</option>
+		  <option>21</option>
+		  <option>22</option>
+		</select>
+	</div>
+	<div class="col-md-4 form-group" id="start-form">
+		<label class="control-label">Start position</label>
+		<input type="number" id="start" class="form-control" placeholder="start position"/>
+		<span id="start-help-none" class="help-block" style="display:none">Please specify the start position</span>
+		<span id="start-help-negative" class="help-block" style="display:none">Smalles position possible is 0</span>
+	</div>
+	<div class="col-md-4 form-group" id="stop-form">
+		<label class="control-label">Stop position</label>
+		<input type="number" id="stop" class="form-control" placeholder="stop position"/>
+		<span id="stop-help-none" class="help-block" style="display:none">Please specify the stop position</span>
+		<span id="stop-help-too-big" class="help-block" style="display:none">Stop position exceeds max chromosome position of ~249,000,000</span>
+		<span id="stop-help-smaller-than-start" class="help-block" style="display:none">Stop position should be bigger than start position</span>
+	</div>
+</div>
+<br/>
+<div class="row">
+	<div class="col-md-6">
+		<button class="btn btn-default" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("#search").click(function(){
+		var chromosome = $('#chromosome').val()
+		var start = $('#start').val()
+		var stop = $('#stop').val()
+		$("#stop").removeClass("has-error")	
+		$("#start-form").removeClass("has-error")
+		$(".help-block").css("display", "none")
+		if((stop && start) && (Number(stop) > Number(start)) && Number(stop) < 249000000 && Number(start) > -1){
+			window.location.replace("https://go-nl-acc.gcc.rug.nl/menu/main/dataexplorer?entity=gonl_chr"+chromosome+"&mod=data&filter=(POS=ge="+start+";POS=le="+stop+")")
+		}else if(start && ! stop){
+			$("#stop-form").addClass("has-error")
+			$("#stop-help-none").css("display", "inline")
+		}else if(stop && ! start){
+			$("#start-form").addClass("has-error")
+			$("#start-help-none").css("display", "inline")
+		}else if(Number(stop) > 250000000){
+			$("#stop-form").addClass("has-error")
+			$("#stop-help-too-big").css("display", "inline")
+		}else if(Number(start) < 0){
+			$("#start-form").addClass("has-error")
+			$("#start-help-negative").css("display", "inline")
+		}else if(Number(stop) < Number(start)) {
+			$("#start-form").addClass("has-error")
+			$("#stop-form").addClass("has-error")
+			$("#stop-help-smaller-than-start").css("display", "inline")
+		}else{
+			$("#stop-form").addClass("has-error")
+			$("#start-form").addClass("has-error")
+			$("#stop-help-none").css("display", "inline")
+			$("#start-help-none").css("display", "inline")
+		}
+	});
+</script>

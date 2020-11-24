@@ -1,0 +1,17 @@
+name	entity	dataType	label	description	idAttribute	labelAttribute	aggregateable	visible	nillable	refEntity	partOfAttribute
+#CHROM	attribs	string	#CHROM	The chromosome on which the variant is observed	FALSE	FALSE	TRUE	TRUE	FALSE		
+ALT	attribs	text	ALT	The alternative allele observed	FALSE	FALSE	TRUE	TRUE	FALSE		
+POS	attribs	int	POS	The position on the chromosome which the variant is observed	FALSE	FALSE	TRUE	TRUE	FALSE		
+REF	attribs	text	REF	The reference allele	FALSE	FALSE	TRUE	TRUE	FALSE		
+FILTER	attribs	string	FILTER		FALSE	FALSE	TRUE	TRUE	TRUE		
+QUAL	attribs	string	QUAL		FALSE	FALSE	TRUE	TRUE	TRUE		
+ID	attribs	string	ID		FALSE	FALSE	FALSE	TRUE	TRUE		
+INTERNAL_ID	attribs	string	INTERNAL_ID		TRUE	TRUE	FALSE	TRUE	FALSE		
+AC	attribs	string	AC	Allele count in genotypes, for each ALT allele, in the same order as ced	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+AF	attribs	string	AF	Allele Frequency, for each ALT allele, in the same order as ced	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+AN	attribs	int	AN	Total number of alleles in called genotypes	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+DB	attribs	bool	DB	dbSNP Membership	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+DP	attribs	int	DP	Approximate read depth; some reads may have been filtered	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+NUMALT	attribs	int	NUMALT	Number of alternative alleles	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+set	attribs	text	set	Source VCF for the merged record in CombineVariants	FALSE	FALSE	TRUE	TRUE	TRUE		INFO
+INFO	attribs	compound	INFO		FALSE	FALSE	TRUE	TRUE	TRUE		

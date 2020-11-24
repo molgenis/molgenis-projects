@@ -1,0 +1,7 @@
+url=https://molgenis01.gcc.rug.nl/api/
+account=account_name
+password=yourpassword
+labs=lab1,lab2,lab3
+consensus_table=pkg_consensus_2018
+comments_table=pkg_comments_2018
+postfix=_2018

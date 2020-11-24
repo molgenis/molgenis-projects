@@ -1,0 +1,9 @@
+@import '../variables';
+@import './variables';
+@import 'bootstrap-scss/bootstrap';
+
+@import '../custom';
+@import './custom';
+
+@import 'molgenis/theme-4/elements/**/*.scss'; /* stylelint-disable-line */
+

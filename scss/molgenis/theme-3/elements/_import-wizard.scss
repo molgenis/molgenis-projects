@@ -1,0 +1,44 @@
+// TODO: Make selector less specific once old css files are removed.
+// See https://wiki.gcc.rug.nl/ticket/7600
+body {
+    .bwizard-steps .active {
+        background: $mg-color-primary;
+        color: $mg-color-white;
+
+        &::after {
+            border-left-color: $mg-color-primary;
+        }
+    }
+
+    .ui-fancytree {
+        li {
+            &:nth-child(even) {
+                background: $mg-color-white;
+            }
+
+
+            &:nth-child(odd) {
+                background: $mg-color-grey-100;
+            }
+
+            .fancytree-node {
+                background: none !important;
+                font-weight: 600;
+                padding: $mg-spacer / 2 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+
+                .fancytree-title {
+                    color: $mg-color-primary !important;
+                }
+
+                &:hover {
+                    background: $mg-color-primary-light !important;
+                }
+            }
+        }
+    }
+}

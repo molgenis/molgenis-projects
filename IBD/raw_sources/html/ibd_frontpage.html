@@ -1,0 +1,226 @@
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2-bootstrap.min.css" integrity="sha512-eNfdYTp1nlHTSXvQD4vfpGnJdEibiBbCmaXHQyizI93wUnbCZTlrs1bUhD7pVnFtKRChncH5lpodpXrLpEdPfQ==" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.css" integrity="sha512-iVAPZRCMdOOiZWYKdeY78tlHFUKf/PqAJEf/0bfnkxJ8MHQHqNXB/wK2y6RH/LmoQ0avRlGphSn06IMMxSW+xw==" rel="stylesheet" /><script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.js" integrity="sha512-jfp1Gv+A3dHho9qOUUWOrZA6NWR08j7GYVn8VXcRI0FsDb3xe0hQHVwasi2UarjZzPYOxT5uvmlHrWLXQ+M4AQ==" crossorigin="anonymous"></script>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<h1>1000IBD</h1>
+
+<p id="description">The 1000IBD data is available at the European Genome-phenome Archive (EGA): <a href="#">Here will be the link to the paper</a><br />
+<br />
+Please find below the patient characteristics of the available datasets:</p>
+
+<hr /></div>
+</div>
+
+<div class="row">
+<div class="col-md-6"><select id="dataset-select" style="width:100%"><option selected="selected" value="all_patients">Dataset 1: All participants (select all 1215 from the phenotype table)</option><option value="ichip_patients">Dataset 2: iChip (selection of 1215 participants)</option><option value="stool_patients">Dataset 3: 16S microbiome from stool (selection of 1215 participants)</option><option value="biopsies_patients">Dataset 4: 16S microbiome from biopsies (selection of 1215 participants)</option><option value="metagenomics_patients">Dataset 5: metagenomics (selection of 1215 participants)</option><option value="scrna_patients">Dataset 6: Single-Cell RNA-seq (selection of 1215 participants)</option> </select></div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<h2 id="title">&nbsp;</h2>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12" id="overview">
+<div class="row" id="counts">
+<div class="col-md-3">
+<ul class="list-group">
+	<li class="list-group-item count-info">
+	<h5>Patients <span class="float-right"> <span class="badge badge-pill badge-secondary" id="percentage-of-patients"></span> <span class="badge badge-pill badge-primary" id="number-of-patients"></span> </span></h5>
+	</li>
+	<li class="list-group-item count-info">
+	<h6>Male <span class="float-right"> <span class="badge badge-pill badge-secondary" id="percentage-of-males"></span> <span class="badge badge-pill badge-primary" id="number-of-males"></span> </span></h6>
+	</li>
+	<li class="list-group-item count-info">
+	<h6>Female <span class="float-right"> <span class="badge badge-pill badge-secondary" id="percentage-of-females"></span> <span class="badge badge-pill badge-primary" id="number-of-females"></span> </span></h6>
+	</li>
+	<li class="list-group-item count-info">
+	<h5>Samples <span class="float-right"> <span class="badge badge-pill badge-primary" id="number-of-samples"></span> </span></h5>
+	</li>
+	<li class="list-group-item count-info">
+	<h5>Age <small>average (SD)</small></h5>
+	</li>
+	<li class="list-group-item count-info">Onset <span class="float-right"><span id="age-onset-mean"></span> (<span id="age-onset-sd"></span>)</span></li>
+	<li class="list-group-item count-info">Last recorded diagnosis <span class="float-right"><span id="age-final-mean"></span> (<span id="age-final-sd"></span>)</span></li>
+</ul>
+</div>
+
+<div class="col-md-9">
+<div class="card card-primary border-primary">
+<div class="card-header bg-primary text-white"><b>Diagnosis</b></div>
+
+<div class="card-body diagnosis-panel">
+<table class="table table-striped" id="diagnosis-table">
+	<thead>
+		<tr>
+			<th>Count</th>
+			<th>Percentage</th>
+			<th>Diagnosis</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="count-cd">&nbsp;</td>
+			<td id="percentage-cd">&nbsp;</td>
+			<td>CD</td>
+		</tr>
+		<tr>
+			<td id="count-uc">&nbsp;</td>
+			<td id="percentage-uc">&nbsp;</td>
+			<td>UC</td>
+		</tr>
+		<tr>
+			<td id="count-ibdu">&nbsp;</td>
+			<td id="percentage-ibdu">&nbsp;</td>
+			<td>IBDU</td>
+		</tr>
+		<tr>
+			<td id="count-ibdi">&nbsp;</td>
+			<td id="percentage-ibdi">&nbsp;</td>
+			<td>IBDI</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12"><canvas height="500" id="ibd-canvas" width="1140"></canvas></div>
+</div>
+</div>
+<style type="text/css">.badge-primary{
+		background-color: #337ab7;
+	}
+	.count-info{
+		padding: 0.58em!important;
+	}
+	.diagnosis-panel {
+		padding: 7px!important;
+	}
+	#title {
+		margin-bottom: 1em;
+	}
+	.select2-container .select2-choice {
+		height: 34px;
+		line-height: 1.42857;
+		background-image: none;
+		margin-bottom: 1rem;
+	}
+	.select2-choice>span:first-child, .select2-chosen, .select2-container .select2-choices .select2-search-field input {
+		padding: 6px 12px;
+	}
+	.select2-container .select2-choice .select2-arrow {
+		background-image: none;
+		background-color: #fff;
+	}
+</style>
+<script>
+	function setTitle(data){
+		$('#title').text(data.text.split(" (")[0]);
+	}
+
+	function createImageString(numberOfPatients, numberOfPatientsWithLocation, percentage){
+		return '('+numberOfPatientsWithLocation+' of '+numberOfPatients+' patients ('+percentage+'%))'
+	}
+	function drawImage(data){
+		var canvas = document.getElementById("ibd-canvas");
+     	var context = canvas.getContext("2d");
+     	var imageObj = new Image();
+     	var L1Number = data.L1Number;
+     	var L1Percentage = data.L1Percentage;
+     	var L2Number = data.L2Number;
+     	var L2Percentage = data.L2Percentage;
+     	var L3Number = data.L3Number;
+     	var L3Percentage = data.L3Percentage;
+     	var L4Number = data.L4Number;
+     	var L4Percentage = data.L4Percentage;
+     	var E1Number = data.E1Number;
+     	var E1Percentage = data.E1Percentage;
+     	var E2Number = data.E2Number;
+     	var E2Percentage = data.E2Percentage;
+     	var E3Number = data.E3Number;
+     	var E3Percentage = data.E3Percentage;
+     	var total = data.numberPatients;
+    	imageObj.onload = function(){
+         	context.drawImage(imageObj, 5, 5);
+         	context.font = "11pt Calibri";
+         	L1Text = createImageString(total, L1Number, L1Percentage)
+         	L2Text = createImageString(total, L2Number, L2Percentage)
+         	L3Text = createImageString(total, L3Number, L3Percentage)
+         	L4Text = createImageString(total, L4Number, L4Percentage)
+         	E1Text = createImageString(total, E1Number, E1Percentage)
+         	E2Text = createImageString(total, E2Number, E2Percentage)
+         	E3Text = createImageString(total, E3Number, E3Percentage)
+         	context.textAlign="end"
+         	context.fillText("Colonic disease (L2)", 235, 290);
+         	context.fillText(L2Text, 235, 310);
+         	context.fillText("Iliocolonic (L3)", 235, 350);
+         	context.fillText(L3Text, 235, 370);
+         	context.textAlign="start"
+         	context.fillText("UpperGI disease (L4)", 405, 180);
+         	context.fillText(L4Text, 405, 200);
+         	context.fillText("Ileal disease (L1)", 405, 320);
+         	context.fillText(L1Text, 405, 340);
+         	context.textAlign="end"
+         	context.fillText("Extensive colitis (E3)", 775, 340);
+         	context.fillText(E3Text, 775, 360);
+         	context.textAlign="start"
+         	context.fillText("Left sided colitis (E2)", 950, 320);
+         	context.fillText(E2Text, 950, 340);
+         	context.fillText("Proctitis (E1)", 950, 390);
+         	context.fillText(E1Text, 950, 410);
+
+     	};
+     	imageObj.src = "/logo/blankImg.png";
+	}
+	function fillInPage(selected_option) {
+		$.get('/api/v2/IBD_counts/' + selected_option).done( function(counts) {
+				$('#number-of-patients').text(counts.numberPatients);
+				$('#number-of-males').text(counts.countMale);
+				$('#number-of-females').text(counts.countFemale);
+
+				$('#percentage-of-patients').text('100%');
+				$('#percentage-of-males').text(counts.percentageMale+'%');
+				$('#percentage-of-females').text(counts.percentageFemale+'%');
+
+				$('#percentage-cd').text(counts.percentageCD+'%');
+				$('#percentage-uc').text(counts.percentageUC+'%');
+				$('#percentage-ibdu').text(counts.percentageIBDU+'%');
+				$('#percentage-ibdi').text(counts.percentageIBDI+'%');
+
+				$('#count-cd').text(counts.totalCD);
+				$('#count-uc').text(counts.totalUC);
+				$('#count-ibdu').text(counts.totalIBDU);
+				$('#count-ibdi').text(counts.totalIBDI);
+
+				$('#age-onset-mean').text(counts.meanOnsetAge);
+				$('#age-onset-sd').text(counts.sdOnsetAge);
+				$('#age-final-mean').text(counts.meanFinalAge);
+				$('#age-final-sd').text(counts.sdFinalAge);
+
+				$('#number-of-samples').text(counts.numberSamples);
+
+				drawImage(counts);
+			})
+		}
+
+	$(function () {
+		$('#dataset-select').select2();
+		var selected_option = $('#dataset-select').select2('data').id;
+		setTitle($('#dataset-select').select2('data'));
+
+		$('#dataset-select').on('change', function(e) {
+			selected_option = $('#dataset-select').select2('data').id;
+			setTitle($('#dataset-select').select2('data'));
+			fillInPage(selected_option);
+		})
+		fillInPage(selected_option);
+
+	});
+</script>

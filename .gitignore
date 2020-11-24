@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 vcfs/*.vcf
 vcfs/gzip/*.gz
+=======
+molgenis-projects.iml
+node_modules
+.idea
+docker/.env
+yarn-error.log
+>>>>>>> molgenis-projects/master

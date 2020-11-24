@@ -1,0 +1,7 @@
+config.txt
+__pycache__
+.idea
+config_test.txt
+OMIM_to_HGNC.txt
+*.csv
+omim.txt

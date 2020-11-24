@@ -1,0 +1,90 @@
+.navbar-expand-md {
+    // Override .bg-light's important
+    background: $mg-color-white !important;
+    border-bottom: 0 !important;
+    box-shadow: $mg-box-shadow;
+    height: $mg-navbar-height;
+
+    .form-inline {
+        height: 100%;
+    }
+
+
+    .navbar-collapse {
+        height: 50px;
+    }
+
+    .navbar-nav {
+        height: 50px;
+
+        #logout-form {
+            padding-right: $mg-spacer / 2;
+        }
+
+        .nav-item {
+            // font-weight: 600;
+            height: 50px;
+
+            &.dropdown.show {
+                background: $mg-color-primary;
+                color: $mg-color-primary-light;
+            }
+
+            &.active {
+                background: $mg-color-primary;
+
+                &:hover {
+                    color: $mg-color-primary-light;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .nav-link {
+                font-weight: $mg-navbar-font-weight;
+                height: 50px;
+                line-height: 50px;
+                overflow: hidden;
+                padding-bottom: 0;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-top: 0;
+                text-overflow: ellipsis;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+        }
+
+    }
+}
+
+
+.dropdown-toggle {
+    &::after {
+        border-bottom: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid;
+        content: '';
+        display: inline-block;
+        margin-left: 4px;
+        margin-top: 22px;
+        position: absolute;
+    }
+}
+
+
+
+.dropdown-menu {
+    // Bootstrap 4 doesn't add a shadow.
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+
+    a {
+        height: 35px;
+        line-height: 35px;
+        padding: 0 $mg-spacer / 2;
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,26 @@
+networks:
+  mg_projects:
+    driver: bridge
+services:
+  nginx:
+    container_name: mg_projects_nginx
+    environment:
+      MG_HOST: ${MG_HOST:-https://master.dev.molgenis.org/}
+      MG_THEME: ${MG_THEME:-default}
+      MG_WATCHFILE: ${MG_WATCHFILE:-bootstrap-molgenis-blue.min.css}
+    image: nginx
+    networks:
+      - mg_projects
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/localhost.tpl:/tmp/localhost.tpl
+      - ../projects:/usr/share/nginx/html
+    command: >
+      /bin/bash -c "envsubst \"`for v in $$(compgen -v);do printf '$${%s} ' $$v;done`'\"
+      < /tmp/localhost.tpl
+      > /etc/nginx/localhost
+      && nginx -g 'daemon off;'"
+
+version: "3.8"
