@@ -69,7 +69,7 @@ class Molgenis():
             return [resource["href"].split("/")[-1] for resource in response.json()["resources"]]
         else:
             errors = json.loads(response.content.decode("utf-8"))['errors'][0]['message']
-            print(errors)
+            print('ERRORS', errors)
         response.raise_for_status()
         return response
 
@@ -152,26 +152,24 @@ def replace_chars(id):
     return ''.join(charList)
 
 
-def syncEricWithNL(tables, sourceUrl, targetUrl, token):
-    dutchMolgenis = Molgenis(sourceUrl)
+def syncEricWithBE(tables, sourceUrl, targetUrl, token):
+    belgiumMolgenis = Molgenis(sourceUrl)
     ericMolgenis = Molgenis(targetUrl)
     ericMolgenis.token = token
     # wipe everything before upload because this works the other way around as updating
     for table in reversed(tables):
        ericMolgenis.wipe_table(table)
     for table in tables:
-        dutchTable = table.replace("NL_", "")
-        dutch = dutchMolgenis.get_molgenis_upload_format(dutchTable)
-        if len(dutch) > 0:
-           ericMolgenis.add_all(table, dutch)
+        belgiumTable = table.replace("BE_", "")
+        belgium = belgiumMolgenis.get_molgenis_upload_format(belgiumTable)
+        if len(belgium) > 0: ericMolgenis.add_all(table, belgium)
 
 
-def importDutchData():
-    source = "https://catalogue.bbmri.nl/api/"
+def importBelgiumData():
+    source = "https://directory.bbmri.be/api/"
     target = "https://directory.bbmri-eric.eu/api/"
     token = '${molgenisToken}'
-    syncEricWithNL(["eu_bbmri_eric_NL_persons", "eu_bbmri_eric_NL_networks", "eu_bbmri_eric_NL_biobanks",
-                    "eu_bbmri_eric_NL_collections"], source, target, token)
+    syncEricWithBE(["eu_bbmri_eric_BE_persons", "eu_bbmri_eric_BE_networks", "eu_bbmri_eric_BE_biobanks", "eu_bbmri_eric_BE_collections"], source, target, token)
 
 
-importDutchData()
+importBelgiumData()
