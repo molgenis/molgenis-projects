@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -166,8 +167,8 @@ def syncEricWithTMF(de_tables, eu_tables, sourceUrl, targetUrl, token):
 
 
 def importGermanData():
-    source = "https://molgenis21.gcc.rug.nl/api/"
-    target = "https://molgenis129.gcc.rug.nl/api/"
+    source = "https://molgenis54.gcc.rug.nl/api/"
+    target = "https://directory.bbmri-eric.eu/api/"
     token = '${molgenisToken}'
     syncEricWithTMF(["eu_bbmri_eric_persons", "eu_bbmri_eric_networks", "eu_bbmri_eric_biobanks", "eu_bbmri_eric_collections"],
                     ["eu_bbmri_eric_DE_persons", "eu_bbmri_eric_DE_networks", "eu_bbmri_eric_DE_biobanks", "eu_bbmri_eric_DE_collections"],
