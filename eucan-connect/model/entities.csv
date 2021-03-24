@@ -1,0 +1,8 @@
+"name","package","label","description","abstract","extends","backend","tags","label-en","description-en","label-nl","description-nl","label-de","description-de","label-es","description-es","label-it","description-it","label-pt","description-pt","label-fr","description-fr","label-xx","description-xx"
+"persons","eucan","Contacts","false","PostgreSQL",""
+"country","eucan","Country","false","PostgreSQL",""
+"events","eucan","Data Collection Events","false","PostgreSQL",""
+"population","eucan","Population","false","PostgreSQL",""
+"recruitment_sources","eucan","Recruitment Sources","false","PostgreSQL",""
+"selection_criteria","eucan","Selection Criteria","false","PostgreSQL",""
+"study","eucan","Study description","false","PostgreSQL",""
