@@ -54,6 +54,7 @@ def get_variables_values(remodeled_variables, values):
                     var_values.loc[j, 'variable'] = 'core.' + remodeled_variables['name'][i]
                     var_values.loc[j, 'value'] = values['value'][j]
                     var_values.loc[j, 'label'] = values['label'][j]
+                    var_values.loc[j, 'order'] = values['order'][j]
                 j+=1
         i+=1
 
