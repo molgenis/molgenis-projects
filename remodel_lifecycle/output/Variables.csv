@@ -1,0 +1,718 @@
+release.version,table,name,collectionEvent.resource,collectionEvent.name,label,format,unit,references.table,references.name,mandatory,description,order,exampleValues,keywords,vocabularies,temp_code_list,release.resource
+1.0.0,core,abroad_child,,,Child's born abroad,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,abroad_fa,,,Father's born abroad,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,abroad_mo,,,Mother's born abroad,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,adhd_age,,,exact age of the child (in years) when ADHD were recorded for adhd_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adhd_avg,,,average of available items comprising the total raw score of  adhd_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adhd_eval,,,who the test for measuring ADHD was administered/answered by for adhd_raw_0,categorical,,,,,,,,,,adhd_eval_options,LifeCycle
+1.0.0,core,adhd_instr,,,Cohort-specific instrument used to measure the ADHD for adhd_raw_0,categorical,,,,,,,,,,adhd_instr_options,LifeCycle
+1.0.0,core,adhd_pc,,,"ADHD, percentiles of adhd_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adhd_pro,,,total ADHD score after prorating adhd_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adhdR,,,ADHD diagnosis assessed within one year of childbirth (>0 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,adhdR_age,,,exact age of the child (in years) at onset for ADHD diagnosis for adhdR_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adhd_raw,,,"ADHD, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adhdR_eval,,,how was the medical diagnosis reported for adhdR_0,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,adipo,,,Child's adiponectin (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adipoage,,,Age at adiponectin measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adipo_cord,,,adiponectin measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,adipomes,,,Nonfasting or fasting when adiponectin measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,agebirth_m_d,,,Mother's age at delivery in days,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,agebirth_m_y,,,Mother's age at delivery in complete years.,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,agebirth_p_d,,,Father's age at birth in days,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,agebirth_p_fath,,,"Type of father, father's age at birth",categorical,,,,,,,,,,agebirth_p_fath_options,LifeCycle
+1.0.0,core,agebirth_p_y,,,Father's age at birth in complete years,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,agrgr,,,"percentage of agrgr (agricultural areas, semi-natural areas and wetlands) land use within a buffer of 300 m at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,agrgr_preg,,,"percentage of agrgr (agricultural areas, semi-natural areas and wetlands) land use within a buffer of 300 m at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,airpt,,,percentage of airpt (airports) land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,airpt_preg,,,percentage of airpt (airports) land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,alc,,,Any alcohol intake in 1. trimester,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,all,,,"Doctor diagnosis of allergy, type of allergen unspecified within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,allergy_any_m,,,Maternal history of any allergy before pregnancy (of index child),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,allergy_food_m,,,Maternal history of food allergy before pregnancy (of index child),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,allergy_inh_m,,,Maternal history of inhalant allergy before pregnancy (of index child),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,all_ever,,,"Ever doctor diagnosis of allergy, type of allergen unspecified",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,anaphylaxis,,,Ever diagnosis of anaphylactic shock,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,an_m,,,Maternal anorexia nervosa active active from ≥0 to 1 year.,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,apgar,,,5 minute Apgar score,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,areases_quint,,,area-level SES indicator (deprivation index in quintiles) at birth,categorical,,,,,,,,,,areases_quint_options,LifeCycle
+1.0.0,core,areases_quint_preg,,,area-level SES indicator (deprivation index in quintiles) at pregnancy,categorical,,,,,,,,,,areases_quint_preg_options,LifeCycle
+1.0.0,core,areases_tert,,,area-level SES indicator (deprivation index in tertiles) at birth,categorical,,,,,,,,,,areases_tert_options,LifeCycle
+1.0.0,core,areases_tert_preg,,,area-level SES indicator (deprivation index in tertiles) at pregnancy,categorical,,,,,,,,,,areases_tert_preg_options,LifeCycle
+1.0.0,core,armcirc,,,Child's arm circumference (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,armcircage,,,Age at arm circumference measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,armcircmes,,,Measured vs. reported child arn circumference (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,armlength,,,Child's arm length (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,armlengthage,,,Age at arm length measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,armlengthmes,,,Measured vs. reported child arm length (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,art,,,Assisted reproductive treatment,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asd_age,,,exact age of the child (in years) when ASD were recorded for asd_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,asd_avg,,,average of available items comprising the total raw score of  asd_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,asd_eval,,,who the test for measuring ASD was administered/answered by for asd_raw_0,categorical,,,,,,,,,,asd_eval_options,LifeCycle
+1.0.0,core,asd_instr,,,Cohort-specific instrument used to measure the ASD for asd_raw_0,categorical,,,,,,,,,,asd_instr_options,LifeCycle
+1.0.0,core,asd_pc,,,"ASD, percentiles of asd_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,asd_pro,,,total ASD score after prorating asd_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,asdR,,,ASD diagnosis assessed within one year of childbirth (>0 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asdR_age,,,exact age of the child (in years) at onset for ASD diagnosis for asdR_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,asd_raw,,,"ASD, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,asdR_eval,,,how was the medical diagnosis reported for asdR_0,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma,,,diagnosis of asthma within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,Asthma_adult,,,Ever diagnosis of asthma in adulthood based on physician diagnosis,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_bf,,,Paternal history of asthma (biological father),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_current_ISAAC,,,Current asthma  (ISAAC),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_current_MeDALL,,,Current asthma (MeDALL),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_ever_CHICOS,,,School age asthma according to CHICOS definition,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_ever_MeDALL,,,Ever diagnosis of asthma according to MeDALL definition,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_m,,,Maternal history of asthma before pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_med,,,use of asthma medication within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,asthma_med_spec,,,"use of asthma medication, type specified, within one year of birth (child aged between >-1 year and <1 year)",categorical,,,,,,,,,,asthma_med_spec_options,LifeCycle
+1.0.0,core,bdens100,,,building density within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bdens100_preg,,,building density within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bdens300,,,building density within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bdens300_preg,,,building density within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,BHR,,,"Bronchial hyperresponsiveness, as measured by metacholine challenge test, within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,bicepsf,,,Child's bicep skinfold (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bicepsfage,,,Age at bicep skinfold measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bicepsfmes,,,Measured vs. reported child bicep skinfold (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,bio,,,Child's body fat % from bioimpedance (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bioage,,,Age at bioimpedance measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,biomes,,,Device used to measure bioimpedance (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,birth_head_circum,,,Circumference of the head at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,birth_length,,,Length of the child at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,birth_month,,,Birth month of the index child,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,birth_weight,,,Weight of the child at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,birth_year,,,Birth year of the index child,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,blue_dist,,,"straight line distance to nearest blue space > 5,000 m2 at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,blue_dist_preg,,,"straight line distance to nearest blue space > 5,000 m2 at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,blue_size,,,"area of closest blue space > 5,000m2 at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,blue_size_preg,,,"area of closest blue space > 5,000m2 at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,blueyn300,,,"is there a blue space  > 5,000 m2 in a distance of 300 m? at birth",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,blueyn300_preg,,,"is there a blue space  > 5,000 m2 in a distance of 300 m? at pregnancy",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,bn_m,,,Maternal bulimia nervosa active active from ≥0 to 1 year.,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,bpage,,,Age at peripheral blood pressure measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,breastfed_any,,,Total duration of any breastfeeding,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,breastfed_ever,,,Child ever breast fed,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,breastfed_excl,,,Total duration of exclusive breastfeeding,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_lines_100,,,length of public bus lines within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_lines_100_preg,,,length of public bus lines within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_lines_300,,,length of public bus lines within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_lines_300_preg,,,length of public bus lines within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_lines_500,,,length of public bus lines within a buffer of 500 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_lines_500_preg,,,length of public bus lines within a buffer of 500 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_stops_100,,,number of public bus stops within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_stops_100_preg,,,number of public bus stops within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_stops_300,,,number of public bus stops within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_stops_300_preg,,,number of public bus stops within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_stops_500,,,number of public bus stops within a buffer of 500 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,bus_stops_500_preg,,,number of public bus stops within a buffer of 500 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cats,,,Cat ownership (≥0 to <1year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,cats_preg,,,Cat ownership in pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,cats_quant,,,Number of cats owned (≥0 to <1year),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,cats_quant_preg,,,Number of cats owned in pregnancy,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,cbpage,,,Age at central (i.e. aortic) blood pressure measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cbpsit,,,Standing or sitting when central (i.e. aortic) blood pressure measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,cdbp,,,Child's central (i.e. aortic) diastolic blood pressure (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cer_palsy,,,Any subtype of cerebral palsy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,cfpwv,,,Child's carotid-femoral pulse wave velocity (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cfpwvage,,,Age at carotid-femoral pulse wave velocity measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,childcare,,,Child cared for by care givers other than parents (age ≥0 and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,childcarecentre,,,Child attending a day care centre (age ≥0 and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,childcare_intro,,,Age child started in child care,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,childcareprof,,,Child cared for by a child care professional (age ≥0 and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,childcarerel,,,Child cared for by relatives/friends/nanny/babysitter/au pair (age ≥0 and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,child_id,,,Unique identifier number for the index child,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,child_no,,,Within pregnancy birth order,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,chol,,,Child's total cholesterol (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cholage,,,Age at total cholesterol measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,chol_cord,,,total cholesterol measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cholmes,,,Nonfasting or fasting when total cholesterol measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,cimt,,,Child's carotid intima-media thickness (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cimtage,,,Age at carotid intima-media thickness measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,cimtmes,,,Measured vs. reported child waist circumference (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,cob_m,,,Maternal country of birth,categorical,,,,,,,,,,cob_m_options,LifeCycle
+1.0.0,core,cob_p,,,Paternal country of birth,categorical,,,,,,,,,,cob_p_options,LifeCycle
+1.0.0,core,cob_p_fath,,,"Type of father, paternal country of birth",categorical,,,,,,,,,,cob_p_fath_options,LifeCycle
+1.0.0,core,cohab,,,Cohabitation status of the mother (age ≥0 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,coh_country,,,Country of the cohort,categorical,,,,,,,,,,coh_country_options,LifeCycle
+1.0.0,core,cohort_id,,,Unique identifier number for the cohort,categorical,,,,,,,,,,cohort_id_options,LifeCycle
+1.0.0,core,con_anomalies,,,Any congenital malformation,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,connind100,,,connectivity density within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,connind100_preg,,,connectivity density within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,connind300,,,connectivity density within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,connind300_preg,,,connectivity density within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,COPD_adult_diagnosis,,,Ever diagnosis of COPD in adulthood based on physician diagnosis,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,COPD_adult_GOLD,,,Ever diagnosis of COPD in adulthood based on GOLD criteria,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,COPD_adult_LLN,,,Ever diagnosis of COPD in adulthood based on lower limit of normal (LLN),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,crp,,,Child's CRP (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,crpage,,,Age at CRP measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,crp_cord,,,CRP measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,crpmes,,,Nonfasting or fasting when CRP measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,crpwv,,,Child's carotid-radial pulse wave velocity (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,crpwvage,,,Age at carotid-radial pulse wave velocity measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,csbp,,,Child's central (i.e. aortic) systolic blood pressure (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dairy_pgn,,,Milk and milk products during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dairy_psc,,,Milk and milk products in  preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dairy_sch,,,Milk and milk products in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dash_pgn,,,Fung's DASH diet index in pregnancy,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,dash_sch,,,Fung's DASH diet index in school-aged children (5-8 years),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,dbp,,,Child's diastolic blood pressure - 1st measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dbpav,,,Child's diastolic blood pressure - average (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,death_child,,,Indicator variable for death of the child,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,death_child_age,,,Age of death of the child,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,death_m,,,Maternal death,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,death_m_age,,,Age of the child at the time of mother's death,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,death_p,,,Paternal death,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,death_p_age,,,Age of the child at the time of father's death,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,death_p_fath,,,"Type of father, paternal death",categorical,,,,,,,,,,death_p_fath_options,LifeCycle
+1.0.0,core,dia_bf,,,Diabetes diagnosis (biological father),categorical,,,,,,,,,,dia_bf_options,LifeCycle
+1.0.0,core,dietage_psc,,,Exact age at dietary assessment in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dietage_sch,,,Exact age at dietary assessment of  school-age children,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dietass_pgn,,,Method of dietary assessment in pregnancy,categorical,,,,,,,,,,dietass_pgn_options,LifeCycle
+1.0.0,core,dietass_psc,,,Method of dietary assessment in preschool age (age 2-4),categorical,,,,,,,,,,dietass_psc_options,LifeCycle
+1.0.0,core,dietass_sch,,,Method of dietary assessment in school-age children (5-8 years),categorical,,,,,,,,,,dietass_sch_options,LifeCycle
+1.0.0,core,dietga_pgn,,,Gestational week at dietary assessment,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,distinvnear1,,,inverse distance to nearest road at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,distinvnear1_preg,,,inverse distance to nearest road at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dogs,,,Dog ownership (≥0 to <1year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,dogs_preg,,,Dog ownership in pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,dogs_quant,,,Number of dogs owned (≥0 to <1year),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,dogs_quant_preg,,,Number of dogs owned in pregnancy,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,dominant_armc,,,Arm circumference measured in dominant or non-dominant arm (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,dxafm,,,Child's whole-body DXA fat mass (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dxafmage,,,Age at DXA fat mass measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dxafmmes,,,Device used to measure DXA fat mass (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,dxalm,,,Child's whole-body DXA lean mass (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dxalmage,,,Age at DXA lean mass measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,dxalmmes,,,Device used to measure DXA lean mass (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,eczema,,,Doctor diagnosis of eczema within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,eczema_ever,,,Ever doctor-diagnosis of eczema,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,eczema_m,,,Maternal history of eczema before pregnancy (of index child),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,ed_m,,,Maternal any eating disorder active from ≥0 to 1 year.,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,edu_f1,,,Primary father figure's education level (age >-1 year and <1 year),categorical,,,,,,,,,,edu_f1_options,LifeCycle
+1.0.0,core,edu_f2,,,Secondary father figure's education level (age >-1 year and <1 year),categorical,,,,,,,,,,edu_f2_options,LifeCycle
+1.0.0,core,edu_m,,,Mother's education level (between >-1 year and <1 year),categorical,,,,,,,,,,edu_m_options,LifeCycle
+1.0.0,core,egg_pgn,,,Egg and egg products  during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,egg_psc,,,Egg and egg products in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,egg_sch,,,Egg and egg products in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ethn1_m,,,(Ethnic) background of mother based on country of origin (of parents),categorical,,,,,,,,,,ethn1_m_options,LifeCycle
+1.0.0,core,ethn1_p,,,Father's (ethnic) background based on country of origin (of father's parents),categorical,,,,,,,,,,ethn1_p_options,LifeCycle
+1.0.0,core,ethn2_m,,,Ethnic background of mother based on colour,categorical,,,,,,,,,,ethn2_m_options,LifeCycle
+1.0.0,core,ethn2_p,,,Father's ethnic background based on colour,categorical,,,,,,,,,,ethn2_p_options,LifeCycle
+1.0.0,core,ethn3_m,,,Best estimate of mother's ethnic background,categorical,,,,,,,,,,ethn3_m_options,LifeCycle
+1.0.0,core,ethn3_p,,,Best estimate of father's ethnic background,categorical,,,,,,,,,,ethn3_p_options,LifeCycle
+1.0.0,core,ethn_p_fath,,,"Type of father, paternal ethnicity",categorical,,,,,,,,,,ethn_p_fath_options,LifeCycle
+1.0.0,core,eusilc_income,,,Log-equivalised total disposable household income predicted using EUSILC data (task 3.1.1) at baseline ,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,eusilc_income_quintiles,,,Quintiles of the log-equivalised total disposable household income predicted using EUSILC data (task 3.1.1) at baseline ,categorical,,,,,,,,,,eusilc_income_quintiles_options,LifeCycle
+1.0.0,core,ext_age,,,exact age of the child (in years) when externalizing problems were recorded for ext_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ext_avg,,,average of available items comprising the total raw score of  ext_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ext_eval,,,who the test for measuring externalizing problems was administered/answered by for ext_raw_0,categorical,,,,,,,,,,ext_eval_options,LifeCycle
+1.0.0,core,ext_instr,,,Cohort-specific instrument used to measure the externalizing problems for ext_raw_0,categorical,,,,,,,,,,ext_instr_options,LifeCycle
+1.0.0,core,ext_pc,,,"externalizing problems, percentiles of ext_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ext_pro,,,total externalizing problems score after prorating ext_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ext_raw,,,"externalizing problems, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,famdinner_psc,,,Family dinner or dinner with at least one adult (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,famdinner_sch,,,Family dinner or dinner with at least one adult (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,famsize,,,"Family size, adults (≥0 to <1 year)",integer,,,,,,,,,,,LifeCycle
+1.0.0,core,fam,,,Parent split up (age ≥0 to <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,fastfood_psc,,,Visiting fast food restaurant (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fastfood_sch,,,Visiting fast food restaurants per week (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,f_dbp,,,Father's diastolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fdensity300,,,number of facilities present within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fdensity300_preg,,,number of facilities present within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEF25_abs,,,Forced Expiratory Flow after exhaling 25% of FVC (L/s) within one year of birth (child aged between >-1 year and <1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEF50_abs,,,Forced Expiratory Flow after exhaling 50% of FVC (L/s) within one year of birth (child aged between >-1 year and <1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEF75_abs,,,Forced Expiratory Flow after exhaling 75% of FVC (L/s) within one year of birth (child aged between >-1 year and <1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEF75_z,,,"Forced Expiratory Flow after exhaling 75% of FVC, z-score according to GLI reference criteria within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FeNO,,,"FeNO, in sympercent change within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEV1_abs,,,Forced Expiratory Volume in the first second (L) within one year of birth (child aged between >-1 year and <1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEV1FVC_z,,,"FEV1 FVC ratio, z-score according to GLI reference criteria within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FEV1_z,,,"Forced Expiratotory Volume in the first second, z-score according to GLI reference criteria within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ffish_pgn,,,Fatty Fish during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ffish_psc,,,Fatty Fish in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ffish_sch,,,Fatty Fish in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fish_pgn,,,Fish and fish products during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fish_psc,,,Fish and fish products in  preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fish_sch,,,Fish and fish products in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fm_age,,,exact age of the child (in years) when fine motor were recorded for fm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fm_avg,,,average of available items comprising the total raw score of  fm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fm_eval,,,who the test for measuring fine motor was administered/answered by for fm_raw_0,categorical,,,,,,,,,,fm_eval_options,LifeCycle
+1.0.0,core,fm_instr,,,Cohort-specific instrument used to measure the fine motor for fm_raw_0,categorical,,,,,,,,,,fm_instr_options,LifeCycle
+1.0.0,core,fm_pc,,,"fine motor, percentiles of fm_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fm_pro,,,total fine motor score after prorating fm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fm_raw,,,"fine motor, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fm_std,,,"fine motor, standardized score of fm_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,folic,,,Folic acids >12 weeks.,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,folic_prepreg,,,Folic acids before conception,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all,,,Doctor diagnosis of food allergy within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_ever,,,Ever doctor diagnosis of food allergy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_IgE,,,"Food allergic sensitization, measured by specific IgE within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT,,,"Food allergic sensitization, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_COWMILK,,,"Food allergic sensitization to cowmilk, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_EGG,,,"Food allergic sensitization to chicken egg, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_FISH_cod,,,"Food allergic sensitization to cod fish, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_FISH_mix,,,"Food allergic sensitization to fish mix, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_FRUIT_kiw,,,"Food allergic sensitization to kiwi fruit, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_FRUIT_pea,,,"Food allergic sensitization to peach fruit, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_NUT_cas,,,"Food allergic sensitization to cashew nut, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_NUT_haz,,,"Food allergic sensitization to hazelnut, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_NUT_mix,,,"Food allergic sensitization to nut mix, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_NUT_wal,,,"Food allergic sensitization to walnut, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_PNT,,,"Food allergic sensitization to peanut, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_SES,,,"Food allergic sensitization to sesame, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_SHELL_mix,,,"Food allergic sensitization to shellfish mix, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,food_all_sens_SPT_WHEAT,,,"Food allergic sensitization to wheat, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,foodenvdens300,,,number of facilities related to unhealthy food divided by the area of the 300 meters buffer at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,foodenvdens300_preg,,,number of facilities related to unhealthy food divided by the area of the 300 meters buffer at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,foodenvdensosm300,,,number of open street maps facilities related to unhealthy food divided by the area of the 300 meters buffer at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,foodenvdensosm300_preg,,,number of open street maps facilities related to unhealthy food divided by the area of the 300 meters buffer at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,frichness300,,,number of different facility types present divided by the maximum potential number of facility types within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,frichness300_preg,,,number of different facility types present divided by the maximum potential number of facility types within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fruit_pgn,,,Fruits during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fruit_psc,,,Fruits in  preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,fruit_sch,,,Fruits in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,f_sbp,,,Father's systolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FVC_abs,,,Forced Vital Capacity (L) within one year of birth (child aged between >-1 year and <1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,FVC_z,,,"Forced Vital Capacity, z-score according to GLI reference criteria within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ga_bj,,,Gestational age (best judgement),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,ga_lmp,,,Gestational age (last menstrual period),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,ga_mr,,,Gestational age (maternal report),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,ga_us,,,Gestational age (ultrasound),integer,,,,,,,,,,,LifeCycle
+1.0.0,core,glucose,,,Child's glucose (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,glucoseage,,,Age at glucose measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,glucose_cord,,,Glucose measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,glucosemes,,,Nonfasting or fasting when glucose measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,gm_age,,,exact age of the child (in years) when gross motor were recorded for gm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,gm_avg,,,average of available items comprising the total raw score of  gm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,gm_eval,,,who the test for measuring gross motor was administered/answered by for gm_raw_0,categorical,,,,,,,,,,gm_eval_options,LifeCycle
+1.0.0,core,gm_instr,,,Cohort-specific instrument used to measure the gross motor for gm_raw_0,categorical,,,,,,,,,,gm_instr_options,LifeCycle
+1.0.0,core,gm_pc,,,"gross motor, percentiles of gm_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,gm_pro,,,total gross motor score after prorating gm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,gm_raw,,,"gross motor, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,gm_std,,,"gross motor, standardized score of gm_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,grain_pgn,,,Grains and grain products  during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,grain_psc,,,Grains and grain products in  preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,grain_sch,,,Grains and grain products in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,green_dist,,,"straight line distance to nearest green space > 5,000 m2 at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,green_dist_preg,,,"straight line distance to nearest green space > 5,000 m2 at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,green_size,,,"area of closest green space > 5,000m2 at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,green_size_preg,,,"area of closest green space > 5,000m2 at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,greenyn300,,,"is there a green space  > 5,000 m2 in a distance of 300 m? at birth",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,greenyn300_preg,,,"is there a green space  > 5,000 m2 in a distance of 300 m? at pregnancy",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,haem,,,Child's haemoglobin (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,haemage,,,Age at haemoglobin measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,haem_cord,,,Haemoglobin from cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,haemmes,,,Nonfasting or fasting when haemoglobin measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,hba1c,,,Child's HbA1c (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hba1cage,,,Age at HbA1c measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hba1c_cord,,,HbA1c measured from cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hba1cmes,,,Nonfasting or fasting when HbA1c measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,hdlc,,,Child's HDLc (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hdlcage,,,Age at HDLc measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hdlc_cord,,,HDLc measurd in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hdlcmes,,,Nonfasting or fasting when HDLc measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,hdres,,,percentage of hdres (continuous urban fabric) land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hdres_preg,,,percentage of hdres (continuous urban fabric) land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,headcirc,,,Child's head circumference (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,headcircage,,,Age at head circumference measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,headcircmes,,,Measured vs. reported child head circumference (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,height,,,Child's height (0 and <1 month,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,height_f1_fath,,,"Type of father, paternal height",categorical,,,,,,,,,,height_f1_fath_options,LifeCycle
+1.0.0,core,height_m,,,Maternal height,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,heightmes,,,Method used to measure child's height (0 and <1 month),categorical,,,,,,,,,,heightmes_options,LifeCycle
+1.0.0,core,height_mes,,,"Height measurement, primary father",categorical,,,,,,,,,,height_mes_options,LifeCycle
+1.0.0,core,height_mes_m,,,"Height measurement, mother",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,hhincome,,,Total yearly income of the household (age >-1 year and <1 year),categorical,,,,,,,,,,hhincome_options,LifeCycle
+1.0.0,core,hipcirc,,,Child's hip circumference (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hipcircage,,,Age at hip circumference measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hipcircmes,,,Measured vs. reported child hip circumference (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,hmax,,,average of maximum relative humidity during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hmax_preg,,,average of maximum relative humidity during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hmin,,,average of minimum relative humidity during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hmin_preg,,,average of minimum relative humidity during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hum,,,average of mean relative humidity during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,hum_preg,,,average of mean relative humidity during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,il6,,,Child's IL-6 (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,il6age,,,Age at IL-6 measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,il6_cord,,,IL-6 measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,il6mes,,,Nonfasting or fasting when IL-6 measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,indtr,,,"percentage of indtr (industrial, commercial, public, military and private units) land use within a buffer of 300 m at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,indtr_preg,,,"percentage of indtr (industrial, commercial, public, military and private units) land use within a buffer of 300 m at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,inhalant_all_sens_SPT,,,"Inhalant allergic sensitization, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all,,,Doctor diagnosis of inhalant allergy within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_ever,,,Ever doctor diagnosis of inhalant allergy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_IgE,,,"Inhalant allergic sensitization, measured by specific IgE within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_IgE_CAT,,,"Inhalant allergic sensitization to cat, measured by IgE within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_IgE_HDM,,,"Inhalant allergic sensitization to house dust mite, measured by IgE within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_IgE_MOULD,,,"Inhalant allergic sensitization to mould, measured by IgE within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_IgE_RYE,,,"Inhalant allergic sensitization to rye, measured by IgE within one year of birth (child aged between >-1 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_CAT,,,"Inhalant allergic sensitization to cat, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_DOG,,,"Inhalant allergic sensitization to dog, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_GRASS_mix,,,"Inhalant allergic sensitization to grass mix, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_GRASS_tim,,,"Inhalant allergic sensitization to timothy grass, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_HDM_derf,,,"Inhalant allergic sensitization to house dust mite (dermatophagoides farinae), measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_HDM_derp,,,"Inhalant allergic sensitization to house dust mite (dermatophagoides pteronyssinus), measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_HDM_mix,,,"Inhalant allergic sensitization to house dust mite mix, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_TREE_birch,,,"Inhalant allergic sensitization to birch, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,inh_all_sens_SPT_TREE_mix,,,"Inhalant allergic sensitization to tree polen mix, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,insulin,,,Child's insulin (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,insulinage,,,Age at insulin measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,insulin_cord,,,Insulin measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,insulinmes,,,Nonfasting or fasting when insulin measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,int_age,,,exact age of the child (in years) when internalizing problems were recorded for int_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,int_avg,,,average of available items comprising the total raw score of  int_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,int_eval,,,who the test for measuring internalizing problems was administered/answered by for int_raw_0,categorical,,,,,,,,,,int_eval_options,LifeCycle
+1.0.0,core,int_instr,,,Cohort-specific instrument used to measure the internalizing problems for int_raw_0,categorical,,,,,,,,,,int_instr_options,LifeCycle
+1.0.0,core,int_pc,,,"internalizing problems, percentiles of int_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,int_pro,,,total internalizing problems score after prorating int_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,int_raw,,,"internalizing problems, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ivf,,,In vitro-fertilisation,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,kcal_pgn,,,Total Daily Kcal intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,kcal_psc,,,Daily Kcal intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,kcal_sch,,,Daily Kcal intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lan_age,,,exact age of the child (in years) when language were recorded for lan_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lan_avg,,,average of available items comprising the total raw score of  lan_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,landuseshan300,,,landuse Shannon's Evenness Index within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,landuseshan300_preg,,,landuse Shannon's Evenness Index within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lan_eval,,,who the test for measuring language was administered/answered by for lan_raw_0,categorical,,,,,,,,,,lan_eval_options,LifeCycle
+1.0.0,core,lan_instr,,,Cohort-specific instrument used to measure the language for lan_raw_0,categorical,,,,,,,,,,lan_instr_options,LifeCycle
+1.0.0,core,lan_pc,,,"language, percentiles of lan_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lan_pro,,,total language score after prorating lan_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lan_raw,,,"language, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lan_std,,,"language, standardized score of lan_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,latepreg_weight,,,Late pregnancy weight,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,latepreg_weight_ga,,,Late pregnancy weight gestational age,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,latepreg_weight_mes,,,Late pregnancy weight measurement,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,lden,,,day-evening-night level at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lden_c,,,categorized day-evening-night level at birth,categorical,,,,,,,,,,lden_c_options,LifeCycle
+1.0.0,core,lden_c_preg,,,categorized day-evening-night level at pregnancy,categorical,,,,,,,,,,lden_c_preg_options,LifeCycle
+1.0.0,core,lden_preg,,,day-evening-night level at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ldlc,,,Child's LDLc (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ldlcage,,,Age at LDLc measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ldlc_cord,,,LDLc measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ldlcmes,,,Nonfasting or fasting when LDLc measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,ldres,,,percentage of ldres (discontinuous dense/medium density/low density urban fabric) land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ldres_preg,,,percentage of ldres (discontinuous dense/medium density/low density urban fabric) land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,leptin,,,Child's leptin (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,leptinage,,,Age at leptin measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,leptin_cord,,,leptin measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,leptinmes,,,Nonfasting or fasting when leptin measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,lfdairy_pgn,,,Low fat dairy during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lfdairy_psc,,,Low fat dairy in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lfdairy_sch,,,Low fat dairy in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ln,,,night level at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ln_c,,,categorized night level at birth,categorical,,,,,,,,,,ln_c_options,LifeCycle
+1.0.0,core,ln_c_preg,,,categorized night level at pregnancy,categorical,,,,,,,,,,ln_c_preg_options,LifeCycle
+1.0.0,core,ln_preg,,,night level at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,LRTI,,,"Lower respiratory tract infections (bronchiolitis, bronchitis, pneumonia, chest infection, or equivalent) within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,lst,,,land surface temperature during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,lst_preg,,,land surface temperature during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,mainmeal_psc,,,Main meals frequency per day (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,mainmeal_sch,,,Main meals frequency per day (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,major_con_anomalies,,,Major congenital anomalies,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,mar,,,Medically Assisted Reproduction,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,m_chol,,,Mother's total cholesterol during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_crp,,,Mother's CRP during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_dbp,,,Mother's diastolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,mdist,,,distance to meteorological station during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,mdist_preg,,,distance to meteorological station during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,meat_pgn,,,Meat and meat products during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,meat_psc,,,Meat and meat products in  preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,meat_sch,,,Meat and meat products in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,mental,,,Mental disorder exposure (age ≥0 to <1year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,m_glucose,,,Mother's glucose during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_haem,,,Mother's haemoglobin during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_hba1c,,,Mother's HbA1c during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_hdlc,,,Mother's HDLc during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,miggen_child,,,Child's migrant status,categorical,,,,,,,,,,miggen_child_options,LifeCycle
+1.0.0,core,m_insulin,,,Mother's insulin during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_ldlc,,,Mother's LDLc during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,mode_delivery,,,Mode of delivery,categorical,,,,,,,,,,mode_delivery_options,LifeCycle
+1.0.0,core,mother_id,,,Unique identifier number for the mother,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,m_sbp,,,Mother's systolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,m_triglycerides,,,Mother's triglycerides during pregnancy between 0-6 day of gestation (0 completed weeks),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,na_pgn,,,Sodium intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,na_psc,,,Sodium intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,na_sch,,,Sodium intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,natgr,,,percentage of natgr (forests) land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,natgr_preg,,,percentage of natgr (forests) land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ndvi100,,,average of NDVI values within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ndvi100_preg,,,average of NDVI values within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ndvi300,,,average of NDVI values within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ndvi300_preg,,,average of NDVI values within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ndvi500,,,average of NDVI values within a buffer of 500 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ndvi500_preg,,,average of NDVI values within a buffer of 500 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,neo_unit,,,Transferred to neonatal unit,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,nffish_pgn,,,Non Fatty Fish during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nffish_psc,,,Non Fatty Fish in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nffish_sch,,,Non Fatty Fish in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,no2,,,no2 average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,no2_preg,,,no2 average value (extrapolated back in time using ratio method) during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,noise_dist,,,straight distance to the nearest road with noise level at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,noise_dist_preg,,,straight distance to the nearest road with noise level at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nox,,,nox average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nox_preg,,,nox average value (extrapolated back in time using ratio method) during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nvi_age,,,exact age of the child (in years) when non-verbal intelligence were recorded for nvi_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nvi_avg,,,average of available items comprising the total raw score of  nvi_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nvi_eval,,,who the test for measuring non-verbal intelligence was administered/answered by for nvi_raw_0,categorical,,,,,,,,,,nvi_eval_options,LifeCycle
+1.0.0,core,nvi_instr,,,Cohort-specific instrument used to measure the non-verbal intelligence for nvi_raw_0,categorical,,,,,,,,,,nvi_instr_options,LifeCycle
+1.0.0,core,nvi_pc,,,"non-verbal intelligence, percentiles of nvi_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nvi_pro,,,total non-verbal intelligence score after prorating nvi_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nvi_raw,,,"non-verbal intelligence, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,nvi_std,,,"non-verbal intelligence, standardized score of nvi_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,occupcode_f1,,,Primary father's occupational code (>-1 year and <1 year),categorical,,,,,,,,,,occupcode_f1_options,LifeCycle
+1.0.0,core,occupcode_f2,,,Secondary father's occupational code (>-1 year and <1 year),categorical,,,,,,,,,,occupcode_f2_options,LifeCycle
+1.0.0,core,occupcode_m,,,Maternal occupational code (>-1 year and <1 year),categorical,,,,,,,,,,occupcode_m_options,LifeCycle
+1.0.0,core,occup_f1,,,"Paternal occupational status, primary father (>-1 year and <1 year)",categorical,,,,,,,,,,occup_f1_options,LifeCycle
+1.0.0,core,occup_f2,,,"Paternal occupational status, secondary father (>-1 year and <1 year)",categorical,,,,,,,,,,occup_f2_options,LifeCycle
+1.0.0,core,occup_m,,,Maternal occupational status (>-1 year and <1 year),categorical,,,,,,,,,,occup_m_options,LifeCycle
+1.0.0,core,other,,,"percentage of other (mineral extraction and dump sites, construction sites, land without current use) land use within a buffer of 300 m at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,other_preg,,,"percentage of other (mineral extraction and dump sites, construction sites, land without current use) land use within a buffer of 300 m at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,outcome,,,Birth outcome,categorical,,,,,,,,,,outcome_options,LifeCycle
+1.0.0,core,outdoorpage_psc,,,Exact age at outdoor play (outdoorp_psc) data collection in years,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,outdoorp_psc,,,"Child’s outdoor play duration in h /day, at preschool age",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,parity_m,,,Mother's parity,categorical,,,,,,,,,,parity_m_options,LifeCycle
+1.0.0,core,patternA_snackscreen_psc,,,"Child’s score on the 'snack - screen' pattern, at preschool age.",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,patternB_psc,,,"Child’s score on the secondary multibehavioral pattern, at preschool age.",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,perccarb_pgn,,,Percentage of Total carbohydrate intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,perccarb_psc,,,Total carbohydrate intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,perccarb_sch,,,Total carbohydrate intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,percfat_pgn,,,Percentage of Total Fat intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,percfat_psc,,,Total Fat intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,percfat_sch,,,Total Fat intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,percprot_pgn,,,Percentage of Total Protein intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,percprot_psc,,,Total Protein intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,percprot_sch,,,Total Protein intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pets,,,Furry pet ownership (≥0 to <1year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,pets_preg,,,"Furry pet (dogs, cats, rodents) ownership in child's household during pregnancy.",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,plac_abrup,,,Placental abruption,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,plac_weight,,,Placental weight,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,plurality,,,Plurality,categorical,,,,,,,,,,plurality_options,LifeCycle
+1.0.0,core,pm10,,,pm10 average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10cu,,,pm10cu value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10cu_preg,,,pm10cu value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10fe,,,pm10fe value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10fe_preg,,,pm10fe value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10k,,,pm10k value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10k_preg,,,pm10k value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10ni,,,pm10ni value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10ni_preg,,,pm10ni value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10_preg,,,pm10 average value (extrapolated back in time using ratio method) during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10s,,,pm10s value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10si,,,pm10si value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10si_preg,,,pm10si value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10s_preg,,,pm10s value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10v,,,pm10v value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10v_preg,,,pm10v value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10zn,,,pm10zn value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm10zn_preg,,,pm10zn value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25,,,pm25 average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25abs,,,pm25abs average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25abs_preg,,,pm25abs average value (extrapolated back in time using ratio method) during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25cu,,,pm25cu value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25cu_preg,,,pm25cu value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25fe,,,pm25fe value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25fe_preg,,,pm25fe value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25k,,,pm25k value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25k_preg,,,pm25k value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25ni,,,pm25ni value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25ni_preg,,,pm25ni value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25_preg,,,pm25 average value (extrapolated back in time using ratio method) during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25s,,,pm25s value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25si,,,pm25si value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25si_preg,,,pm25si value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25s_preg,,,pm25s value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25v,,,pm25v value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25v_preg,,,pm25v value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25zn,,,pm25zn value (extrapolated back in time using ratio method) at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pm25zn_preg,,,pm25zn value (extrapolated back in time using ratio method) at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pmcoarse,,,pmcoarse average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pmcoarse_preg,,,pmcoarse average value (extrapolated back in time using ratio method) during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,popdens,,,population density at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,popdens_preg,,,population density at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,port,,,percentage of port (port areas) land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,port_preg,,,percentage of port (port areas) land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,potat_pgn,,,Potatoes during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,potat_psc,,,Potatoes in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,potat_sch,,,Potatoes in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,ppd,,,Postpartum depression,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preeclam,,,Preeclampsia/HELLP syndrome,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_alc,,,Maternal alcohol intake in pregnancy (any),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_alc_unit,,,Maternal alcohol intake in pregnancy (units),categorical,,,,,,,,,,preg_alc_unit_options,LifeCycle
+1.0.0,core,preg_an,,,Maternal anorexia nervosa active during the index pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_bn,,,Maternal bulimia nervosa active during the index pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_cig,,,Maternal smoking in pregnancy (cigarettes),categorical,,,,,,,,,,preg_cig_options,LifeCycle
+1.0.0,core,preg_dia,,,Gestational diabetes,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_ed,,,Maternal any eating disorder active during the index pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,"preg_ed
+",,,Maternal any eating disorder active during the index pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_fever,,,Fever in pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_gain,,,Gestational weight gain,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_gain_mes,,,Gestational weight gain measurement,categorical,,,,,,,,,,preg_gain_mes_options,LifeCycle
+1.0.0,core,preg_ht,,,Gestational hypertension,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_no,,,Pregnancy number,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_plan,,,Planned pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_psych,,,Maternal psychiatric disorders during pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_smk,,,Maternal smoking in pregnancy (any),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,preg_thyroid,,,Thyroid disorders during pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_alc,,,Maternal pre-pregnancy alcohol intake (any),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_alc_unit,,,Maternal pre-pregnancy alcohol intake (units),categorical,,,,,,,,,,prepreg_alc_unit_options,LifeCycle
+1.0.0,core,prepreg_an,,,Maternal history of anorexia nervosa,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_anx,,,Maternal history of anxiety disorders,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_bn,,,Maternal history of bulimia nervosa,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_cig,,,Maternal smoking before pregnancy (cigarettes),categorical,,,,,,,,,,prepreg_cig_options,LifeCycle
+1.0.0,core,prepreg_dep,,,Maternal history of depressive disorders,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_dia,,,History of diabetes,categorical,,,,,,,,,,prepreg_dia_options,LifeCycle
+1.0.0,core,prepreg_ed,,,Maternal history of any eating disorder,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,"prepreg_ed
+",,,Maternal history of any eating disorder,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_psych,,,Maternal pre-pregnancy psychiatric disorders,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_smk,,,Maternal pre-pregnancy smoking (any),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_weight,,,Pre-pregnancy weight,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_weight_ga,,,GA of mother when pre-pregnancy weight measured,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,prepreg_weight_mes,,,Pre-pregnancy weight measurement,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,procmeat_pgn,,,Processed meat during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,procmeat_psc,,,Processed meat in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,procmeat_sch,,,Processed meat in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,psych_bf,,,Paternal history of psychiatric disorder,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,pufas_pgn,,,Polyunsaturated fats intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pufas_psc,,,Polyunsaturated fats intakein preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pufas_sch,,,Polyunsaturated fats intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pulse,,,Child's pulse rate (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pulseage,,,Age at pulse rate measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pulsemessit,,,Standing or sitting when pulse rate measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,pulses_pgn,,,"Legumes, nuts and their products  during pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pulses_psc,,,"Legumes, nuts and their products in  preschool age (2-4 years)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,pulses_sch,,,"Legumes, nuts and their products in school-age children (5-8 years)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,rash,,,Itchy rash within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,rash_loc,,,Location of itchy rash typical for eczema within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,recruit_age,,,Recruitment age,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,redmeat_pgn,,,Red meat  during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,redmeat_psc,,,Red meat  during in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,redmeat_sch,,,Red meat  during in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,region_fa,,,Father’s world region of birth,categorical,,,,,,,,,,region_fa_options,LifeCycle
+1.0.0,core,region_mo,,,Mother’s world region of birth,categorical,,,,,,,,,,region_mo_options,LifeCycle
+1.0.0,core,reledu_fa,,,Father’s educational selectivity,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,reledu_mo,,,Mother’s educational selectivity,integer,,,,,,,,,,,LifeCycle
+1.0.0,core,repro,,,Reproducibility of the spirometry within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,satfat_pgn,,,Saturated Fats intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,satfat_psc,,,Saturated Fats intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,satfat_sch,,,Saturated Fats in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sav_pgn,,,Savory biscuits and crisps during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sav_psc,,,Savory biscuits and crisps in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sav_sch,,,Savory biscuits and crisps in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sbp,,,Child's systolic blood pressure - 1st measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sbpav,,,Child's systolic blood pressure - average (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,screenage_psc,,,Exact age at screen time (tv_psc and screenoth_psc) data collection in years,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,screenoth_psc,,,"Child’s screen watching (minus tv) duration in h /day, at preschool age",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sex,,,Sex of the child,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,sibling_pos,,,Sibling position,categorical,,,,,,,,,,sibling_pos_options,LifeCycle
+1.0.0,core,sittinght,,,Child's sitting height (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sittinghtage,,,Age at sitting height measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sittinghtmes,,,Measured vs. reported child sitting height (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,skipbreakf_psc,,,Skipping Breakfast (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,skipbreakf_sch,,,Skipping Breakfast (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sleeptage_psc,,,Exact age at total sleep (sleept_psc) data collection in years,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sleept_psc,,,"Child’s total sleep duration in h /day, at preschool age",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,smk_cig_p,,,Paternal smoking during pregnancy (cigarettes),categorical,,,,,,,,,,smk_cig_p_options,LifeCycle
+1.0.0,core,smk,,,Passive smoking (age ≥0 to <1year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,smk_fath,,,"Father type, paternal smoking during pregnancy",categorical,,,,,,,,,,smk_fath_options,LifeCycle
+1.0.0,core,smk_p,,,Paternal smoking during pregnancy (any),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,snacks_psc,,,Snacking frequency per day (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,snacks_sch,,,Snacking frequency per day (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,solid_food,,,Solid fod introduction,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,subscapsf,,,Child's subscapular skinfold (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,subscapsfage,,,Age at subscapular skinfold measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,subscapsfmes,,,Measured vs. reported child subscapular skinfold (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,sugar_pgn,,,"Sugar, sugar products, chocolate products and confectionery  during pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sugar_psc,,,"Sugar, sugar products, chocolate products and confectionery in  preschool age (2-4 years)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,sugar_sch,,,"Sugar, sugar products, chocolate products and confectionery in school-age children (5-8 years)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,supp_pgn,,,Supplements during pregnancy,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,supp_psc,,,Any dietary supplements intake in preschool age (2-4 years),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,supp_sch,,,Any dietary supplements intake in school-age children (5-8 years),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,suprasf,,,Child's suprailiac skinfold (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,suprasfage,,,Age at suprailiac skinfold measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,suprasfmes,,,Measured vs. reported child suprailiac skinfold (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,swebev_pgn,,,Sugar-sweetened beverages during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,swebev_psc,,,Sugar-sweetened beverages in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,swebev_sch,,,Sugar-sweetened beverages in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tm,,,average of mean temperature during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tmax,,,average of maximum temperature during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tmax_preg,,,average of maximum temperature during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tmin,,,average of minimum temperature during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tmin_preg,,,average of minimum temperature during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tm_preg,,,average of mean temperature during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totcarb_pgn,,,Total carbohydrate intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totcarb_psc,,,Total carbohydrate intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totcarb_sch,,,Total carbohydrate intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totfat_pgn,,,Total Fat intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totfat_psc,,,Total Fat intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totfat_sch,,,Total Fat intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totprot_pgn,,,Total Protein intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totprot_psc,,,Total Protein intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,totprot_sch,,,Total Protein intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trafload100,,,total traffic load of all roads within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trafload100_preg,,,total traffic load of all roads within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trafmajorload100,,,total traffic load of major roads within a buffer of 100 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trafmajorload100_preg,,,total traffic load of major roads within a buffer of 100 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trafnear,,,traffic density on nearest road at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trafnear_preg,,,traffic density on nearest road at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trans,,,"percentage of trans (road and rail network and associated land, fast transit roads and associated land, other roads and associated land, railways and associated land) land use within a buffer of 300 m at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,transfat_pgn,,,Trans Fats intake during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,transfat_psc,,,Trans Fats intake in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,transfat_sch,,,Trans Fats intake in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,trans_preg,,,"percentage of trans (road and rail network and associated land, fast transit roads and associated land, other roads and associated land, railways and associated land) land use within a buffer of 300 m at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tricepsf,,,Child's tricep skinfold (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tricepsfage,,,Age at tricep skinfold measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tricepsfmes,,,Measured vs. reported child tricep skinfold (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,triglycerides,,,Child's triglycerides (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,triglyceridesage,,,Age at triglycerides measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,triglycerides_cord,,,Triglycerides measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,triglyceridesmes,,,Nonfasting or fasting when triglycerides measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,tveat_psc,,,Eating with the TV on (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tveat_sch,,,Eating with the TV on (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,tv_psc,,,"Child’s tv watching duration in h /day, at preschool age",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,urb_area_id,,,unique identifier for the urban area,categorical,,,,,,,,,,urb_area_id_options,LifeCycle
+1.0.0,core,urbgr,,,"percentage of urbgr (green urban areas, sports and leisure facilities) land use within a buffer of 300 m at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,urbgr_preg,,,"percentage of urbgr (green urban areas, sports and leisure facilities) land use within a buffer of 300 m at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,URTI,,,"Upper respiratory tract infections (ear infection, throat infections, laryngitis, croup, whooping cough or equivalent) within one year of birth (child aged between >-1 year and <1 year)",boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,urticaria,,,Ever diagnosis of urticaria,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,uvddc,,,average of DNA-damage UV dose during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,uvddc_preg,,,average of DNA-damage UV dose during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,uvdec,,,average of erythemal UV dose during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,uvdec_preg,,,average of erythemal UV dose during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,uvdvc,,,average of vitamin-d UV dose during first year (>0 year and <=1 year),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,uvdvc_preg,,,average of vitamin-d UV dose during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,veg_pgn,,,Vegetables without potatoes  during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,veg_psc,,,Vegetables without potatoes in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,veg_sch,,,Vegetables without potatoes in school-age children (5-8 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,vldlc,,,Child's vLDLc (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,vldlcage,,,Age at vLDLc measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,vldlc_cord,,,vLDLc measured in cord blood,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,vldlcmes,,,Nonfasting or fasting when vLDLc measured (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,vldres,,,percentage of vldres (discontinuous very low density urban fabric) land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,vldres_preg,,,percentage of vldres (discontinuous very low density urban fabric) land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,waistcirc,,,Child's waist circumference (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,waistcircage,,,Age at waist circumference measurement (0 and <1 month),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,waistcircmes,,,Measured vs. reported child waist circumference (0 and <1 month),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,walkability_mean,,,"walkability index (as mean of deciles of facility richness index, landuse shannon's Evenness Index, population density, connectivity density) within a buffer of 300 m at birth",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,walkability_mean_preg,,,"walkability index (as mean of deciles of facility richness index, landuse shannon's Evenness Index, population density, connectivity density) within a buffer of 300 m at pregnancy",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,water,,,percentage of water land use within a buffer of 300 m at birth,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,water_preg,,,percentage of water land use within a buffer of 300 m at pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,weight,,,Child's weight (0 and <1 month,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,weight_f1_fath,,,"Father type, weight_f1_fath",categorical,,,,,,,,,,weight_f1_fath_options,LifeCycle
+1.0.0,core,weightmes,,,Method used to measure child's weight (0 and <1 month),categorical,,,,,,,,,,weightmes_options,LifeCycle
+1.0.0,core,weight_mes,,,Paternal weight measurement,categorical,,,,,,,,,,weight_mes_options,LifeCycle
+1.0.0,core,weight_who_ga,,,WHO size for gestational age,categorical,,,,,,,,,,weight_who_ga_options,LifeCycle
+1.0.0,core,whe,,,wheezing within one year of birth (child aged between >-1 year and <1 year),boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,whe_ever,,,Wheezing between ages 0-4 years,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,whe_ever5,,,Wheezing between ages 5-10 years,boolean,,,,,,,,,,,LifeCycle
+1.0.0,core,whgrains_pgn,,,Whole grain cereals during pregnancy,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,whgrains_psc,,,Whole grain cereals in preschool age (2-4 years),continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,whgrains_sch,,,Whole grain cereals inschool-age children,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,wm_age,,,exact age of the child (in years) when working memory were recorded for wm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,wm_avg,,,average of available items comprising the total raw score of  wm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,wm_eval,,,who the test for measuring working memory was administered/answered by for wm_raw_0,categorical,,,,,,,,,,wm_eval_options,LifeCycle
+1.0.0,core,wm_instr,,,Cohort-specific instrument used to measure the working memory for wm_raw_0,categorical,,,,,,,,,,wm_instr_options,LifeCycle
+1.0.0,core,wm_pc,,,"working memory, percentiles of wm_pro_0",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,wm_pro,,,total working memory score after prorating wm_raw_0,continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,wm_raw,,,"working memory, total raw score assessed within one year of childbirth (>0 year and <1 year)",continuous,,,,,,,,,,,LifeCycle
+1.0.0,core,wm_std,,,"working memory, standardized score of wm_pro_0",continuous,,,,,,,,,,,LifeCycle
