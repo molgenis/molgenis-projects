@@ -1,1 +1,1 @@
-release,variable,value,label,order,isMissing,ontologyTermIRI
+release.resource,release.version,variable.table,variable.name,value,label,order,isMissing,ontologyTermIRI
