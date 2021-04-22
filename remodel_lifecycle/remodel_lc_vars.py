@@ -14,11 +14,9 @@ def main():
     #delete temporary codelist column
     remodeled_variables = remodeled_variables.drop('temp_code_list', axis=1)
 
-    #get keywords/topics
-    remodeled_variables = get_topics(remodeled_variables, topics)
 
     #add keywords to keywords table
-    keywords = add_keywords(remodeled_variables)
+    keywords = generate_keywords(topics)
 
     #write to file
     remodeled_variables.to_csv('./output/Variables.csv', index=False)
@@ -34,7 +32,7 @@ def remodel_variables(variables):
     remodeled_variables['name'] = variables['name']
     remodeled_variables['label'] = variables['label']
     remodeled_variables['format'] = variables['format']
-    remodeled_variables['temp_keywords'] = variables['topic']
+    remodeled_variables['keywords'] = variables['topic']
     remodeled_variables['temp_code_list'] = variables['codeList']
     
 
@@ -70,37 +68,12 @@ def get_variables_values(remodeled_variables, values):
     
     return var_values
 
+def generate_keywords(topics):
+    keywords = topics.rename(columns={"label": "definition", "parentTopic": "parent"})
+    keywords["comments"] = ""
+    keywords["ontologyTermURI"] = ""
 
-def get_topics(remodeled_variables, topics):
-    #iterate over temp_keywords and get topic labels instead of names
-    remodeled_variables = remodeled_variables.assign(keywords = '')
-
-    i = 0
-    for keyword in remodeled_variables['temp_keywords']:
-        j = 0
-        for name in topics['name']:
-            if keyword == name:
-                remodeled_variables.loc[i, 'keywords'] = topics['label'][j]
-            j+=1
-        i+=1
-
-    #drop temporary column
-    remodeled_variables = remodeled_variables.drop('temp_keywords', axis=1)
-
-    return remodeled_variables
-
-def add_keywords(remodeled_variables):
-    keywords = pd.read_csv('./target/Keywords.csv')
-
-    i = 0
-    for keyword in remodeled_variables['keywords']:
-        keywords.loc[i, 'name'] = keyword
-        i+=1
-
-    #delete duplicate rows 
-    keywords = keywords.drop_duplicates().dropna(subset=['name'])
-    
-    return keywords           
+    return keywords
                     
     
 

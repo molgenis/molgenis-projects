@@ -6,3 +6,4 @@ yarn-error.log
 remodel_lifecycle/.vscode/settings.json
 **/*/venv
 **/*/.DS_Store
+remodel_lifecycle/output/*
