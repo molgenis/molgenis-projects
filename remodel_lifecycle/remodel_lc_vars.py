@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import shutil
 
 def main():
     #read source files, 'old' lifecycle variables
@@ -14,14 +15,20 @@ def main():
     #delete temporary codelist column
     remodeled_variables = remodeled_variables.drop('temp_code_list', axis=1)
 
-
     #add keywords to keywords table
     keywords = generate_keywords(topics)
+
+    #read formats
+    formats = pd.read_csv('./target/Formats.csv')
 
     #write to file
     remodeled_variables.to_csv('./output/Variables.csv', index=False)
     variable_values.to_csv('./output/VariableValues.csv', index=False)
     keywords.to_csv('./output/Keywords.csv', index=False)
+    formats.to_csv('./output/Formats.csv', index=False)
+
+    #zip output
+    shutil.make_archive('output', 'zip', './output/')
     
     
 def remodel_variables(variables):
