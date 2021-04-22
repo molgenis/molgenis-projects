@@ -29,6 +29,7 @@ def main():
 
     #zip output
     shutil.make_archive('output', 'zip', './output/')
+    shutil.move('output.zip', './output')
     
     
 def remodel_variables(variables):
