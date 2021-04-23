@@ -7,3 +7,4 @@ remodel_lifecycle/.vscode/settings.json
 **/*/venv
 **/*/.DS_Store
 remodel_lifecycle/output/*
+.DS_Store
