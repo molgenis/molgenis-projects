@@ -1,0 +1,2 @@
+release.resource,release.version,table,name,collectionEvent.resource,collectionEvent.name,isRepeatOf.table,isRepeatOf.name
+LifeCycle,1.0.0,core,repeat1,LifeCycle,y0-1,core,smoking
