@@ -12,11 +12,15 @@ def main():
     remodeled_variables = remodel_variables(variables)
     variable_values = get_variables_values(remodeled_variables, values)
 
-    #delete temporary codelist column
-    remodeled_variables = remodeled_variables.drop('temp_code_list', axis=1)
-
     #add keywords to keywords table
     keywords = generate_keywords(topics)
+
+    #add repeated variables
+    repeated_variables = add_repeats(remodeled_variables)
+
+    #delete temporary codelist and repeats columns
+    remodeled_variables = remodeled_variables.drop('temp_code_list', axis=1)
+    remodeled_variables = remodeled_variables.drop('temp_repeats', axis=1)
 
     #read formats
     formats = pd.read_csv('./target/Formats.csv')
@@ -26,6 +30,7 @@ def main():
     variable_values.to_csv('./output/VariableValues.csv', index=False)
     keywords.to_csv('./output/Keywords.csv', index=False)
     formats.to_csv('./output/Formats.csv', index=False)
+    repeated_variables.to_csv('./output/RepeatedVariables.csv', index=False)
 
     #zip output
     shutil.make_archive('output', 'zip', './output/')
@@ -42,7 +47,7 @@ def remodel_variables(variables):
     remodeled_variables['format'] = variables['format']
     remodeled_variables['keywords'] = variables['topic']
     remodeled_variables['temp_code_list'] = variables['codeList']
-    
+    remodeled_variables['temp_repeats'] = variables['collectionEvent']
 
     #write new information
     remodeled_variables['release.resource'] = 'LifeCycle'
@@ -76,13 +81,61 @@ def get_variables_values(remodeled_variables, values):
     
     return var_values
 
+
 def generate_keywords(topics):
     keywords = topics.rename(columns={"label": "definition", "parentTopic": "parent"})
     keywords["comments"] = ""
     keywords["ontologyTermURI"] = ""
 
     return keywords
-                    
+
+
+def add_repeats(remodeled_variables):
+    repeated_variables = pd.read_csv('./target/RepeatedVariables.csv', index_col=0, nrows=0)
+
+    i = 0 #iterate over variables in remodeled_variables
+    row = 0 #iterator to count at which index to add repeated variable
+    for repeat in remodeled_variables['temp_repeats']:
+
+        #when yearly repeated add 17 repeats
+        if repeat == 'year':
+            for j in range(1, 18):
+                repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
+                row+=1
+        #when monthly repeated add 215 repeats
+        elif repeat == 'month':
+            for j in range(1, 216):
+                repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
+                row+=1
+        #when weekly repeated add 935 repeats
+        elif repeat == 'month':
+            for j in range(1, 936):
+                repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
+                row+=1
+        #when trimesterly repeated add 2 repeats
+        elif repeat == 'trimester':
+            for j in range(2, 4):
+                repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
+                repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
+                row+=1
+        i+=1
+
+    repeated_variables['release.resource'] = 'LifeCycle'
+    repeated_variables['release.version'] = '1.0.0'
+    
+    return repeated_variables
+
     
 
 if __name__ == '__main__':
