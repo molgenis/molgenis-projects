@@ -1,0 +1,10 @@
+mcmd give --user anonymous view references
+mcmd give --user anonymous view sorta
+mcmd give --user anonymous view app
+mcmd give --user anonymous view home
+mcmd give --user anonymous view Sorta
+mcmd give --user anonymous view sys_ont
+mcmd give --user anonymous view sys_md
+mcmd give --user anonymous view sys_dec
+mcmd give --user anonymous view sys_set_dataexplorer
+mcmd give --user anonymous edit sys_job
