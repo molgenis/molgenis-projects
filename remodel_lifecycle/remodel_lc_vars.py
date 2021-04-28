@@ -34,6 +34,11 @@ def main():
 
     #zip output
     shutil.make_archive('output', 'zip', './output/')
+
+    #if output.zip already exists in ./output, delete it
+    if os.path.exists('./output/output.zip'):
+        os.remove('./output/output.zip')
+    #move output.zip to folder ouptut
     shutil.move('output.zip', './output')
     
     
@@ -49,12 +54,29 @@ def remodel_variables(variables):
     remodeled_variables['temp_code_list'] = variables['codeList']
     remodeled_variables['temp_repeats'] = variables['collectionEvent']
 
+    #add '_0' to names of repeated variables
+    remodeled_variables.loc[:, 'name'] = \
+                               remodeled_variables.apply(lambda x: \
+                                                         add_zeros(x['name'], \
+                                                                   x['temp_repeats']), \
+                                                         axis=1)
+    
+
     #write new information
     remodeled_variables['release.resource'] = 'LifeCycle'
     remodeled_variables['release.version'] = '1.0.0'
     remodeled_variables['table'] = 'core'
 
     return remodeled_variables
+
+
+def add_zeros(name, repeat):
+    #add "_0" to variable name for repeated variables
+    if repeat in ['year', 'month', 'week', 'trimester']:
+        name_0 = name + "_0"
+        return name_0
+    else:
+        return name
 
 
 def get_variables_values(remodeled_variables, values):
@@ -74,7 +96,7 @@ def get_variables_values(remodeled_variables, values):
                     var_values.loc[j, 'order'] = values['order'][j]
                 j+=1
         i+=1
-
+    
     var_values['release.resource'] = 'LifeCycle'
     var_values['release.version'] = '1.0.0'
     var_values['variable.table'] = 'core'
@@ -114,7 +136,7 @@ def add_repeats(remodeled_variables):
                 repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
                 row+=1
         #when weekly repeated add 935 repeats
-        elif repeat == 'month':
+        elif repeat == 'week':
             for j in range(1, 936):
                 repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
