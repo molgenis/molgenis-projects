@@ -32,12 +32,11 @@ def main():
     formats.to_csv('./output/Formats.csv', index=False)
     repeated_variables.to_csv('./output/RepeatedVariables.csv', index=False)
 
-    #zip output
-    shutil.make_archive('output', 'zip', './output/')
-
     #if output.zip already exists in ./output, delete it
     if os.path.exists('./output/output.zip'):
         os.remove('./output/output.zip')
+    #zip output
+    shutil.make_archive('output', 'zip', './output/')    
     #move output.zip to folder ouptut
     shutil.move('output.zip', './output')
     
@@ -55,13 +54,8 @@ def remodel_variables(variables):
     remodeled_variables['temp_repeats'] = variables['collectionEvent']
 
     #add '_0' to names of repeated variables
-    remodeled_variables.loc[:, 'name'] = \
-                               remodeled_variables.apply(lambda x: \
-                                                         add_zeros(x['name'], \
-                                                                   x['temp_repeats']), \
-                                                         axis=1)
+    remodeled_variables.loc[:, 'name'] = remodeled_variables.apply(lambda x: add_zeros(x['name'], x['temp_repeats']), axis=1)
     
-
     #write new information
     remodeled_variables['release.resource'] = 'LifeCycle'
     remodeled_variables['release.version'] = '1.0.0'
