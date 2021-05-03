@@ -22,15 +22,21 @@ def main():
     remodeled_variables = remodeled_variables.drop('temp_code_list', axis=1)
     remodeled_variables = remodeled_variables.drop('temp_repeats', axis=1)
 
-    #read formats
+    #read target tables with updated info
     formats = pd.read_csv('./target/Formats.csv')
+    tables = pd.read_csv('./target/Tables.csv')
+    databanks = pd.read_csv('./target/Databanks.csv')
+    releases = pd.read_csv('./target/Releases.csv')
 
     #write to file
     remodeled_variables.to_csv('./output/Variables.csv', index=False)
     variable_values.to_csv('./output/VariableValues.csv', index=False)
     keywords.to_csv('./output/Keywords.csv', index=False)
-    formats.to_csv('./output/Formats.csv', index=False)
     repeated_variables.to_csv('./output/RepeatedVariables.csv', index=False)
+    formats.to_csv('./output/Formats.csv', index=False)
+    tables.to_csv('./output/Tables.csv', index=False)
+    databanks.to_csv('./output/Databanks.csv', index=False)
+    releases.to_csv('./output/Releases.csv', index=False)
 
     #if output.zip already exists in ./output, delete it
     if os.path.exists('./output/output.zip'):
@@ -43,7 +49,7 @@ def main():
     
 def remodel_variables(variables):
     #read target model
-    remodeled_variables = pd.read_csv('./target/Variables.csv', index_col=0, nrows=0)
+    remodeled_variables = pd.read_csv('./target/Variables.csv', nrows=0)
 
     #remodel existing information
     remodeled_variables['name'] = variables['name']
@@ -54,7 +60,7 @@ def remodel_variables(variables):
     remodeled_variables['temp_repeats'] = variables['collectionEvent']
 
     #add '_0' to names of repeated variables
-    remodeled_variables.loc[:, 'name'] = remodeled_variables.apply(lambda x: add_zeros(x['name'], x['temp_repeats']), axis=1)
+    remodeled_variables.loc[:, 'name'] = remodeled_variables.apply(lambda x: add_appendix(x['name'], x['temp_repeats']), axis=1)
     
     #write new information
     remodeled_variables['release.resource'] = 'LifeCycle'
@@ -64,18 +70,29 @@ def remodel_variables(variables):
     return remodeled_variables
 
 
-def add_zeros(name, repeat):
+def add_appendix(name, repeat):
+    #define irregular repeats
+    irregular_repeats = ['famsize_child', 'famsize_adult', 'edu_f1_fath', 'edu_f2_fath',
+                         'fam_splitup', 'occup_f1_fath', 'occup_f2_fath', 'occupcode_f1_fath',
+                         'occupcode_f2_fath', 'mental_exp','smk_exp', 'height_age', 'weight_age']
+    
     #add "_0" to variable name for repeated variables
-    if repeat in ['year', 'month', 'week', 'trimester']:
+    if repeat in ['year', 'month', 'week'] and name not in irregular_repeats:
         name_0 = name + "_0"
         return name_0
+    elif name in irregular_repeats:
+        name0 = name + "0"
+        return name0
+    elif repeat == 'trimester':
+        name_t1 = name + "1"
+        return name_t1
     else:
         return name
 
 
 def get_variables_values(remodeled_variables, values):
     #create new df
-    var_values = pd.read_csv('./target/VariableValues.csv', index_col=0, nrows=0)
+    var_values = pd.read_csv('./target/VariableValues.csv', nrows=0)
 
     #for categorical variables get values from values df and write to new df
     i = 0
@@ -107,8 +124,8 @@ def generate_keywords(topics):
 
 
 def add_repeats(remodeled_variables):
-    repeated_variables = pd.read_csv('./target/RepeatedVariables.csv', index_col=0, nrows=0)
-
+    repeated_variables = pd.read_csv('./target/RepeatedVariables.csv', nrows=0)
+    
     i = 0 #iterate over variables in remodeled_variables
     row = 0 #iterator to count at which index to add repeated variable
     for repeat in remodeled_variables['temp_repeats']:
@@ -117,7 +134,7 @@ def add_repeats(remodeled_variables):
         if repeat == 'year':
             for j in range(1, 18):
                 repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
-                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i][:-1] + str(j)
                 repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
                 row+=1
@@ -125,7 +142,7 @@ def add_repeats(remodeled_variables):
         elif repeat == 'month':
             for j in range(1, 216):
                 repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
-                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i][:-1] + str(j)
                 repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
                 row+=1
@@ -133,7 +150,7 @@ def add_repeats(remodeled_variables):
         elif repeat == 'week':
             for j in range(1, 936):
                 repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
-                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i][:-1] + str(j)
                 repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
                 row+=1
@@ -141,7 +158,7 @@ def add_repeats(remodeled_variables):
         elif repeat == 'trimester':
             for j in range(2, 4):
                 repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
-                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i] + '_' + str(j)
+                repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i][:-1] + str(j)
                 repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
                 row+=1
