@@ -1,0 +1,2 @@
+fromRelease.resource,fromRelease.version,fromTable,fromVariable,toRelease.resource,toRelease.version,toTable,toVariable,match,status,description,comments,syntax
+ALSPAC,1.0.0,core,demo-var-1,LifeCycle,1.0.0,core,FEF75_z,complete,,mock demo mapping,mapper de map ,1 / 0 

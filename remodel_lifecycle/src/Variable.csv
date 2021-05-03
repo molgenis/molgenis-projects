@@ -27,9 +27,11 @@ agebirth_p_fath,"Type of father, father's age at birth","Variable indicating whe
 agebirth_p_y,Father's age at birth in complete years,,false,integer,,aaaacyy2z4tqj6qwh3nxvnaaae,,baseline
 agrgr,"percentage of agrgr (agricultural areas, semi-natural areas and wetlands) land use within a buffer of 300 m at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_38,,year
 agrgr_preg,"percentage of agrgr (agricultural areas, semi-natural areas and wetlands) land use within a buffer of 300 m at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_38,,baseline
+agrgr_t,"percentage of agrgr (agricultural areas, semi-natural areas and wetlands) land use within a buffer of 300 m at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_38,,trimester
 airpt,percentage of airpt (airports) land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_39,,year
 airpt_preg,percentage of airpt (airports) land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_39,,baseline
-alc,Any alcohol intake in 1. trimester,,false,boolean,,aaaacyy2zc3hp6qwh3nxvnaaae,,trimester
+airpt_t,percentage of airpt (airports) land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_39,,trimester
+alc_t,Any alcohol intake in 1. trimester,,false,boolean,,aaaacyy2zc3hp6qwh3nxvnaaae,,trimester
 all,"Doctor diagnosis of allergy, type of allergen unspecified within one year of birth (child aged between >-1 year and <1 year)","Where data are available, allergy should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_allergy_anyallergy,,year
 allergy_any_m,Maternal history of any allergy before pregnancy (of index child),"Where data are available, allergy should be doctor diagnosed. If no information is available on doctor diagnosis, the variable is partially harmonised.",false,boolean,,matchar_healthchar_respallergyskin,,baseline
 allergy_food_m,Maternal history of food allergy before pregnancy (of index child),"Where data are available, food allergy should be doctor diagnosed. If no information is available on doctor diagnosis, the variable is partially harmonised.",false,boolean,,matchar_healthchar_respallergyskin,,baseline
@@ -46,8 +48,10 @@ apgar,5 minute Apgar score,"10 minute Apgar score can be used if 5 minute Apgar 
 1 minute Apgar score cannot be used in place of 5 minute Apgar score",false,integer,,aaaaczocjzph56qwhycgrlaaae,,baseline
 areases_quint,area-level SES indicator (deprivation index in quintiles) at birth,using different local data for each cohort,false,categorical,areases_quint_options,sub_sub_folder_75,,year
 areases_quint_preg,area-level SES indicator (deprivation index in quintiles) at pregnancy,using different local data for each cohort,false,categorical,areases_quint_preg_options,sub_sub_folder_75,,baseline
+areases_quint_t,area-level SES indicator (deprivation index in quintiles) at first trimester,using different local data for each cohort,false,categorical,areases_quint_t_options,sub_sub_folder_75,,trimester
 areases_tert,area-level SES indicator (deprivation index in tertiles) at birth,using different local data for each cohort,false,categorical,areases_tert_options,sub_sub_folder_74,,year
 areases_tert_preg,area-level SES indicator (deprivation index in tertiles) at pregnancy,using different local data for each cohort,false,categorical,areases_tert_preg_options,sub_sub_folder_74,,baseline
+areases_tert_t,area-level SES indicator (deprivation index in tertiles) at first trimester,using different local data for each cohort,false,categorical,areases_tert_t_options,sub_sub_folder_74,,trimester
 armcirc,Child's arm circumference (0 and <1 month),,false,continuous,,,,month
 armcircage,Age at arm circumference measurement (0 and <1 month),,false,continuous,,,,month
 armcircmes,Measured vs. reported child arn circumference (0 and <1 month),,false,boolean,,,,month
@@ -75,14 +79,22 @@ asthma_bf,Paternal history of asthma (biological father),"State in harmonisation
 
 Where data are available, asthma should be doctor diagnosed. If no information is available on doctor diagnosis, the variable is partially harmonised.
 Fathers who were asked whether their asthma was diagnosed by a doctor but who did not know or were unsure, should be coded as missing.",false,boolean,,aaaacyy22ey536qwh3nxvnaaae,,baseline
-asthma_current_ISAAC,Current asthma  (ISAAC),"1, and (2 or 3)
+asthma_current_ISAAC,Diagnosis of asthma according to ISAAC definition,"1, and (2 or 3)
 1. Doctor diagnosed asthma
 2. Wheezing in the past 12 months
 3. Use of asthma medication in the past 12 months",false,boolean,,child_healthchar_resp_asthma_isaac,,year
-asthma_current_MeDALL,Current asthma (MeDALL),"2 out of 3 of: 
+asthma_current_MeDALL,Diagnosis of asthma according to MeDALL definition,"2 out of 3 of: 
 1. Doctor diagnosed asthma
 2. Wheezing in the past 12 months
 3. Use of asthma medication in the past 12 months",false,boolean,,child_healthchar_resp_asthma_medall,,year
+asthma_current_ISAAC,Current asthma  (ISAAC),"1, and (2 or 3)
+1. Doctor diagnosed asthma
+2. Wheezing in the past 12 months
+3. Use of asthma medication in the past 12 months",false,boolean,,child_healthchar_resp_asthma_isaac,,baseline
+asthma_current_MeDALL,Current asthma (MeDALL),"2 out of 3 of: 
+1. Doctor diagnosed asthma
+2. Wheezing in the past 12 months
+3. Use of asthma medication in the past 12 months",false,boolean,,child_healthchar_resp_asthma_medall,,baseline
 asthma_ever_CHICOS,School age asthma according to CHICOS definition,"Asthma diagnosis at the age of ≥5 years. Where data are available, asthma should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_asthma_chicos,,baseline
 asthma_ever_MeDALL,Ever diagnosis of asthma according to MeDALL definition,"Ever diagnosis of asthma. Where data are available, asthma should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_asthma_medall,,baseline
 asthma_m,Maternal history of asthma before pregnancy,"Where data are available, asthma should be doctor diagnosed. If no information is available on doctor diagnosis, the variable is partially harmonised.",false,boolean,,aaaacyy2yydqt6qwh3nxvnaaae,,baseline
@@ -90,8 +102,10 @@ asthma_med,use of asthma medication within one year of birth (child aged between
 asthma_med_spec,"use of asthma medication, type specified, within one year of birth (child aged between >-1 year and <1 year)",,false,categorical,asthma_med_spec_options,child_healthchar_resp_asthma_med,,year
 bdens100,building density within a buffer of 100 m at birth,using European Settlement Map 2017 except for MOBA (Open Street Maps),false,continuous,,sub_sub_folder_24,,year
 bdens100_preg,building density within a buffer of 100 m at pregnancy,using European Settlement Map 2017 except for MOBA (Open Street Maps),false,continuous,,sub_sub_folder_24,,baseline
+bdens100_t,building density within a buffer of 100 m at first trimester,using European Settlement Map 2017 except for MOBA (Open Street Maps),false,continuous,,sub_sub_folder_24,,trimester
 bdens300,building density within a buffer of 300 m at birth,using European Settlement Map 2017 except for MOBA (Open Street Maps),false,continuous,,sub_sub_folder_25,,year
 bdens300_preg,building density within a buffer of 300 m at pregnancy,using European Settlement Map 2017 except for MOBA (Open Street Maps),false,continuous,,sub_sub_folder_25,,baseline
+bdens300_t,building density within a buffer of 300 m at first trimester,using European Settlement Map 2017 except for MOBA (Open Street Maps),false,continuous,,sub_sub_folder_25,,trimester
 BHR,"Bronchial hyperresponsiveness, as measured by metacholine challenge test, within one year of birth (child aged between >-1 year and <1 year)",Bronchial hyperresponsiveness is defined as a decrease in FEV1 of ≥20% after the administration of methacholine.,false,boolean,,child_healthchar_resp_lungfunc_spirometry_bronchhr,,year
 bicepsf,Child's bicep skinfold (0 and <1 month),,false,continuous,,,,month
 bicepsfage,Age at bicep skinfold measurement (0 and <1 month),,false,continuous,,,,month
@@ -106,10 +120,13 @@ birth_weight,Weight of the child at birth,,false,continuous,,aaaaczockliiz6qwhyc
 birth_year,Birth year of the index child,,false,integer,,aaaaczocjrcav6qwhycgrlaaae,,baseline
 blue_dist,"straight line distance to nearest blue space > 5,000 m2 at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_60,,year
 blue_dist_preg,"straight line distance to nearest blue space > 5,000 m2 at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_60,,baseline
+blue_dist_t,"straight line distance to nearest blue space > 5,000 m2 at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_60,,trimester
 blue_size,"area of closest blue space > 5,000m2 at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_62,,year
 blue_size_preg,"area of closest blue space > 5,000m2 at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_62,,baseline
+blue_size_t,"area of closest blue space > 5,000m2 at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_62,,trimester
 blueyn300,"is there a blue space  > 5,000 m2 in a distance of 300 m? at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,boolean,,sub_sub_folder_64,,year
 blueyn300_preg,"is there a blue space  > 5,000 m2 in a distance of 300 m? at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,boolean,,sub_sub_folder_64,,baseline
+blueyn300_t,"is there a blue space  > 5,000 m2 in a distance of 300 m? at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,boolean,,sub_sub_folder_64,,trimester
 bn_m,Maternal bulimia nervosa active active from ≥0 to 1 year.,"Maternal bulimia nervosa active active from ≥0 to 1 year: self-reported or registry-based. If both sources of information are available, consider registry-based BN.
 Partial harmonization includes:
 - Standardized questionnaires/criteria that refer to the period after pregnancy;
@@ -123,16 +140,22 @@ breastfed_excl,Total duration of exclusive breastfeeding,"Total duration of excl
 Upper limit of 6 months; durations greater than 6 months assigned the value 6 months. Children never breastfed will have a duration of 0 months",false,continuous,,aaaacyy22p2fn6qwh3nxvnaaae,,baseline
 bus_lines_100,length of public bus lines within a buffer of 100 m at birth,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_28,,year
 bus_lines_100_preg,length of public bus lines within a buffer of 100 m at pregnancy,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_28,,baseline
+bus_lines_100_t,length of public bus lines within a buffer of 100 m at first trimester,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_28,,trimester
 bus_lines_300,length of public bus lines within a buffer of 300 m at birth,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_29,,year
 bus_lines_300_preg,length of public bus lines within a buffer of 300 m at pregnancy,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_29,,baseline
+bus_lines_300_t,length of public bus lines within a buffer of 300 m at first trimester,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_29,,trimester
 bus_lines_500,length of public bus lines within a buffer of 500 m at birth,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_30,,year
 bus_lines_500_preg,length of public bus lines within a buffer of 500 m at pregnancy,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_30,,baseline
+bus_lines_500_t,length of public bus lines within a buffer of 500 m at first trimester,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_30,,trimester
 bus_stops_100,number of public bus stops within a buffer of 100 m at birth,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_31,,year
 bus_stops_100_preg,number of public bus stops within a buffer of 100 m at pregnancy,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_31,,baseline
+bus_stops_100_t,number of public bus stops within a buffer of 100 m at first trimester,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_31,,trimester
 bus_stops_300,number of public bus stops within a buffer of 100 m at birth,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_32,,year
 bus_stops_300_preg,number of public bus stops within a buffer of 100 m at pregnancy,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_32,,baseline
+bus_stops_300_t,number of public bus stops within a buffer of 300 m at first trimester,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_32,,trimester
 bus_stops_500,number of public bus stops within a buffer of 500 m at birth,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_33,,year
 bus_stops_500_preg,number of public bus stops within a buffer of 500 m at pregnancy,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_33,,baseline
+bus_stops_500_t,number of public bus stops within a buffer of 500 m at first trimester,using a different local layer or open street maps for each cohort,false,continuous,,sub_sub_folder_33,,trimester
 cats,Cat ownership (≥0 to <1year),Cat ownership in child's household from 0 to <1 year,false,boolean,,aaaac4b5pvo7j6qwhza7xqiaae,,year
 cats_preg,Cat ownership in pregnancy,Cat ownership in household during pregnancy,false,boolean,,aaaac4b5pvo7j6qwhza7xqiaae,,baseline
 cats_quant,Number of cats owned (≥0 to <1year),"Number of cats owned in child's household from 0 to <1 year
@@ -180,8 +203,10 @@ cohort_id,Unique identifier number for the cohort,,false,categorical,cohort_id_o
 con_anomalies,Any congenital malformation,Diagnosed within the 1st year of life,false,boolean,,aaaaczoclfi7h6qwhycgrlaaae,,baseline
 connind100,connectivity density within a buffer of 100 m at birth,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_26,,year
 connind100_preg,connectivity density within a buffer of 100 m at pregnancy,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_26,,baseline
+connind100_t,connectivity density within a buffer of 100 m at first trimester,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_26,,trimester
 connind300,connectivity density within a buffer of 300 m at birth,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_27,,year
 connind300_preg,connectivity density within a buffer of 300 m at pregnancy,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_27,,baseline
+connind300_t,connectivity density within a buffer of 300 m at first trimester,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_27,,trimester
 COPD_adult_diagnosis,Ever diagnosis of COPD in adulthood based on physician diagnosis,"Where data are available, COPD should be doctor diagnosed. If no information is available on doctor diagnosis, the variable is partially harmonised.",false,boolean,,child_adulthealthchar_resp,,baseline
 COPD_adult_GOLD,Ever diagnosis of COPD in adulthood based on GOLD criteria,COPD defined according to the GOLD criteria encompasses an obstructive pre-bronchodilator spirometry (FEV1/FVC < 0.70),false,boolean,,child_adulthealthchar_resp,,baseline
 COPD_adult_LLN,Ever diagnosis of COPD in adulthood based on lower limit of normal (LLN),"COPD defined according to the lower limit of normal (LLN), as described in J.L. Hankinson et al, Am J Respir Crit Care Med, 1999.",false,boolean,,child_adulthealthchar_resp,,baseline
@@ -215,6 +240,7 @@ dietass_sch,Method of dietary assessment in school-age children (5-8 years),,fal
 dietga_pgn,Gestational week at dietary assessment,,false,continuous,,aaaac4cyap2ax6qwhza7xqiaae,,baseline
 distinvnear1,inverse distance to nearest road at birth,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_73,,year
 distinvnear1_preg,inverse distance to nearest road at pregnancy,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_73,,baseline
+distinvnear1_t,inverse distance to nearest road at first trimester,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_73,,trimester
 dogs,Dog ownership (≥0 to <1year),Dog ownership in child's household from 0 to <1 year,false,boolean,,aaaac4b5qxlmb6qwhza7xqiaae,,year
 dogs_preg,Dog ownership in pregnancy,Dog ownership in household during pregnancy,false,boolean,,aaaac4b5qxlmb6qwhza7xqiaae,,baseline
 dogs_quant,Number of dogs owned (≥0 to <1year),"Number of dogs owned in child's household from 0 to <1 year
@@ -249,7 +275,8 @@ Medium: Upper secondary, Post-secondary non-tertiary (ISCED-2011: 3-4, ISCED-97:
 
 Low: No education; early childhood; pre-primary; primary; lower secondary or second stage of basic education.   (ISCED-2011: 0-2, ISCED-97: 0-2) 
 
-Mapping tools for specific countries can be found here: http://uis.unesco.org/en/isced-mappings",false,categorical,edu_f1_options,aaaacyy2zzopf6qwh3nxvnaaae,,week
+Mapping tools for specific countries can be found here: http://uis.unesco.org/en/isced-mappings",false,categorical,edu_f1_options,aaaacyy2zzopf6qwh3nxvnaaae,,year
+edu_f1_fath,"Type of father, edu_f1_0","Variable indicating whether the education level recorded in edu_f1_0 is for the biological father, the social father/mother or whether this is unknown",false,categorical,edu_f1_fath_options,aaaacyy2zzopf6qwh3nxvnaaae,,year
 edu_f2,Secondary father figure's education level (age >-1 year and <1 year),"Secondary father figure's level of education based on the highest on-going or completed education within one year of birth. If more than one education level is reported within the defined time frame, use highest recorded education level.
 
 Classification according to International Standard Classification of Education 97/2011 (ISCED-97/2011)
@@ -260,7 +287,8 @@ Medium: Upper secondary, Post-secondary non-tertiary (ISCED-2011: 3-4, ISCED-97:
 
 Low: No education; early childhood; pre-Secondary; Secondary; lower secondary or second stage of basic education.   (ISCED-2011: 0-2, ISCED-97: 0-2) 
 
-Mapping tools for specific countries can be found here: http://uis.unesco.org/en/isced-mappings",false,categorical,edu_f2_options,aaaacyy2zzopf6qwh3nxvnaaae,,week
+Mapping tools for specific countries can be found here: http://uis.unesco.org/en/isced-mappings",false,categorical,edu_f2_options,aaaacyy2zzopf6qwh3nxvnaaae,,year
+edu_f2_fath,"Type of father, edu_f2_0","Variable indicating whether the education level recorded in variable edu_f2_0 is for the biological father, the social father/mother or whether this is unknown",false,categorical,edu_f2_fath_options,aaaacyy2zzopf6qwh3nxvnaaae,,year
 edu_m,Mother's education level (between >-1 year and <1 year),"Level of education based on the highest on-going or completed education when the child was 0 year (between >-1 year and <1 year). If more than one education level is reported within the defined time frame, use highest recorded education level.
 
 Classification according to International Standard Classification of Education 97/2011 (ISCED-97/2011)
@@ -295,13 +323,18 @@ ext_raw,"externalizing problems, total raw score assessed within one year of chi
 The variable is fully harmonized if the score is based on all required items of the respective instrument. In case of score calculated using a short form of the test, please inform about it (including the items used) and categorize it as partially harmonized.",false,continuous,,aaaac3pytaulj6qwhza7xqiaae,,year
 famdinner_psc,Family dinner or dinner with at least one adult (2-4 years),,false,continuous,,aaaac4cyehvsh6qwhza7xqiaae,,baseline
 famdinner_sch,Family dinner or dinner with at least one adult (5-8 years),,false,continuous,,aaaac4cyewju56qwhza7xqiaae,,baseline
-famsize,"Family size, adults (≥0 to <1 year)","Total numbers of adults in the same household in 1st year of life (≥0 to <1 year), preferably from same time point as when hh income recorded",false,integer,,aaaacyy23tsy56qwh3nxvnaaae,,week
-fam,Parent split up (age ≥0 to <1 year),Did the parents split up during the 1st year of child´s life (age range ≥0 to <1 year),false,boolean,,aaaacyy23svon6qwh3nxvnaaae,,year
+famsize_adult,"Family size, adults (≥0 to <1 year)","Total numbers of adults in the same household in 1st year of life (≥0 to <1 year), preferably from same time point as when hh income recorded",false,integer,,aaaacyy23tsy56qwh3nxvnaaae,,year
+famsize_child,"Family size, children (≥0 to <1 year)","Total number of children in the household under 18 years old including index child (all children: biological, half-siblings, adopted, fostered etc.); maximum recorded number of children in 1st year of life (≥0 to <1 year) 
+
+If the cohort has a different definition for child (e.g. <14 years), harmonisation is still possible, the variable will be a partial match (this should be detailed under the match in the catalogue)
+Household where the child lives the majority of the time",false,integer,,aaaacyy23tsy56qwh3nxvnaaae,,year
+fam_splitup,Parent split up (age ≥0 to <1 year),Did the parents split up during the 1st year of child´s life (age range ≥0 to <1 year),false,boolean,,aaaacyy23svon6qwh3nxvnaaae,,year
 fastfood_psc,Visiting fast food restaurant (2-4 years),,false,continuous,,aaaac4cyehvsh6qwhza7xqiaae,,baseline
 fastfood_sch,Visiting fast food restaurants per week (5-8 years),,false,continuous,,aaaac4cyewju56qwhza7xqiaae,,baseline
-f_dbp,Father's diastolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
+f_dbp,Father's diastolic blood pressure during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
 fdensity300,number of facilities present within a buffer of 300 m at birth,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_34,,year
 fdensity300_preg,number of facilities present within a buffer of 300 m at pregnancy,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_34,,baseline
+fdensity300_t,number of facilities present within a buffer of 300 m at first trimester,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_34,,trimester
 FEF25_abs,Forced Expiratory Flow after exhaling 25% of FVC (L/s) within one year of birth (child aged between >-1 year and <1 year),,false,continuous,,child_healthchar_resp_lungfunc_spirometry_fef25_absolute,,year
 FEF50_abs,Forced Expiratory Flow after exhaling 50% of FVC (L/s) within one year of birth (child aged between >-1 year and <1 year),,false,continuous,,child_healthchar_resp_lungfunc_spirometry_fef50_absolute,,year
 FEF75_abs,Forced Expiratory Flow after exhaling 75% of FVC (L/s) within one year of birth (child aged between >-1 year and <1 year),,false,continuous,,child_healthchar_resp_lungfunc_spirometry_fef75_absolute,,year
@@ -325,7 +358,8 @@ fm_pc,"fine motor, percentiles of fm_pro_0",,false,continuous,,aaaac3pywgivt6qwh
 fm_pro,total fine motor score after prorating fm_raw_0,"If fine motor is measured using “computerized” test, create prorated scores equals to raw scores: fm_pro_0=fm_raw_0",false,continuous,,aaaac3pywgivt6qwhza7xqiaai,,year
 fm_raw,"fine motor, total raw score assessed within one year of childbirth (>0 year and <1 year)","The variable is fully harmonized if the score is based on all required items of the respective instrument. In case of score calculated using a short form of the test, please inform about it (including the items used) and categorize it as partially harmonized",false,continuous,,aaaac3pywgivt6qwhza7xqiaai,,year
 fm_std,"fine motor, standardized score of fm_pro_0",,false,continuous,,aaaac3pywgivt6qwhza7xqiaai,,year
-folic,Folic acids >12 weeks.,"Intake of folic acids (folate, vitamin B9) after week 12 of pregnancy.",false,boolean,,aaaacyy2zdxxd6qwh3nxvnaaae,,trimester
+folic_post12,Folic acids >12 weeks.,"Intake of folic acids (folate, vitamin B9) after week 12 of pregnancy.",false,boolean,,aaaacyy2zdxxd6qwh3nxvnaaae,,baseline
+folic_preg12,Folic acids 0-12 weeks,"Intake of folic acids (folate, vitamin B9) during the period from conception to early pregnancy (12 weeks)",false,boolean,,aaaacyy2zdxxd6qwh3nxvnaaae,,baseline
 folic_prepreg,Folic acids before conception,"Intake of folic acids (folate, vitamin B9) before conception",false,boolean,,aaaacyy2zdxxd6qwh3nxvnaaae,,baseline
 food_all,Doctor diagnosis of food allergy within one year of birth (child aged between >-1 year and <1 year),"Where data are available, allergy should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_allergy_foodallergy,,year
 food_all_ever,Ever doctor diagnosis of food allergy,"Where data are available, allergy should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_allergy_foodallergy,,baseline
@@ -347,14 +381,17 @@ food_all_sens_SPT_SHELL_mix,"Food allergic sensitization to shellfish mix, measu
 food_all_sens_SPT_WHEAT,"Food allergic sensitization to wheat, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",,false,boolean,,child_healthchar_allergy_allsens_food_skinprick_wheat,,year
 foodenvdens300,number of facilities related to unhealthy food divided by the area of the 300 meters buffer at birth,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_80,,year
 foodenvdens300_preg,number of facilities related to unhealthy food divided by the area of the 300 meters buffer at pregnancy,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_80,,baseline
+foodenvdens300_t,number of facilities related to unhealthy food divided by the area of the 300 meters buffer at first trimester,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_80,,trimester
 foodenvdensosm300,number of open street maps facilities related to unhealthy food divided by the area of the 300 meters buffer at birth,using the same source for all the cohorts (OPEN STREET MAPS),false,continuous,,sub_sub_folder_81,,year
 foodenvdensosm300_preg,number of open street maps facilities related to unhealthy food divided by the area of the 300 meters buffer at pregnancy,using the same source for all the cohorts (OPEN STREET MAPS),false,continuous,,sub_sub_folder_81,,baseline
+foodenvdensosm300_t,number of open street maps facilities related to unhealthy food divided by the area of the 300 meters buffer at first trimester,using the same source for all the cohorts (OPEN STREET MAPS),false,continuous,,sub_sub_folder_81,,trimester
 frichness300,number of different facility types present divided by the maximum potential number of facility types within a buffer of 300 m at birth,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_35,,year
 frichness300_preg,number of different facility types present divided by the maximum potential number of facility types within a buffer of 300 m at pregnancy,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_35,,baseline
+frichness300_t,number of different facility types present divided by the maximum potential number of facility types within a buffer of 300 m at first trimester,using the same source for all the cohorts (NAVTEQ),false,continuous,,sub_sub_folder_35,,trimester
 fruit_pgn,Fruits during pregnancy,Based on Eurocode 2 Food Coding System,false,continuous,,aaaac4cyara376qwhza7xqiaae,,baseline
 fruit_psc,Fruits in  preschool age (2-4 years),,false,continuous,,aaaac4cyeeamt6qwhza7xqiaam,,baseline
 fruit_sch,Fruits in school-age children (5-8 years),,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
-f_sbp,Father's systolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
+f_sbp,Father's systolic blood pressure during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
 FVC_abs,Forced Vital Capacity (L) within one year of birth (child aged between >-1 year and <1 year),,false,continuous,,child_healthchar_resp_lungfunc_spirometry_fvc_absolute,,year
 FVC_z,"Forced Vital Capacity, z-score according to GLI reference criteria within one year of birth (child aged between >-1 year and <1 year)",,false,continuous,,child_healthchar_resp_lungfunc_spirometry_fvc_zscore,,year
 ga_bj,Gestational age (best judgement),"Best clinical judgement decided by cohorts estimating the most accurately measure of GA obtained within the cohort
@@ -397,10 +434,13 @@ grain_psc,Grains and grain products in  preschool age (2-4 years),,false,continu
 grain_sch,Grains and grain products in school-age children (5-8 years),,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
 green_dist,"straight line distance to nearest green space > 5,000 m2 at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_61,,year
 green_dist_preg,"straight line distance to nearest green space > 5,000 m2 at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_61,,baseline
+green_dist_t,"straight line distance to nearest green space > 5,000 m2 at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_61,,trimester
 green_size,"area of closest green space > 5,000m2 at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_63,,year
 green_size_preg,"area of closest green space > 5,000m2 at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_63,,baseline
+green_size_t,"area of closest green space > 5,000m2 at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_63,,trimester
 greenyn300,"is there a green space  > 5,000 m2 in a distance of 300 m? at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,boolean,,sub_sub_folder_65,,year
 greenyn300_preg,"is there a green space  > 5,000 m2 in a distance of 300 m? at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,boolean,,sub_sub_folder_65,,baseline
+greenyn300_t,"is there a green space  > 5,000 m2 in a distance of 300 m? at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,boolean,,sub_sub_folder_65,,trimester
 haem,Child's haemoglobin (0 and <1 month),,false,continuous,,,,month
 haemage,Age at haemoglobin measurement (0 and <1 month),,false,continuous,,,,month
 haem_cord,Haemoglobin from cord blood,,false,continuous,,,,baseline
@@ -415,14 +455,20 @@ hdlc_cord,HDLc measurd in cord blood,,false,continuous,,,,baseline
 hdlcmes,Nonfasting or fasting when HDLc measured (0 and <1 month),,false,boolean,,,,month
 hdres,percentage of hdres (continuous urban fabric) land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_40,,year
 hdres_preg,percentage of hdres (continuous urban fabric) land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_40,,baseline
+hdres_t,percentage of hdres (continuous urban fabric) land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_40,,trimester
 headcirc,Child's head circumference (0 and <1 month),,false,continuous,,,,month
 headcircage,Age at head circumference measurement (0 and <1 month),,false,continuous,,,,month
 headcircmes,Measured vs. reported child head circumference (0 and <1 month),,false,boolean,,,,month
 height,Child's height (0 and <1 month,Child's height measured between the ages of 0 and <1 month. This does not include the child’s birth length,false,continuous,,aaaaczock5eyb6qwhycgrlaaai,,month
+height_age,"Exact age, height_0",Exact age of the child (in days) when child's height was recorded for height_0,false,integer,,aaaaczock5eyb6qwhycgrlaaai,,month
+height_f1,"Paternal height, primary father","Primary/main father figure´s height reported in first paternal questionnaire
+
+Use measured height if available. 
+Note in the catalogue when it was recorded, i.e., which follow-up",false,continuous,,aaaacyy22c72p6qwh3nxvnaaae,,baseline
 height_f1_fath,"Type of father, paternal height","Variable indicating whether the height recorded in height_f1 is for the biological father, the social father, or whether this is unknown",false,categorical,height_f1_fath_options,aaaacyy22c72p6qwh3nxvnaaae,,baseline
 height_m,Maternal height,Use measured height if available,false,continuous,,aaaacyy2ynhez6qwh3nxvnaaae,,baseline
 heightmes,Method used to measure child's height (0 and <1 month),,false,categorical,heightmes_options,,,month
-height_mes,"Height measurement, primary father",Reported vs. measured paternal height (primary father),false,categorical,height_mes_options,aaaacyy22c72p6qwh3nxvnaaae,,baseline
+height_mes_f1,"Height measurement, primary father",Reported vs. measured paternal height (primary father),false,categorical,height_mes_f_options,aaaacyy22c72p6qwh3nxvnaaae,,baseline
 height_mes_m,"Height measurement, mother",Reported vs. measured maternal height,false,boolean,,aaaacyy2ynhez6qwh3nxvnaaae,,baseline
 hhincome,Total yearly income of the household (age >-1 year and <1 year),"Total yearly income of the household,  within one year of birth (child aged between >-1 year and <1 year). Categorised into quartiles of low, medium-low, medium-high and high income levels based on national distribution of household yearly income
 
@@ -434,16 +480,20 @@ hipcircage,Age at hip circumference measurement (0 and <1 month),,false,continuo
 hipcircmes,Measured vs. reported child hip circumference (0 and <1 month),,false,boolean,,,,month
 hmax,average of maximum relative humidity during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,sub_sub_folder_55,,year
 hmax_preg,average of maximum relative humidity during pregnancy,using local meteorologic stations,false,continuous,,sub_sub_folder_55,,baseline
+hmax_t,average of maximum relative humidity during first trimester,using local meteorologic stations,false,continuous,,sub_sub_folder_55,,trimester
 hmin,average of minimum relative humidity during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,sub_sub_folder_54,,year
 hmin_preg,average of minimum relative humidity during pregnancy,using local meteorologic stations,false,continuous,,sub_sub_folder_54,,baseline
+hmin_t,average of minimum relative humidity during first trimester,using local meteorologic stations,false,continuous,,sub_sub_folder_54,,trimester
 hum,average of mean relative humidity during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,sub_sub_folder_53,,year
 hum_preg,average of mean relative humidity during pregnancy,using local meteorologic stations,false,continuous,,sub_sub_folder_53,,baseline
+hum_t,average of mean relative humidity during first trimester,using local meteorologic stations,false,continuous,,sub_sub_folder_53,,trimester
 il6,Child's IL-6 (0 and <1 month),,false,continuous,,,,month
 il6age,Age at IL-6 measurement (0 and <1 month),,false,continuous,,,,month
 il6_cord,IL-6 measured in cord blood,,false,continuous,,,,baseline
 il6mes,Nonfasting or fasting when IL-6 measured (0 and <1 month),,false,boolean,,,,month
 indtr,"percentage of indtr (industrial, commercial, public, military and private units) land use within a buffer of 300 m at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_41,,year
 indtr_preg,"percentage of indtr (industrial, commercial, public, military and private units) land use within a buffer of 300 m at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_40,,baseline
+indtr_t,"percentage of indtr (industrial, commercial, public, military and private units) land use within a buffer of 300 m at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_41,,trimester
 inhalant_all_sens_SPT,"Inhalant allergic sensitization, measured by skin prick test within one year of birth (child aged between >-1 year and <1 year)",,false,boolean,,child_healthchar_allergy_allsens_inhalant_skinprick_any,,year
 inh_all,Doctor diagnosis of inhalant allergy within one year of birth (child aged between >-1 year and <1 year),"Where data are available, allergy should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_allergy_inhallergy,,year
 inh_all_ever,Ever doctor diagnosis of inhalant allergy,"Where data are available, allergy should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_allergy_inhallergy,,baseline
@@ -483,6 +533,7 @@ lan_age,exact age of the child (in years) when language were recorded for lan_ra
 lan_avg,average of available items comprising the total raw score of  lan_raw_0,,false,continuous,,aaaac3pywlwmb6qwhza7xqiaau,,year
 landuseshan300,landuse Shannon's Evenness Index within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_36,,year
 landuseshan300_preg,landuse Shannon's Evenness Index within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_36,,baseline
+landuseshan300_t,landuse Shannon's Evenness Index within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_36,,trimester
 lan_eval,who the test for measuring language was administered/answered by for lan_raw_0,“computerized” (value label 4) only applies if the child perform the test with automatic results. Any computerized rating scale or questionnaire does not apply.,false,categorical,lan_eval_options,aaaac3pywlwmb6qwhza7xqiaau,,year
 lan_instr,Cohort-specific instrument used to measure the language for lan_raw_0,"Use the following specified scales:
 Expressive subscale for BAS, BDIST;
@@ -506,13 +557,16 @@ latepreg_weight_mes,Late pregnancy weight measurement,Reported vs. measured late
 lden,day-evening-night level at birth,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_69,,year
 lden_c,categorized day-evening-night level at birth,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,categorical,lden_c_options,sub_sub_folder_71,,year
 lden_c_preg,categorized day-evening-night level at pregnancy,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,categorical,lden_c_preg_options,sub_sub_folder_71,,baseline
+lden_c_t,categorized day-evening-night level at first trimester,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,categorical,lden_c_t_options,sub_sub_folder_71,,trimester
 lden_preg,day-evening-night level at pregnancy,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_69,,baseline
+lden_t,day-evening-night level at first trimester,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_69,,trimester
 ldlc,Child's LDLc (0 and <1 month),,false,continuous,,,,month
 ldlcage,Age at LDLc measurement (0 and <1 month),,false,continuous,,,,month
 ldlc_cord,LDLc measured in cord blood,,false,continuous,,,,baseline
 ldlcmes,Nonfasting or fasting when LDLc measured (0 and <1 month),,false,boolean,,,,month
 ldres,percentage of ldres (discontinuous dense/medium density/low density urban fabric) land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_42,,year
 ldres_preg,percentage of ldres (discontinuous dense/medium density/low density urban fabric) land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_41,,baseline
+ldres_t,percentage of ldres (discontinuous dense/medium density/low density urban fabric) land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_42,,trimester
 leptin,Child's leptin (0 and <1 month),,false,continuous,,,,month
 leptinage,Age at leptin measurement (0 and <1 month),,false,continuous,,,,month
 leptin_cord,leptin measured in cord blood,,false,continuous,,,,baseline
@@ -523,60 +577,71 @@ lfdairy_sch,Low fat dairy in school-age children (5-8 years),,false,continuous,,
 ln,night level at birth,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_70,,year
 ln_c,categorized night level at birth,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,categorical,ln_c_options,sub_sub_folder_72,,year
 ln_c_preg,categorized night level at pregnancy,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,categorical,ln_c_preg_options,sub_sub_folder_72,,baseline
+ln_c_t,categorized night level at first trimester,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,categorical,ln_c_t_options,sub_sub_folder_72,,trimester
 ln_preg,night level at pregnancy,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_70,,baseline
+ln_t,night level at first trimester,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_70,,trimester
 LRTI,"Lower respiratory tract infections (bronchiolitis, bronchitis, pneumonia, chest infection, or equivalent) within one year of birth (child aged between >-1 year and <1 year)","Please specify which infections were assessed. Where data are available, infections should be doctor diagnosed. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_resptractinf_lower,,year
 lst,land surface temperature during first year (>0 year and <=1 year),using satellite imagery,false,continuous,,sub_sub_folder_59,,year
 lst_preg,land surface temperature during pregnancy,using satellite imagery,false,continuous,,sub_sub_folder_59,,baseline
+lst_t,land surface temperature during first trimester,using satellite imagery,false,continuous,,sub_sub_folder_59,,trimester
 mainmeal_psc,Main meals frequency per day (2-4 years),,false,continuous,,aaaac4cyehvsh6qwhza7xqiaae,,baseline
 mainmeal_sch,Main meals frequency per day (5-8 years),,false,continuous,,aaaac4cyewju56qwhza7xqiaae,,baseline
 major_con_anomalies,Major congenital anomalies,"According to EUROCAT guide 1.4 for all births from 1st January 2013 (http://www.eurocat-network.eu/content/Full%20Guide%201%204%20version%2008_Sept2017.pdf); EUROCAT guide 1.3 for births between 1st January 2005 and 31st December 2012 (http://www.eurocat-network.eu/content/EUROCAT-Guide-1.3.pdf); EUROCAT guide 1.2 for births up to 31st December 2004 (http://www.eurocat-network.eu/content/EUROCAT-Guide-1.2.pdf).
 
 Diagnosed within the 1st year of life",false,boolean,,aaaaczoclfi7h6qwhycgrlaaae,,baseline
 mar,Medically Assisted Reproduction,"MAR (medically assisted reproduction) refers to reproduction brought about through various interventions, procedures, surgeries and technologies to treat different forms of fertility impairment and infertility. These include ovulation induction, ovarian stimulation, ovulation triggering, all ART procedures (interventions that include the in vitro handling of both human oocytes and sperm or of embryos for the purpose of reproduction), uterine transplantation and intra-uterine, intracervical and intravaginal insemination with semen of husband/partner or donor.",false,boolean,,aaaacyy2zhuep6qwh3nxvnaaae,,baseline
-m_chol,Mother's total cholesterol during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_crp,Mother's CRP during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_dbp,Mother's diastolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
+m_chol,Mother's total cholesterol during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_crp,Mother's CRP during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_dbp,Mother's diastolic blood pressure during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
 mdist,distance to meteorological station during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,urbanenv_meteo_mdist,,year
 mdist_preg,distance to meteorological station during pregnancy,using local meteorologic stations,false,continuous,,urbanenv_meteo_mdist,,baseline
+mdist_t,distance to meteorological station during first trimester,using local meteorologic stations,false,continuous,,urbanenv_meteo_mdist,,trimester
 meat_pgn,Meat and meat products during pregnancy,Based on Eurocode 2 Food Coding System,false,continuous,,aaaac4cyara376qwhza7xqiaae,,baseline
 meat_psc,Meat and meat products in  preschool age (2-4 years),,false,continuous,,aaaac4cyeeamt6qwhza7xqiaam,,baseline
 meat_sch,Meat and meat products in school-age children (5-8 years),,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
-mental,Mental disorder exposure (age ≥0 to <1year),"Any exposure to relatives with mental disorders (mother, biological father, social father, or any individuals close to the child) from birth up to 1st birthday (age range ≥0 to <1year)",false,boolean,,aaaacyy22vk3t6qwh3nxvnaaae,,year
-m_glucose,Mother's glucose during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_haem,Mother's haemoglobin during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_hba1c,Mother's HbA1c during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_hdlc,Mother's HDLc during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
+mental_exp,Mental disorder exposure (age ≥0 to <1year),"Any exposure to relatives with mental disorders (mother, biological father, social father, or any individuals close to the child) from birth up to 1st birthday (age range ≥0 to <1year)",false,boolean,,aaaacyy22vk3t6qwh3nxvnaaae,,year
+m_glucose,Mother's glucose during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_haem,Mother's haemoglobin during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_hba1c,Mother's HbA1c during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_hdlc,Mother's HDLc during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
 miggen_child,Child's migrant status,"“1st generation”: cohort member is born abroad;
 “2nd generation”: cohort member is born in the host country, both parents are born abroad;
 “2.5 generation – mother”: cohort member born in the host country, father born in the host country, mother born abroad; “2.5 generation – father”: cohort member born in the host country, mother born in the host country, father born abroad
 “Natives”: cohort member is born in the host country; both parents born in the host country",false,categorical,miggen_child_options,aaaac2ipjyxw36qwhza7xqiaae,,baseline
-m_insulin,Mother's insulin during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_ldlc,Mother's LDLc during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
+m_insulin,Mother's insulin during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_ldlc,Mother's LDLc during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
 mode_delivery,Mode of delivery,"Complete match achieved when data on all categories are available, otherwise the match is partial.",false,categorical,mode_delivery_options,aaaacyy2zjxht6qwh3nxvnaaae,,baseline
 mother_id,Unique identifier number for the mother,Either original id or new id generated by the cohort,false,integer,,aaaacyy2wugwj6qwh3nxvnaaae,,baseline
-m_sbp,Mother's systolic blood pressure during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
-m_triglycerides,Mother's triglycerides during pregnancy between 0-6 day of gestation (0 completed weeks),,false,continuous,,,,week
+m_sbp,Mother's systolic blood pressure during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
+m_triglycerides,Mother's triglycerides during pregnancy between 0-6 days of gestation (0 completed weeks),,false,continuous,,,,week
 na_pgn,Sodium intake during pregnancy,,false,continuous,,aaaac4cyas72j6qwhza7xqiaae,,baseline
 na_psc,Sodium intake in preschool age (2-4 years),,false,continuous,,aaaac4cyegdwf6qwhza7xqiaae,,baseline
 na_sch,Sodium intake in school-age children (5-8 years),,false,continuous,,aaaac4cyevtgx6qwhza7xqiaae,,baseline
 natgr,percentage of natgr (forests) land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_43,,year
 natgr_preg,percentage of natgr (forests) land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_42,,baseline
+natgr_t,percentage of natgr (forests) land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_43,,trimester
 ndvi100,average of NDVI values within a buffer of 100 m at birth,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_66,,year
 ndvi100_preg,average of NDVI values within a buffer of 100 m at pregnancy,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_66,,baseline
+ndvi100_t,average of NDVI values within a buffer of 100 m at first trimester,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_66,,trimester
 ndvi300,average of NDVI values within a buffer of 300 m at birth,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_67,,year
 ndvi300_preg,average of NDVI values within a buffer of 300 m at pregnancy,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_67,,baseline
+ndvi300_t,average of NDVI values within a buffer of 300 m at first trimester,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_67,,trimester
 ndvi500,average of NDVI values within a buffer of 500 m at birth,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_68,,year
 ndvi500_preg,average of NDVI values within a buffer of 500 m at pregnancy,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_68,,baseline
+ndvi500_t,average of NDVI values within a buffer of 500 m at first trimester,using the same source for all the cohorts (LANDSAT),false,continuous,,sub_sub_folder_68,,trimester
 neo_unit,Transferred to neonatal unit,Any transfer to a neonatal unit within the first week of life,false,boolean,,aaaaczocj2xfb6qwhycgrlaaae,,baseline
 nffish_pgn,Non Fatty Fish during pregnancy,Based on Eurocode 2 Food Coding System,false,continuous,,aaaac4cyara376qwhza7xqiaae,,baseline
 nffish_psc,Non Fatty Fish in preschool age (2-4 years),,false,continuous,,aaaac4cyeeamt6qwhza7xqiaam,,baseline
 nffish_sch,Non Fatty Fish in school-age children (5-8 years),,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
 no2,no2 average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),"using ESCAPE LUR models except for ALSPAC, DNBC, NINFEA FIRENZE, PICCOLIPIÙ FIRENZE, that has been used ELAPSE models",false,continuous,,sub_sub_folder_1,,year
 no2_preg,no2 average value (extrapolated back in time using ratio method) during pregnancy,"using ESCAPE LUR models except for ALSPAC, DNBC, NINFEA FIRENZE, PICCOLIPIÙ FIRENZE, that has been used ELAPSE models",false,continuous,,sub_sub_folder_1,,baseline
+no2_t,no2 average value (extrapolated back in time using ratio method) during first trimester,"using ESCAPE LUR models except for ALSPAC, DNBC, NINFEA FIRENZE, PICCOLIPIÙ FIRENZE, that has been used ELAPSE models",false,continuous,,sub_sub_folder_1,,trimester
 noise_dist,straight distance to the nearest road with noise level at birth,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_73,,year
 noise_dist_preg,straight distance to the nearest road with noise level at pregnancy,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_73,,baseline
+noise_dist_t,straight distance to the nearest road with noise level at first trimester,"using european road traffic noise maps, which were generated under EC Directive 2002/49/EC (Assessment and Management of Environmental Noise) in the framework of the European Noise Directive (END)",false,continuous,,sub_sub_folder_73,,trimester
 nox,nox average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_2,,year
 nox_preg,nox average value (extrapolated back in time using ratio method) during pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_2,,baseline
+nox_t,nox average value (extrapolated back in time using ratio method) during first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_2,,trimester
 nvi_age,exact age of the child (in years) when non-verbal intelligence were recorded for nvi_raw_0,"Calculate age in years as
 (date of test assessment - date of birth)/365.2422",false,continuous,,aaaac3pywidtd6qwhza7xqiaae,,year
 nvi_avg,average of available items comprising the total raw score of  nvi_raw_0,,false,continuous,,aaaac3pywidtd6qwhza7xqiaae,,year
@@ -599,13 +664,15 @@ occupcode_f1,Primary father's occupational code (>-1 year and <1 year),"Occupati
 If more than one occupation is recorded within the defined time frame use the highest reported level.
 
 Classified according to ISCO-88 (International Standard Classification of Occupations 1988)  1 digit codes 
-http://www.ilo.org/public/english/bureau/stat/isco/isco08/index.htm",false,categorical,occupcode_f1_options,aaaacyy2z2iej6qwh3nxvnaaae,,week
+http://www.ilo.org/public/english/bureau/stat/isco/isco08/index.htm",false,categorical,occupcode_f1_options,aaaacyy2z2iej6qwh3nxvnaaae,,year
+occupcode_f1_fath,"Father type, occupcode_f1_0","Variables indicating whether the occupation codes recorded in occupcode_f1_0 are for the biological father, the social father/mother or whether this is unknown",false,categorical,occupcode_f1_fath_options,aaaacyy2z2iej6qwh3nxvnaaae,,year
 occupcode_f2,Secondary father's occupational code (>-1 year and <1 year),"Occupation of the secondary father figure classified according to ISCO-88 1 digit codes within one year of birth (child aged between >-1 year and <1 year)
 
 If more than one occupation is recorded within the defined time frame use the highest reported level.
 
 Classified according to ISCO-88 (International Standard Classification of Occupations 1988)  1 digit codes 
-http://www.ilo.org/public/english/bureau/stat/isco/isco08/index.htm",false,categorical,occupcode_f2_options,aaaacyy2z2iej6qwh3nxvnaaae,,week
+http://www.ilo.org/public/english/bureau/stat/isco/isco08/index.htm",false,categorical,occupcode_f2_options,aaaacyy2z2iej6qwh3nxvnaaae,,year
+occupcode_f2_fath,"Father type, occupcode_f2_0","Variables indicating whether the occupation codes recorded in occupcode_f2_0 are for the biological father, the social father/mother or whether this is unknown",false,categorical,occupcode_f2_fath_options,aaaacyy2z2iej6qwh3nxvnaaae,,year
 occupcode_m,Maternal occupational code (>-1 year and <1 year),"Occupation of the mother classified according to ISCO-88 1 digit codes within one year of birth (child aged between >-1 year and <1 year)
 
 If more than one occupation is recorded within the defined time frame use the highest reported level.
@@ -616,12 +683,14 @@ occup_f1,"Paternal occupational status, primary father (>-1 year and <1 year)","
 
 If a cohort does not have data specifying whether the father is employed or self-employed, categorise the father as employed; the variable will be partially harmonised. 
 
- If more than one status is recorded within the defined time frame, use the highest reported level",false,categorical,occup_f1_options,aaaacyxxchjdn6qwh3nxvnaaae,,week
+ If more than one status is recorded within the defined time frame, use the highest reported level",false,categorical,occup_f1_options,aaaacyxxchjdn6qwh3nxvnaaae,,year
+occup_f1_fath,"Father type, occup_f1_0","Variable indicating whether the occupational status recorded in occup_f1_0 is for the biological father, the social father/mother or whether this is unknown",false,categorical,occup_f1_fath_options,aaaacyxxchjdn6qwh3nxvnaaae,,year
 occup_f2,"Paternal occupational status, secondary father (>-1 year and <1 year)","Occupational status of secondary father-figure within one year of birth (>-1 year and <1 year)
 
 If a cohort does not have data specifying whether the father is employed or self-employed, categorise the father as employed; the variable will be partially harmonised 
 
- If more than one status is recorded within the defined time frame, use the highest reported level",false,categorical,occup_f2_options,aaaacyxxchjdn6qwh3nxvnaaae,,week
+ If more than one status is recorded within the defined time frame, use the highest reported level",false,categorical,occup_f2_options,aaaacyxxchjdn6qwh3nxvnaaae,,year
+occup_f2_fath,"Father type, occup_f2_0","Variable indicating whether the occupational status recorded in occup_f2_0, is for the biological father, the social father/mother or whether this is unknown",false,categorical,occup_f2_fath_options,aaaacyxxchjdn6qwh3nxvnaaae,,year
 occup_m,Maternal occupational status (>-1 year and <1 year),"Occupational status of the mother when the chld was within one year of birth (≥-1 year and <1 year)
 
 Employed/self-employed  includes maternity leave if she was employed before commencing maternity leave. 
@@ -630,6 +699,7 @@ Employed/self-employed  includes maternity leave if she was employed before comm
 If a cohort does not have data specifying whether the mother is employed or self-employed, categorise the mother as employed; the variable will be partially harmonised.",false,categorical,occup_m_options,aaaacyxw33i5d6qwh3nxvnaaae,,year
 other,"percentage of other (mineral extraction and dump sites, construction sites, land without current use) land use within a buffer of 300 m at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_44,,year
 other_preg,"percentage of other (mineral extraction and dump sites, construction sites, land without current use) land use within a buffer of 300 m at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_43,,baseline
+other_t,"percentage of other (mineral extraction and dump sites, construction sites, land without current use) land use within a buffer of 300 m at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_44,,trimester
 outcome,Birth outcome,"A complete match is achieved when data on all categories (live born, still born, spontaneous abortion etc.) are available. When detailing the match of the variable in the catalogue it is important to include the date of recruitment; in many cases this will explain a partial match. Where the match is only partial, also indicate whether there are complete data on live-born vs. stillborn.
 Stillborn defined as 22 completed weeks",false,categorical,outcome_options,aaaacyy2zknrv6qwh3nxvnaaae,,baseline
 outdoorpage_psc,Exact age at outdoor play (outdoorp_psc) data collection in years,"When available, we took the questionnaire return date.",false,continuous,,aaaac3wu545nf6qwhza7xqiaae,,baseline
@@ -660,47 +730,69 @@ plurality,Plurality,Number of foetuses in pregnancy,false,categorical,plurality_
 pm10,pm10 average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_3,,year
 pm10cu,pm10cu value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_15,,year
 pm10cu_preg,pm10cu value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_15,,baseline
+pm10cu_t,pm10cu value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_15,,trimester
 pm10fe,pm10fe value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_16,,year
 pm10fe_preg,pm10fe value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_16,,baseline
+pm10fe_t,pm10fe value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_16,,trimester
 pm10k,pm10k value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_17,,year
 pm10k_preg,pm10k value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_17,,baseline
+pm10k_t,pm10k value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_17,,trimester
 pm10ni,pm10ni value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_18,,year
 pm10ni_preg,pm10ni value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_18,,baseline
+pm10ni_t,pm10ni value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_18,,trimester
 pm10_preg,pm10 average value (extrapolated back in time using ratio method) during pregnancy,"using ESCAPE LUR models except for EDEN NANCY and EDEN POITIERS, that has been used a Local Dispersion Model",false,continuous,,sub_sub_folder_3,,baseline
 pm10s,pm10s value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_19,,year
 pm10si,pm10si value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_20,,year
 pm10si_preg,pm10si value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_20,,baseline
+pm10si_t,pm10si value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_20,,trimester
 pm10s_preg,pm10s value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_19,,baseline
+pm10s_t,pm10s value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_19,,trimester
+pm10_t,pm10 average value (extrapolated back in time using ratio method) during first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_3,,trimester
 pm10v,pm10v value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_21,,year
 pm10v_preg,pm10v value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_21,,baseline
+pm10v_t,pm10v value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_21,,trimester
 pm10zn,pm10zn value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_22,,year
 pm10zn_preg,pm10zn value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_22,,baseline
+pm10zn_t,pm10zn value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_22,,trimester
 pm25,pm25 average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_4,,year
 pm25abs,pm25abs average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_6,,year
 pm25abs_preg,pm25abs average value (extrapolated back in time using ratio method) during pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_6,,baseline
+pm25abs_t,pm25abs average value (extrapolated back in time using ratio method) during first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_6,,trimester
 pm25cu,pm25cu value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_7,,year
 pm25cu_preg,pm25cu value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_7,,baseline
+pm25cu_t,pm25cu value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_7,,trimester
 pm25fe,pm25fe value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_8,,year
 pm25fe_preg,pm25fe value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_8,,baseline
+pm25fe_t,pm25fe value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_8,,trimester
 pm25k,pm25k value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_9,,year
 pm25k_preg,pm25k value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_9,,baseline
+pm25k_t,pm25k value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_9,,trimester
 pm25ni,pm25ni value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_10,,year
 pm25ni_preg,pm25ni value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_10,,baseline
+pm25ni_t,pm25ni value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_10,,trimester
 pm25_preg,pm25 average value (extrapolated back in time using ratio method) during pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_4,,baseline
 pm25s,pm25s value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_11,,year
 pm25si,pm25si value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_12,,year
 pm25si_preg,pm25si value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_12,,baseline
+pm25si_t,pm25si value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_12,,trimester
 pm25s_preg,pm25s value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_11,,baseline
+pm25s_t,pm25s value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_11,,trimester
+pm25_t,pm25 average value (extrapolated back in time using ratio method) during first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_4,,trimester
 pm25v,pm25v value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_13,,year
 pm25v_preg,pm25v value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_13,,baseline
+pm25v_t,pm25v value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_13,,trimester
 pm25zn,pm25zn value (extrapolated back in time using ratio method) at birth,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_14,,year
 pm25zn_preg,pm25zn value (extrapolated back in time using ratio method) at pregnancy,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_14,,baseline
+pm25zn_t,pm25zn value (extrapolated back in time using ratio method) at first trimester,using the same source for all the cohorts (ESCAPE LUR MODELS),false,continuous,,sub_sub_folder_14,,trimester
 pmcoarse,pmcoarse average value (extrapolated back in time using ratio method) during first year (>0 year and <=1 year),"using ESCAPE LUR models except for ALSPAC, DNBC, EDEN NANCY, EDEN POITIERS, INMA GUIPUZCOA, INMA VALENCIA, NINFEA FIRENZE, PICCOLIPIÙ FIRENZE, that has been used ELAPSE models",false,continuous,,sub_sub_folder_5,,year
 pmcoarse_preg,pmcoarse average value (extrapolated back in time using ratio method) during pregnancy,"using ESCAPE LUR models except for ALSPAC, DNBC, EDEN NANCY, EDEN POITIERS, INMA GUIPUZCOA, INMA VALENCIA, NINFEA FIRENZE, PICCOLIPIÙ FIRENZE, that has been used ELAPSE models",false,continuous,,sub_sub_folder_5,,baseline
+pmcoarse_t,pmcoarse average value (extrapolated back in time using ratio method) during first trimester,"using ESCAPE LUR models except for ALSPAC, DNBC, EDEN NANCY, EDEN POITIERS, INMA GUIPUZCOA, INMA VALENCIA, NINFEA FIRENZE, PICCOLIPIÙ FIRENZE, that has been used ELAPSE models",false,continuous,,sub_sub_folder_5,,trimester
 popdens,population density at birth,using Global Human Settlement Layer (GHSL) except for MOBA (local layer),false,continuous,,sub_sub_folder_23,,year
 popdens_preg,population density at pregnancy,using Global Human Settlement Layer (GHSL) except for MOBA (local layer),false,continuous,,sub_sub_folder_23,,baseline
+popdens_t,population density at first trimester,using Global Human Settlement Layer (GHSL) except for MOBA (local layer),false,continuous,,sub_sub_folder_23,,trimester
 port,percentage of port (port areas) land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_45,,year
 port_preg,percentage of port (port areas) land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_44,,baseline
+port_t,percentage of port (port areas) land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_45,,trimester
 potat_pgn,Potatoes during pregnancy,Based on Eurocode 2 Food Coding System,false,continuous,,aaaac4cyara376qwhza7xqiaae,,baseline
 potat_psc,Potatoes in preschool age (2-4 years),,false,continuous,,aaaac4cyeeamt6qwhza7xqiaam,,baseline
 potat_sch,Potatoes in school-age children (5-8 years),,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
@@ -893,9 +985,10 @@ sleept_psc,"Child’s total sleep duration in h /day, at preschool age",Obtained
 smk_cig_p,Paternal smoking during pregnancy (cigarettes),"Average number of cigarettes father smoked  per day during pregnancy
 
 Cigars, pipes, cheroots should be converted into number of cigarettes (1:3). 1 cigar, pipe, cheroot etc. is equivalent to 3 cigarettes.",false,categorical,smk_cig_p_options,aaaacyy22jkcf6qwh3nxvnaaae,,baseline
-smk,Passive smoking (age ≥0 to <1year),"Any exposure to smoking (mother, biological father, social father, any smokers close to the child, or exposure to smoke in the home) from birth up to 1st birthday (age range ≥0 to <1year)",false,boolean,,aaaacyy22tfx76qwh3nxvnaaae,,year
+smk_exp,Passive smoking (age ≥0 to <1year),"Any exposure to smoking (mother, biological father, social father, any smokers close to the child, or exposure to smoke in the home) from birth up to 1st birthday (age range ≥0 to <1year)",false,boolean,,aaaacyy22tfx76qwh3nxvnaaae,,year
 smk_fath,"Father type, paternal smoking during pregnancy","Variable indicating whether paternal smoking during pregnancy variables (smk_p and smk_cig_p) are for the biological father, the social father or whether this is unknown",false,categorical,smk_fath_options,aaaacyy22jkcf6qwh3nxvnaaae,,baseline
 smk_p,Paternal smoking during pregnancy (any),Indicates whether the father smoked during pregnancy,false,boolean,,aaaacyy22jkcf6qwh3nxvnaaae,,baseline
+smk_t,Smoking in 1. trimester,Any maternal smoking in first trimester of pregnancy,false,boolean,,5,,trimester
 snacks_psc,Snacking frequency per day (2-4 years),,false,continuous,,aaaac4cyehvsh6qwhza7xqiaae,,baseline
 snacks_sch,Snacking frequency per day (5-8 years),,false,continuous,,aaaac4cyewju56qwhza7xqiaae,,baseline
 solid_food,Solid fod introduction,"Age of the child when solid food was introduced
@@ -919,9 +1012,12 @@ swebev_sch,Sugar-sweetened beverages in school-age children (5-8 years),,false,c
 tm,average of mean temperature during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,sub_sub_folder_50,,year
 tmax,average of maximum temperature during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,sub_sub_folder_52,,year
 tmax_preg,average of maximum temperature during pregnancy,using local meteorologic stations,false,continuous,,sub_sub_folder_52,,baseline
+tmax_t,average of maximum temperature during first trimester,using local meteorologic stations,false,continuous,,sub_sub_folder_52,,trimester
 tmin,average of minimum temperature during first year (>0 year and <=1 year),using local meteorologic stations,false,continuous,,sub_sub_folder_51,,year
 tmin_preg,average of minimum temperature during pregnancy,using local meteorologic stations,false,continuous,,sub_sub_folder_51,,baseline
+tmin_t,average of minimum temperature during first trimester,using local meteorologic stations,false,continuous,,sub_sub_folder_51,,trimester
 tm_preg,average of mean temperature during pregnancy,using local meteorologic stations,false,continuous,,sub_sub_folder_50,,baseline
+tm_t,average of mean temperature during first trimester,using local meteorologic stations,false,continuous,,sub_sub_folder_50,,trimester
 totcarb_pgn,Total carbohydrate intake during pregnancy,,false,continuous,,aaaac4cyas72j6qwhza7xqiaae,,baseline
 totcarb_psc,Total carbohydrate intake in preschool age (2-4 years),,false,continuous,,aaaac4cyegdwf6qwhza7xqiaae,,baseline
 totcarb_sch,Total carbohydrate intake in school-age children (5-8 years),,false,continuous,,aaaac4cyevtgx6qwhza7xqiaae,,baseline
@@ -933,15 +1029,19 @@ totprot_psc,Total Protein intake in preschool age (2-4 years),,false,continuous,
 totprot_sch,Total Protein intake in school-age children (5-8 years),,false,continuous,,aaaac4cyevtgx6qwhza7xqiaae,,baseline
 trafload100,total traffic load of all roads within a buffer of 100 m at birth,using different local data for each cohort,false,continuous,,sub_sub_folder_77,,year
 trafload100_preg,total traffic load of all roads within a buffer of 100 m at pregnancy,using different local data for each cohort,false,continuous,,sub_sub_folder_77,,baseline
+trafload100_t,total traffic load of all roads within a buffer of 100 m at first trimester,using different local data for each cohort,false,continuous,,sub_sub_folder_77,,trimester
 trafmajorload100,total traffic load of major roads within a buffer of 100 m at birth,using different local data for each cohort,false,continuous,,sub_sub_folder_78,,year
 trafmajorload100_preg,total traffic load of major roads within a buffer of 100 m at pregnancy,using different local data for each cohort,false,continuous,,sub_sub_folder_78,,baseline
+trafmajorload100_t,total traffic load of major roads within a buffer of 100 m at first trimester,using different local data for each cohort,false,continuous,,sub_sub_folder_78,,trimester
 trafnear,traffic density on nearest road at birth,using different local data for each cohort,false,continuous,,sub_sub_folder_79,,year
 trafnear_preg,traffic density on nearest road at pregnancy,using different local data for each cohort,false,continuous,,sub_sub_folder_79,,baseline
+trafnear_t,traffic density on nearest road at first trimester,using different local data for each cohort,false,continuous,,sub_sub_folder_79,,trimester
 trans,"percentage of trans (road and rail network and associated land, fast transit roads and associated land, other roads and associated land, railways and associated land) land use within a buffer of 300 m at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_46,,year
 transfat_pgn,Trans Fats intake during pregnancy,,false,continuous,,aaaac4cyas72j6qwhza7xqiaae,,baseline
 transfat_psc,Trans Fats intake in preschool age (2-4 years),,false,continuous,,aaaac4cyegdwf6qwhza7xqiaae,,baseline
 transfat_sch,Trans Fats intake in school-age children (5-8 years),,false,continuous,,aaaac4cyevtgx6qwhza7xqiaae,,baseline
 trans_preg,"percentage of trans (road and rail network and associated land, fast transit roads and associated land, other roads and associated land, railways and associated land) land use within a buffer of 300 m at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_45,,baseline
+trans_t,"percentage of trans (road and rail network and associated land, fast transit roads and associated land, other roads and associated land, railways and associated land) land use within a buffer of 300 m at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_46,,trimester
 tricepsf,Child's tricep skinfold (0 and <1 month),,false,continuous,,,,month
 tricepsfage,Age at tricep skinfold measurement (0 and <1 month),,false,continuous,,,,month
 tricepsfmes,Measured vs. reported child tricep skinfold (0 and <1 month),,false,boolean,,,,month
@@ -955,14 +1055,18 @@ tv_psc,"Child’s tv watching duration in h /day, at preschool age",,false,conti
 urb_area_id,unique identifier for the urban area,,false,categorical,urb_area_id_options,aaaac3tn4bup76qwhza7xqiaae,,baseline
 urbgr,"percentage of urbgr (green urban areas, sports and leisure facilities) land use within a buffer of 300 m at birth",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_47,,year
 urbgr_preg,"percentage of urbgr (green urban areas, sports and leisure facilities) land use within a buffer of 300 m at pregnancy",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_46,,baseline
+urbgr_t,"percentage of urbgr (green urban areas, sports and leisure facilities) land use within a buffer of 300 m at first trimester",using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_47,,trimester
 URTI,"Upper respiratory tract infections (ear infection, throat infections, laryngitis, croup, whooping cough or equivalent) within one year of birth (child aged between >-1 year and <1 year)","Please specify which infections were assessed. Where data are available, infections should be doctor diagnosed. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_resptractinf_upper,,year
 urticaria,Ever diagnosis of urticaria,"Where data are available, urticaria should be doctor diagnosed. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_allergy_urticaria,,baseline
 uvddc,average of DNA-damage UV dose during first year (>0 year and <=1 year),"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_56,,year
 uvddc_preg,average of DNA-damage UV dose during pregnancy,"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_56,,baseline
+uvddc_t,average of DNA-damage UV dose during first trimester,"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_56,,trimester
 uvdec,average of erythemal UV dose during first year (>0 year and <=1 year),"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_57,,year
 uvdec_preg,average of erythemal UV dose during pregnancy,"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_57,,baseline
+uvdec_t,average of erythemal UV dose during first trimester,"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_57,,trimester
 uvdvc,average of vitamin-d UV dose during first year (>0 year and <=1 year),"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_58,,year
 uvdvc_preg,average of vitamin-d UV dose during pregnancy,"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_58,,baseline
+uvdvc_t,average of vitamin-d UV dose during first trimester,"using TEMIS (http://www.temis.nl/index.php), a web-based service to browse and download atmospheric satellite data products (version 2.0 except for MOBA that version 1.0 is used)",false,continuous,,sub_sub_folder_58,,trimester
 veg_pgn,Vegetables without potatoes  during pregnancy,Based on Eurocode 2 Food Coding System,false,continuous,,aaaac4cyara376qwhza7xqiaae,,baseline
 veg_psc,Vegetables without potatoes in preschool age (2-4 years),,false,continuous,,aaaac4cyeeamt6qwhza7xqiaam,,baseline
 veg_sch,Vegetables without potatoes in school-age children (5-8 years),,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
@@ -972,17 +1076,24 @@ vldlc_cord,vLDLc measured in cord blood,,false,continuous,,,,baseline
 vldlcmes,Nonfasting or fasting when vLDLc measured (0 and <1 month),,false,boolean,,,,month
 vldres,percentage of vldres (discontinuous very low density urban fabric) land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_48,,year
 vldres_preg,percentage of vldres (discontinuous very low density urban fabric) land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_47,,baseline
+vldres_t,percentage of vldres (discontinuous very low density urban fabric) land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_48,,trimester
 waistcirc,Child's waist circumference (0 and <1 month),,false,continuous,,,,month
 waistcircage,Age at waist circumference measurement (0 and <1 month),,false,continuous,,,,month
 waistcircmes,Measured vs. reported child waist circumference (0 and <1 month),,false,boolean,,,,month
 walkability_mean,"walkability index (as mean of deciles of facility richness index, landuse shannon's Evenness Index, population density, connectivity density) within a buffer of 300 m at birth","facility richness: using the same source for all the cohorts (NAVTEQ); landuse shannon's Evenness Index: using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer), population density: using Global Human Settlement Layer (GHSL) except for MOBA (local layer), connectivity density: using the same source for all the cohorts (NAVTEQ)",false,continuous,,sub_sub_folder_37,,year
 walkability_mean_preg,"walkability index (as mean of deciles of facility richness index, landuse shannon's Evenness Index, population density, connectivity density) within a buffer of 300 m at pregnancy","facility richness: using the same source for all the cohorts (NAVTEQ); landuse shannon's Evenness Index: using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer), population density: using Global Human Settlement Layer (GHSL) except for MOBA (local layer), connectivity density: using the same source for all the cohorts (NAVTEQ)",false,continuous,,sub_sub_folder_37,,baseline
+walkability_mean_t,"walkability index (as mean of deciles of facility richness index, landuse shannon's Evenness Index, population density, connectivity density) within a buffer of 300 m at first trimester","facility richness: using the same source for all the cohorts (NAVTEQ); landuse shannon's Evenness Index: using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer), population density: using Global Human Settlement Layer (GHSL) except for MOBA (local layer), connectivity density: using the same source for all the cohorts (NAVTEQ)",false,continuous,,sub_sub_folder_37,,trimester
 water,percentage of water land use within a buffer of 300 m at birth,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_49,,year
 water_preg,percentage of water land use within a buffer of 300 m at pregnancy,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_49,,baseline
+water_t,percentage of water land use within a buffer of 300 m at first trimester,using URBANATLAS except for INMA GUIPUZCOA (EUNIS) and MOBA (local layer),false,continuous,,sub_sub_folder_49,,trimester
 weight,Child's weight (0 and <1 month,Child's weight measured between the ages of 0 and <1 month. This does not include the child’s birth weight,false,continuous,,aaaaczock4cdf6qwhycgrlaaae,,month
+weight_age,"Exact age, weight_0",Exact age of the child (in days) when child's weight was recorded for weight_0,false,integer,,aaaaczock4cdf6qwhycgrlaaae,,month
+weight_f1,"Paternal weight, primary father","Primary/main father figure´s weight reported in first paternal questionnaire
+Use measured weight if available. 
+Note in the catalogue when it was recorded, i.e., which follow-up",false,continuous,,aaaacyy22cbx36qwh3nxvnaaae,,baseline
 weight_f1_fath,"Father type, weight_f1_fath","Variable indicating whether the weight recorded in weight_f1 is for the biological father, the social father, or whether this is unknown",false,categorical,weight_f1_fath_options,aaaacyy22cbx36qwh3nxvnaaae,,baseline
 weightmes,Method used to measure child's weight (0 and <1 month),,false,categorical,weightmes_options,,,month
-weight_mes,Paternal weight measurement,Reported vs. measured weight,false,categorical,weight_mes_options,aaaacyy22cbx36qwh3nxvnaaae,,baseline
+weight_mes_f1,Paternal weight measurement,Reported vs. measured weight,false,categorical,weight_mes_f_options,aaaacyy22cbx36qwh3nxvnaaae,,baseline
 weight_who_ga,WHO size for gestational age,"Weight of the child for gestational age at birth, categorised into small for gestational age (SGA), appropriate for gestational age (AGA) and large for gestational age (LGA).
 
 Defined using the WHO foetal growth charts (Kiserud et al 2017) using the 5th and 95th percentiles as cut-off values for SGA and LGA respectively .
@@ -993,7 +1104,9 @@ A child is classified as LGA if their birth weight is >= 95th percentile for the
 For e.g., a female born at 32 weeks + 2 days weighing 1,530g will be classified as SGA. A male born at 37 weeks + 5 days weighing 3,598 will be classified as LGA.",false,categorical,weight_who_ga_options,aaaaczoclca2n6qwhycgrlaaae,,baseline
 whe,wheezing within one year of birth (child aged between >-1 year and <1 year),"Where data are available, wheezing should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_wheezing,,year
 whe_ever,Wheezing between ages 0-4 years,"Where data are available, wheezing should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_wheezing,,baseline
-whe_ever5,Wheezing between ages 5-10 years,"Where data are available, wheezing should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_wheezing,,baseline
+whe_ever2,Wheezing between ages 0-2 years,"Where data are available, wheezing should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_wheezing,,baseline
+whe_ever 4,Wheezing between ages 2-4 years,"Where data are available, wheezing should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_wheezing,,baseline
+whe_ever5_10,Wheezing between ages 5-10 years,"Where data are available, wheezing should be obtained by ISAAC questionnaires. If this is not the case, the variabele is partially harmonized",false,boolean,,child_healthchar_resp_wheezing,,baseline
 whgrains_pgn,Whole grain cereals during pregnancy,Based on Eurocode 2 Food Coding System,false,continuous,,aaaac4cyara376qwhza7xqiaae,,baseline
 whgrains_psc,Whole grain cereals in preschool age (2-4 years),,false,continuous,,aaaac4cyeeamt6qwhza7xqiaam,,baseline
 whgrains_sch,Whole grain cereals inschool-age children,,false,continuous,,aaaac4cyeuhdp6qwhza7xqiaae,,baseline
