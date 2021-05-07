@@ -1,10 +1,11 @@
-##Procedure LifeLines NEXT to TGO NEXT data model.
+# Procedure LifeLines NEXT to TGO NEXT data model.
 
-#Background:
+## Background:
+
 LifeLines (LL) NEXT questionnaire data model was moved from LifeLines databases to Unipark. The data model was made by TGO at the UMCG.
 LL NEXT variable names were not kept. Questionnaire questions were entered into the system by hand by multiple people.
 
-1. Matching LifeLines NEXT and TGO NEXT codebooks:
+## 1. Matching LifeLines NEXT and TGO NEXT codebooks:
 
 llnext_mapping.py -ll_in <LL NEXT codebook> -tgo_in <TGO NEXT codebook> -out <output file name>
 
@@ -12,7 +13,7 @@ Script maps LL NEXT questions to TGO NEXT questions. Needs to be run on each que
 separately and give one output file per questionnaire pair (see folder 'codebooks_comparison'). All output files were checked for mapping/matching
 errors by hand.
 
-2. Transfer/transform LL NEXT data to TGO NEXT model:
+## 2. Transfer/transform LL NEXT data to TGO NEXT model:
 
 llnext_recoding.py -c <comparison codebook> -d <LL NEXT data> -out <output file name>
 
@@ -34,14 +35,14 @@ Run script per comparison codebook and data file per questionnaire.
 Output on screen, overview of variables that are in the codebook but are missing in the data files.
 
 
-3. Model metadata (TGO NEXT codebooks) to EMX:
+## 3. Model metadata (TGO NEXT codebooks) to EMX:
 
 llnext_emx.py -out <output_filename>
 
 Script uses TGO NEXT codebooks and comparison codebooks to make
 EMX datamodel for MOLGENIS
 
-4. Model LL NEXT data in TGO NEXT model to fit with EMX: 
+## 4. Model LL NEXT data in TGO NEXT model to fit with EMX: 
 
 llnext_data_emx_ll.py -out <output_filename>
 
@@ -49,7 +50,7 @@ Script uses LL NEXT recoded/transformed data and writes them to match the EMX me
 Takes in all data files that are in the folder where the script is run.
 Data files are in possession of the data manager of LL NEXT.
 
-5. Model TGO NEXT data in TGO NEXT model to fit with EMX: 
+## 5. Model TGO NEXT data in TGO NEXT model to fit with EMX: 
 
 llnext_data_emx_tgo.py -out <output_filename>
 
