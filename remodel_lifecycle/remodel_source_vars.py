@@ -45,7 +45,7 @@ def main():
 
         remodeled_source_vars = remodel_variables(source_variables, key)
 
-        write to file
+        # write to file
         remodeled_source_vars.to_csv("./output/Variables.csv", mode="a", index=False, header=False)
 
     # Get ALSPAC data
