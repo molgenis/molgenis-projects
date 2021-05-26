@@ -53,7 +53,7 @@ def main():
     alspac_data = pd.DataFrame.from_dict(source_alspac)
     remodeled_vals_alspac = remodel_values_alspac(alspac_data, 'ALSPAC')
     # Write to file
-    remodeled_vals_alspac.to_csv("./output/Values.csv", mode="a", index=False, header=True)
+    remodeled_vals_alspac.to_csv("./output/VariableValues.csv", mode="a", index=False, header=False)
 
     # Get NINFEA data
     # source_ninfea = session.get(cohorts['NINFEA'])
@@ -95,17 +95,19 @@ def remodel_variables(source_variables, key):
 
 def remodel_values_alspac(alspac_data, cohort):
     alspac_data['splitted_values'] = alspac_data['values'].str.split(';')
-    
-    remodeled_values_alspac = alspac_data.explode('splitted_values')
+    alspac_data = alspac_data.explode('splitted_values')
+
+    remodeled_values_alspac = pd.read_csv('./target/VariableValues.csv', nrows=0)
     
     remodeled_values_alspac['variable.name'] = alspac_data['variable']
     remodeled_values_alspac['release.resource'] = cohort
     remodeled_values_alspac['release.version'] = "1.0.0"
     remodeled_values_alspac['variable.table'] = "core"
-    remodeled_values_alspac[['value', 'label']] = remodeled_values_alspac['splitted_values'].str.extract(r"(\d+)\s*[=.]\s*\"?([^\"]*)\"?")
+    remodeled_values_alspac[['value', 'label']] = alspac_data['splitted_values'].str.extract(r"(\d+)\s*[=.]\s*\"?([^\"]*)\"?")
 
-    remodeled_values_alspac.drop(['_href', 'variable', 'datatype', 'values', 'unit', 'collectionType', 'description', 'dateOfUpdate', 'splitted_values',], axis='columns', inplace=True)
-    
+    # delete rows where 'value' is empty
+    remodeled_values_alspac = remodeled_values_alspac.dropna(axis=0, subset=['value'])
+   
     return remodeled_values_alspac
 
 

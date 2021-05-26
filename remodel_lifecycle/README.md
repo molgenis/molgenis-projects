@@ -4,10 +4,16 @@ Running in mapper
 2. Install dependencies in the virtual environment ( if not installed)
 
    `pip install -r requirements.txt`
-3. run the main script 
+3. run the following scripts sequentially using a batch file:
 
     `python remodel_lc_vars.py`
+    `python remodel_source_vars.py -pw <pw for server>`
+    `python remodel_mappings.py -pw <pw for server>`
+
 4. mapped data can been seen in /output folder
+
+
+Upload data to a preloaded LifeCycle model in the emx2 Catalogue. 
 
 
 ## Python setup
