@@ -8,35 +8,33 @@ def main():
     values = pd.read_csv('./src/Code.csv')
     topics = pd.read_csv('./src/Topic.csv')
 
-    #remodel to emx2 Cohort Catalogue model
-    remodeled_variables = remodel_variables(variables)
-    variable_values = get_variables_values(remodeled_variables, values)
-
     #add keywords to keywords table
     keywords = generate_keywords(topics)
+
+    #remodel to emx2 Cohort Catalogue model
+    remodeled_variables = remodel_variables(variables, keywords)
+    variable_values = get_variables_values(remodeled_variables, values) 
 
     #add repeated variables
     repeated_variables = add_repeats(remodeled_variables)
 
     #delete temporary codelist and repeats columns
-    remodeled_variables = remodeled_variables.drop('temp_code_list', axis=1)
-    remodeled_variables = remodeled_variables.drop('temp_repeats', axis=1)
+    remodeled_variables = remodeled_variables.drop(['temp_code_list',
+                                                    'temp_repeats'], axis=1)
 
-    #read target tables with updated info
-    formats = pd.read_csv('./target/Formats.csv')
-    tables = pd.read_csv('./target/Tables.csv')
-    databanks = pd.read_csv('./target/Databanks.csv')
-    releases = pd.read_csv('./target/Releases.csv')
+    #copy tables in catalogue_emx2 to output folder
+    source_dir = './catalogue_emx2/'
+    target_dir = './output/'
+    file_names = os.listdir(source_dir)
+
+    for file in file_names:
+        shutil.copy(os.path.join(source_dir, file), target_dir)
 
     #write to file
     remodeled_variables.to_csv('./output/Variables.csv', index=False)
     variable_values.to_csv('./output/VariableValues.csv', index=False)
     keywords.to_csv('./output/Keywords.csv', index=False)
     repeated_variables.to_csv('./output/RepeatedVariables.csv', index=False)
-    formats.to_csv('./output/Formats.csv', index=False)
-    tables.to_csv('./output/Tables.csv', index=False)
-    databanks.to_csv('./output/Databanks.csv', index=False)
-    releases.to_csv('./output/Releases.csv', index=False)
 
     #if output.zip already exists in ./output, delete it
     if os.path.exists('./output/output.zip'):
@@ -47,7 +45,7 @@ def main():
     shutil.move('output.zip', './output')
     
     
-def remodel_variables(variables):
+def remodel_variables(variables, keywords):
     #read target model
     remodeled_variables = pd.read_csv('./target/Variables.csv', nrows=0)
 
@@ -55,7 +53,9 @@ def remodel_variables(variables):
     remodeled_variables['name'] = variables['name']
     remodeled_variables['label'] = variables['label']
     remodeled_variables['format'] = variables['format']
-    remodeled_variables['keywords'] = variables['topic']
+    remodeled_variables['keywords_id'] = variables['topic']
+    remodeled_variables['description'] = variables['description']
+    remodeled_variables['unit'] = variables['unit']
     remodeled_variables['temp_code_list'] = variables['codeList']
     remodeled_variables['temp_repeats'] = variables['collectionEvent']
 
@@ -66,6 +66,9 @@ def remodel_variables(variables):
     remodeled_variables['release.resource'] = 'LifeCycle'
     remodeled_variables['release.version'] = '1.0.0'
     remodeled_variables['table'] = 'core'
+
+    #get keyword labels instead of ids
+    remodeled_variables = get_keyword_labels(remodeled_variables, keywords)
 
     return remodeled_variables
 
@@ -116,11 +119,28 @@ def get_variables_values(remodeled_variables, values):
 
 
 def generate_keywords(topics):
-    keywords = topics.rename(columns={"label": "definition", "parentTopic": "parent"})
-    keywords["comments"] = ""
-    keywords["ontologyTermURI"] = ""
+    keywords = topics.rename(columns={"label": "name",
+                                      "name": "definition",
+                                      "parentTopicLabel": "parent"})
 
     return keywords
+
+
+def get_keyword_labels(remodeled_variables, keywords):
+    #rename and drop columns to be able to merge
+    keywords = keywords.rename(columns={"definition": "keywords_id",
+                                       "name": "keywords_label"})
+
+    keywords = keywords.drop(['parent', 'order'], axis=1)
+    
+    #merge remodeled_variables and keywords dfs on 'keywords' (id/name)
+    merged = pd.merge(remodeled_variables, keywords, on='keywords_id', how='left')
+
+    #drop and rename columns
+    merged = merged.drop(['keywords_id', 'keywords'], axis=1)
+    merged = merged.rename(columns={'keywords_label': 'keywords'})
+    
+    return merged
 
 
 def add_repeats(remodeled_variables):
@@ -146,9 +166,9 @@ def add_repeats(remodeled_variables):
                 repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'isRepeatOf.name'] = remodeled_variables['name'][i]
                 row+=1
-        #when weekly repeated add 935 repeats
+        #when weekly repeated add 42 repeats #NEEDS CHECK
         elif repeat == 'week':
-            for j in range(1, 936):
+            for j in range(1, 43):
                 repeated_variables.loc[row, 'table'] = remodeled_variables['table'][i]
                 repeated_variables.loc[row, 'name'] = remodeled_variables['name'][i][:-1] + str(j)
                 repeated_variables.loc[row, 'isRepeatOf.table'] = remodeled_variables['table'][i]

@@ -1,0 +1,37 @@
+name,code,order,definition,comments,parent,ontologyTermURI
+biomedical research,DUO_0000037,,,,,http://purl.obolibrary.org/obo/DUO_0000037
+research specific restrictions,DUO_0000012,,,,,http://purl.obolibrary.org/obo/DUO_0000012
+disease specific research,DUO_0000007,,,,,http://purl.obolibrary.org/obo/DUO_0000007
+return to database or resource,DUO_0000029,,,,,http://purl.obolibrary.org/obo/DUO_0000029
+general research use and clinical care,DUO_0000005,,,,,http://purl.obolibrary.org/obo/DUO_0000005
+project specific restriction,DUO_0000027,,,,,http://purl.obolibrary.org/obo/DUO_0000027
+health or medical or biomedical research,DUO_0000006,,,,,http://purl.obolibrary.org/obo/DUO_0000006
+institution specific restriction,DUO_0000028,,,,,http://purl.obolibrary.org/obo/DUO_0000028
+obsolete consent code secondary category,DUO_0000003,,,,,http://purl.obolibrary.org/obo/DUO_0000003
+time limit on use,DUO_0000025,,,,,http://purl.obolibrary.org/obo/DUO_0000025
+no restriction,DUO_0000004,,,,,http://purl.obolibrary.org/obo/DUO_0000004
+user specific restriction,DUO_0000026,,,,,http://purl.obolibrary.org/obo/DUO_0000026
+data use limitation,DUO_0000001,,,,,http://purl.obolibrary.org/obo/DUO_0000001
+obsolete consent code primary category,DUO_0000002,,,,,http://purl.obolibrary.org/obo/DUO_0000002
+publication moratorium,DUO_0000024,,,,,http://purl.obolibrary.org/obo/DUO_0000024
+ethics approval required,DUO_0000021,,,,,http://purl.obolibrary.org/obo/DUO_0000021
+geographical restriction,DUO_0000022,,,,,http://purl.obolibrary.org/obo/DUO_0000022
+collaboration required,DUO_0000020,,,,,http://purl.obolibrary.org/obo/DUO_0000020
+general research use,DUO_0000042,,,,,http://purl.obolibrary.org/obo/DUO_0000042
+disease category research,DUO_0000040,,,,,http://purl.obolibrary.org/obo/DUO_0000040
+investigation,OBI_0000066,,,,,http://purl.obolibrary.org/obo/OBI_0000066
+not for profit use only,DUO_0000018,,This data use modifier indicates that use of the data is limited to not-for-profit organizations.,,,http://purl.obolibrary.org/obo/DUO_0000018
+publication required,DUO_0000019,,,,,http://purl.obolibrary.org/obo/DUO_0000019
+genetic studies only,DUO_0000016,,,,,http://purl.obolibrary.org/obo/DUO_0000016
+genetic research,DUO_0000038,,,,,http://purl.obolibrary.org/obo/DUO_0000038
+data use requirements,DUO_0000017,,,,,http://purl.obolibrary.org/obo/DUO_0000017
+drug development research,DUO_0000039,,,,,http://purl.obolibrary.org/obo/DUO_0000039
+research use only,DUO_0000014,,,,,http://purl.obolibrary.org/obo/DUO_0000014
+research control,DUO_0000036,,,,,http://purl.obolibrary.org/obo/DUO_0000036
+no general methods research,DUO_0000015,,,,,http://purl.obolibrary.org/obo/DUO_0000015
+age category research,DUO_0000034,,,,,http://purl.obolibrary.org/obo/DUO_0000034
+gender category research,DUO_0000035,,,,,http://purl.obolibrary.org/obo/DUO_0000035
+population research,DUO_0000032,,,,,http://purl.obolibrary.org/obo/DUO_0000032
+population origins or ancestry research,DUO_0000011,,,,,http://purl.obolibrary.org/obo/DUO_0000011
+ancestry research,DUO_0000033,,,,,http://purl.obolibrary.org/obo/DUO_0000033
+method development,DUO_0000031,,,,,http://purl.obolibrary.org/obo/DUO_0000031

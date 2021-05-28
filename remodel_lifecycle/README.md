@@ -12,8 +12,14 @@ Running in mapper
 
 4. mapped data can been seen in /output folder
 
+Upload data:
 
-Upload data to a preloaded LifeCycle model in the emx2 Catalogue. 
+1. In table VariableValues: duplicate keys: [ALSPAC,1.0.0,core,g591,2, ALSPAC,1.0.0,core,g650,2],
+Change duplicate value for both variables to -2 for label 'No partner'
+2. In table VariableMappings: delete many trailing spaces at MOBA mapping to 'prepreg_ed
+     ' and MOBA mapping to 'preg_ed                     ' (duplicates in old LifeCycle variables) 
+3. rezip all files in output folder
+4. Upload output.zip to a new emx2 schema.
 
 
 ## Python setup
