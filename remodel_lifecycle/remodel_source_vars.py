@@ -87,9 +87,14 @@ def remodel_variables(source_variables, key):
     remodeled_variables['format'] = source_variables['datatype'].apply(get_id)
     remodeled_variables['release.resource'] = key
     remodeled_variables['release.version'] = "1.0.0"
-    ##    remodeled_variables['unit'] = source_variables['unit'] #some cohorts do not contain unit as column
+
+    #some cohorts do not contain unit as column
+    if 'unit' in source_variables.columns:
+        remodeled_variables.loc[:, 'unit'] = source_variables['unit'].apply(get_id)
+
     remodeled_variables['table'] = "core"
     remodeled_variables['description'] = source_variables['description']
+
     return remodeled_variables
 
 
@@ -134,7 +139,10 @@ def get_id(x):
     """ (dict) -> str
     Retrieves value for key "id" from dictionary x.
     """
-    value = x['id']
+    try:
+        value = x['id']
+    except TypeError:
+        return x
 
     return value
 

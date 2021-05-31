@@ -1,0 +1,5 @@
+key,value
+menu,"[{""label"":""Catalogue"",""href"":""../catalogue/"",""key"":""h8fd59"",""submenu"":[]},{""label"":""Tables"",""href"":""../tables/"",""key"":""sxvw6j"",""submenu"":[]},{""label"":""Schema"",""href"":""../schema/"",""key"":""ykkcq"",""submenu"":[]},{""label"":""Up/Download"",""href"":""../updownload/"",""key"":""nhoayr"",""submenu"":[]},{""label"":""Graphql"",""href"":""../graphql-playground/"",""key"":""zgpybm"",""submenu"":[]},{""label"":""Settings"",""href"":""../settings/"",""key"":""z778a"",""submenu"":[]}]"
+page.test page,"<h1>New page</h1>
+
+<p>Add your contents here</p>"

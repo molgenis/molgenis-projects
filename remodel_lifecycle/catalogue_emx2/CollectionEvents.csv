@@ -1,0 +1,4 @@
+resource,name,description,startYear,endYear,ageMin,ageMax,noParticipants,populations,supplementaryInformation
+LifeCycle,y0-1,age ≥0 year and <1 year,,,0y,1y,,,
+LifeCycle,y1-2,age ≥1 year and <2 year,,,1y,2y,,,
+LifeCycle,y2-3,age ≥2 year and <3 year,,,2y,3y,,,
