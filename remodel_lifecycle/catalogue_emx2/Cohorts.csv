@@ -1,0 +1,46 @@
+acronym,name,type,institution,contact,startYear,endYear,population,inclusionCriteria,keywords,description,publications,logo,homepage,conditions,conditionsDescription,fundingType,fundingStatement,acknowledgements,noParticipants,noParticipantsWithSamples,dataCategories,sampleCategories
+ALSPAC,Avon Longitudinal Study of Parents and Children,cohort,UOB,"ALSPAC General enquiries,ALSPAC Data enquiries,ALSPAC Lab enquiries",,,United Kingdom,"Children,Mothers,Partners",,"Based at the University of Bristol, the Avon Longitudinal Study of Parents and Children (ALSPAC), also known as Children of the 90s, is a world-leading birth cohort study.
+
+Between April 1991 and December 1992 we recruited more than 14,000 pregnant women into the study and these women (some of whom had two pregnancies or multiple births during the recruitment period), the children arising from the pregnancy, and their partners have been followed up intensively over two decades.
+
+We are the most detailed study of its kind in the world and we provide the international research community with a rich resource for the study of the environmental and genetic factors that affect a person’s health and development. Through our research we aim to inform policy and practices that will provide a better life for future generations.",10.1093/ije/dys064,,http://www.bristol.ac.uk/alspac/,not for profit use only,,,"“The UK Medical Research Council and Wellcome (Grant ref: 217065/Z/19/Z) and the University of Bristol provide core support for ALSPAC. This publication is the work of the authors and <INSERT NAMES> will serve as guarantors for the contents of this paper.”
+
+In addition, you are expected to acknowledge the grant(s) which supported the collection of the primary exposure(s) and outcome(s) used in your study and any other grants in the checklist, which are pertinent to your study. The following sentences should be included with the above section:
+
+ “A comprehensive list of grants funding (PDF, 330KB) is available on the ALSPAC website. This research was specifically funded by <INSERT DETAILS FOR SPECIFIC PROJECT(S) WHERE APPROPRIATE, including grant number(s)>.”",,,,,
+GenR,The Generation R Study,cohort,EMC,Vincent Jaddoe,,,,,,,,,https://generationr.nl/,,,,,,,,,
+BIB,Born in Bradford,cohort,BRI,BIB team,,,,,,,,,https://borninbradford.nhs.uk/,,,,,,,,,
+CHOP,Childhood Obesity Programme,cohort,,Berthold Koletzko,,,,,,,,,http://www.metabolic-programming.org/obesity/,,,,,,,,,
+INMA,INfancia y Medio Ambiente [Environment and Childhood] Project,cohort,,Mònica Guxens,,,,,,,,,https://www.proyectoinma.org/en/#,,,,,,,,,
+GECKO,The Groningen Expert Center for Kids with Obesity Drenthe cohort,cohort,,Eva Corpeleijn,,,,,,,,,https://www.rug.nl/research/portal/datasets/gecko-drenthe-cohort(3e14f7ca-a55d-41d9-9803-19302aa4ea87).html,,,,,,,,,
+NFBC86,The Northern Finland Birth Cohort Study 1986,cohort,UOULU,Minna Ruddock,,,,,,,,,www.oulu.fi/nfbc,,,,,,,,,
+MoBa,"The Norwegian Mother, Father and Child Cohort Study",cohort,,Per Minor Magnus,,,,,,,,,https://www.fhi.no/en/studies/moba/,,,,,,,,,
+ELFE,"Etude Longitudinale Française depuis l'Enfance""  (French longitudinal study of children)",cohort,INSERM,Marie Aline Charles,,,,,,,,,https://www.elfe-france.fr/en/,,,,,,,,,
+EDEN,Study on the pre and early postnatal determinants of child health and development,cohort,INSERM,Barbara Heude,,,,,,,,,http://eden.vjf.inserm.fr/index.php/fr/,,,,,,,,,
+NFBC66,The Northern Finland Birth Cohort Study 1966,cohort,UOULU,Minna Ruddock,,,,,,,,,www.oulu.fi/nfbc,,,,,,,,,
+DNBC,The Danish National Birth Cohort,cohort,,Inger Kristine Meder,,,,,,,,,https://www.dnbc.dk,,,,,,,,,
+HBCS,Helsinki Birth Cohort Study,cohort,,Tuija Mikkola,,,,,,,,,https://thl.fi/en/web/thlfi-en/research-and-expertwork/projects-and-programmes/helsinki-birth-cohort-study-hbcs-idefix,,,,,,,,,
+NINFEA,Nascita ed INFanzia: gli Effetti dell'Ambiente,cohort,,Lorenzo Richiardi,,,,,,,,,https://www.progettoninfea.it/index_en,,,,,,,,,
+SWS,Southampton Women’s Survey,cohort,,Hazel Inskip,,,,,,,,,https://www.mrc.soton.ac.uk/sws/,,,,,,,,,
+RAINE,The West Australian Pregnancy Cohort,cohort,,Raineadmin,,,,,,,,,https://rainestudy.org.au/,,,,,,,,,
+RHEA,"RHEA - Mother Child Cohort in Crete, Greece",cohort,,Marina Vafeiadi,,,,,,,,,http://www.rhea.gr/,,,,,,,,,
+Borealis,Borealis Biobank,biobank,UOULU,,,,,,,,,,,,,,,,,,,
+CONSTANCES,Cohorte des Consultants des Centres d’Examens de Santé,cohort,INSERM,,,,,,,,,,,,,,,,,,,
+DFBC,Dutch Famine Birth Cohort study,cohort,AMC,,,,,,,,,,,,,,,,,,,
+ELIPA,Elintarvikkeita Painonhallintaan,cohort,UEF,,,,,,,,,,,,,,,,,,,
+FEF,Fibrefects,cohort,UEF,,,,,,,,,,,,,,,,,,,
+FinnGeDi,Finnish Gestational Diabetes Study,cohort,UOULU,,,,,,,,,,,,,,,,,,,
+FMC,Finnish Maternity Cohort,cohort,UOULU,,,,,,,,,,,,,,,,,,,
+FR,Finnish Register Sample,,UOULU,,,,,,,,,,,,,,,,,,,
+NOMA,,,UiO,,,,,,,,,,,,,,,,,,,
+OULU1935,Born in Oulu in 1935,cohort,UOULU,,,,,,,,,,,,,,,,,,,
+OULU1945,Born in Oulu in 1945,cohort,UOULU,,,,,,,,,,,,,,,,,,,
+PANIC,Physical Activity and Nutrition In Children,cohort,UEF,,,,,,,,,,,,,,,,,,,
+RCGP RSC,Royal College of General Practitioners Research & Surveillance Centre,,USEY,,,,,,,,,,,,,,,,,,,
+Rotterdam Study first cohort,"Rotterdam Study, first cohort",cohort,EMC,,,,,,,,,,,,,,,,,,,
+Rotterdam Study second cohort,"Rotterdam Study, second cohort",cohort,EMC,,,,,,,,,,,,,,,,,,,
+Rotterdam Study third cohort,"Rotterdam Study, third cohort",cohort,EMC,,,,,,,,,,,,,,,,,,,
+SYSDIMET,,,UEF,,,,,,,,,,,,,,,,,,,
+UK Biobank,United Kingdom Biobank,biobank,USEY,,,,,,,,,,,,,,,,,,,
+NFBC66 G0,Parents of NFBC1966,cohort,UOULU,,,,,,,,,,,,,,,,,,,
+ABCD,The Amsterdam Born Children and their Development Study,,,,,,,,,,,,,,,,,,,,,
