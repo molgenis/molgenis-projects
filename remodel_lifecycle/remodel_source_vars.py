@@ -84,7 +84,7 @@ def remodel_variables(source_variables, key):
     remodeled_variables = pd.read_csv('./target/Variables.csv', nrows=0)
     remodeled_variables['name'] = source_variables['variable']
     remodeled_variables['label'] = source_variables['label']
-    remodeled_variables['format'] = source_variables['datatype'].apply(get_id)
+    remodeled_variables['format'] = source_variables['datatype'].apply(get_id).apply(adapt_format)
     remodeled_variables['release.resource'] = key
     remodeled_variables['release.version'] = "1.0.0"
 
@@ -145,6 +145,14 @@ def get_id(x):
         return x
 
     return value
+
+
+def adapt_format(x):
+    #adapt format to fit available formats
+    if x == 'int':
+        x = 'integer'
+
+    return x
 
 
 if __name__ == "__main__":
