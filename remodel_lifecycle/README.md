@@ -1,4 +1,4 @@
-Running in mapper
+Running the mapper
 
 1. Setup/Active a virtual environment (see python setup below)
 2. Install dependencies in the virtual environment ( if not installed)
