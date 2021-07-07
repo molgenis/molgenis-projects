@@ -52,7 +52,7 @@ def remodel_variables(variables, keywords):
     #remodel existing information
     remodeled_variables['name'] = variables['name']
     remodeled_variables['label'] = variables['label']
-    remodeled_variables['format'] = variables['format']
+    remodeled_variables['format'] = variables['format'].apply(adapt_format)
     remodeled_variables['keywords_id'] = variables['topic']
     remodeled_variables['description'] = variables['description']
     remodeled_variables['unit'] = variables['unit']
@@ -71,6 +71,14 @@ def remodel_variables(variables, keywords):
     remodeled_variables = get_keyword_labels(remodeled_variables, keywords)
 
     return remodeled_variables
+
+
+def adapt_format(x):
+    #adapt format to fit available formats
+    if x == 'boolean':
+        x = 'binary'
+
+    return x
 
 
 def add_appendix(name, repeat):

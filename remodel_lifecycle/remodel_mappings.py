@@ -96,7 +96,7 @@ def remodel_mappings(mappings, key):
     remodeled_mappings['toTable'] = "core"
     remodeled_mappings['toVariable'] = mappings['target'].apply(get_target_name)
 
-    remodeled_mappings['match'] = mappings['status'].apply(get_id)
+    remodeled_mappings['match'] = mappings['status'].apply(get_id).apply(adapt_match)
     remodeled_mappings['description'] = mappings['description']
     remodeled_mappings['syntax'] = mappings['syntax']
 ##    remodeled_mappings['comments'] = mappings['info'] #empty in table Harmonizations
@@ -132,6 +132,14 @@ def get_id(x):
     value = x['id']
 
     return value
+
+
+def adapt_match(x):
+    #change zna to na
+    if x == 'zna':
+        x = 'na'
+
+    return x
 
 
 if __name__ == "__main__":
