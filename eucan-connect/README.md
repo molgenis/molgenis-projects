@@ -1,5 +1,5 @@
 # **EUCAN-CONNECT**
 - EUCAN-connect datamodel
-- Python scripts:
+- Scripts:
   * Upload birth cohort data
 - Templates of the interface design
