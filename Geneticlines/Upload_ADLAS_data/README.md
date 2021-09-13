@@ -24,7 +24,7 @@ Import keys (all UMCGnr need geneticlines number)
 ##Step 3
 Run script to transform data to be mapped to personal, clinicalEvent and testResults
 order of running script:
-- Run geneticlines_clinicalEvent.py
+- Run geneticlines_personal.py
 - Run geneticlines_clinicalEvent.py
 - Run geneticlines_testResult.py 
 
