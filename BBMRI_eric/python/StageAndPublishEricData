@@ -1,0 +1,15 @@
+from molgenis.bbmri_eric.bbmri_client import EricSession
+from molgenis.bbmri_eric.eric import Eric
+
+# First, initialise an EricSession (an extension of the molgenis-py-client Session)
+session = EricSession(url="http://localhost:8080", token="${molgenisToken}")
+
+# Get the nodes you want to work with
+nodes_to_publish = session.get_nodes() # all nodes
+
+# Create an Eric instance and use that to perform the desired actions
+eric = Eric(session)
+publishing_report = eric.publish_nodes(nodes_to_publish)
+
+if publishing_report.has_errors():
+    raise ValueError("Some nodes did not publish correctly")
