@@ -1,4 +1,5 @@
-![Geneticlines](/Geneticlines/images/Logo_GeneticLines.png)
+<img src="/Geneticlines/images/Logo_GeneticLines.PNG" width="148">
+
 # Overview of manuals
 
 Geneticlines contains a couple of manuals. In this repository all versions are kept. From the markdown files, HTML files are made by using [https://dillinger.io](https://dillinger.io). These are transferred to the manuals page within the Gentelines server, making use of the "background" page.
