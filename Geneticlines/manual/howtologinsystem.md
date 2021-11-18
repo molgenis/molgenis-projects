@@ -6,7 +6,7 @@ This manual explains how to log in/out in [Geneticlines](https://geneticlines.mo
 At first, potential users need to request access to geneticlines administration. If you are already added to list of geneticlines users then you can log in the system as follows.
 
 1. Go to the Geneticlines website:[https://geneticlines.molgeniscloud.org](https://geneticlines.molgeniscloud.org)
-2. Use the "Sign in" button on the upper right corner. <img src=/Geneticlines/images/signin.png width="150" height= "50" >
+2. Use the "Sign in" button on the upper right corner. ![signIn](/Geneticlines/images/signin.png)
 3. You are redirected to login page. Use the blue button "With molgenis-auth". 
    
    <img src=/Geneticlines/images/molgenis-auth.png width="350" height= "125">
@@ -24,5 +24,5 @@ At first, potential users need to request access to geneticlines administration.
 # 2. How to log out the System
 You can log out the system as follows.
 
-1. Click on the "Sign out" button on the upper right corner. <img src=/Geneticlines/images/signout.png width="150" height= "50" >
+1. Click on the "Sign out" button on the upper right corner. ![signOut](/Geneticlines/images/signout.png)
 2. You are logged out and redirected to the homepage.
