@@ -6,3 +6,4 @@ Geneticlines contains a couple of manuals. In this repository all versions are k
 
 - [USER MANUAL – HOW TO LOG IN THE SYSTEM](/Geneticlines/manual/howtologinsystem.md)
 - [USER MANUAL – HOW TO USE PSEUDONIMIZATION TOOL](/Geneticlines/manual/howtousepseudotool.md)
+- [USER MANUAL – HOW TO SET CONSENT INFORMATION MANUALLY](/Geneticlines/manual/howtoaddconsenttypes.md)
