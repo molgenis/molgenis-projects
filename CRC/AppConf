@@ -1,0 +1,137 @@
+{
+    "language": "en",
+    "disabledFilters": [
+        "country",
+        "diagnosis_available",
+        "biobank_quality",
+        "collection_quality",
+        "collection_network",
+        "biobank_network",
+        "covid19",
+        "covid19network",
+        "collaboration_non_for_profit",
+        "collaboration_commercial"   
+    ],
+    "customCollectionFilterFacets": [
+        {
+    "tableName": "eu_bbmri_eric_decode_diagnosis",
+    "columnName": "decode_diagnosis",
+    "negotiatorDescription": "Decode diagnosis:",
+    "facetTitle": "Diagnosis",
+    "insertBefore": "materials"
+},
+{
+    "tableName": "eu_bbmri_eric_stage",
+    "columnName": "stage",
+    "negotiatorDescription": "Cancer stage(s): ",
+    "facetTitle": "Stage(s)",
+    "insertBefore": "materials"
+},
+{
+    "tableName": "eu_bbmri_eric_exp_data",
+    "columnName": "experimental_data",
+    "negotiatorDescription": "Experimental data: ",
+    "facetTitle": "Experimental data",
+    "insertBefore": "materials"
+},
+
+        {
+    "tableName": "eu_bbmri_eric_mol_analysis",
+    "columnName": "molecular_analysis",
+    "negotiatorDescription": "Molecular data: ",
+    "facetTitle": "Molecular data",
+    "insertBefore": "materials"
+}
+],
+    "collectionColumns": [
+        {
+            "label": "Website:",
+            "column": "url",
+            "type": "hyperlink"
+        },
+        {
+            "label": "Diagnosis:",
+            "column": "decode_diagnosis",
+            "type": "categoricalmref"
+            
+        
+        },
+                {
+            "label": "Stage(s):",
+            "column": "stage",
+            "type": "categoricalmref"
+        },
+        {
+            "label": "Inclusion target:",
+            "column": "size",
+            "type": "int",
+            "display": "badge",
+            "suffix": "participants"
+           
+        },
+
+                {
+            "label": "Collection type:",
+            "column": "type",
+            "type": "mref"
+        },
+
+
+                {
+            "label": "Experimental data:",
+            "column": "experimental_data",
+            "type": "mref"
+        },
+        {
+            "label": "Molecular Analysis:",
+            "column": "molecular_analysis",
+            "type": "mref"
+        },
+
+        {
+            "label": "Material types:",
+            "column": "materials",
+            "type": "categoricalmref"
+        },
+
+        {
+            "label": "Data types:",
+            "column": "data_categories",
+            "type": "categoricalmref"
+        },
+                {
+            "label": "Storage:",
+            "column": "storage_temperatures",
+            "type": "categoricalmref"
+        },
+                {
+            "label": "Data use conditions:",
+            "column": "data_use",
+            "type": "mref",
+            "rsql": "data_use(label,uri)"
+        },
+
+        {
+            "label": "Status of inclusion :",
+            "column": "number_of_donors",
+            "type": "int",
+            "display": "badge",
+            "suffix": "participants included"
+        },
+
+        {
+            "label": "Age:",
+            "type": "range",
+            "min": "age_low",
+            "max": "age_high",
+            "unit": "age_unit"
+        },
+                {
+            "label": "Sex:",
+            "column": "sex",
+            "type": "categoricalmref"
+        }
+
+
+    ]
+}
