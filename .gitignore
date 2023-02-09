@@ -8,3 +8,4 @@ remodel_lifecycle/.vscode/settings.json
 **/*/.DS_Store
 remodel_lifecycle/output/*
 .DS_Store
+out
