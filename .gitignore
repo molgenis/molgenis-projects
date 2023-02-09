@@ -9,3 +9,4 @@ remodel_lifecycle/.vscode/settings.json
 remodel_lifecycle/output/*
 .DS_Store
 out
+target
