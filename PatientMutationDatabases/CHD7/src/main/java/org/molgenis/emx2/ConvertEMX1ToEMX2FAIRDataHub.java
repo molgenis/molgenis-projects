@@ -98,6 +98,7 @@ public class ConvertEMX1ToEMX2FAIRDataHub {
         individualsDiseases.familyHistory = familyHistory(patient.Positive_family_history);
         indToDiseases.add(individualsDiseases.id);
         individualsDiseasesWriter.writeNext(individualsDiseases.toRow());
+        individual.diseaseCausalGenes = "CHD7";
       }
       individual.diseases = StringUtils.join(indToDiseases, ",");
 
