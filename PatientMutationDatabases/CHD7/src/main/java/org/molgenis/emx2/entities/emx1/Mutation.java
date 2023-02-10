@@ -1,4 +1,6 @@
-package org.molgenis.emx2;
+package org.molgenis.emx2.entities.emx1;
+
+import java.util.Arrays;
 
 public class Mutation {
 
@@ -24,7 +26,7 @@ public class Mutation {
     {
         if(values.length != 17)
         {
-            System.out.println("Need 17 values, found " + values.length + " for " + values);
+            System.out.println("Need 17 values, found " + values.length + " for " + Arrays.toString(values));
         }
         this.Mutation_ID = values[0];
         this.CHD7_c = values[1];
@@ -43,6 +45,5 @@ public class Mutation {
         this.alt = values[14];
         this.start_nucleotide_cDNA = values[15];
         this.Molgenis_ID = values[16];
-
     }
 }

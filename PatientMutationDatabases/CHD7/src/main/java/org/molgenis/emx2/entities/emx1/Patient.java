@@ -1,4 +1,9 @@
-package org.molgenis.emx2;
+package org.molgenis.emx2.entities.emx1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class Patient {
 
@@ -32,11 +37,13 @@ public class Patient {
     public String Insert_detailed_information_column_other;
     public String Other_information_mutation;
 
-    public Patient(String[] values)
-    {
+    // map and add after loading the mutations
+    public List<Mutation> mutation;
+
+    public Patient(String[] values) throws Exception {
         if(values.length != 29)
         {
-            System.out.println("Need 29 values, found " + values.length + " for " + values);
+            System.out.println("Need 29 values, found " + values.length + " for " + Arrays.toString(values));
         }
         this.Molgenis_ID = values[0];
         this.Patient_ID = values[1];
@@ -67,6 +74,17 @@ public class Patient {
         this.Reference_refworks = values[26];
         this.Insert_detailed_information_column_other = values[27];
         this.Other_information_mutation = values[28];
+        this.mutation = new ArrayList<>();
     }
 
+    public void updateMutationIdToMutation(Map<String, Mutation> idToMutation) throws Exception {
+        String[] mutationIds = this.Mutation_ID.split(",", -1);
+        for(String mutationId : mutationIds)
+        {
+            if(!idToMutation.containsKey(mutationId)){
+                throw new Exception("Mutation ID not found: " + this.Mutation_ID);
+            }
+            this.mutation.add(idToMutation.get(mutationId));
+        }
+    }
 }
