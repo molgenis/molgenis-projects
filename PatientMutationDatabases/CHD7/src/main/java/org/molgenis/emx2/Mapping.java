@@ -7,6 +7,38 @@ import java.util.List;
 
 public class Mapping {
 
+    public static String pathogenicityToCategory(String value) throws Exception {
+        if(value.equals("Benign"))
+        {
+            return "Not related to clinical phenotype";
+        }
+        else if(value.equals("Pathogenic")){
+            return "Disease causing";
+        }
+        else if(value.equals("Unclassified variant")){
+            return null;
+        }
+        else{
+            throw new Exception("unmapped Pathogenicity value: " + value);
+        }
+    }
+
+    public static String pathogenicityToClinRevelance(String value) throws Exception {
+        if(value.equals("Benign"))
+        {
+            return "Benign";
+        }
+        else if(value.equals("Pathogenic")){
+            return "Pathogenic";
+        }
+        else if(value.equals("Unclassified variant")){
+            return "Unknown Significance";
+        }
+        else{
+            throw new Exception("unmapped Pathogenicity value: " + value);
+        }
+    }
+
     public static List<String> diseaseToOntology(String value) {
         List<String> diseases = new ArrayList<>();
         if (value.contains("CHARGE syndrome")) {
