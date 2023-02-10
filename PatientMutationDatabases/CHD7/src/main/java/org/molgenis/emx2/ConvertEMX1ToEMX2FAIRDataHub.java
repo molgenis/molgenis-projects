@@ -85,6 +85,7 @@ public class ConvertEMX1ToEMX2FAIRDataHub {
     {
       Individual individual = new Individual();
       individual.id = patient.Molgenis_ID;
+      individual.sex = "assigned unspecified at birth";
 
       // map to diseases
       List<String> orphaTermNames = diseaseToOntology(patient.Phenotype);
