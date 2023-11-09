@@ -11,6 +11,7 @@ def get_collections(session, biobank_ids):
     collections['country'] = collections['country'].apply(reformat.reformat_countries)
     collections['contact'] = collections['contact'].apply(reformat.get_from_dict, key='email')
 
+    # reference to BBMRI-ERIC or EOSC4Cancer and BBMRI-ERIC networks
     collections['cancerYN'] = ''
     collections['cancerYN'] = collections['categories'].apply(get_cancer_category)
     collections['networks'] = ''
@@ -44,10 +45,10 @@ def get_collections(session, biobank_ids):
     collections = collections[collections.name != 'Northern Finland Birth Cohort 1986']
 
     collections = reformat.float_to_int(collections)
-    collections.to_csv('C:/Users/brend/projects/EOSC4cancer/bbmri/collections.csv')
+    # collections.to_csv('C:/Users/brend/projects/EOSC4cancer/bbmri/collections.csv')
     # select columns
     collections = collections[['resource', 'id', 'name', 'acronym', 'contact email', 'countries', 'keywords',
-                               'networks', 'number of participants', 'cancerYN']]  # 'population disease'
+                               'networks', 'number of participants', 'cancerYN', 'description']]  # 'population disease'
 
     return collections
 

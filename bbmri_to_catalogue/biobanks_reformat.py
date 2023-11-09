@@ -20,7 +20,7 @@ def get_network(biobank_id, collection_networks):
     return 'BBMRI-ERIC'
 
 
-def get_biobanks(session):
+def get_biobanks(session, network_ids):
     data = session.get("eu_bbmri_eric_biobanks")
     biobanks = pd.DataFrame.from_dict(data)
 
@@ -42,13 +42,16 @@ def get_biobanks(session):
     external_identifiers.resource = biobanks.id
     external_identifiers.identifier = biobanks.old_id
     external_identifiers['external identifier type other'] = 'BBMRI id'
-    external_identifiers.to_csv("C:/Users/brend/projects/EOSC4cancer/bbmri/External identifiers.csv", index=None)
+    external_identifiers.to_csv("C:/Users/brend/projects/EOSC4cancer/bbmri/External identifiers.csv", mode='a',
+                                index=None)
 
-    biobanks['networks'] = 'EOSC4Cancer, BBMRI-ERIC'
-    # TODO: get network into Networks table, get cancer networks from subcohorts
-    biobanks['type'] = 'Biobank'
+    # TODO: get network into Networks table and Cohorts.networks column
+    # get networks
+    biobanks['networks'] = biobanks['network'].apply(reformat.get_from_list_of_dict, key='id')
+    biobanks['networks'] = biobanks['network'].apply(get_network_id, network_ids=network_ids)
 
     # reformat columns
+    biobanks['type'] = 'Biobank'
     biobanks['country'] = biobanks['country'].apply(reformat.get_from_dict, key='name')
     biobanks['country'] = biobanks['country'].apply(reformat.reformat_countries)
     biobanks['contact'] = biobanks['contact'].apply(reformat.get_from_dict, key='email')
@@ -68,3 +71,12 @@ def get_biobanks(session):
                          'description', 'website', 'networks', 'old_id']]
 
     return biobanks
+
+
+def get_network_id(old_ids, networks_ids):
+    new_ids = ''
+    for old_id in old_ids:
+        new_id = networks_ids.get(old_id)
+        new_ids += ',' + new_id
+
+    return new_ids
