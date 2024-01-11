@@ -18,7 +18,7 @@ def main():
     biobank_ids = dict(zip(biobanks.old_id, biobanks.id))
 
     networks = get_networks(session)
-    network_ids = dict(zip(networks.old_id, networks.id))
+    # network_ids = dict(zip(networks.old_id, networks.id))
 
     collections = get_collections(session, biobank_ids)
     collections_networks = collections[['resource', 'networks']]
